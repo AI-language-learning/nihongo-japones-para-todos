@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sitio de aprendizaje de japonés para hispanohablantes. Aprende japonés desde su lógica interna con un enfoque inductivo.">
+    <title>日本語 — Japonés para Todos</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/base.css">
+    
+    <style>
+        /* Estilos específicos de la landing page */
+        .hero {
+            background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 50%, var(--color-primary-light) 100%);
+            color: var(--text-inverse);
+            padding: var(--spacing-2xl) var(--spacing-md);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: clamp(2rem, 6vw, 3rem);
+            margin-bottom: var(--spacing-md);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* 日本語タイトルは白文字 */
+        .hero .jp {
+            color: var(--text-inverse);
+        }
+        
+        .hero .title-jp {
+            display: block;
+            font-size: 0.7em;
+            margin-top: var(--spacing-sm);
+            opacity: 0.95;
+        }
+        
+        .hero .subtitle {
+            font-size: clamp(1rem, 2.5vw, 1.25rem);
+            opacity: 0.95;
+            max-width: 600px;
+            margin: 0 auto var(--spacing-xl);
+        }
+        
+        .hero-cta {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: var(--spacing-md);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: var(--spacing-md) var(--spacing-xl);
+            border-radius: var(--radius-lg);
+            font-family: var(--font-ui);
+            font-size: 1rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all var(--transition-normal);
+        }
+        
+        .btn-primary {
+            background: var(--text-inverse);
+            color: var(--color-primary-dark);
+        }
+        
+        .btn-primary:hover {
+            background: var(--color-accent-light);
+            color: var(--color-primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-inverse);
+            border: 2px solid var(--text-inverse);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.1);
+            color: var(--text-inverse);
+        }
+        
+        /* Features */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--spacing-xl);
+            margin: var(--spacing-xl) 0;
+        }
+        
+        .feature-card {
+            background: var(--bg-section);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl);
+            text-align: center;
+            transition: all var(--transition-normal);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-medium);
+            border-color: var(--color-primary);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .feature-card h3 {
+            color: var(--color-primary-dark);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .feature-card p {
+            color: var(--text-secondary);
+            margin: 0;
+        }
+        
+        /* Principles */
+        .principle-box {
+            background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-secondary-light) 100%);
+            color: var(--text-inverse);
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-lg);
+            text-align: center;
+            margin: var(--spacing-xl) 0;
+        }
+        
+        .principle-box .jp {
+            color: var(--text-inverse);
+            display: block;
+            font-size: 1.3rem;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        /* Quick links */
+        .quick-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-md);
+            margin: var(--spacing-xl) 0;
+        }
+        
+        .quick-link {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+            padding: var(--spacing-lg);
+            background: var(--bg-highlight);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            color: var(--text-primary);
+            transition: all var(--transition-fast);
+        }
+        
+        .quick-link:hover {
+            background: var(--color-accent-light);
+            border-color: var(--color-primary);
+            color: var(--color-primary-dark);
+        }
+        
+        .quick-link-icon {
+            font-size: 1.5rem;
+        }
+        
+        /* Status badge */
+        .status-badge {
+            display: inline-block;
+            background: #FEF3C7;
+            color: #92400E;
+            padding: var(--spacing-xs) var(--spacing-md);
+            border-radius: var(--radius-xl);
+            font-size: 0.85rem;
+            margin-top: var(--spacing-lg);
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>
+                Japonés para Todos
+                <span class="title-jp jp">日本語 — スペイン語話者のための日本語</span>
+            </h1>
+            <p class="subtitle">
+                Aprende japonés desde su lógica interna, no desde la perspectiva del español.
+                Un enfoque que te permite <strong>pensar en japonés</strong>.
+            </p>
+            <div class="hero-cta">
+                <a href="aprender/index.html" class="btn btn-primary">Comenzar a Aprender</a>
+                <a href="gramatica/index.html" class="btn btn-secondary">Ver Gramática</a>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main class="main-content">
+        
+        <!-- Introducción -->
+        <section class="section">
+            <h2>¿Qué hace diferente a este sitio?</h2>
+            
+            <div class="principle-box">
+                <span class="jp">述語の運用能力に重点を置く</span>
+                El enfoque se centra en la capacidad de operar el <strong>predicado</strong>.
+            </div>
+            
+            <p>La mayoría de los cursos de japonés para hispanohablantes intentan explicar el japonés usando conceptos del español: "sujeto", "objeto directo", "verbo auxiliar"... Pero estos conceptos <strong>no funcionan</strong> en japonés.</p>
+            
+            <p>Este sitio ofrece un <strong>sistema gramatical unificado</strong> que describe el japonés desde su propia estructura, y un <strong>enfoque inductivo</strong> que parte de situaciones reales para que descubras los patrones por ti mismo.</p>
+            
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Predicado como centro</h3>
+                    <p>El predicado es el único elemento obligatorio. Aprendes a construir desde el centro hacia afuera.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <h3>Enfoque inductivo</h3>
+                    <p>Situación → "¿Qué es esto?" → Descubrimiento → Uso. No memorización de reglas.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔊</div>
+                    <h3>Audio integrado</h3>
+                    <p>Escucha cualquier texto japonés con un clic. Usa la síntesis de voz de tu navegador.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌐</div>
+                    <h3>Sin "sujeto" ni "objeto"</h3>
+                    <p>Usamos el sistema de complementos con posposiciones. Así funciona realmente el japonés.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Cómo funciona -->
+        <section class="section">
+            <h2>¿Cómo funciona el aprendizaje?</h2>
+            
+            <h3>En lugar de esto:</h3>
+            <div class="note" style="background: #FEE2E2; border-color: #FECACA;">
+                "El adjetivo negativo ない se añade a la forma de conexión del verbo para expresar negación..."
+            </div>
+            
+            <h3>Hacemos esto:</h3>
+            <div class="scene">
+                <span class="scene-label">Situación</span>
+                <p class="scene-context">Tu amigo te ofrece carne. No comes carne.</p>
+                <p class="scene-jp">
+                    <ruby>肉<rt>にく</rt></ruby>、<ruby>食<rt>た</rt></ruby>べない。
+                    <button class="speak-btn" data-text="肉、食べない" aria-label="Escuchar">🔊</button>
+                </p>
+                <p class="scene-es">Carne, no como.</p>
+            </div>
+            
+            <div class="question">
+                ¿Qué parte de <span class="jp">食べない</span> indica "no"?
+            </div>
+            
+            <p>Primero <strong>ves</strong> el uso real. Luego te <strong>preguntas</strong>. Después <strong>descubres</strong> el patrón. Finalmente, lo <strong>usas</strong> en contexto.</p>
+        </section>
+        
+        <!-- Enlaces rápidos -->
+        <section class="section">
+            <h2>Explora el sitio</h2>
+            
+            <div class="quick-links">
+                <a href="aprender/index.html" class="quick-link">
+                    <span class="quick-link-icon">📚</span>
+                    <span>Etapas de aprendizaje</span>
+                </a>
+                <a href="gramatica/index.html" class="quick-link">
+                    <span class="quick-link-icon">📖</span>
+                    <span>Referencia gramatical</span>
+                </a>
+                <a href="herramientas/kana.html" class="quick-link">
+                    <span class="quick-link-icon">あ</span>
+                    <span>Tablas de Hiragana/Katakana</span>
+                </a>
+                <a href="herramientas/audio.html" class="quick-link">
+                    <span class="quick-link-icon">🔊</span>
+                    <span>Herramienta de audio</span>
+                </a>
+                <a href="docs/documento-fundamental.html" class="quick-link">
+                    <span class="quick-link-icon">📄</span>
+                    <span>Documento fundamental</span>
+                </a>
+                <a href="qa/index.html" class="quick-link">
+                    <span class="quick-link-icon">❓</span>
+                    <span>Preguntas frecuentes</span>
+                </a>
+            </div>
+            
+            <p class="text-center text-muted mt-lg">
+                <span class="status-badge">🚧 Sitio en desarrollo activo</span>
+            </p>
+        </section>
+        
+    </main>
+    
+    <!-- Footer -->
+    <footer class="site-footer">
+        <p><strong>日本語 — Japonés para Todos</strong></p>
+        <p class="jp">スペイン語話者のための日本語学習サイト</p>
+        <p style="margin-top: var(--spacing-md); font-size: 0.9rem; opacity: 0.8;">
+            Proyecto de código abierto en GitHub
+        </p>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="js/speech.js"></script>
+    
+</body>
+</html>

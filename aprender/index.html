@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprender | 学習 — Japonés para Todos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/base.css">
+    <style>
+        .etapa-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--spacing-lg);
+            margin: var(--spacing-xl) 0;
+        }
+        .etapa-card {
+            background: var(--bg-section);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+            transition: all var(--transition-normal);
+        }
+        .etapa-card:hover {
+            border-color: var(--color-primary);
+            box-shadow: var(--shadow-medium);
+        }
+        .etapa-card.disabled {
+            opacity: 0.6;
+            pointer-events: none;
+        }
+        .etapa-number {
+            display: inline-block;
+            background: var(--color-primary);
+            color: white;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 2rem;
+            font-weight: 600;
+            margin-bottom: var(--spacing-sm);
+        }
+        .etapa-card.disabled .etapa-number {
+            background: var(--border-medium);
+        }
+        .etapa-card h3 {
+            margin-bottom: var(--spacing-sm);
+        }
+        .etapa-card p {
+            color: var(--text-secondary);
+            margin: 0;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+    
+    <header class="site-header">
+        <h1>Etapas de Aprendizaje <span class="jp">学習</span></h1>
+        <p>Aprende japonés paso a paso, desde el predicado hacia afuera</p>
+    </header>
+    
+    <nav class="main-nav">
+        <div class="nav-container">
+            <ul class="nav-list">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="../gramatica/index.html">Gramática</a></li>
+                <li><a href="index.html" class="active">Aprender</a></li>
+                <li><a href="../herramientas/kana.html">Herramientas</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <main class="main-content">
+        <section class="section">
+            <h2>Mapa de Etapas <span class="jp">学習マップ</span></h2>
+            
+            <p>El aprendizaje sigue una secuencia lógica: primero dominas el predicado (el centro de la oración), luego expandes hacia los complementos, el tópico, y finalmente las oraciones complejas.</p>
+            
+            <div class="etapa-grid">
+                
+                <div class="etapa-card disabled">
+                    <span class="etapa-number">0</span>
+                    <h3>Fonética y Escritura <span class="jp">音声と書記</span></h3>
+                    <p>Hiragana, katakana, sonidos del japonés. Base indispensable.</p>
+                </div>
+                
+                <div class="etapa-card disabled">
+                    <span class="etapa-number">1</span>
+                    <h3>Marco Conceptual <span class="jp">枠組み</span></h3>
+                    <p>Entender la estructura del predicado. Ver antes de hacer.</p>
+                </div>
+                
+                <div class="etapa-card disabled">
+                    <span class="etapa-number">2</span>
+                    <h3>Adjetivos (A) <span class="jp">形容詞</span></h3>
+                    <p>Tu primer núcleo predicativo. 高い → 高くない → 高かった</p>
+                </div>
+                
+                <div class="etapa-card disabled">
+                    <span class="etapa-number">3</span>
+                    <h3>Nominales Adjetivales (Na) <span class="jp">形容名詞</span></h3>
+                    <p>Introducir el declarativo だ. 静かだ → 静かじゃない</p>
+                </div>
+                
+                <div class="etapa-card disabled">
+                    <span class="etapa-number">4</span>
+                    <h3>Nominales (N) <span class="jp">名詞</span></h3>
+                    <p>Predicación nominal con だ. 学生だ → 学生じゃない</p>
+                </div>
+                
+                <div class="etapa-card disabled">
+                    <span class="etapa-number">5</span>
+                    <h3>Verbos (V) <span class="jp">動詞</span></h3>
+                    <p>El núcleo más complejo. 食べる → 食べない → 食べた</p>
+                </div>
+                
+                <div class="etapa-card disabled">
+                    <span class="etapa-number">6</span>
+                    <h3>Complementos <span class="jp">補語</span></h3>
+                    <p>Posposiciones: が, を, に, で, へ, から, まで, と</p>
+                </div>
+                
+                <div class="etapa-card disabled">
+                    <span class="etapa-number">7</span>
+                    <h3>Tópico <span class="jp">話題</span></h3>
+                    <p>El marcador は. Estructura informativa.</p>
+                </div>
+                
+                <div class="etapa-card disabled">
+                    <span class="etapa-number">8+</span>
+                    <h3>Y más... <span class="jp">続く</span></h3>
+                    <p>のだ, modificación nominal, oraciones complejas...</p>
+                </div>
+                
+            </div>
+            
+            <div class="note">
+                🚧 <strong>Contenido en desarrollo.</strong> Las etapas se irán activando conforme se complete el contenido.
+            </div>
+        </section>
+    </main>
+    
+    <footer class="site-footer">
+        <p><strong>日本語 — Japonés para Todos</strong></p>
+        <p class="jp">スペイン語話者のための日本語学習サイト</p>
+    </footer>
+    
+</body>
+</html>

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiragana y Katakana | 仮名 — Japonés para Todos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/base.css">
+    <style>
+        .kana-section {
+            margin: var(--spacing-xl) 0;
+        }
+        .kana-table {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 4px;
+            max-width: 500px;
+            margin: var(--spacing-lg) auto;
+        }
+        .kana-cell {
+            background: var(--bg-section);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-md);
+            text-align: center;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+        }
+        .kana-cell:hover {
+            background: var(--color-accent-light);
+            border-color: var(--color-primary);
+            transform: scale(1.05);
+        }
+        .kana-cell:active {
+            transform: scale(0.98);
+        }
+        .kana-char {
+            font-family: var(--font-japanese);
+            font-size: 1.8rem;
+            color: var(--japanese-kanji);
+            display: block;
+        }
+        .kana-romaji {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+        .kana-cell.empty {
+            background: transparent;
+            border-color: transparent;
+            cursor: default;
+        }
+        .kana-cell.empty:hover {
+            transform: none;
+        }
+        
+        .row-label {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: var(--spacing-sm);
+            color: var(--color-secondary);
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-top: var(--spacing-md);
+        }
+        
+        .toggle-group {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-md);
+            margin: var(--spacing-lg) 0;
+        }
+        .toggle-btn {
+            padding: var(--spacing-sm) var(--spacing-lg);
+            border: 2px solid var(--color-primary);
+            border-radius: var(--radius-md);
+            background: transparent;
+            color: var(--color-primary);
+            font-family: var(--font-ui);
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+        }
+        .toggle-btn.active {
+            background: var(--color-primary);
+            color: white;
+        }
+        .toggle-btn:hover:not(.active) {
+            background: var(--color-accent-light);
+        }
+        
+        .instructions {
+            text-align: center;
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-lg);
+        }
+    </style>
+</head>
+<body>
+    
+    <header class="site-header">
+        <h1>Hiragana y Katakana <span class="jp">ひらがな・カタカナ</span></h1>
+        <p>Haz clic en cualquier carácter para escucharlo</p>
+    </header>
+    
+    <nav class="main-nav">
+        <div class="nav-container">
+            <ul class="nav-list">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="../gramatica/index.html">Gramática</a></li>
+                <li><a href="../aprender/index.html">Aprender</a></li>
+                <li><a href="kana.html" class="active">Herramientas</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <main class="main-content">
+        
+        <section class="section">
+            <h2>Tablas de Kana <span class="jp">仮名表</span></h2>
+            
+            <p class="instructions">🔊 Haz clic en cualquier carácter para escuchar su pronunciación.</p>
+            
+            <div class="toggle-group">
+                <button class="toggle-btn active" id="btn-hiragana">ひらがな Hiragana</button>
+                <button class="toggle-btn" id="btn-katakana">カタカナ Katakana</button>
+            </div>
+            
+            <!-- Hiragana -->
+            <div class="kana-section" id="hiragana-section">
+                <h3 class="text-center">Hiragana <span class="jp">ひらがな</span></h3>
+                
+                <div class="kana-table" id="hiragana-table">
+                    <!-- Vocales -->
+                    <div class="kana-cell" data-sound="あ"><span class="kana-char">あ</span><span class="kana-romaji">a</span></div>
+                    <div class="kana-cell" data-sound="い"><span class="kana-char">い</span><span class="kana-romaji">i</span></div>
+                    <div class="kana-cell" data-sound="う"><span class="kana-char">う</span><span class="kana-romaji">u</span></div>
+                    <div class="kana-cell" data-sound="え"><span class="kana-char">え</span><span class="kana-romaji">e</span></div>
+                    <div class="kana-cell" data-sound="お"><span class="kana-char">お</span><span class="kana-romaji">o</span></div>
+                    
+                    <!-- K行 -->
+                    <div class="kana-cell" data-sound="か"><span class="kana-char">か</span><span class="kana-romaji">ka</span></div>
+                    <div class="kana-cell" data-sound="き"><span class="kana-char">き</span><span class="kana-romaji">ki</span></div>
+                    <div class="kana-cell" data-sound="く"><span class="kana-char">く</span><span class="kana-romaji">ku</span></div>
+                    <div class="kana-cell" data-sound="け"><span class="kana-char">け</span><span class="kana-romaji">ke</span></div>
+                    <div class="kana-cell" data-sound="こ"><span class="kana-char">こ</span><span class="kana-romaji">ko</span></div>
+                    
+                    <!-- S行 -->
+                    <div class="kana-cell" data-sound="さ"><span class="kana-char">さ</span><span class="kana-romaji">sa</span></div>
+                    <div class="kana-cell" data-sound="し"><span class="kana-char">し</span><span class="kana-romaji">shi</span></div>
+                    <div class="kana-cell" data-sound="す"><span class="kana-char">す</span><span class="kana-romaji">su</span></div>
+                    <div class="kana-cell" data-sound="せ"><span class="kana-char">せ</span><span class="kana-romaji">se</span></div>
+                    <div class="kana-cell" data-sound="そ"><span class="kana-char">そ</span><span class="kana-romaji">so</span></div>
+                    
+                    <!-- T行 -->
+                    <div class="kana-cell" data-sound="た"><span class="kana-char">た</span><span class="kana-romaji">ta</span></div>
+                    <div class="kana-cell" data-sound="ち"><span class="kana-char">ち</span><span class="kana-romaji">chi</span></div>
+                    <div class="kana-cell" data-sound="つ"><span class="kana-char">つ</span><span class="kana-romaji">tsu</span></div>
+                    <div class="kana-cell" data-sound="て"><span class="kana-char">て</span><span class="kana-romaji">te</span></div>
+                    <div class="kana-cell" data-sound="と"><span class="kana-char">と</span><span class="kana-romaji">to</span></div>
+                    
+                    <!-- N行 -->
+                    <div class="kana-cell" data-sound="な"><span class="kana-char">な</span><span class="kana-romaji">na</span></div>
+                    <div class="kana-cell" data-sound="に"><span class="kana-char">に</span><span class="kana-romaji">ni</span></div>
+                    <div class="kana-cell" data-sound="ぬ"><span class="kana-char">ぬ</span><span class="kana-romaji">nu</span></div>
+                    <div class="kana-cell" data-sound="ね"><span class="kana-char">ね</span><span class="kana-romaji">ne</span></div>
+                    <div class="kana-cell" data-sound="の"><span class="kana-char">の</span><span class="kana-romaji">no</span></div>
+                    
+                    <!-- H行 -->
+                    <div class="kana-cell" data-sound="は"><span class="kana-char">は</span><span class="kana-romaji">ha</span></div>
+                    <div class="kana-cell" data-sound="ひ"><span class="kana-char">ひ</span><span class="kana-romaji">hi</span></div>
+                    <div class="kana-cell" data-sound="ふ"><span class="kana-char">ふ</span><span class="kana-romaji">fu</span></div>
+                    <div class="kana-cell" data-sound="へ"><span class="kana-char">へ</span><span class="kana-romaji">he</span></div>
+                    <div class="kana-cell" data-sound="ほ"><span class="kana-char">ほ</span><span class="kana-romaji">ho</span></div>
+                    
+                    <!-- M行 -->
+                    <div class="kana-cell" data-sound="ま"><span class="kana-char">ま</span><span class="kana-romaji">ma</span></div>
+                    <div class="kana-cell" data-sound="み"><span class="kana-char">み</span><span class="kana-romaji">mi</span></div>
+                    <div class="kana-cell" data-sound="む"><span class="kana-char">む</span><span class="kana-romaji">mu</span></div>
+                    <div class="kana-cell" data-sound="め"><span class="kana-char">め</span><span class="kana-romaji">me</span></div>
+                    <div class="kana-cell" data-sound="も"><span class="kana-char">も</span><span class="kana-romaji">mo</span></div>
+                    
+                    <!-- Y行 -->
+                    <div class="kana-cell" data-sound="や"><span class="kana-char">や</span><span class="kana-romaji">ya</span></div>
+                    <div class="kana-cell empty"></div>
+                    <div class="kana-cell" data-sound="ゆ"><span class="kana-char">ゆ</span><span class="kana-romaji">yu</span></div>
+                    <div class="kana-cell empty"></div>
+                    <div class="kana-cell" data-sound="よ"><span class="kana-char">よ</span><span class="kana-romaji">yo</span></div>
+                    
+                    <!-- R行 -->
+                    <div class="kana-cell" data-sound="ら"><span class="kana-char">ら</span><span class="kana-romaji">ra</span></div>
+                    <div class="kana-cell" data-sound="り"><span class="kana-char">り</span><span class="kana-romaji">ri</span></div>
+                    <div class="kana-cell" data-sound="る"><span class="kana-char">る</span><span class="kana-romaji">ru</span></div>
+                    <div class="kana-cell" data-sound="れ"><span class="kana-char">れ</span><span class="kana-romaji">re</span></div>
+                    <div class="kana-cell" data-sound="ろ"><span class="kana-char">ろ</span><span class="kana-romaji">ro</span></div>
+                    
+                    <!-- W行 + N -->
+                    <div class="kana-cell" data-sound="わ"><span class="kana-char">わ</span><span class="kana-romaji">wa</span></div>
+                    <div class="kana-cell empty"></div>
+                    <div class="kana-cell" data-sound="ん"><span class="kana-char">ん</span><span class="kana-romaji">n</span></div>
+                    <div class="kana-cell empty"></div>
+                    <div class="kana-cell" data-sound="を"><span class="kana-char">を</span><span class="kana-romaji">wo</span></div>
+                </div>
+            </div>
+            
+            <!-- Katakana -->
+            <div class="kana-section" id="katakana-section" style="display: none;">
+                <h3 class="text-center">Katakana <span class="jp">カタカナ</span></h3>
+                
+                <div class="kana-table" id="katakana-table">
+                    <!-- Vocales -->
+                    <div class="kana-cell" data-sound="ア"><span class="kana-char">ア</span><span class="kana-romaji">a</span></div>
+                    <div class="kana-cell" data-sound="イ"><span class="kana-char">イ</span><span class="kana-romaji">i</span></div>
+                    <div class="kana-cell" data-sound="ウ"><span class="kana-char">ウ</span><span class="kana-romaji">u</span></div>
+                    <div class="kana-cell" data-sound="エ"><span class="kana-char">エ</span><span class="kana-romaji">e</span></div>
+                    <div class="kana-cell" data-sound="オ"><span class="kana-char">オ</span><span class="kana-romaji">o</span></div>
+                    
+                    <!-- K行 -->
+                    <div class="kana-cell" data-sound="カ"><span class="kana-char">カ</span><span class="kana-romaji">ka</span></div>
+                    <div class="kana-cell" data-sound="キ"><span class="kana-char">キ</span><span class="kana-romaji">ki</span></div>
+                    <div class="kana-cell" data-sound="ク"><span class="kana-char">ク</span><span class="kana-romaji">ku</span></div>
+                    <div class="kana-cell" data-sound="ケ"><span class="kana-char">ケ</span><span class="kana-romaji">ke</span></div>
+                    <div class="kana-cell" data-sound="コ"><span class="kana-char">コ</span><span class="kana-romaji">ko</span></div>
+                    
+                    <!-- S行 -->
+                    <div class="kana-cell" data-sound="サ"><span class="kana-char">サ</span><span class="kana-romaji">sa</span></div>
+                    <div class="kana-cell" data-sound="シ"><span class="kana-char">シ</span><span class="kana-romaji">shi</span></div>
+                    <div class="kana-cell" data-sound="ス"><span class="kana-char">ス</span><span class="kana-romaji">su</span></div>
+                    <div class="kana-cell" data-sound="セ"><span class="kana-char">セ</span><span class="kana-romaji">se</span></div>
+                    <div class="kana-cell" data-sound="ソ"><span class="kana-char">ソ</span><span class="kana-romaji">so</span></div>
+                    
+                    <!-- T行 -->
+                    <div class="kana-cell" data-sound="タ"><span class="kana-char">タ</span><span class="kana-romaji">ta</span></div>
+                    <div class="kana-cell" data-sound="チ"><span class="kana-char">チ</span><span class="kana-romaji">chi</span></div>
+                    <div class="kana-cell" data-sound="ツ"><span class="kana-char">ツ</span><span class="kana-romaji">tsu</span></div>
+                    <div class="kana-cell" data-sound="テ"><span class="kana-char">テ</span><span class="kana-romaji">te</span></div>
+                    <div class="kana-cell" data-sound="ト"><span class="kana-char">ト</span><span class="kana-romaji">to</span></div>
+                    
+                    <!-- N行 -->
+                    <div class="kana-cell" data-sound="ナ"><span class="kana-char">ナ</span><span class="kana-romaji">na</span></div>
+                    <div class="kana-cell" data-sound="ニ"><span class="kana-char">ニ</span><span class="kana-romaji">ni</span></div>
+                    <div class="kana-cell" data-sound="ヌ"><span class="kana-char">ヌ</span><span class="kana-romaji">nu</span></div>
+                    <div class="kana-cell" data-sound="ネ"><span class="kana-char">ネ</span><span class="kana-romaji">ne</span></div>
+                    <div class="kana-cell" data-sound="ノ"><span class="kana-char">ノ</span><span class="kana-romaji">no</span></div>
+                    
+                    <!-- H行 -->
+                    <div class="kana-cell" data-sound="ハ"><span class="kana-char">ハ</span><span class="kana-romaji">ha</span></div>
+                    <div class="kana-cell" data-sound="ヒ"><span class="kana-char">ヒ</span><span class="kana-romaji">hi</span></div>
+                    <div class="kana-cell" data-sound="フ"><span class="kana-char">フ</span><span class="kana-romaji">fu</span></div>
+                    <div class="kana-cell" data-sound="ヘ"><span class="kana-char">ヘ</span><span class="kana-romaji">he</span></div>
+                    <div class="kana-cell" data-sound="ホ"><span class="kana-char">ホ</span><span class="kana-romaji">ho</span></div>
+                    
+                    <!-- M行 -->
+                    <div class="kana-cell" data-sound="マ"><span class="kana-char">マ</span><span class="kana-romaji">ma</span></div>
+                    <div class="kana-cell" data-sound="ミ"><span class="kana-char">ミ</span><span class="kana-romaji">mi</span></div>
+                    <div class="kana-cell" data-sound="ム"><span class="kana-char">ム</span><span class="kana-romaji">mu</span></div>
+                    <div class="kana-cell" data-sound="メ"><span class="kana-char">メ</span><span class="kana-romaji">me</span></div>
+                    <div class="kana-cell" data-sound="モ"><span class="kana-char">モ</span><span class="kana-romaji">mo</span></div>
+                    
+                    <!-- Y行 -->
+                    <div class="kana-cell" data-sound="ヤ"><span class="kana-char">ヤ</span><span class="kana-romaji">ya</span></div>
+                    <div class="kana-cell empty"></div>
+                    <div class="kana-cell" data-sound="ユ"><span class="kana-char">ユ</span><span class="kana-romaji">yu</span></div>
+                    <div class="kana-cell empty"></div>
+                    <div class="kana-cell" data-sound="ヨ"><span class="kana-char">ヨ</span><span class="kana-romaji">yo</span></div>
+                    
+                    <!-- R行 -->
+                    <div class="kana-cell" data-sound="ラ"><span class="kana-char">ラ</span><span class="kana-romaji">ra</span></div>
+                    <div class="kana-cell" data-sound="リ"><span class="kana-char">リ</span><span class="kana-romaji">ri</span></div>
+                    <div class="kana-cell" data-sound="ル"><span class="kana-char">ル</span><span class="kana-romaji">ru</span></div>
+                    <div class="kana-cell" data-sound="レ"><span class="kana-char">レ</span><span class="kana-romaji">re</span></div>
+                    <div class="kana-cell" data-sound="ロ"><span class="kana-char">ロ</span><span class="kana-romaji">ro</span></div>
+                    
+                    <!-- W行 + N -->
+                    <div class="kana-cell" data-sound="ワ"><span class="kana-char">ワ</span><span class="kana-romaji">wa</span></div>
+                    <div class="kana-cell empty"></div>
+                    <div class="kana-cell" data-sound="ン"><span class="kana-char">ン</span><span class="kana-romaji">n</span></div>
+                    <div class="kana-cell empty"></div>
+                    <div class="kana-cell" data-sound="ヲ"><span class="kana-char">ヲ</span><span class="kana-romaji">wo</span></div>
+                </div>
+            </div>
+            
+            <div class="note">
+                <strong>Nota:</strong> La calidad del audio depende de las voces instaladas en tu sistema. Para mejor experiencia, usa Chrome o Edge con voces japonesas instaladas.
+            </div>
+        </section>
+        
+    </main>
+    
+    <footer class="site-footer">
+        <p><strong>日本語 — Japonés para Todos</strong></p>
+        <p class="jp">スペイン語話者のための日本語学習サイト</p>
+    </footer>
+    
+    <script src="../js/speech.js"></script>
+    <script>
+        // Toggle Hiragana/Katakana
+        const btnHiragana = document.getElementById('btn-hiragana');
+        const btnKatakana = document.getElementById('btn-katakana');
+        const sectionHiragana = document.getElementById('hiragana-section');
+        const sectionKatakana = document.getElementById('katakana-section');
+        
+        btnHiragana.addEventListener('click', () => {
+            btnHiragana.classList.add('active');
+            btnKatakana.classList.remove('active');
+            sectionHiragana.style.display = 'block';
+            sectionKatakana.style.display = 'none';
+        });
+        
+        btnKatakana.addEventListener('click', () => {
+            btnKatakana.classList.add('active');
+            btnHiragana.classList.remove('active');
+            sectionKatakana.style.display = 'block';
+            sectionHiragana.style.display = 'none';
+        });
+        
+        // Click to speak
+        document.querySelectorAll('.kana-cell[data-sound]').forEach(cell => {
+            cell.addEventListener('click', () => {
+                const sound = cell.dataset.sound;
+                if (sound && window.NihongoSpeech) {
+                    NihongoSpeech.speak(sound);
+                }
+            });
+        });
+    </script>
+    
+</body>
+</html>
