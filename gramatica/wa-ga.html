@@ -1,0 +1,1307 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="は y が: posposiciones malinterpretadas como 'marcadores de sujeto'. Tópico, contraste, complemento nominativo, identificación, doble nominativo. Guía de gramática japonesa para hispanohablantes.">
+<title>は・が — Posposiciones malinterpretadas como "marcadores de sujeto" — 日本語 Japonés para Todos</title>
+<!-- Archivo: wa-ga.html -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@400;700&family=DM+Serif+Display:ital@0;1&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+<!-- Shared styles -->
+<link rel="stylesheet" href="../css/common.css">
+
+<style>
+/* ===== HERO BACKGROUND TEXT ===== */
+.hero::before { content: 'は・が'; }
+.hero { min-height: 70vh; }
+
+/* ===== POSPOSICIÓN COLOR BADGES ===== */
+.pp {
+  display: inline-block;
+  font-family: 'Noto Serif JP', serif;
+  font-size: 0.92em;
+  font-weight: 700;
+  padding: 0.05em 0.35em;
+  border-radius: 4px;
+  letter-spacing: 0;
+}
+.pp-wa  { color: var(--teal-dark);  background: var(--teal-light); }
+.pp-ga  { color: var(--success);    background: #dff0e8;           }
+.pp-mo  { color: #5a2878;           background: #f2eaf8;           }
+.pp-nul { color: var(--warm-gray);  background: var(--light-gray); }
+
+/* ===== DATA TABLE ===== */
+.table-wrap {
+  overflow-x: auto;
+  margin: 2rem 0;
+  border-radius: 12px;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+}
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  font-size: 0.96rem;
+  min-width: 500px;
+}
+.data-table thead { background: var(--teal-light); }
+.data-table th {
+  padding: 0.9rem 1.2rem;
+  text-align: left;
+  font-weight: 700;
+  font-size: 0.88rem;
+  letter-spacing: 0.04em;
+  border-bottom: 2px solid var(--teal);
+  color: var(--ink);
+}
+.data-table th.col-b { background: #dff0e8; border-bottom-color: var(--success); }
+.data-table th.col-c { background: #f2eaf8; border-bottom-color: #5a2878; }
+.data-table td {
+  padding: 0.9rem 1.2rem;
+  border-bottom: 1px solid var(--light-gray);
+  vertical-align: top;
+  line-height: 1.75;
+}
+.data-table tr:last-child td { border-bottom: none; }
+.data-table tbody tr:hover { background: #faf8f5; }
+.data-table .row-label { font-weight: 700; color: var(--teal-dark); white-space: nowrap; }
+.data-table .jp-c { font-family: 'Noto Sans JP', sans-serif; font-size: 1rem; font-weight: 500; }
+.data-table .ok-c { color: var(--success); font-style: italic; }
+.data-table .ng-c { color: var(--danger);  font-style: italic; font-family: inherit; }
+
+/* ===== CASE CARD ===== */
+.case-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: clamp(1.4rem, 3vw, 2.2rem);
+  margin: 2rem 0;
+  box-shadow: 0 2px 24px rgba(0,0,0,0.05);
+  border-left: 4px solid var(--teal);
+}
+.case-card.accent { border-left-color: var(--accent); }
+.case-card.gold   { border-left-color: var(--gold);   }
+.case-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 0.55rem;
+}
+.case-card.accent .case-label { color: var(--accent); }
+.case-card.gold   .case-label { color: var(--gold);   }
+.case-card h4 {
+  font-family: 'DM Serif Display', 'Noto Serif JP', serif;
+  font-size: 1.12rem;
+  margin-bottom: 0.9rem;
+  color: var(--ink);
+}
+
+/* ===== DIALOGUE BLOCK ===== */
+.dialogue {
+  background: #faf8f5;
+  border-radius: 10px;
+  padding: 1.1rem 1.4rem;
+  margin: 0.9rem 0;
+  font-size: 0.97rem;
+}
+.dialogue .lang-tag {
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--warm-gray);
+  margin-bottom: 0.3rem;
+}
+.dialogue .jp-text {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--ink);
+  margin: 0.25rem 0;
+}
+.dialogue .es-text {
+  color: var(--warm-gray);
+  font-style: italic;
+  margin: 0.15rem 0;
+  font-size: 0.92rem;
+}
+
+/* ===== SYMMETRY PAIR ===== */
+.sym-pair {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 0.75rem;
+  align-items: center;
+  margin: 1.1rem 0;
+}
+.sym-card {
+  background: #fff;
+  border: 1px solid var(--light-gray);
+  border-radius: 10px;
+  padding: 0.85rem 1rem;
+  text-align: center;
+}
+.sym-card .jp-t {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--ink);
+  display: block;
+  margin-bottom: 0.2rem;
+  line-height: 1.5;
+}
+.sym-card .es-t { font-size: 0.82rem; color: var(--warm-gray); font-style: italic; }
+.sym-arrow { font-size: 1.3rem; color: var(--light-gray); font-weight: 700; text-align: center; user-select: none; }
+
+/* ===== SECTION BADGE HEADER ===== */
+.sec-badge {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-bottom: 0.4rem;
+}
+.sec-badge .pp { font-size: 1.5rem; padding: 0.1em 0.4em; border-radius: 6px; }
+
+/* ===== NAV DOTS ===== */
+.page-nav {
+  position: fixed;
+  top: 50%;
+  right: clamp(0.5rem, 2vw, 1.5rem);
+  transform: translateY(-50%);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+.page-nav a {
+  width: 13px; height: 13px;
+  border-radius: 50%;
+  background: var(--teal);
+  opacity: 0.25;
+  transition: all 0.3s;
+  display: block;
+}
+.page-nav a:hover, .page-nav a.active { opacity: 0.8; transform: scale(1.3); }
+.page-nav a:focus-visible { outline: 2px solid var(--teal); outline-offset: 4px; opacity: 0.7; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) { .page-nav { display: none; } }
+@media (max-width: 600px) {
+  .sym-pair { grid-template-columns: 1fr; }
+  .sym-arrow { display: none; }
+  .data-table th, .data-table td { padding: 0.7rem; }
+  .data-table { font-size: 0.84rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== BREADCRUMB ===== -->
+<nav class="breadcrumb" aria-label="Ruta de navegación">
+  <div class="breadcrumb-inner">
+    <a href="../index.html">Inicio</a>
+    <span class="separator">›</span>
+    <a href="index.html">Gramática</a>
+    <span class="separator">›</span>
+    <span class="current">は・が — Posposiciones malinterpretadas como "marcadores de sujeto"</span>
+  </div>
+</nav>
+
+<!-- ===== NAV DOTS ===== -->
+<nav class="page-nav" id="pageNav" aria-label="Navegación de secciones">
+  <a href="#hero"  title="Inicio"                    aria-label="Inicio"></a>
+  <a href="#sec1"  title="1. は — tópico"            aria-label="Sección 1"></a>
+  <a href="#sec2"  title="2. は — contraste"         aria-label="Sección 2"></a>
+  <a href="#sec3"  title="3. は — estructura compleja" aria-label="Sección 3"></a>
+  <a href="#sec4"  title="4. が — foco"              aria-label="Sección 4"></a>
+  <a href="#sec5"  title="5. が — subordinadas"      aria-label="Sección 5"></a>
+  <a href="#sec6"  title="6. 誰が・Aは — cuatro fenómenos" aria-label="Sección 6"></a>
+  <a href="#sec7"  title="7. Doble nominativo"       aria-label="Sección 7"></a>
+  <a href="#sec8"  title="8. だ述語 は vs が"         aria-label="Sección 8"></a>
+  <a href="#sec9"  title="9. Resumen"                aria-label="Sección 9"></a>
+</nav>
+
+<!-- ===== HERO ===== -->
+<header class="hero" id="hero">
+  <div class="hero-badge">Guía gramatical 2 — Continuación de «¿Sujeto?»</div>
+  <h1>
+    <span class="pp pp-wa">は</span> · <span class="pp pp-ga">が</span> — Posposiciones malinterpretadas como «marcadores de sujeto»
+    <span class="jp">主語マーカーと誤解されがちな二つの後置詞</span>
+  </h1>
+  <p class="hero-sub">
+    Esta guía da por establecido que el japonés no tiene sujeto sintáctico.<br>
+    El foco es ahora: <strong>¿por qué el japonés usa frecuentemente estas posposiciones para lo que en español es el sujeto?"</strong>
+  </p>
+  <div class="hero-scroll">
+    <a href="#sec1">Comenzar <div class="arrow"></div></a>
+  </div>
+</header>
+
+
+<!-- ════════════════════════════════
+     PUENTE CON LA GUÍA ANTERIOR
+════════════════════════════════ -->
+<section id="intro" style="padding: clamp(2.5rem,5vw,4rem) 0;">
+  <div class="container">
+    <div class="note-block reveal">
+      <div class="note-title">📌 Prerequisito — Guía 1: ¿Sujeto?</div>
+      <p>Esta página continúa directamente desde <a href="sujeto-japones-guia.html" style="color:var(--teal-dark);font-weight:600">Guía 1: ¿Sujeto? — El predicado como centro</a>. Si aún no la has leído, te recomendamos hacerlo primero: allí se explica por qué el predicado japonés es autosuficiente, qué significa que el enunciado «se diseñe desde la situación», y la diferencia fundamental entre la elisión del español y la no-verbalización del japonés.</p>
+      <p style="margin-bottom:0">Partiendo de esa base, analizaremos qué función cumplen realmente las posposición <span class="pp pp-wa">は</span> y <span class="pp pp-ga">が</span>, y su equivalencia, o no, con el sujeto en el español. </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════
+     ORIGEN SEMÁNTICO DE LAS TRES POSPOSICIONES
+════════════════════════════════════════ -->
+<section id="origen" style="padding: clamp(2rem,4vw,3.5rem) 0; background: #fff; border-bottom: 1px solid var(--light-gray);">
+  <div class="container">
+    <div class="reveal">
+      <h2 class="sec-title" style="font-size:clamp(1.2rem,2vw,1.6rem); margin-bottom:0.3em;">El origen semántico de las posposiciones</h2>
+      <p class="sec-lead" style="margin-bottom:1.5rem;">Conviene entender el origen de cada postposición desde el punto de vista semántico, del significado. Dado que sus funciones se derivan de ello.</p>
+    </div>
+
+    <div class="reveal">
+      <div class="case-card" style="border-left-color: var(--teal);">
+        <div class="case-label" style="color:var(--teal);">は — el origen: «tomar X y distinguirlo del resto»</div>
+        <p>El núcleo semántico de <span class="pp pp-wa">は</span> es <strong>取り立て</strong> (<em>toridateru</em>): seleccionar un elemento del conjunto de alternativas posibles y ponerlo en primer plano. Cuando alguien dice <span style="font-family:'Noto Sans JP';font-weight:500">「私は…」</span>, no solo anuncia que va a hablar de sí mismo — también implica que no va a hablar de los demás. De ese punto de partida derivan todas sus funciones:</p>
+        <ul style="list-style:none; padding:0; margin:0.5rem 0 0; display:flex; flex-direction:column; gap:0.45rem;">
+          <li style="display:flex; gap:0.6rem;"><span style="flex-shrink:0; font-weight:700; color:var(--teal);">→</span> <span><strong>Tópico</strong>: «de entre los posibles temas, hablo de X»</span></li>
+          <li style="display:flex; gap:0.6rem;"><span style="flex-shrink:0; font-weight:700; color:var(--teal);">→</span> <span><strong>Contraste</strong>: «X sí (pero Y no)» — la separación del resto se hace explícita</span></li>
+          <li style="display:flex; gap:0.6rem;"><span style="flex-shrink:0; font-weight:700; color:var(--teal);">→</span> <span><strong>Combinación con negación</strong>: 〜はしない implica «eso no, pero algo sí»</span></li>
+          <li style="display:flex; gap:0.6rem;"><span style="flex-shrink:0; font-weight:700; color:var(--teal);">→</span> <span><strong>Reserva / matiz</strong>: <span style="font-family:'Noto Sans JP';font-weight:500">まあ、行きはします</span> — «ir, iré, pero…» (concesión con restricción implícita)</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <div class="case-card" style="border-left-color: var(--success);">
+        <div class="case-label" style="color:var(--success);">が — el origen: señalar el referente del predicado</div>
+        <p>La función central de <span class="pp pp-ga">が</span> es marcar el <strong>complemento nominativo</strong>: el elemento al que el predicado apunta directamente para efectuar su predicación. Si el predicado es <span style="font-family:'Noto Sans JP';font-weight:500">降る</span> (<em>precipitar / caer</em>), が señala qué se precipita (<span style="font-family:'Noto Sans JP';font-weight:500">雨が</span> lluvia, <span style="font-family:'Noto Sans JP';font-weight:500">雪が</span> nieve). No es un marcador de agente ni de sujeto gramatical: es el marcador de <em>referente</em>. De ahí derivan:</p>
+        <ul style="list-style:none; padding:0; margin:0.5rem 0 0; display:flex; flex-direction:column; gap:0.45rem;">
+          <li style="display:flex; gap:0.6rem;"><span style="flex-shrink:0; font-weight:700; color:var(--success);">→</span> <span><strong>Identificación</strong>: «es X (y no otro) quien …» «es X (y no otro) el que…» </span></li>
+          <li style="display:flex; gap:0.6rem;"><span style="flex-shrink:0; font-weight:700; color:var(--success);">→</span> <span><strong>Cláusulas subordinadas</strong>: が es el único marcador posible en esa posición</span></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════
+     S1 — は COMO MARCADOR DE TÓPICO
+════════════════════════════════════════ -->
+<section id="sec1">
+  <div class="container">
+    <div class="reveal">
+      <div class="sec-num">01</div>
+      <div class="sec-badge"><span class="pp pp-wa">は</span></div>
+      <h2 class="sec-title">は — marcador de tópico</h2>
+      <p class="sec-lead">は establece el marco temático del que se va a hablar (del que se va a enunciar algo).</p>
+    </div>
+
+    <div class="reveal">
+      <p>La función primaria de <span class="pp pp-wa">は</span> es establecer el <strong>tópico</strong> (<span style="font-family:'Noto Sans JP'">話題</span>): el elemento acerca del cual se va a decir algo. El tópico no tiene un papel gramatical fijo dentro del enunciado — puede coincidir con lo que sería sujeto en el español, pero también del objeto, del complemento de lugar, de tiempo o de cualquier otro elemento. Lo que importa es que el hablante lo presenta como el <em>marco</em> desde el que se va a entender lo que sigue.</p>
+    </div>
+
+    <!-- は con equivalentes de distinto tipo gramatical español -->
+    <div class="case-card reveal">
+      <div class="case-label">は en posición de distinto tipo de complemento español</div>
+      <h4>は no es un marcador de sujeto — se adjunta a cualquier elemento</h4>
+
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Ejemplo</th>
+              <th>Elemento con は</th>
+              <th>Función en español equivalente</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="jp-c">私<span class="pp pp-wa">は</span>東京に住んでいます。</td>
+              <td>私 (yo)</td>
+              <td>Sujeto</td>
+            </tr>
+            <tr>
+              <td class="jp-c">刺身<span class="pp pp-wa">は</span>食べますか。</td>
+              <td>刺身 (pescado crudo)</td>
+              <td>Complemento directo</td>
+            </tr>
+            <tr>
+              <td class="jp-c">東京に<span class="pp pp-wa">は</span>行ったことがない。</td>
+              <td>東京 (Tokio)</td>
+              <td>Complemento de dirección</td>
+            </tr>
+            <tr>
+              <td class="jp-c">今日<span class="pp pp-wa">は</span>寒い。</td>
+              <td>今日 (hoy)</td>
+              <td>Complemento temporal</td>
+            </tr>
+            <tr>
+              <td class="jp-c">ここで<span class="pp pp-wa">は</span>静かにしてください。</td>
+              <td>ここ (aquí)</td>
+              <td>Complemento de lugar</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="explain">
+        <div class="explain-title">💡 La prueba de que は no marca sujeto</div>
+        <p style="margin-bottom:0">En <span style="font-family:'Noto Sans JP';font-weight:500">魚は食べない</span>, si は marcara sujeto gramatical, «pescado» sería el sujeto de «no comer» — lo que no tiene sentido. は simplemente convierte «el pescado» en el tópico: <em>«En cuanto al pescado, no lo como.»</em> El verdadero argumento de lo que se dice (quién no come) está disponible en la situación y no se verbaliza.</p>
+      </div>
+    </div>
+
+    <!-- は tópico y lo que dice sobre él -->
+    <div class="case-card reveal">
+      <div class="case-label">Cuándo aparece は — condiciones de uso</div>
+      <h4>El tópico con は aparece cuando el elemento ya es información conocida o accesible</h4>
+      <p>は aparece cuando el referente ya es accesible en el contexto compartido — ya sea porque se ha mencionado antes, porque es genérico y universalmente conocido, o porque el hablante lo establece deliberadamente como marco del discurso.</p>
+
+      <div class="dialogue">
+        <div class="lang-tag">Verdad general — referente genérico</div>
+        <div class="jp-text">犬<span class="pp pp-wa">は</span>動物だ。</div>
+        <div class="es-text">Los perros son animales. (verdad general → tópico desde la primera mención)</div>
+      </div>
+
+      <div class="dialogue">
+        <div class="lang-tag">Marco establecido por el hablante — ¿de qué vamos a hablar?</div>
+        <div class="jp-text">田中さん<span class="pp pp-wa">は</span>今日休みです。</div>
+        <div class="es-text">Tanaka no viene hoy. (el hablante establece a Tanaka como el tema de lo que va a decir)</div>
+      </div>
+
+      <div class="explain">
+        <div class="explain-title">はの対比機能は次のセクションで扱います</div>
+        <p style="margin-bottom:0">は tiene una segunda función crucial —el contraste— que se explica en la siguiente sección. Las dos funciones (tópico y contraste) comparten la misma forma y a veces son difíciles de separar, pero producen efectos comunicativos bien distintos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+
+<!-- ════════════════════════════════════════
+     S2 — は DE CONTRASTE
+════════════════════════════════════════ -->
+<section id="sec2">
+  <div class="container">
+    <div class="reveal">
+      <div class="sec-num">02</div>
+      <div class="sec-badge"><span class="pp pp-wa">は</span></div>
+      <h2 class="sec-title">は — contraste</h2>
+      <p class="sec-lead">La misma posposición は cumple una segunda función: marcar contraste entre el elemento que lleva は y otro elemento implícito o explícito. Esta función produce efectos pragmáticos importantes en negación y en comparaciones.</p>
+    </div>
+
+    <div class="reveal">
+      <p>El contraste con <span class="pp pp-wa">は</span> puede ser <strong>explícito</strong> (cuando hay dos elementos con は en la misma oración) o <strong>implícito</strong> (cuando el contraste se infiere del contexto). La presuposición de contraste es siempre la misma: <em>«Este elemento tiene esta propiedad; hay otro elemento (mencionado o no) que tiene una propiedad diferente.»</em></p>
+    </div>
+
+    <div class="case-card reveal">
+      <div class="case-label">Contraste explícito — dos は en la misma oración</div>
+      <h4></h4>
+
+      <div class="dialogue">
+        <div class="lang-tag">Afirmación de A, negación de B</div>
+        <div class="jp-text">ビール<span class="pp pp-wa">は</span>飲むが、ワイン<span class="pp pp-wa">は</span>飲まない。</div>
+        <div class="es-text">Cerveza bebo, pero vino no.</div>
+      </div>
+
+      <div class="dialogue">
+        <div class="lang-tag">Atributos contrastados</div>
+        <div class="jp-text">兄<span class="pp pp-wa">は</span>背が高いが、弟<span class="pp pp-wa">は</span>低い。</div>
+        <div class="es-text">El hermano mayor es alto, pero el menor es bajo.</div>
+      </div>
+    </div>
+
+    <div class="case-card reveal">
+      <div class="case-label">Contraste implícito — un solo は, pero con presuposición de contraste</div>
+      <h4>は en negación: el contraste siempre está presente</h4>
+      <p>Cuando <span class="pp pp-wa">は</span> aparece en una oración negativa, genera inevitablemente un contraste implícito. La negación con は no dice simplemente «X no hace Y» — dice «X no hace TAL (pero tal vez, hay algo (o alguien) que sí lo hace», o dice «X no hace TAL (bajo las circunstancias comentadas, pero tal vez sí bajo otras circunstancias».</p>
+
+      <div class="sym-pair">
+        <div class="sym-card">
+          <span class="jp-t">彼女<span class="pp pp-wa">は</span>来なかった。</span>
+          <span class="es-t">Ella no vino. <em>(implica: los demás sí)</em></span>
+        </div>
+        <div class="sym-arrow">≠</div>
+        <div class="sym-card">
+          <span class="jp-t">彼女<span class="pp pp-ga">が</span>来なかった。</span>
+          <span class="es-t">Fue ella quien no vino. <em>(foco de identificación)</em></span>
+        </div>
+      </div>
+
+      <div class="sym-pair">
+        <div class="sym-card">
+          <span class="jp-t">今日<span class="pp pp-wa">は</span>行かない。</span>
+          <span class="es-t">Hoy no voy. <em>(implica: quizá otro día sí)</em></span>
+        </div>
+        <div class="sym-arrow">≠</div>
+        <div class="sym-card">
+          <span class="jp-t">今日<span class="pp pp-ga">が</span>ダメだ。</span>
+          <span class="es-t">Hoy es el problema. <em>(identificación: de los días, este)</em></span>
+        </div>
+      </div>
+
+      <div class="explain">
+        <div class="explain-title">¿Por qué は siempre implica contraste en negación?</div>
+        <p>Porque は por su naturaleza siempre <em>abre el espacio de alternativas</em>: al convertir un elemento en tópico delimitado (<em>en cuanto a X</em>), implica que hay otros elementos posibles. En una oración afirmativa, ese trasfondo de alternativas no produce efecto notable. En una negación, hace saltar la implicatura: <em>«De entre las opciones, X no — alguna otra sí.»</em></p>
+        <p style="margin-bottom:0">En español, esta diferencia se suele marcar con énfasis prosódico: <em>«Hoy no voy»</em> (énfasis en «hoy») vs. <em>«No voy»</em> (sin énfasis temporal). En japonés la posposición は ya lleva incorporada la diferencia que en español requiere entonación; no es necesario añadir énfasis encima.</p>
+      </div>
+    </div>
+
+    <div class="case-card reveal">
+      <div class="case-label">Aplicación práctica — tópico vs. contraste en la misma forma</div>
+      <h4>Cómo distinguirlos en contexto</h4>
+
+      <div class="dialogue">
+        <div class="lang-tag">Contexto A — hablando específicamente de Tanaka</div>
+        <div class="jp-text">A: 「田中さんは最近どうしてる？」— B: 「田中さん<span class="pp pp-wa">は</span>結婚した。」</div>
+        <div class="es-text">A: ¿Qué tal últimamente Tanaka? — B: Tanaka se ha casado. → función de tópico</div>
+      </div>
+
+      <div class="explain" style="margin: 0.5rem 0 1rem;">
+        <div class="explain-title">⚠️ Si la pregunta es «¿Qué hay de nuevo?», la respuesta natural es が</div>
+        <p style="margin-bottom:0">Una pregunta general como <span style="font-family:'Noto Sans JP';font-weight:500">「最近何かあった？」</span> (<em>¿Qué hay de nuevo?</em>) no establece ningún tópico previo. En ese contexto, la respuesta natural es <span style="font-family:'Noto Sans JP';font-weight:500">「田中さん<span class="pp pp-ga" style="font-family:'Noto Sans JP'">が</span>結婚した。」</span> — が porque es información enteramente nueva. <span class="pp pp-wa">は</span> solo aparece si el interlocutor ya ha establecido a Tanaka como tema, como en la pregunta de arriba.</p>
+      </div>
+
+      <div class="dialogue">
+        <div class="lang-tag">Contexto B — después de «Yamada se ha casado, ¿y Tanaka?»</div>
+        <div class="jp-text">A: 「山田さんは結婚したけど、田中さんは？」— B: 「田中さん<span class="pp pp-wa">は</span>まだだ。」</div>
+        <div class="es-text">A: Yamada ya se casó, ¿y Tanaka? — B: Tanaka, todavía no. → función de contraste (él, a diferencia de Yamada)</div>
+      </div>
+
+      <div class="explain">
+        <div class="explain-title">La forma は es idéntica — el contexto decide</div>
+        <p style="margin-bottom:0">Tanto la función de tópico como la de contraste usan exactamente la misma posposición <span class="pp pp-wa">は</span>. El oyente interpreta cuál de las dos está activa según el contexto discursivo. Esta ambigüedad de superficie es una característica del japonés, no un defecto: la lengua confía en que la situación compartida entre hablante e interlocutor resuelve cualquier ambigüedad.</p>
+      </div>
+    </div>
+
+    <div class="case-card reveal">
+      <div class="case-label">は de tópico + は de contraste en la misma oración</div>
+      <h4>Cuando は aparece dos veces: el primer は fija el marco, el segundo contrasta</h4>
+      <p>Es posible —y frecuente en japonés— que una misma oración contenga dos は: el primero en función de tópico y el segundo en función de contraste. Esto muestra que は no es una categoría única y fija.</p>
+
+      <div class="dialogue">
+        <div class="lang-tag">Contraste dentro del marco del tópico</div>
+        <div class="jp-text">日本語<span class="pp pp-wa">は</span>発音<span class="pp pp-wa">は</span>簡単だ。</div>
+        <div class="es-text">Del japonés, la pronunciación al menos es fácil. (implica: otras cosas no lo son tanto)</div>
+      </div>
+
+      <div class="dialogue">
+        <div class="lang-tag">Tópico (persona) + dos は de contraste</div>
+        <div class="jp-text">あの人<span class="pp pp-wa">は</span>スペイン語<span class="pp pp-wa">は</span>上手だけど、英語<span class="pp pp-wa">は</span>そうでもない。</div>
+        <div class="es-text">Esa persona habla bien el español, pero el inglés no tanto. (el 1.º es tópico; el 2.º y 3.º son contraste)</div>
+      </div>
+
+      <div class="explain">
+        <div class="explain-title">Análisis de la estructura</div>
+        <p>En <span style="font-family:'Noto Sans JP';font-weight:500">日本語は発音は簡単だ</span>, el primer <span class="pp pp-wa">は</span> (<span style="font-family:'Noto Sans JP'">日本語は</span>) establece el tópico general del enunciado. El segundo <span class="pp pp-wa">は</span> (<span style="font-family:'Noto Sans JP'">発音は</span>) opera dentro de ese marco como contraste: de todo lo que tiene el japonés, la pronunciación es lo que se señala como fácil, con la implicatura de que otras dimensiones (gramática, escritura…) no lo son tanto.</p>
+        <p style="margin-bottom:0">Este patrón tiene un equivalente frecuente en español con la partícula «al menos» o el énfasis: <em>«Del japonés, al menos la pronunciación es fácil.»</em> La doble aparición de <span class="pp pp-wa">は</span> nunca es redundante — cada instancia cumple una función distinta.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+
+<!-- ════════════════════════════════════════
+     S3 — は EN ESTRUCTURA TÓPICO-COMENTARIO COMPLEJA
+════════════════════════════════════════ -->
+<section id="sec3">
+  <div class="container">
+    <div class="reveal">
+      <div class="sec-num">03</div>
+      <div class="sec-badge"><span class="pp pp-wa">は</span></div>
+      <h2 class="sec-title">は — la estructura tópico-comentario compleja</h2>
+      <p class="sec-lead">Cuando は y が coexisten en la misma oración, は fija el marco general y が señala el complemento nominativo dentro de ese marco. Este patrón no tiene equivalente directo en español.</p>
+    </div>
+
+    <div class="reveal">
+      <p>En la Guía 1 se introdujo que が marca el complemento nominativo del predicado. Lo que sucede en oraciones como <span style="font-family:'Noto Sans JP';font-weight:500">象は鼻が長い</span> es que los dos elementos operan en <em>niveles distintos</em>: <span class="pp pp-wa">は</span> actúa a nivel del discurso (establece el marco) y <span class="pp pp-ga">が</span> actúa a nivel de la predicación interna (señala el argumento del predicado).</p>
+      <p>Este patrón は〜が〜 es especialmente frecuente en japonés para describir <strong>atributos físicos, capacidades y estados internos</strong>. Los predicados de este tipo — <span style="font-family:'Noto Sans JP';font-weight:500">頭がいい, 背が高い, 目が黒い, 足が速い, 気が強い</span>… — siempre toman un argumento con <span class="pp pp-ga">が</span> que describe una parte, aspecto o dimensión del referente establecido como tópico. Este esquema <em>parte del cuerpo / dimensión</em> + が + <em>adjetivo</em> es una de las construcciones más productivas del japonés.</p>
+    </div>
+
+    <div class="case-card reveal">
+      <div class="case-label">Estructura は〜が〜 — marco y lo que se dice internamente</div>
+      <h4>象は鼻が長い — análisis del patrón</h4>
+
+      <div class="dialogue">
+        <div class="lang-tag">Descripción de una característica prototípica</div>
+        <div class="jp-text">象<span class="pp pp-wa">は</span>鼻<span class="pp pp-ga">が</span>長い。</div>
+        <div class="es-text">El elefante tiene la trompa larga. / Del elefante, la trompa es larga.</div>
+      </div>
+
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Elemento</th>
+              <th>Posposición</th>
+              <th>Función</th>
+              <th>Equivalente español</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="jp-c">象</td>
+              <td><span class="pp pp-wa">は</span></td>
+              <td>Tópico del enunciado (marco general)</td>
+              <td>«El elefante» (como tema de lo que se dice)</td>
+            </tr>
+            <tr>
+              <td class="jp-c">鼻</td>
+              <td><span class="pp pp-ga">が</span></td>
+              <td>Complemento nominativo del predicado 長い</td>
+              <td>«la trompa» (sujeto gramatical de «es larga»)</td>
+            </tr>
+            <tr>
+              <td class="jp-c">長い</td>
+              <td>—</td>
+              <td>Predicado</td>
+              <td>«es larga»</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="table-wrap" style="margin-top:1.5rem;">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Marco con は</th>
+              <th>Parte / dimensión con が</th>
+              <th>Predicado</th>
+              <th>Traducción</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="jp-c">彼女<span class="pp pp-wa">は</span></td>
+              <td class="jp-c">頭<span class="pp pp-ga">が</span></td>
+              <td class="jp-c">いい</td>
+              <td>Ella es inteligente. (lit. la buena cabeza)</td>
+            </tr>
+            <tr>
+              <td class="jp-c">田中さん<span class="pp pp-wa">は</span></td>
+              <td class="jp-c">背<span class="pp pp-ga">が</span></td>
+              <td class="jp-c">高い</td>
+              <td>Tanaka es alto.</td>
+            </tr>
+            <tr>
+              <td class="jp-c">あの犬<span class="pp pp-wa">は</span></td>
+              <td class="jp-c">目<span class="pp pp-ga">が</span></td>
+<td class="jp-c">黒い</td>
+              <td>Ese perro tiene los ojos negros.</td>
+            </tr>
+            <tr>
+              <td class="jp-c">山田さん<span class="pp pp-wa">は</span></td>
+              <td class="jp-c">足<span class="pp pp-ga">が</span></td>
+              <td class="jp-c">速い</td>
+              <td>Yamada corre rápido. (lit. las piernas rápidas)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Más ejemplos del patrón -->
+    <div class="case-card reveal">
+      <div class="case-label">Más ejemplos del patrón は〜が〜 — marcos no personales</div>
+      <h4></h4>
+      <p>El marco con <span class="pp pp-wa">は</span> no tiene por qué ser una persona. Estaciones, lugares, situaciones — cualquier elemento puede funcionar como referente del predicado marcado con <span class="pp pp-ga">が</span>.</p>
+
+      <div class="dialogue">
+        <div class="lang-tag">Marco temporal — estación del año</div>
+        <div class="jp-text">春<span class="pp pp-wa">は</span>桜<span class="pp pp-ga">が</span>きれいだ。</div>
+        <div class="es-text">En primavera, los cerezos son preciosos. (lit. «De la primavera, los cerezos son bonitos.»)</div>
+      </div>
+
+      <div class="dialogue">
+        <div class="lang-tag">Marco de lugar — establecimiento</div>
+        <div class="jp-text">あの店<span class="pp pp-wa">は</span>ラーメン<span class="pp pp-ga">が</span>うまい。</div>
+        <div class="es-text">En ese local, el ramen está rico. (lit. «De aquel local, el ramen está bueno.»)</div>
+      </div>
+
+      <div class="explain">
+        <div class="explain-title">El patrón は〜が〜 más allá de las personas</div>
+        <p style="margin-bottom:0">El esquema se generaliza a cualquier tipo de marco: estaciones (<span style="font-family:'Noto Sans JP';font-weight:500">春は〜が…</span>), lugares (<span style="font-family:'Noto Sans JP';font-weight:500">あの店は〜が…</span>), eventos (<span style="font-family:'Noto Sans JP';font-weight:500">この映画は〜が…</span>). En todos los casos, <span class="pp pp-wa">は</span> delimita el dominio desde el que se interpreta la predicación y <span class="pp pp-ga">が</span> señala el referente interno sobre el que el predicado actúa. El español traduce estas construcciones con muy diversas estructuras: <em>«tiene»</em>, <em>«es conocido por»</em>, <em>«allí se…»</em>, <em>«en X, lo mejor es Y»</em>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+
+<!-- ════════════════════════════════════════
+     S4 — が COMO MARCADOR DE FOCO
+════════════════════════════════════════ -->
+<section id="sec4">
+  <div class="container">
+    <div class="reveal">
+      <div class="sec-num">04</div>
+      <div class="sec-badge"><span class="pp pp-ga">が</span></div>
+      <h2 class="sec-title">が — foco e identificación</h2>
+      <p class="sec-lead">が tiene dos usos como marcador de foco: señala el referente que responde a ¿quién? o ¿qué? (foco neutro), y señala el elemento que satisface una condición de búsqueda (identificación exhaustiva). Ambos usos son distintos del tópico con は.</p>
+    </div>
+
+    <!-- が de foco neutro -->
+    <div class="case-card reveal">
+      <div class="case-label">が de foco neutro — respuesta a ¿quién? / ¿qué?</div>
+      <h4>が en respuestas a preguntas con 誰 · 何 · どれ</h4>
+      <p>La Guía 1 señala que <span class="pp pp-ga">が</span> contiene inherentemente una carga identificativa: <span style="font-family:'Noto Sans JP';font-weight:500">「田中さんが来た」</span> no dice solo <em>«Tanaka vino»</em> sino <em>«Es Tanaka quien vino»</em>. Esta propiedad hace que が sea la posposición natural en respuestas a preguntas con <span style="font-family:'Noto Sans JP';font-weight:500">誰, 何, どれ</span> — preguntas que solicitan identificar el argumento del predicado — y en la primera presentación de un evento o personaje.</p>
+
+      <div class="dialogue">
+        <div class="lang-tag">¿Quién? → respuesta con が</div>
+        <div class="jp-text">A: 「誰<span class="pp pp-ga">が</span>電話した？」— B: 「田中さん<span class="pp pp-ga">が</span>電話した。」</div>
+        <div class="es-text">A: ¿Quién llamó? — B: Fue Tanaka quien llamó. (identificación del agente)</div>
+      </div>
+
+      <div class="dialogue">
+        <div class="lang-tag">¿Qué ocurrió? → primera aparición del evento con が</div>
+        <div class="jp-text">地震<span class="pp pp-ga">が</span>あった。</div>
+        <div class="es-text">Hubo un terremoto. (evento nuevo, anunciado)</div>
+      </div>
+
+      <div class="dialogue">
+        <div class="lang-tag">¿Cuál? → が identifica el elemento del predicado</div>
+        <div class="jp-text">A: 「どれ<span class="pp pp-ga">が</span>一番安いですか？」— B: 「これ<span class="pp pp-ga">が</span>一番安いです。」</div>
+        <div class="es-text">A: ¿Cuál es el más barato? — B: Este es el más barato.</div>
+      </div>
+
+      <div class="explain">
+        <div class="explain-title">が の識別性 — por qué la traducción cambia con が</div>
+        <p>La carga identificativa de <span class="pp pp-ga">が</span> produce una diferencia de matiz que el español no puede marcar morfológicamente. Compara:</p>
+        <p style="margin:0.4rem 0"><span style="font-family:'Noto Sans JP';font-weight:500">田中さん<span class="pp pp-wa" style="font-family:'Noto Sans JP'">は</span>来た。</span> → <em>Tanaka vino.</em> (neutro; Tanaka es el tópico, y de él se dice que vino)</p>
+        <p style="margin:0.4rem 0 1rem"><span style="font-family:'Noto Sans JP';font-weight:500">田中さん<span class="pp pp-ga" style="font-family:'Noto Sans JP'">が</span>来た。</span> → <em>Fue Tanaka quien vino.</em> (identificativo; de entre los que podrían venir, es Tanaka el que llegó)</p>
+        <p style="margin-bottom:0">Esta propiedad de <span class="pp pp-ga">が</span> es la razón por la que Guía 1 lo llama <em>complemento nominativo</em> en lugar de «sujeto»: <span class="pp pp-ga">が</span> no solo marca el argumento del predicado — lo <em>identifica</em> como el elemento que satisface la predicación dentro del conjunto de alternativas posibles.</p>
+      </div>
+    </div>
+
+    <!-- が de identificación exhaustiva -->
+    <div class="case-card reveal">
+      <div class="case-label">が de identificación exhaustiva — «el único que satisface la condición»</div>
+      <h4>が como resultado de búsqueda o comparación</h4>
+      <p>Un segundo uso de <span class="pp pp-ga">が</span> aparece cuando hay un conjunto de candidatos y se identifica <em>cuál de ellos</em> cumple una condición. Este uso se explica con detalle en la Guía 1 con el ejemplo del bolígrafo. Aquí añadimos el patrón general.</p>
+      <p>Las condiciones necesarias son tres: (1) existe un conjunto de alternativas, (2) se ha planteado una condición o propiedad buscada, (3) が señala el elemento que la satisface. Sin estas condiciones, が de identificación no es natural.</p>
+
+      <div class="dialogue">
+        <div class="lang-tag">Identificación de la persona responsable de una tarea</div>
+        <div class="jp-text">A: 「この仕事、誰ができる？」— B: 「花子さん<span class="pp pp-ga">が</span>できる。」</div>
+        <div class="es-text">A: ¿Quién puede hacer este trabajo? — B: Hanako puede. (de los candidatos, ella)</div>
+      </div>
+
+      <div class="dialogue">
+        <div class="lang-tag">Conclusión tras proceso de selección</div>
+        <div class="jp-text">やっぱり、これ<span class="pp pp-ga">が</span>いい。</div>
+        <div class="es-text">Al final, este es el que me gusta. (de todas las opciones vistas, este)</div>
+      </div>
+
+      <div class="explain">
+        <div class="explain-title">が de identificación vs. は de tópico con predicado declarativo</div>
+        <p>La diferencia se vuelve muy visible con el declarativo だ (se analiza en detalle en la sección 8). En resumen: <span style="font-family:'Noto Sans JP';font-weight:500">Xは山田だ</span> establece X como tema y dice que es Yamada; <span style="font-family:'Noto Sans JP';font-weight:500">Xが山田だ</span> identifica X como el que resulta ser Yamada en un proceso de determinación.</p>
+        <p style="margin-bottom:0">En español, la identificación exhaustiva se expresa a menudo con énfasis prosódico («Quien es el culpable es YAMADA»), con oraciones hendidas («Es Yamada quien…») o con pronombres de identificación («El que lo hizo fue él»).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+
+<!-- ════════════════════════════════════════
+     S5 — が EN SUBORDINADAS Y が→の
+════════════════════════════════════════ -->
+<section id="sec5">
+  <div class="container">
+    <div class="reveal">
+      <div class="sec-num">05</div>
+      <div class="sec-badge"><span class="pp pp-ga">が</span></div>
+      <h2 class="sec-title">が en cláusulas subordinadas</h2>
+      <p class="sec-lead">は opera a nivel del discurso completo y no puede entrar en cláusulas subordinadas. En esa posición, が es obligatorio.</p>
+    </div>
+
+    <div class="reveal">
+      <p>En la oración principal, el hablante elige entre <span class="pp pp-wa">は</span> y <span class="pp pp-ga">が</span> según la organización informativa del discurso. Pero dentro de una cláusula subordinada (relativa, condicional, causal, nominal, etc.), esa elección deja de estar disponible: <span class="pp pp-wa">は</span> opera a nivel del enunciado completo y no tiene acceso al interior de una cláusula. El único marcador posible en esa posición es <span class="pp pp-ga">が</span>.</p>
+    </div>
+
+    <div class="case-card reveal">
+      <div class="case-label">が obligatorio en cláusulas subordinadas — は imposible</div>
+      <h4></h4>
+
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Tipo de cláusula</th>
+              <th>Con が — correcto</th>
+              <th>Con は — imposible</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="row-label">Relativa</td>
+              <td class="jp-c">田中さん<span class="pp pp-ga">が</span>書いた手紙</td>
+              <td class="ng-c">*田中さんは書いた手紙</td>
+            </tr>
+            <tr>
+              <td class="row-label">Condicional</td>
+              <td class="jp-c">雨<span class="pp pp-ga">が</span>降ったら、中止します。</td>
+              <td class="ng-c">*雨は降ったら、中止します。</td>
+            </tr>
+            <tr>
+              <td class="row-label">Temporal</td>
+              <td class="jp-c">彼<span class="pp pp-ga">が</span>来たとき、出かけた。</td>
+              <td class="ng-c">*彼は来たとき、出かけた。</td>
+            </tr>
+            <tr>
+              <td class="row-label">Nominal (こと)</td>
+              <td class="jp-c">彼<span class="pp pp-ga">が</span>来ることは知っていた。</td>
+              <td class="ng-c">*彼は来ることは知っていた。</td>
+            </tr>
+            <tr>
+              <td class="row-label">Causal (から)</td>
+              <td class="jp-c">彼女<span class="pp pp-ga">が</span>頑張ったから、成功した。</td>
+              <td class="ng-c">*彼女は頑張ったから、成功した。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="explain">
+        <div class="explain-title">Por qué は no puede entrar en subordinadas</div>
+        <p style="margin-bottom:0"><span class="pp pp-wa">は</span> es una posposición que opera al nivel del enunciado completo: establece el tópico <em>para el predicado principal</em>. Una cláusula subordinada define su propio «mundo de referencia» interno y el predicado que le da sentido es el de la subordinada, no el principal. Por eso は no tiene acceso a ese dominio interno. <span class="pp pp-ga">が</span>, en cambio, simplemente señala el complemento nominativo del predicado más cercano, sea este el principal o el de una subordinada.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<div class="divider"></div>
+
+
+<!-- ════════════════════════════════════════
+     S6 — 誰が来る？/ Aは来る？ CUATRO FENÓMENOS
+════════════════════════════════════════ -->
+<section id="sec6">
+  <div class="container">
+    <div class="reveal">
+      <div class="sec-num">06</div>
+      <h2 class="sec-title">が y は: cuatro fenómenos, un sistema
+        <span class="jp" style="font-family:'Noto Serif JP',serif; display:block; font-size:0.55em; margin-top:0.3em; color:var(--teal-dark);">「誰が来る？」「Aは来る？」から見えてくるもの</span>
+      </h2>
+      <p class="sec-lead">Las preguntas 「誰が来る？」y 「Aは来る？」y sus respuestas posibles e imposibles forman un conjunto de ocho datos que se explican desde una sola diferencia estructural.</p>
+    </div>
+
+    <!-- Tabla de datos de partida -->
+    <div class="table-wrap reveal">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Enunciado</th>
+            <th>Gramatical</th>
+            <th>Observación</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="jp-c">誰<span class="pp pp-ga">が</span>来る？</td>
+            <td class="ok-c">✓</td>
+            <td>Pregunta por el referente del predicado</td>
+          </tr>
+          <tr>
+            <td class="jp-c"><span style="text-decoration:line-through;text-decoration-color:var(--danger)">誰<span class="pp pp-wa">は</span>来る？</span></td>
+            <td class="ng-c">✗</td>
+            <td>Agramatical — topicalizar lo desconocido es imposible</td>
+          </tr>
+          <tr>
+            <td class="jp-c">誰が来る？ → A<span class="pp pp-ga">が</span>来る。</td>
+            <td class="ok-c">✓</td>
+            <td>Respuesta directa: llena el hueco referencial</td>
+          </tr>
+          <tr>
+            <td class="jp-c">誰が来る？ → A<span class="pp pp-wa">は</span>来る。</td>
+            <td class="ok-c">✓</td>
+            <td>Respuesta con contraste: extrae A del conjunto</td>
+          </tr>
+          <tr>
+            <td class="jp-c">A<span class="pp pp-wa">は</span>来る？</td>
+            <td class="ok-c">✓</td>
+            <td>Pregunta sobre el predicado; A ya es identificable</td>
+          </tr>
+          <tr>
+            <td class="jp-c">Aは来る？ → A<span class="pp pp-wa">は</span>来る。</td>
+            <td class="ok-c">✓</td>
+            <td>Confirma el predicado para A</td>
+          </tr>
+          <tr>
+            <td class="jp-c">Aは来る？ → A<span class="pp pp-wa">は</span>来ない。</td>
+            <td class="ok-c">✓</td>
+            <td>Niega el predicado para A</td>
+          </tr>
+          <tr>
+            <td class="jp-c">Aは来る？ → <span style="text-decoration:line-through;text-decoration-color:var(--danger)">A<span class="pp pp-ga">が</span>来る。</span></td>
+            <td class="ng-c">✗</td>
+            <td>No funciona como respuesta — no hay hueco referencial abierto</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Diferencia estructural de base -->
+    <div class="case-card reveal">
+      <div class="case-label">La diferencia estructural de base</div>
+      <h4>が y は no operan en el mismo nivel</h4>
+      <p><span class="pp pp-ga">が</span> es una posposición de caso. Marca el <strong>complemento nominativo</strong> del predicado: el elemento que llena el hueco referencial que el predicado deja abierto. Su función es interna a la estructura del predicado. No dice nada sobre el resto del mundo — solo completa la referencia del predicado.</p>
+      <p style="margin-bottom:0"><span class="pp pp-wa">は</span> no es una posposición de caso. Es un <strong>marcador de tópico con estructura contrastiva incorporada</strong>. Su funcionamiento requiere dos condiciones simultáneas: (1) el elemento topicalizado debe ser <em>identificable</em> para los interlocutores — は no puede operar sobre lo desconocido; (2) el elemento topicalizado se extrae de un conjunto presupuesto, y el predicado se afirma <em>solo para ese elemento</em> — los demás miembros del conjunto quedan fuera del alcance del enunciado. Esta segunda condición es lo que genera el llamado «contraste», pero no es un uso especial ni una variante pragmática: es la operación básica de は en todos sus usos. Lo que varía es si el conjunto de fondo resulta contextualmente saliente o no.</p>
+    </div>
+
+    <!-- 誰は来る？ -->
+    <div class="case-card accent reveal">
+      <div class="case-label">La prueba más directa: ~~誰は来る？~~</div>
+      <h4>Por qué は no puede combinarse con 誰</h4>
+      <p>La agramaticalidad de <span style="font-family:'Noto Sans JP';font-weight:500;text-decoration:line-through;text-decoration-color:var(--danger)">誰は来る？</span> no es un accidente: es la demostración más directa de cómo funciona は.</p>
+      <p>誰 es una incógnita. El hablante no sabe a quién se refiere. Topicalizar con は requiere que el elemento sea identificable — que haya «algo sobre lo que hablar». No se puede establecer como tópico una entidad cuya identidad se desconoce: no hay entidad sobre la que extraer nada y predicar nada.</p>
+      <p style="margin-bottom:0"><span class="pp pp-ga">が</span>, en cambio, es perfectamente compatible con 誰. Su función es marcar el rol nominativo dentro del predicado, no presuponer identidad. Preguntar 「誰が来る？」es exactamente preguntar <em>qué valor llena el hueco nominativo de</em> 来る. が no presupone nada — pregunta.</p>
+
+      <div class="explain" style="margin-top:1.2rem;">
+        <div class="explain-title">Principio</div>
+        <p style="margin-bottom:0"><span class="pp pp-ga">が</span> puede apuntar a lo desconocido — lo busca. <span class="pp pp-wa">は</span> no puede — lo presupone conocido y lo extrae de un conjunto.</p>
+      </div>
+    </div>
+
+    <!-- 誰が来る？ y sus dos respuestas -->
+    <div class="case-card reveal">
+      <div class="case-label">「誰が来る？」— dos respuestas estructuralmente distintas</div>
+      <h4>Aが来る。 vs. Aは来る。</h4>
+      <p>「誰が来る？」abre el hueco nominativo de 来る. Las dos respuestas posibles operan de manera distinta sobre ese hueco.</p>
+
+      <div class="sym-pair">
+        <div class="sym-card">
+          <span class="jp-t">A<span class="pp pp-ga">が</span>来る。</span>
+          <span class="es-t">A viene. / Es A quien viene.<br><em>Llena directamente el hueco referencial.<br>No implica nada sobre los demás.</em></span>
+        </div>
+        <div class="sym-arrow">≠</div>
+        <div class="sym-card">
+          <span class="jp-t">A<span class="pp pp-wa">は</span>来る。</span>
+          <span class="es-t">A sí viene (los demás, no sabemos).<br><em>Extrae a A del conjunto.<br>Los demás quedan sin pronunciamiento.</em></span>
+        </div>
+      </div>
+
+      <p>「Aが来る。」llena directamente el hueco que 誰が había abierto. La operación es limpia: hueco abierto → hueco cerrado. No se afirma ni se implica nada sobre los demás.</p>
+      <p style="margin-bottom:0">「Aは来る。」no cierra el hueco referencial de 誰が directamente. En su lugar, toma a A —ya identificable en el contexto— lo extrae del conjunto de posibles asistentes y afirma 来る solo para A. El conjunto de fondo (las demás personas que podrían venir) no desaparece: queda presente como trasfondo, y sobre ellas el enunciado no se pronuncia. Ese es el contraste de は — no es énfasis añadido: es la consecuencia estructural de que は solo afirma el predicado sobre el elemento extraído.</p>
+
+      <div class="explain" style="margin-top:1.2rem;">
+        <div class="explain-title">Cuándo aparece 「Aは来る。」como respuesta a 「誰が来る？」</div>
+        <p>El contexto debe justificar la extracción. Tres situaciones típicas:</p>
+        <ul style="padding-left:1.4rem; margin:0.4rem 0 0;">
+          <li style="margin-bottom:0.5rem">Hay varias personas en juego y el hablante solo puede confirmar a A: <span style="font-family:'Noto Sans JP';font-weight:500">Aは来る。BとCは分からない。</span></li>
+          <li style="margin-bottom:0.5rem">La pregunta tiene trasfondo de duda («¿vendrá alguien siquiera?»): <span style="font-family:'Noto Sans JP';font-weight:500">Aは来る。</span> funciona como <em>al menos A sí</em>.</li>
+          <li style="margin-bottom:0">El interlocutor daba por sentado que A no vendría: <span style="font-family:'Noto Sans JP';font-weight:500">Aは来る。</span> corrige esa presuposición.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Aは来る？ y la imposibilidad de Aが来る。 -->
+    <div class="case-card reveal">
+      <div class="case-label">「Aは来る？」— por qué 「Aが来る。」no funciona como respuesta</div>
+      <h4>Cuando el tópico ya está fijado, no hay hueco referencial que が pueda llenar</h4>
+      <p>「Aは来る？」es una pregunta de predicado. A ya es identificable en el contexto — ya está establecido. La pregunta no busca al referente de 来る; eso ya está dado por el tópico は. Lo que se pregunta es: <em>¿se cumple el predicado para A?</em></p>
+
+      <div class="dialogue">
+        <div class="lang-tag">Confirmación — el predicado se cumple para A</div>
+        <div class="jp-text">A<span class="pp pp-wa">は</span>来る。</div>
+        <div class="es-text">A (sí) viene. ✓</div>
+      </div>
+      <div class="dialogue">
+        <div class="lang-tag">Negación — el predicado no se cumple para A</div>
+        <div class="jp-text">A<span class="pp pp-wa">は</span>来ない。</div>
+        <div class="es-text">A no viene. ✓</div>
+      </div>
+      <div class="ng-block" style="margin-top:0.9rem;">
+        <div class="ng-marker">✗ No funciona como respuesta</div>
+        <p class="jp-text">A<span class="pp pp-ga" style="color:var(--danger); background:#fde8e7; font-family:'Noto Serif JP',serif; font-size:0.92em; font-weight:700; padding:0.05em 0.35em; border-radius:4px;">が</span>来る。</p>
+      </div>
+
+      <div class="explain" style="margin-top:1rem;">
+        <div class="explain-title">La razón es precisa</div>
+        <p style="margin-bottom:0">「Aが来る。」llena el hueco nominativo de 来る. Pero ese hueco <em>no estaba abierto</em>: 「Aは来る？」no pregunta quién es el referente de 来る — eso ya está fijado por el tópico は. Responder con が es contestar a una pregunta diferente (「誰が来る？」), ignorando la estructura que は había establecido. La incompatibilidad no es una irregularidad: es la misma diferencia de base. が llena huecos referenciales; は no los abre — organiza el enunciado en torno a un referente ya conocido.</p>
+      </div>
+    </div>
+
+    <!-- El sistema completo -->
+    <div class="case-card reveal" style="border-left-color:var(--gold);">
+      <div class="case-label" style="color:var(--gold);">El sistema completo</div>
+      <h4>Los cuatro fenómenos derivados de una sola diferencia</h4>
+
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th></th>
+              <th><span class="pp pp-ga">が</span></th>
+              <th class="col-b" style="background:var(--teal-light); border-bottom-color:var(--teal);"><span class="pp pp-wa">は</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="row-label">Naturaleza</td>
+              <td>Posposición de caso</td>
+              <td>Marcador de tópico</td>
+            </tr>
+            <tr>
+              <td class="row-label">Función</td>
+              <td>Marca el complemento nominativo del predicado</td>
+              <td>Extrae un elemento identificable de un conjunto presupuesto y afirma el predicado solo para ese elemento</td>
+            </tr>
+            <tr>
+              <td class="row-label">El «contraste»</td>
+              <td>No genera contraste</td>
+              <td>No es un uso especial: es la consecuencia necesaria de su operación básica. Siempre hay un conjunto de fondo; lo que varía es si resulta contextualmente saliente</td>
+            </tr>
+            <tr>
+              <td class="row-label">Con 誰</td>
+              <td class="jp-c ok-c">誰が来る？ ✓<br><span style="font-style:normal; font-family:inherit; font-size:0.88rem;">Busca el referente</span></td>
+              <td class="jp-c ng-c">誰は来る？ ✗<br><span style="font-style:normal; font-family:inherit; font-size:0.88rem;">Imposible topicalizar lo desconocido</span></td>
+            </tr>
+            <tr>
+              <td class="row-label">En preguntas</td>
+              <td>Busca identificar el referente del predicado</td>
+              <td>Presupone el referente; pregunta sobre el predicado</td>
+            </tr>
+            <tr>
+              <td class="row-label">Como respuesta a 「誰が来る？」</td>
+              <td class="jp-c ok-c">Aが来る。 ✓<br><span style="font-style:normal; font-family:inherit; font-size:0.88rem;">Llena el hueco; sin implicatura</span></td>
+              <td class="jp-c ok-c" style="color:var(--ink)">Aは来る。 ✓<br><span style="font-style:normal; font-family:inherit; font-size:0.88rem;">Extrae A; los demás sin pronunciamiento</span></td>
+            </tr>
+            <tr>
+              <td class="row-label">Como respuesta a 「Aは来る？」</td>
+              <td class="jp-c ng-c">Aが来る。 ✗<br><span style="font-style:normal; font-family:inherit; font-size:0.88rem;">No hay hueco referencial abierto</span></td>
+              <td class="jp-c ok-c" style="color:var(--ink)">Aは来る。/ Aは来ない。 ✓<br><span style="font-style:normal; font-family:inherit; font-size:0.88rem;">Confirma o niega el predicado</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="explain" style="margin-top:1.4rem;">
+        <div class="explain-title">Lo que esto demuestra</div>
+        <p style="margin-bottom:0"><span class="pp pp-ga">が</span> y <span class="pp pp-wa">は</span> no son variantes del mismo marcador — no son intercambiables según el nivel de formalidad ni según el «énfasis». Operan en niveles estructurales distintos: が es interno al predicado; は reorganiza la estructura informativa del enunciado en relación con un conjunto presupuesto. El «contraste» de は no es un uso especial: es la consecuencia necesaria de su operación básica. Enseñar que は «es el sujeto» o que が «también puede ser el sujeto» colapsa esta distinción exactamente donde más importa.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<div class="divider"></div>
+
+
+<!-- ════════════════════════════════════════
+     S7 — PREDICADOS DE DOBLE NOMINATIVO
+════════════════════════════════════════ -->
+<section id="sec7">
+  <div class="container">
+    <div class="reveal">
+      <div class="sec-num">07</div>
+      <h2 class="sec-title">Predicados con dos complementos nominativos: 好きだ, わかる, できる</h2>
+      <p class="sec-lead">Ciertos predicados toman dos argumentos que en japonés pueden llevar は o が de forma intercambiable — solo cambia la organización informativa. Ninguno de los dos es «sujeto» ni «objeto».</p>
+    </div>
+
+    <div class="reveal">
+      <p>En español, verbos como <em>gustar</em> asignan roles fijos a sus argumentos: <em>«me gusta el pescado»</em> tiene un sujeto gramatical (<em>el pescado</em>) y un objeto indirecto (<em>me</em>), y esos roles no son intercambiables sin cambiar la estructura gramatical. En japonés, los predicados equivalentes (<span style="font-family:'Noto Sans JP';font-weight:500">好きだ, 嫌いだ, 得意だ, 苦手だ, わかる, できる, ほしい, 上手だ</span>…) tienen dos argumentos nominativos sin que ninguno sea «sujeto» en sentido sintáctico. La elección de cuál lleva <span class="pp pp-wa">は</span> y cuál lleva <span class="pp pp-ga">が</span> depende de la <em>estructura comunicativa</em>: cuál es el tópico establecido y cuál es el elemento en foco.</p>
+    </div>
+
+    <div class="case-card reveal">
+      <div class="case-label">Elección informativa: tópico (は) y foco (が)</div>
+      <h4>Mismo contenido semántico — diferente organización discursiva</h4>
+
+      <div class="dialogue">
+        <div class="lang-tag">Contexto: hablando de mí — «yo» ya es el tópico establecido</div>
+        <div class="jp-text">私<span class="pp pp-wa">は</span>魚<span class="pp pp-ga">が</span>好きだ。</div>
+        <div class="es-text">A mí me gusta el pescado. (yo = tópico; pescado = lo que me gusta)</div>
+      </div>
+
+      <div class="dialogue">
+        <div class="lang-tag">Contexto: hablando del pescado — «pescado» es ahora el tópico</div>
+        <div class="jp-text">魚<span class="pp pp-wa">は</span>私<span class="pp pp-ga">が</span>好きだ。</div>
+        <div class="es-text">El pescado, yo le tengo cariño. / Del pescado, a mí me gusta.</div>
+      </div>
+
+      <div class="explain">
+        <div class="explain-title">La segunda forma no es libre — requiere un tópico establecido</div>
+        <p style="margin-bottom:0">La forma <span style="font-family:'Noto Sans JP';font-weight:500">魚は私が好きだ</span> no es una variante libre de <span style="font-family:'Noto Sans JP';font-weight:500">私は魚が好きだ</span>. Requiere que «pescado» haya sido establecido previamente como tópico del discurso — por ejemplo, en una conversación sobre distintos alimentos donde toca hablar del pescado. Si no existe ese contexto previo, la segunda forma resulta forzada.</p>
+      </div>
+    </div>
+
+    <div class="case-card reveal">
+      <div class="case-label">Más predicados del mismo tipo</div>
+      <h4></h4>
+
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Predicado</th>
+              <th>Estructura habitual (X = tópico)</th>
+              <th>Traducción</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="row-label jp-c">わかる</td>
+              <td class="jp-c">彼女<span class="pp pp-wa">は</span>英語<span class="pp pp-ga">が</span>わかる。</td>
+              <td>Ella entiende inglés.</td>
+            </tr>
+            <tr>
+              <td class="row-label jp-c">できる</td>
+              <td class="jp-c">彼<span class="pp pp-wa">は</span>料理<span class="pp pp-ga">が</span>できる。</td>
+              <td>Él sabe cocinar.</td>
+            </tr>
+            <tr>
+              <td class="row-label jp-c">得意だ</td>
+              <td class="jp-c">田中さん<span class="pp pp-wa">は</span>数学<span class="pp pp-ga">が</span>得意だ。</td>
+              <td>Tanaka se le da bien la matemática.</td>
+            </tr>
+            <tr>
+              <td class="row-label jp-c">ほしい</td>
+              <td class="jp-c">私<span class="pp pp-wa">は</span>新しい自転車<span class="pp pp-ga">が</span>ほしい。</td>
+              <td>Quiero una bicicleta nueva.</td>
+            </tr>
+            <tr>
+              <td class="row-label jp-c">見える</td>
+              <td class="jp-c">ここから富士山<span class="pp pp-ga">が</span>見える。</td>
+              <td>Desde aquí se ve el Fuji.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="explain">
+        <div class="explain-title">見える · 聞こえる · 匂う: experiencia espontánea — solo un argumento con が</div>
+        <p style="margin-bottom:0">Los verbos de percepción espontánea (<span style="font-family:'Noto Sans JP';font-weight:500">見える, 聞こえる, 匂う</span>) toman un solo argumento con <span class="pp pp-ga">が</span>: lo que se ve/oye/huele. El experimentante (la persona) normalmente no se verbaliza porque está dado por la situación, o aparece como tópico con <span class="pp pp-wa">は</span>: <span style="font-family:'Noto Sans JP';font-weight:500">私には音が聞こえない</span> (<em>A mí no me llega el sonido</em>). Aquí <span style="font-family:'Noto Sans JP';font-weight:500">には</span> es la combinación de la posposición de dirección に y el realce は.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+
+<!-- ════════════════════════════════════════
+     S8 — は vs が CON DECLARATIVO だ
+════════════════════════════════════════ -->
+<section id="sec8">
+  <div class="container">
+    <div class="reveal">
+      <div class="sec-num">08</div>
+      <h2 class="sec-title">は vs が con el declarativo だ</h2>
+      <p class="sec-lead">En oraciones con predicado declarativo だ, la elección entre は y が para el primer elemento produce diferencias de significado que no tienen equivalente morfológico en español: predicación neutral vs. identificación restrictiva.</p>
+    </div>
+
+    <div class="case-card reveal">
+      <div class="case-label">Predicación neutral (は) vs. identificación restrictiva (が)</div>
+      <h4>La diferencia en un par mínimo</h4>
+
+      <div class="sym-pair">
+        <div class="sym-card">
+          <span class="jp-t">犯人<span class="pp pp-wa">は</span>山田だ。</span>
+          <span class="es-t">El culpable es Yamada.<br><em>(tópico: «del culpable» se dice quién es)</em></span>
+        </div>
+        <div class="sym-arrow">≠</div>
+        <div class="sym-card">
+          <span class="jp-t">犯人<span class="pp pp-ga">が</span>山田だ。</span>
+          <span class="es-t">Quien es el culpable es Yamada.<br><em>(identificación: de los candidatos, este)</em></span>
+        </div>
+      </div>
+
+      <div class="explain">
+        <div class="explain-title">¿Cuál es la diferencia en la práctica?</div>
+        <p><span style="font-family:'Noto Sans JP';font-weight:500">犯人は山田だ</span>: el hablante ya sabe de qué se habla (el culpable) y simplemente declara quién es. No hay un conjunto de candidatos que explorar.</p>
+        <p style="margin-bottom:0"><span style="font-family:'Noto Sans JP';font-weight:500">犯人が山田だ</span>: hay un proceso de identificación — de entre varios sospechosos o candidatos posibles, el que resulta ser el culpable es precisamente Yamada. En español esto se expresa con énfasis (<em>«El culpable es YAMADA»</em>), con una oración hendida (<em>«Es Yamada quien es el culpable»</em>), o con verbos de identificación (<em>«Resulta que el culpable es Yamada»</em>).</p>
+      </div>
+    </div>
+
+    <!-- ウナギ文 -->
+    <div class="case-card gold reveal">
+      <div class="case-label">Caso especial — la «oración anguila» (ウナギ文)</div>
+      <h4>私はウナギだ — cuando el tópico no tiene relación directa con lo que se dice</h4>
+
+      <div class="dialogue">
+        <div class="lang-tag">En un restaurante — respuesta a «¿Qué va a pedir?»</div>
+        <div class="jp-text">私<span class="pp pp-wa">は</span>ウナギだ。</div>
+        <div class="es-text">Para mí, anguila. / Yo pido anguila.</div>
+      </div>
+
+      <div class="explain">
+        <div class="explain-title">¿Por qué «yo = anguila» funciona?</div>
+        <p>Gramaticalmente, esta oración afirma que «yo soy una anguila», lo cual es biológicamente absurdo. Lo que funciona es el principio de <span class="pp pp-wa">は</span> como tópico: <span style="font-family:'Noto Sans JP';font-weight:500">私は</span> establece «yo» como el marco, y el predicado <span style="font-family:'Noto Sans JP';font-weight:500">ウナギだ</span> expresa lo que <em>corresponde a ese marco en la situación comunicativa concreta</em> del restaurante: <em>«En cuanto a mí, [lo que pido es] anguila.»</em></p>
+        <p style="margin-bottom:0">Esta oración es una demostración clásica de que <span class="pp pp-wa">は</span> no marca sujeto sino tópico. El predicado no dice algo sobre «yo» en sentido existencial — dice algo sobre «yo» como posición dentro del contexto situacional (reparto de pedidos). Si se usara <span class="pp pp-ga">が</span> (<span style="font-family:'Noto Sans JP';font-weight:500">私がウナギだ</span>), la frase diría que «la persona que es la anguila soy yo» — una identificación muy distinta, que podría tener sentido si el camarero lleva la anguila y busca a quién dársela.</p>
+      </div>
+    </div>
+
+    <!-- は vs が final comparison -->
+    <div class="case-card reveal">
+      <div class="case-label">Tabla de resumen — は vs が con だ</div>
+      <h4></h4>
+
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Aspecto</th>
+              <th>X<span class="pp pp-wa">は</span>Yだ</th>
+              <th class="col-b">X<span class="pp pp-ga">が</span>Yだ</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="row-label">Función de X</td>
+              <td>Tópico del enunciado</td>
+              <td>Elemento identificado entre candidatos</td>
+            </tr>
+            <tr>
+              <td class="row-label">Contexto previo</td>
+              <td>X ya es conocido o es el marco del discurso</td>
+              <td>Hay un conjunto de alternativas; se busca cuál es Y</td>
+            </tr>
+            <tr>
+              <td class="row-label">En español</td>
+              <td>Predicación neutral: <em>«X es Y»</em></td>
+              <td>Identificación enfática: <em>«Es X quien es Y»</em></td>
+            </tr>
+            <tr>
+              <td class="row-label">Ejemplo</td>
+              <td class="jp-c">犯人<span class="pp pp-wa">は</span>山田だ。<br><span style="font-family:inherit;font-size:0.85rem;color:var(--warm-gray)">El culpable es Yamada.</span></td>
+              <td class="jp-c ok-c" style="color:var(--ink)">犯人<span class="pp pp-ga">が</span>山田だ。<br><span style="font-family:inherit;font-size:0.85rem;color:var(--warm-gray)">Quien resultó ser el culpable es Yamada.</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+
+<!-- ════════════════════════════════════════
+     S9 — RESUMEN
+════════════════════════════════════════ -->
+<section id="sec9">
+  <div class="container">
+    <div class="reveal">
+      <div class="sec-num">09</div>
+      <h2 class="sec-title">Resumen: は・が en la posición del sujeto español</h2>
+      <p class="sec-lead">La misma posición que en español ocupa un sujeto puede cubrirla en japonés は, が o nada — según la función comunicativa. Aquí está la lógica completa.</p>
+    </div>
+
+    <div class="table-wrap reveal">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Posposición</th>
+            <th>Función principal</th>
+            <th>Cuándo aparece</th>
+            <th>En español</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="pp pp-nul">∅</span> (ninguna)</td>
+            <td>Predicado solo, sin verbalización</td>
+            <td>La situación proporciona toda la información</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td><span class="pp pp-wa">は</span></td>
+            <td>Tópico / contraste</td>
+            <td>El elemento ya es conocido, genérico, o se contrapone a otro</td>
+            <td>Sujeto tópico, sujeto contrastivo con énfasis</td>
+          </tr>
+          <tr>
+            <td><span class="pp pp-ga">が</span></td>
+            <td>Complemento nominativo / foco</td>
+            <td>Respuesta a ¿quién?, identificación, cláusula subordinada</td>
+            <td>Sujeto enfático, sujeto de subordinada</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="conclusion-box reveal">
+      <h3>La pregunta correcta no es «¿qué partícula va como sujeto?»</h3>
+      <ol class="steps-list">
+        <li><strong>¿Ya es conocido o accesible en el contexto?</strong><br>
+          Si el elemento ya está en el contexto compartido → <span class="pp pp-wa">は</span> (tópico). Si no lo está → <span class="pp pp-ga">が</span>.</li>
+        <li><strong>¿Lo que se quiere señalar es contraste?</strong><br>
+          «Este sí / otro no», «este pero no aquello» → <span class="pp pp-wa">は</span> (contraste). La presuposición de contraste siempre acompaña a は.</li>
+        <li><strong>¿Se está identificando cuál de varios candidatos cumple una condición?</strong><br>
+          Búsqueda → resultado → identificación → <span class="pp pp-ga">が</span> (identificación exhaustiva).</li>
+        <li><strong>¿Está dentro de una cláusula subordinada?</strong><br>
+          Solo <span class="pp pp-ga">が</span>. は no puede entrar en subordinadas.</li>
+      </ol>
+    </div>
+
+    <div class="reveal" style="text-align:center; margin-top:3rem;">
+      <p style="color:var(--warm-gray); font-size:0.95rem; margin-bottom:0.5rem;">
+        → <a href="mo.html" style="color:var(--teal-dark); font-weight:600">も — adición e inclusión</a>: el uso de も en posición de は y が, y en negación total.
+      </p>
+      <p style="font-family:'Noto Serif JP', serif; font-size:1.3rem; color:var(--teal);">
+        次のステップへ進みましょう。<br>
+        <span style="font-size:0.9rem; color:var(--warm-gray);">Avancemos al siguiente paso.</span>
+      </p>
+      <p style="color:var(--warm-gray); font-size:0.95rem; margin-bottom:0;">
+        → Guía 3: El núcleo del predicado — las cuatro clases (V, A, Na, N) y el papel del declarativo だ.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+  <p class="footer-title"><a href="../index.html"><strong>日本語 — Japonés para Todos</strong></a></p>
+  <p class="footer-jp">スペイン語話者のための日本語学習サイト</p>
+  <nav class="footer-nav" aria-label="Navegación del pie de página">
+    <a href="../index.html">Inicio</a>
+    <a href="../aprender/index.html">Aprender</a>
+    <a href="index.html">Gramática</a>
+    <a href="../herramientas/index.html">Herramientas</a>
+    <a href="../qa/index.html">FAQ</a>
+  </nav>
+  <p class="footer-copy">© 2026 Japonés para Todos — Proyecto de código abierto en GitHub</p>
+</footer>
+
+<script>
+// Scroll reveal
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+reveals.forEach(el => observer.observe(el));
+
+// Nav dots
+const sections = ['hero','sec1','sec2','sec3','sec4','sec5','sec6','sec7','sec8','sec9'];
+const navLinks = document.querySelectorAll('.page-nav a');
+function updateNav() {
+  let current = '';
+  sections.forEach(id => {
+    const el = document.getElementById(id);
+    if (el && el.getBoundingClientRect().top <= window.innerHeight * 0.4) current = id;
+  });
+  navLinks.forEach((link, i) => link.classList.toggle('active', sections[i] === current));
+}
+window.addEventListener('scroll', updateNav, { passive: true });
+updateNav();
+</script>
+</body>
+</html>

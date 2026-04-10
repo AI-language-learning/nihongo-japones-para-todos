@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Terminología gramatical del proyecto Japonés para Todos. Sistema de términos propios frente a la terminología tradicional japonesa.">
+<title>Terminología — 用語体系 | Japonés para Todos</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@400;700&family=DM+Serif+Display:ital@0;1&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="../css/common.css">
+
+<style>
+/* ===== HERO ===== */
+.hero::before { content: '用語'; }
+.hero { min-height: 50vh; }
+
+/* ===== DOC NAV ===== */
+.doc-nav {
+  background: #fff;
+  border-bottom: 1px solid var(--light-gray);
+  padding: 0.6rem clamp(1.5rem, 5vw, 3rem);
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.doc-nav-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  align-items: center;
+}
+.doc-nav-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--warm-gray);
+  margin-right: 0.4rem;
+  white-space: nowrap;
+}
+.doc-nav a {
+  padding: 0.35rem 0.9rem;
+  background: var(--teal-light);
+  border-radius: 100px;
+  text-decoration: none;
+  color: var(--teal-dark);
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.25s;
+  white-space: nowrap;
+}
+.doc-nav a:hover, .doc-nav a.active { background: var(--teal); color: #fff; }
+
+/* ===== SECTION ===== */
+.term-section { padding: clamp(3rem, 6vw, 5rem) 0; }
+.term-section + .term-section { border-top: 1px solid var(--light-gray); }
+.term-section h3 {
+  font-family: 'DM Serif Display', 'Noto Serif JP', serif;
+  font-size: 1.15rem;
+  margin: 2.5rem 0 0.8rem;
+  color: var(--teal-dark);
+}
+.term-section h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 2rem 0 0.6rem;
+  color: var(--ink);
+}
+.term-section p { margin-bottom: 1rem; }
+
+/* ===== ANCHOR IDs (jump targets) ===== */
+.term-anchor { scroll-margin-top: 5rem; }
+
+/* ===== MAIN TERMINOLOGY TABLE ===== */
+.table-wrap {
+  overflow-x: auto;
+  margin: 1.8rem 0;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+}
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  font-size: 0.95rem;
+  min-width: 560px;
+}
+.data-table thead { background: var(--teal-light); }
+.data-table thead th {
+  padding: 0.9rem 1.1rem;
+  text-align: left;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  color: var(--teal-dark);
+  border-bottom: 2px solid var(--teal);
+}
+.data-table td {
+  padding: 0.8rem 1.1rem;
+  border-bottom: 1px solid var(--light-gray);
+  vertical-align: top;
+  line-height: 1.7;
+}
+.data-table tbody tr:last-child td { border-bottom: none; }
+.data-table tbody tr:hover { background: #faf8f5; }
+
+/* term highlight */
+.data-table .term-es {
+  font-weight: 700;
+  color: var(--teal-dark);
+}
+.data-table .term-jp {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 1rem;
+  color: var(--ink);
+}
+.data-table .term-trad {
+  font-size: 0.9rem;
+  color: var(--warm-gray);
+}
+.data-table .notation-badge {
+  display: inline-block;
+  background: var(--teal-light);
+  color: var(--teal-dark);
+  font-family: 'Source Sans 3', monospace;
+  font-weight: 700;
+  font-size: 0.88rem;
+  padding: 0.1rem 0.55rem;
+  border-radius: 5px;
+  white-space: nowrap;
+}
+
+/* ===== CONJUGATION TABLES ===== */
+.conj-block { margin: 2rem 0; }
+.conj-title {
+  font-family: 'DM Serif Display', 'Noto Serif JP', serif;
+  font-size: 1.05rem;
+  color: var(--teal-dark);
+  margin-bottom: 0.6rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid var(--teal-light);
+}
+.conj-title span {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 0.9rem;
+  color: var(--warm-gray);
+  font-weight: 400;
+  margin-left: 0.5rem;
+}
+
+/* ===== CATEGORY TABLE (expresiones funcionales) ===== */
+.cat-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  font-size: 0.93rem;
+  min-width: 480px;
+}
+.cat-table thead { background: var(--teal-light); }
+.cat-table thead th {
+  padding: 0.85rem 1rem;
+  text-align: left;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--teal-dark);
+  border-bottom: 2px solid var(--teal);
+}
+.cat-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--light-gray);
+  vertical-align: top;
+  line-height: 1.7;
+}
+.cat-table tbody tr:last-child td { border-bottom: none; }
+.cat-table tbody tr:hover { background: #faf8f5; }
+.cat-table .cat-name { font-weight: 700; color: var(--ink); }
+.cat-table .jp-list {
+  font-family: 'Noto Sans JP', sans-serif;
+  color: var(--ink);
+  font-size: 0.93rem;
+}
+
+/* ===== STRUCTURE FORMULA ===== */
+.formula-block {
+  background: linear-gradient(135deg, #f5f8fa 0%, var(--teal-light) 100%);
+  border: 1px solid var(--light-gray);
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  margin: 1.5rem 0;
+  font-size: 0.98rem;
+  line-height: 2;
+}
+.formula-block .formula-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 0.3rem;
+}
+.formula-block .f-label {
+  font-weight: 700;
+  color: var(--teal-dark);
+  min-width: 130px;
+}
+.formula-block .f-eq { color: var(--warm-gray); margin: 0 0.2rem; }
+.formula-block .f-core {
+  background: var(--teal);
+  color: #fff;
+  border-radius: 6px;
+  padding: 0.15rem 0.7rem;
+  font-weight: 700;
+}
+.formula-block .f-opt {
+  background: #fff;
+  border: 1.5px dashed var(--teal);
+  color: var(--teal-dark);
+  border-radius: 6px;
+  padding: 0.1rem 0.6rem;
+}
+.formula-block .f-plus { color: var(--warm-gray); font-weight: 300; font-size: 1.1rem; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+  .doc-nav-label { display: none; }
+  .formula-block { padding: 1rem 1.2rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== BREADCRUMB ===== -->
+<nav class="breadcrumb" aria-label="Navegación de migas de pan">
+  <div class="breadcrumb-inner">
+    <a href="../index.html">Inicio</a>
+    <span class="separator" aria-hidden="true">›</span>
+    <a href="index.html">Gramática</a>
+    <span class="separator" aria-hidden="true">›</span>
+    <span class="current">Terminología</span>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<header class="hero">
+  <span class="hero-badge">用語体系 — Sistema terminológico</span>
+  <h1>
+    Terminología Gramatical
+    <span class="jp">述語機能表現と活用形の用語体系</span>
+  </h1>
+  <p class="hero-sub">
+    Términos propios del proyecto frente a la terminología tradicional. Marco de referencia para la descripción del japonés desde su lógica interna.
+  </p>
+  <div class="hero-scroll">
+    <a href="#marco">Comenzar <div class="arrow"></div></a>
+  </div>
+</header>
+
+<!-- ===== STICKY NAV ===== -->
+<nav class="doc-nav" aria-label="Secciones">
+  <div class="doc-nav-inner">
+    <span class="doc-nav-label">Secciones</span>
+    <a href="#marco">1. Marco básico</a>
+    <a href="#terminos">2. Términos básicos</a>
+    <a href="#conjugacion">3. Conjugación</a>
+    <a href="#funcionales">4. Expresiones funcionales</a>
+  </div>
+</nav>
+
+<!-- =========================================================
+     1. MARCO BÁSICO
+     ========================================================= -->
+<section class="term-section" id="marco">
+  <div class="container">
+    <div class="reveal">
+      <div class="sec-num">01</div>
+      <h2 class="sec-title">Marco básico <span class="jp-inline">基本的な枠組み</span></h2>
+      <p class="sec-lead">La oración japonesa se organiza alrededor del predicado. Toda la terminología de este proyecto parte de esta estructura.</p>
+    </div>
+
+    <div class="reveal">
+      <div class="formula-block">
+        <div class="formula-line">
+          <span class="f-label">Oración</span>
+          <span class="f-eq">=</span>
+          <span class="f-opt">(Complementos y expresiones adverbiales)</span>
+          <span class="f-plus">+</span>
+          <span class="f-core">Predicado</span>
+          <span class="f-plus">+</span>
+          <span class="f-opt">(Expresiones finales)</span>
+        </div>
+        <div class="formula-line">
+          <span class="f-label">Predicado</span>
+          <span class="f-eq">=</span>
+          <span class="f-core">Núcleo del predicado</span>
+          <span class="f-plus">+</span>
+          <span class="f-opt">(Expresiones funcionales — múltiples capas posibles)</span>
+        </div>
+        <div class="formula-line">
+          <span class="f-label">Núcleo</span>
+          <span class="f-eq">=</span>
+          <span class="f-opt">Verbo (V)</span>
+          <span class="f-plus">/</span>
+          <span class="f-opt">Adjetivo (A)</span>
+          <span class="f-plus">/</span>
+          <span class="f-opt">Nominal adjetival (Na)</span>
+          <span class="f-plus">/</span>
+          <span class="f-opt">Nominal (N)</span>
+        </div>
+      </div>
+
+      <div class="note-block">
+        <div class="note-title">Principio de descripción</div>
+        <p style="margin:0">Este marco evita imponer categorías del español (sujeto, objeto directo, verbo auxiliar) y describe el japonés desde su lógica interna. Los términos de este documento son los que se usan en todo el sitio.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- =========================================================
+     2. TÉRMINOS BÁSICOS
+     ========================================================= -->
+<section class="term-section" id="terminos">
+  <div class="container">
+    <div class="reveal">
+      <div class="sec-num">02</div>
+      <h2 class="sec-title">Términos básicos <span class="jp-inline">基本用語</span></h2>
+      <p class="sec-lead">Cada término en español corresponde a un término japonés específico, y se contrasta con la terminología gramatical tradicional.</p>
+    </div>
+
+    <div class="reveal">
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Término en japonés</th>
+              <th>Término en español (este proyecto)</th>
+              <th>Terminología tradicional</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr id="nucleo-predicado" class="term-anchor">
+              <td><span class="term-jp">述部の核<br><small style="font-size:0.82rem;color:var(--warm-gray)">jutsubu no kaku</small></span></td>
+              <td><span class="term-es">Núcleo del predicado</span></td>
+              <td><span class="term-trad">Jutsugo (palabra de predicado)</span></td>
+            </tr>
+            <tr id="exp-funcionales" class="term-anchor">
+              <td><span class="term-jp">述語機能表現<br><small style="font-size:0.82rem;color:var(--warm-gray)">jutsugo kinō hyōgen</small></span></td>
+              <td><span class="term-es">Expresiones funcionales del predicado</span></td>
+              <td><span class="term-trad">Jodōshi (auxiliares), keishikimeishi (nominales formales), hojodōshi (verbos auxiliares), fukugōji (partículas compuestas), etc.</span></td>
+            </tr>
+            <tr id="verbo" class="term-anchor">
+              <td><span class="term-jp">動詞<br><small style="font-size:0.82rem;color:var(--warm-gray)">dōshi</small></span></td>
+              <td><span class="term-es">Verbo (V)</span></td>
+              <td><span class="term-trad">Dōshi</span></td>
+            </tr>
+            <tr id="verbo-u" class="term-anchor">
+              <td><span class="term-jp">-u動詞<br><small style="font-size:0.82rem;color:var(--warm-gray)">-u dōshi</small></span></td>
+              <td><span class="term-es">Verbo tipo -u (V-u)</span></td>
+              <td><span class="term-trad">Godan dōshi (verbos pentavocálicos)</span></td>
+            </tr>
+            <tr id="verbo-ru" class="term-anchor">
+              <td><span class="term-jp">-ru動詞<br><small style="font-size:0.82rem;color:var(--warm-gray)">-ru dōshi</small></span></td>
+              <td><span class="term-es">Verbo tipo -ru (V-ru)</span></td>
+              <td><span class="term-trad">Ichidan dōshi (verbos monovocálicos)</span></td>
+            </tr>
+            <tr id="verbo-kuru" class="term-anchor">
+              <td><span class="term-jp">来る動詞<br><small style="font-size:0.82rem;color:var(--warm-gray)">kuru dōshi</small></span></td>
+              <td><span class="term-es">Verbo kuru (Vkuru)</span></td>
+              <td><span class="term-trad">Kahen dōshi (verbo irregular ka)</span></td>
+            </tr>
+            <tr id="verbo-suru" class="term-anchor">
+              <td><span class="term-jp">する動詞<br><small style="font-size:0.82rem;color:var(--warm-gray)">suru dōshi</small></span></td>
+              <td><span class="term-es">Verbo suru (Vsuru)</span></td>
+              <td><span class="term-trad">Sahen dōshi (verbo irregular sa)</span></td>
+            </tr>
+            <tr id="adjetivo" class="term-anchor">
+              <td><span class="term-jp">形容詞<br><small style="font-size:0.82rem;color:var(--warm-gray)">keiyōshi</small></span></td>
+              <td><span class="term-es">Adjetivo (A)</span></td>
+              <td><span class="term-trad">Keiyōshi (adjetivos -i)</span></td>
+            </tr>
+            <tr id="nominal-adjetival" class="term-anchor">
+              <td><span class="term-jp">形容名詞<br><small style="font-size:0.82rem;color:var(--warm-gray)">keiyōmeishi</small></span></td>
+              <td><span class="term-es">Nominal adjetival (Na)</span></td>
+              <td><span class="term-trad">Keiyōdōshi, keijōshi, na-keiyōshi</span></td>
+            </tr>
+            <tr id="nominal" class="term-anchor">
+              <td><span class="term-jp">名詞<br><small style="font-size:0.82rem;color:var(--warm-gray)">meishi</small></span></td>
+              <td><span class="term-es">Nominal (N)</span></td>
+              <td><span class="term-trad">Meishi</span></td>
+            </tr>
+            <tr id="declarativo" class="term-anchor">
+              <td><span class="term-jp">宣言詞「だ」<br><small style="font-size:0.82rem;color:var(--warm-gray)">sengenshi "da"</small></span></td>
+              <td><span class="term-es">Declarativo (Da)</span></td>
+              <td><span class="term-trad">Jodōshi dantei "da"</span></td>
+            </tr>
+            <tr id="dearu" class="term-anchor">
+              <td><span class="term-jp">宣言詞起源形「である」<br><small style="font-size:0.82rem;color:var(--warm-gray)">sengenshi kigenke "dearu"</small></span></td>
+              <td><span class="term-es">Forma original del declarativo (Dearu)</span></td>
+              <td><span class="term-trad">Ren'yōkei de "de" + hojodōshi "aru"</span></td>
+            </tr>
+            <tr id="desu" class="term-anchor">
+              <td><span class="term-jp">宣言詞丁寧形「です」<br><small style="font-size:0.82rem;color:var(--warm-gray)">sengenshi teineike "desu"</small></span></td>
+              <td><span class="term-es">Forma cortés del declarativo (Desu)</span></td>
+              <td><span class="term-trad">Forma cortés del auxiliar "da"</span></td>
+            </tr>
+            <tr id="perfectivo" class="term-anchor">
+              <td><span class="term-jp">完了詞「た（だ）」<br><small style="font-size:0.82rem;color:var(--warm-gray)">kanryōshi "ta (da)"</small></span></td>
+              <td><span class="term-es">Perfectivo (Ta)</span></td>
+              <td><span class="term-trad">Jodōshi kako "ta"</span></td>
+            </tr>
+            <tr id="negativo" class="term-anchor">
+              <td><span class="term-jp">否定形容詞「ない」<br><small style="font-size:0.82rem;color:var(--warm-gray)">hiteikeyōshi "nai"</small></span></td>
+              <td><span class="term-es">Negativo</span></td>
+              <td><span class="term-trad">Jodōshi hitei "nai, nu"</span></td>
+            </tr>
+            <tr id="honorativo" class="term-anchor">
+              <td><span class="term-jp">丁寧詞「ます」<br><small style="font-size:0.82rem;color:var(--warm-gray)">teineishi "masu"</small></span></td>
+              <td><span class="term-es">Honorativo (Masu)</span></td>
+              <td><span class="term-trad">Jodōshi teinei "masu"</span></td>
+            </tr>
+            <tr id="volitivo" class="term-anchor">
+              <td><span class="term-jp">意志詞「う・よう」<br><small style="font-size:0.82rem;color:var(--warm-gray)">ishishi "ō/yō"</small></span></td>
+              <td><span class="term-es">Volitivo</span></td>
+              <td><span class="term-trad">Jodōshi ishi/kanyū</span></td>
+            </tr>
+            <tr id="supositivo" class="term-anchor">
+              <td><span class="term-jp">仮定詞「ば」<br><small style="font-size:0.82rem;color:var(--warm-gray)">kateishi "ba"</small></span></td>
+              <td><span class="term-es">Supositivo</span></td>
+              <td><span class="term-trad">Setsuzokujoshi "ba"</span></td>
+            </tr>
+            <tr id="posposicion" class="term-anchor">
+              <td><span class="term-jp">後置詞<br><small style="font-size:0.82rem;color:var(--warm-gray)">kōchishi</small></span></td>
+              <td><span class="term-es">Posposición</span></td>
+              <td><span class="term-trad">Joshi</span></td>
+            </tr>
+            <tr id="exp-finales" class="term-anchor">
+              <td><span class="term-jp">文末表現<br><small style="font-size:0.82rem;color:var(--warm-gray)">bunmatsu hyōgen</small></span></td>
+              <td><span class="term-es">Expresiones finales</span></td>
+              <td><span class="term-trad">Shūjoshi</span></td>
+            </tr>
+            <tr id="agente-topico" class="term-anchor">
+              <td><span class="term-jp">話題主<br><small style="font-size:0.82rem;color:var(--warm-gray)">wadaishu</small></span></td>
+              <td><span class="term-es">Agente del tópico</span></td>
+              <td><span class="term-trad">Shugo, dōsashu</span></td>
+            </tr>
+            <tr id="adverbio" class="term-anchor">
+              <td><span class="term-jp">副詞<br><small style="font-size:0.82rem;color:var(--warm-gray)">fukushi</small></span></td>
+              <td><span class="term-es">Adverbio</span></td>
+              <td><span class="term-trad">Fukushi</span></td>
+            </tr>
+            <tr id="conjuncion" class="term-anchor">
+              <td><span class="term-jp">接続詞<br><small style="font-size:0.82rem;color:var(--warm-gray)">setsuzokushi</small></span></td>
+              <td><span class="term-es">Conjunción</span></td>
+              <td><span class="term-trad">Setsuzokushi</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- =========================================================
+     3. FORMAS DE CONJUGACIÓN
+     ========================================================= -->
+<section class="term-section" id="conjugacion">
+  <div class="container">
+    <div class="reveal">
+      <div class="sec-num">03</div>
+      <h2 class="sec-title">Formas de conjugación <span class="jp-inline">活用形</span></h2>
+      <p class="sec-lead">Nombre, notación abreviada y equivalente en la terminología tradicional para cada forma conjugada.</p>
+    </div>
+
+    <!-- Verbo -->
+    <div class="reveal">
+      <div class="conj-block" id="conj-verbo">
+        <div class="conj-title">Formas del verbo <span>動詞の活用形</span></div>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr><th>Forma japonesa</th><th>Término en español</th><th>Notación</th><th>Trad.</th><th>Ejemplo</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="term-jp">動詞の宣言形</span><br><small class="term-trad">dōshi no sengenkei</small></td>
+                <td class="term-es">Forma declarativa del verbo</td>
+                <td><span class="notation-badge">V-u/ru</span></td>
+                <td class="term-trad">Shūshikei / rentaikei</td>
+                <td><span style="font-family:'Noto Sans JP'">行く、食べる</span></td>
+              </tr>
+              <tr>
+                <td><span class="term-jp">動詞の完了詞連接形</span><br><small class="term-trad">kanryōshi rensetsukei</small></td>
+                <td class="term-es">Forma seguida por el perfectivo</td>
+                <td><span class="notation-badge">V&gt;</span></td>
+                <td class="term-trad">Ren'yōkei, te-kei</td>
+                <td><span style="font-family:'Noto Sans JP'">行った、食べた</span></td>
+              </tr>
+              <tr>
+                <td><span class="term-jp">動詞の言い切りの形</span><br><small class="term-trad">iikiri no katachi</small></td>
+                <td class="term-es">Forma cortada del verbo</td>
+                <td><span class="notation-badge">V-i/e</span></td>
+                <td class="term-trad">Ren'yōkei</td>
+                <td><span style="font-family:'Noto Sans JP'">行き、食べ</span></td>
+              </tr>
+              <tr>
+                <td><span class="term-jp">動詞の否定形容詞連接形</span><br><small class="term-trad">hitei rensetsukei</small></td>
+                <td class="term-es">Forma seguida por el negativo</td>
+                <td><span class="notation-badge">V-a/e</span></td>
+                <td class="term-trad">Mizenkei</td>
+                <td><span style="font-family:'Noto Sans JP'">行かない、食べない</span></td>
+              </tr>
+              <tr>
+                <td><span class="term-jp">動詞の意志形</span><br><small class="term-trad">ishikei</small></td>
+                <td class="term-es">Forma volitiva del verbo</td>
+                <td><span class="notation-badge">V-o/yo</span></td>
+                <td class="term-trad">Ishikei</td>
+                <td><span style="font-family:'Noto Sans JP'">行こう、食べよう</span></td>
+              </tr>
+              <tr>
+                <td><span class="term-jp">動詞の仮定詞連接形</span><br><small class="term-trad">kateishi rensetsukei</small></td>
+                <td class="term-es">Forma seguida por el supositivo</td>
+                <td><span class="notation-badge">V-e/re</span></td>
+                <td class="term-trad">Kateikei</td>
+                <td><span style="font-family:'Noto Sans JP'">行けば、食べれば</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Adjetivo -->
+    <div class="reveal">
+      <div class="conj-block" id="conj-adjetivo">
+        <div class="conj-title">Formas del adjetivo <span>形容詞の活用形</span></div>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr><th>Forma japonesa</th><th>Término en español</th><th>Notación</th><th>Trad.</th><th>Ejemplo</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="term-jp">形容詞宣言形</span><br><small class="term-trad">sengenkei</small></td>
+                <td class="term-es">Forma declarativa del adjetivo</td>
+                <td><span class="notation-badge">A-i</span></td>
+                <td class="term-trad">Shūshikei / rentaikei</td>
+                <td><span style="font-family:'Noto Sans JP'">高い</span></td>
+              </tr>
+              <tr>
+                <td><span class="term-jp">形容詞の言い切りの形</span><br><small class="term-trad">iikiri no katachi</small></td>
+                <td class="term-es">Forma cortada del adjetivo</td>
+                <td><span class="notation-badge">A-ku</span></td>
+                <td class="term-trad">Ren'yōkei</td>
+                <td><span style="font-family:'Noto Sans JP'">高く</span></td>
+              </tr>
+              <tr>
+                <td><span class="term-jp">形容詞の完了詞連接形</span><br><small class="term-trad">kanryōshi rensetsukei</small></td>
+                <td class="term-es">Forma seguida por el perfectivo</td>
+                <td><span class="notation-badge">A-kat</span></td>
+                <td class="term-trad">Ren'yōkei</td>
+                <td><span style="font-family:'Noto Sans JP'">高かった</span></td>
+              </tr>
+              <tr>
+                <td><span class="term-jp">形容詞の仮定詞連接形</span><br><small class="term-trad">kateishi rensetsukei</small></td>
+                <td class="term-es">Forma seguida por el supositivo</td>
+                <td><span class="notation-badge">A-kere</span></td>
+                <td class="term-trad">Kateikei</td>
+                <td><span style="font-family:'Noto Sans JP'">高ければ</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Declarativo だ -->
+    <div class="reveal">
+      <div class="conj-block" id="conj-da">
+        <div class="conj-title">Formas del declarativo 「だ」 <span>宣言詞「だ」の活用形</span></div>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr><th>Forma japonesa</th><th>Término en español</th><th>Notación</th><th>Trad.</th><th>Ejemplo</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="term-jp">宣言詞「だ」の宣言形</span><br><small class="term-trad">sengenkei</small></td>
+                <td class="term-es">Forma declarativa del declarativo</td>
+                <td><span class="notation-badge">Da</span></td>
+                <td class="term-trad">Jodōshi dantei "da"</td>
+                <td><span style="font-family:'Noto Sans JP'">静かだ、学生だ</span></td>
+              </tr>
+              <tr>
+                <td><span class="term-jp">宣言詞「だ」の継続形「で」</span><br><small class="term-trad">keizokukei "de"</small></td>
+                <td class="term-es">Forma continuada del declarativo</td>
+                <td><span class="notation-badge">De</span></td>
+                <td class="term-trad">Ren'yōkei del auxiliar "da"</td>
+                <td><span style="font-family:'Noto Sans JP'">静かで、学生で</span></td>
+              </tr>
+              <tr>
+                <td><span class="term-jp">宣言詞「だ」の完了詞連接形「だっ」</span><br><small class="term-trad">kanryōshi rensetsukei</small></td>
+                <td class="term-es">Forma seguida por el perfectivo del declarativo</td>
+                <td><span class="notation-badge">Dat</span></td>
+                <td class="term-trad">Ren'yōkei del auxiliar "da"</td>
+                <td><span style="font-family:'Noto Sans JP'">静かだった、学生だった</span></td>
+              </tr>
+              <tr>
+                <td><span class="term-jp">宣言詞「だ」の名詞連接形「な」</span><br><small class="term-trad">meishi rensetsukei</small></td>
+                <td class="term-es">Forma seguida por nominal del declarativo</td>
+                <td><span class="notation-badge">Na</span></td>
+                <td class="term-trad">Rentaikei del auxiliar "da"</td>
+                <td><span style="font-family:'Noto Sans JP'">静かな部屋、学生なのは</span></td>
+              </tr>
+              <tr>
+                <td><span class="term-jp">宣言詞「だ」の仮定詞連接形「なら」</span><br><small class="term-trad">kateishi rensetsukei</small></td>
+                <td class="term-es">Forma seguida por el supositivo del declarativo</td>
+                <td><span class="notation-badge">Nara</span></td>
+                <td class="term-trad">Kateikei del auxiliar "da"</td>
+                <td><span style="font-family:'Noto Sans JP'">静かなら(ば)、学生なら(ば)</span></td>
+              </tr>
+              <tr>
+                <td><span class="term-jp">宣言詞「だ」の丁寧形「です」</span><br><small class="term-trad">teineike "desu"</small></td>
+                <td class="term-es">Forma cortés del declarativo (Desu)</td>
+                <td><span class="notation-badge">Desu</span></td>
+                <td class="term-trad">Forma cortés del auxiliar de aserción "da"</td>
+                <td><span style="font-family:'Noto Sans JP'">高いです、静かです、学生です</span></td>
+              </tr>
+              <tr>
+                <td><span class="term-jp">「です」の完了詞連接形「でし」</span><br><small class="term-trad">kanryōshi rensetsukei</small></td>
+                <td class="term-es">Forma seguida por el perfectivo de la forma cortés, «deshi»</td>
+                <td><span class="notation-badge">Deshi</span></td>
+                <td class="term-trad">Forma te de la forma cortés del auxiliar de aserción "da"</td>
+                <td><span style="font-family:'Noto Sans JP'">静かでした、学生でした</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Perfectivo た -->
+    <div class="reveal">
+      <div class="conj-block" id="conj-ta">
+        <div class="conj-title">Formas del perfectivo 「た（だ）」 <span>完了詞「た（だ）」の活用形</span></div>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr><th>Forma japonesa</th><th>Término en español</th><th>Notación</th><th>Trad.</th><th>Ejemplo</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="term-jp">完了詞「た(だ)」の宣言形</span><br><small class="term-trad">sengenkei</small></td>
+                <td class="term-es">Forma declarativa del perfectivo</td>
+                <td><span class="notation-badge">Ta</span></td>
+                <td class="term-trad">Jodōshi kako "ta"</td>
+                <td><span style="font-family:'Noto Sans JP'">行った、食べた、高かった、静かだった</span></td>
+              </tr>
+              <tr>
+                <td><span class="term-jp">完了詞「た(だ)」の継続形「て(で)」</span><br><small class="term-trad">keizokukei "te (de)"</small></td>
+                <td class="term-es">Forma continuada del perfectivo</td>
+                <td><span class="notation-badge">Te</span></td>
+                <td class="term-trad">Setsuzokujoshi, juntaijoshi, te-kei</td>
+                <td><span style="font-family:'Noto Sans JP'">行って、食べて、高くて</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Honorativo ます -->
+    <div class="reveal">
+      <div class="conj-block" id="conj-masu">
+        <div class="conj-title">Formas del honorativo 「ます」 <span>丁寧詞「ます」の活用形</span></div>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr><th>Forma japonesa</th><th>Término en español</th><th>Notación</th><th>Trad.</th><th>Ejemplo</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="term-jp">丁寧詞「ます」の宣言形</span><br><small class="term-trad">sengenkei</small></td>
+                <td class="term-es">Forma declarativa del honorativo</td>
+                <td><span class="notation-badge">Masu</span></td>
+                <td class="term-trad">Jodōshi teinei "masu"</td>
+                <td><span style="font-family:'Noto Sans JP'">行きます、食べます</span></td>
+              </tr>
+              <tr>
+                <td><span class="term-jp">丁寧詞「ます」の完了詞連接形「まし」</span><br><small class="term-trad">kanryōshi rensetsukei</small></td>
+                <td class="term-es">Forma seguida por el perfectivo del honorativo</td>
+                <td><span class="notation-badge">Mashi</span></td>
+                <td class="term-trad">Ren'yōkei del auxiliar "masu"</td>
+                <td><span style="font-family:'Noto Sans JP'">行きました、行きまして、食べました</span></td>
+              </tr>
+              <tr>
+                <td><span class="term-jp">丁寧詞「ます」の否定形容詞連接形「ませ」</span><br><small class="term-trad">hitei rensetsukei</small></td>
+                <td class="term-es">Forma seguida por el negativo del honorativo</td>
+                <td><span class="notation-badge">Mase</span></td>
+                <td class="term-trad">Mizenkei del auxiliar "masu"</td>
+                <td><span style="font-family:'Noto Sans JP'">行きません、食べません</span></td>
+              </tr>
+              <tr>
+                <td><span class="term-jp">丁寧詞「ます」の意志形「ましょう」</span><br><small class="term-trad">ishikei</small></td>
+                <td class="term-es">Forma volitiva del honorativo</td>
+                <td><span class="notation-badge">Mashō:</span></td>
+                <td class="term-trad">Ishikei del auxiliar "masu"</td>
+                <td><span style="font-family:'Noto Sans JP'">行きましょう、食べましょう</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- =========================================================
+     4. EXPRESIONES FUNCIONALES
+     ========================================================= -->
+<section class="term-section" id="funcionales">
+  <div class="container">
+    <div class="reveal">
+      <div class="sec-num">04</div>
+      <h2 class="sec-title">Visión general de las expresiones funcionales <span class="jp-inline">述語機能表現の概観</span></h2>
+      <p class="sec-lead">Las expresiones funcionales se posponen al núcleo del predicado (V / A / Na / N) y añaden funciones gramaticales y semánticas.</p>
+    </div>
+
+    <div class="reveal">
+      <div class="explain">
+        <div class="explain-title">Definición</div>
+        <p style="margin:0">Las <strong>expresiones funcionales del predicado</strong> son expresiones que se posponen al núcleo del predicado y añaden funciones de tiempo, negación, voz, modalidad, honoríficos y explicación.</p>
+      </div>
+
+      <div class="table-wrap">
+        <table class="cat-table">
+          <thead>
+            <tr><th>Categoría</th><th>Función principal</th><th>Expresiones principales</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="cat-name">Tiempo y aspecto</span></td>
+              <td>Ubicación temporal, fase</td>
+              <td><span class="jp-list">た (perfectivo/pasado)、て-いる (progresivo)、て-ある (estado resultante)、ところ (estar a punto de)、うち (mientras)</span></td>
+            </tr>
+            <tr>
+              <td><span class="cat-name">Negación</span></td>
+              <td>Negación</td>
+              <td><span class="jp-list">ない (negativo)</span></td>
+            </tr>
+            <tr>
+              <td><span class="cat-name">Voz</span></td>
+              <td>Relación entre agente del tópico y objeto</td>
+              <td><span class="jp-list">れる/られる (pasivo/potencial/honorífico)、せる/させる (causativo)、てもらう (benefactivo)</span></td>
+            </tr>
+            <tr>
+              <td><span class="cat-name">Modalidad</span></td>
+              <td>Juicio/actitud del hablante</td>
+              <td><span class="jp-list">だろう (conjetura)、らしい (evidencial)、よう (como si)、はず (se supone que)、わけ (es lógico)、つもり (intención)、かもしれない (quizás)</span></td>
+            </tr>
+            <tr>
+              <td><span class="cat-name">Honoríficos y tratamiento</span></td>
+              <td>Relaciones interpersonales</td>
+              <td><span class="jp-list">ます (forma cortés del verbo)、です (forma cortés de la cópula)、お〜になる (respeto)、お〜する (modestia)</span></td>
+            </tr>
+            <tr>
+              <td><span class="cat-name">Explicación y razón</span></td>
+              <td>Causa, razón, explicación</td>
+              <td><span class="jp-list">の (nominalización/explicación)、わけ (razón)、ため (con el fin de)、せい (causa negativa)、おかげ (causa positiva)</span></td>
+            </tr>
+            <tr>
+              <td><span class="cat-name">Nominalización</span></td>
+              <td>Nominalización de cláusulas</td>
+              <td><span class="jp-list">こと (abstracto)、の (concreto)</span></td>
+            </tr>
+            <tr>
+              <td><span class="cat-name">Esperanza y deseo</span></td>
+              <td>Deseo del hablante/agente del tópico</td>
+              <td><span class="jp-list">たい (querer / 1ª persona)、たがる (querer / 3ª persona)、てほしい (querer que alguien haga)</span></td>
+            </tr>
+            <tr>
+              <td><span class="cat-name">Dar y recibir</span></td>
+              <td>Dirección del beneficio</td>
+              <td><span class="jp-list">て-あげる (hacer por alguien)、て-もらう (recibir favor)、て-くれる (hacer por mí)</span></td>
+            </tr>
+            <tr>
+              <td><span class="cat-name">Intento y completitud</span></td>
+              <td>Aspecto de la acción, finalización</td>
+              <td><span class="jp-list">て-みる (probar a hacer)、て-しまう (completar/lamentablemente)、て-おく (dejar hecho)</span></td>
+            </tr>
+            <tr>
+              <td><span class="cat-name">Grado y evaluación</span></td>
+              <td>Grado, facilidad/dificultad</td>
+              <td><span class="jp-list">すぎる (demasiado)、やすい (fácil de hacer)、にくい (difícil de hacer)、がたい (difícil/formal)</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <div class="conclusion-box">
+        <h3>Uso de esta referencia</h3>
+        <p>Cada vez que aparezca un término gramatical en el sitio, estará vinculado a la entrada correspondiente de esta página. Los términos en <strong>negrita</strong> son los que se usan en todo el proyecto. Los términos tradicionales se incluyen como referencia para estudiantes familiarizados con otras gramáticas.</p>
+      </div>
+
+      <p style="text-align:center; margin-top: 2rem">
+        <span class="status-badge">🚧 Terminología en desarrollo activo</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+  <p class="footer-title"><a href="../index.html">日本語 — Japonés para Todos</a></p>
+  <p class="footer-jp">スペイン語話者のための日本語学習サイト</p>
+  <nav class="footer-nav" aria-label="Navegación del pie de página">
+    <a href="../aprender/index.html">Aprender</a>
+    <a href="index.html">Gramática</a>
+    <a href="sujeto-japones-guia.html">Guía 1</a>
+    <a href="wa-ga.html">Guía 2 は・が</a>
+    <a href="mo.html">Guía 3 も</a>
+    <a href="../herramientas/index.html">Herramientas</a>
+    <a href="../qa/index.html">FAQ</a>
+    <a href="documento_fundamental.html">Documento Fundamental</a>
+  </nav>
+  <p class="footer-copy">© 2026 Japonés para Todos — Proyecto de código abierto en GitHub</p>
+</footer>
+
+<script>
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+reveals.forEach(el => observer.observe(el));
+
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.doc-nav a');
+const navObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      navLinks.forEach(a => a.classList.remove('active'));
+      const active = document.querySelector(`.doc-nav a[href="#${e.target.id}"]`);
+      if (active) active.classList.add('active');
+    }
+  });
+}, { threshold: 0.3 });
+sections.forEach(s => navObs.observe(s));
+</script>
+
+</body>
+</html>
