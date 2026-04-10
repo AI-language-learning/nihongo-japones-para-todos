@@ -6,273 +6,289 @@
     <meta name="description" content="Sitio de aprendizaje de japonés para hispanohablantes. Aprende japonés desde su lógica interna con un enfoque inductivo.">
     <title>日本語 — Japonés para Todos</title>
     
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+    <!-- Fonts (same as guide) -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@400;700&family=DM+Serif+Display:ital@0;1&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     
-    <!-- Styles -->
-    <link rel="stylesheet" href="css/base.css">
+    <!-- Shared styles -->
+    <link rel="stylesheet" href="css/common.css">
     
     <style>
-        /* Estilos específicos de la landing page */
-        .hero {
-            background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 50%, var(--color-primary-light) 100%);
-            color: var(--text-inverse);
-            padding: var(--spacing-2xl) var(--spacing-md);
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-        }
-        
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .hero h1 {
-            font-size: clamp(2rem, 6vw, 3rem);
-            margin-bottom: var(--spacing-md);
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        }
-        
-        /* 日本語タイトルは白文字 */
-        .hero .jp {
-            color: var(--text-inverse);
-        }
-        
-        .hero .title-jp {
-            display: block;
-            font-size: 0.7em;
-            margin-top: var(--spacing-sm);
-            opacity: 0.95;
-        }
-        
-        .hero .subtitle {
-            font-size: clamp(1rem, 2.5vw, 1.25rem);
-            opacity: 0.95;
-            max-width: 600px;
-            margin: 0 auto var(--spacing-xl);
-        }
-        
-        .hero-cta {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: var(--spacing-md);
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: var(--spacing-md) var(--spacing-xl);
-            border-radius: var(--radius-lg);
-            font-family: var(--font-ui);
-            font-size: 1rem;
-            font-weight: 500;
-            text-decoration: none;
-            transition: all var(--transition-normal);
-        }
-        
-        .btn-primary {
-            background: var(--text-inverse);
-            color: var(--color-primary-dark);
-        }
-        
-        .btn-primary:hover {
-            background: var(--color-accent-light);
-            color: var(--color-primary-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-        }
-        
-        .btn-secondary {
-            background: transparent;
-            color: var(--text-inverse);
-            border: 2px solid var(--text-inverse);
-        }
-        
-        .btn-secondary:hover {
-            background: rgba(255,255,255,0.1);
-            color: var(--text-inverse);
-        }
-        
-        /* Features */
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: var(--spacing-xl);
-            margin: var(--spacing-xl) 0;
-        }
-        
-        .feature-card {
-            background: var(--bg-section);
-            border: 1px solid var(--border-light);
-            border-radius: var(--radius-lg);
-            padding: var(--spacing-xl);
-            text-align: center;
-            transition: all var(--transition-normal);
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-medium);
-            border-color: var(--color-primary);
-        }
-        
-        .feature-icon {
-            font-size: 2.5rem;
-            margin-bottom: var(--spacing-md);
-        }
-        
-        .feature-card h3 {
-            color: var(--color-primary-dark);
-            margin-bottom: var(--spacing-sm);
-        }
-        
-        .feature-card p {
-            color: var(--text-secondary);
-            margin: 0;
-        }
-        
-        /* Principles */
-        .principle-box {
-            background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-secondary-light) 100%);
-            color: var(--text-inverse);
-            padding: var(--spacing-xl);
-            border-radius: var(--radius-lg);
-            text-align: center;
-            margin: var(--spacing-xl) 0;
-        }
-        
-        .principle-box .jp {
-            color: var(--text-inverse);
-            display: block;
-            font-size: 1.3rem;
-            margin-bottom: var(--spacing-sm);
-        }
-        
-        /* Quick links */
-        .quick-links {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: var(--spacing-md);
-            margin: var(--spacing-xl) 0;
-        }
-        
-        .quick-link {
-            display: flex;
-            align-items: center;
-            gap: var(--spacing-md);
-            padding: var(--spacing-lg);
-            background: var(--bg-highlight);
-            border: 1px solid var(--border-light);
-            border-radius: var(--radius-md);
-            color: var(--text-primary);
-            transition: all var(--transition-fast);
-        }
-        
-        .quick-link:hover {
-            background: var(--color-accent-light);
-            border-color: var(--color-primary);
-            color: var(--color-primary-dark);
-        }
-        
-        .quick-link-icon {
-            font-size: 1.5rem;
-        }
-        
-        /* Status badge */
-        .status-badge {
-            display: inline-block;
-            background: #FEF3C7;
-            color: #92400E;
-            padding: var(--spacing-xs) var(--spacing-md);
-            border-radius: var(--radius-xl);
-            font-size: 0.85rem;
-            margin-top: var(--spacing-lg);
-        }
+
+.hero h1 .es-sub {
+  font-family: 'DM Serif Display', serif;
+  display: block;
+  font-size: 0.42em;
+  font-style: italic;
+  font-weight: 400;
+  margin-top: 0.4em;
+  color: var(--accent);
+  letter-spacing: 0.01em;
+}
+
+/* ===== INDEX-SPECIFIC: hero background text ===== */
+.hero::before { content: '日本語'; }
+
+/* ===== PRINCIPLE BOX (light) ===== */
+.principle-box {
+  background: linear-gradient(135deg, #e8f4f7 0%, var(--teal-light) 100%);
+  color: var(--ink);
+  border: 2px solid var(--teal);
+  border-radius: 16px;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  text-align: center;
+  margin: 2rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.principle-box::after {
+  content: '述語';
+  position: absolute;
+  font-family: 'Noto Serif JP', serif;
+  font-size: 8rem;
+  font-weight: 900;
+  opacity: 0.05;
+  bottom: -0.5rem;
+  right: -0.3rem;
+  pointer-events: none;
+  color: var(--teal);
+}
+
+.principle-box .jp {
+  font-family: 'Noto Serif JP', serif;
+  color: var(--teal-dark);
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.principle-box p {
+  color: var(--ink);
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+/* ===== FEATURE CARDS ===== */
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin: 2.5rem 0;
+}
+
+.feature-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  text-align: center;
+  box-shadow: 0 2px 24px rgba(0,0,0,0.05);
+  border-left: 4px solid var(--teal);
+  transition: all 0.3s;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+  border-left-color: var(--accent);
+}
+
+.feature-icon { font-size: 2.5rem; margin-bottom: 0.8rem; }
+
+.feature-card h4 {
+  font-family: 'DM Serif Display', 'Noto Serif JP', serif;
+  font-size: 1.2rem;
+  color: var(--ink);
+  margin-bottom: 0.6rem;
+}
+
+.feature-card p {
+  color: var(--warm-gray);
+  font-size: 0.98rem;
+  margin: 0;
+  line-height: 1.7;
+}
+
+/* ===== SCENE (Inductive example) ===== */
+.scene-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  margin: 2rem 0;
+  box-shadow: 0 2px 24px rgba(0,0,0,0.05);
+  border-left: 4px solid var(--accent);
+}
+
+.scene-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.6rem;
+  display: block;
+}
+
+.scene-context { color: var(--warm-gray); font-style: italic; margin-bottom: 1rem; }
+
+.scene-jp {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--ink);
+  margin: 0.5rem 0;
+}
+
+.scene-es { color: var(--warm-gray); font-style: italic; }
+
+.speak-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  vertical-align: middle;
+  padding: 0.2rem;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.speak-btn:hover { background: var(--teal-light); }
+
+/* ===== QUICK LINKS ===== */
+.quick-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.quick-link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.2rem 1.5rem;
+  background: #fff;
+  border: 1px solid var(--light-gray);
+  border-radius: 10px;
+  color: var(--ink);
+  text-decoration: none;
+  transition: all 0.3s;
+  font-weight: 500;
+}
+
+.quick-link:hover {
+  background: var(--teal-light);
+  border-color: var(--teal);
+  color: var(--teal);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+}
+
+.quick-link-icon { font-size: 1.5rem; flex-shrink: 0; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+  .features { grid-template-columns: 1fr; }
+  .quick-links { grid-template-columns: 1fr; }
+}
     </style>
 </head>
 <body>
-    
-    <!-- Hero Section -->
-    <header class="hero">
-        <div class="hero-content">
-            <h1>
-                Nihongo - Japonés para Todos
-                <span class="title-jp jp">スペイン語話者のための日本語学習サイト</span>
-            </h1>
-            <p class="subtitle">
-                Aprende japonés desde su lógica interna, no desde la perspectiva del español.
-                Un enfoque que te permite <strong>pensar en japonés</strong>.
-            </p>
-            <div class="hero-cta">
-                <a href="aprender/index.html" class="btn btn-primary">Comenzar a Aprender</a>
-                <a href="gramatica/index.html" class="btn btn-secondary">Ver Gramática</a>
+
+<!-- ===== HERO ===== -->
+<header class="hero">
+    <div class="hero-badge">スペイン語話者のための日本語</div>
+    <h1>
+        Japonés para Todos
+        <span class="es-sub">Un idioma que gira en torno al predicado</span>
+        <span class="jp">日本語 — 述語から始めよう</span>
+    </h1>
+    <p class="hero-sub">
+        Aprende japonés desde su lógica interna, no desde la perspectiva del español.<br>
+        Un enfoque que te permite <strong>pensar en japonés</strong>.
+    </p>
+    <div class="hero-cta">
+        <a href="aprender/index.html" class="btn btn-primary">Comenzar a Aprender</a>
+        <a href="gramatica/index.html" class="btn btn-secondary">Ver Gramática</a>
+    </div>
+    <div class="hero-scroll">
+        <a href="#intro">Descubre más <div class="arrow"></div></a>
+    </div>
+</header>
+
+<!-- ===== SECTION: INTRO ===== -->
+<section id="intro">
+    <div class="container">
+        <div class="reveal">
+            <div class="sec-num">01</div>
+            <h2 class="sec-title">¿Qué hace diferente a este sitio?</h2>
+            <p class="sec-lead">La mayoría de los cursos explican el japonés usando conceptos del español. Pero esos conceptos no funcionan en japonés.</p>
+        </div>
+
+        <div class="principle-box reveal">
+            <span class="jp">述語の運用能力に重点を置く</span>
+            <p>El enfoque se centra en la capacidad de operar el <strong>predicado</strong>.</p>
+        </div>
+
+        <div class="reveal">
+            <p>La mayoría de los cursos de japonés para hispanohablantes intentan explicar el japonés usando conceptos del español: «sujeto», «objeto directo», «verbo auxiliar»... Pero estos conceptos <strong>no funcionan</strong> en japonés.</p>
+
+            <p>En español, el sujeto sintáctico es un elemento que el verbo <em>exige</em>: la conjugación verbal codifica siempre la persona y el número. Incluso cuando dices <em>«Bebo»</em> sin pronunciar <em>«Yo»</em>, la terminación <em>-o</em> sigue garantizando el sujeto de primera persona. En japonés, esta garantía gramatical <strong>simplemente no existe</strong>. El verbo <span style="font-family:'Noto Sans JP'">飲む</span> (<em>nomu</em>) no contiene ninguna información sobre quién bebe: es autosuficiente.</p>
+
+            <p>Cuando se necesita especificar «qué» o «quién» para completar el sentido del predicado, el japonés usa un <strong>complemento</strong> (<span style="font-family:'Noto Sans JP'">補語</span>) marcado con la posposición <span style="font-family:'Noto Sans JP'">が</span>, que señala <strong>el elemento al que apunta el predicado</strong>. Pero esta pieza <em>no es un sujeto</em>: es información complementaria que se añade solo cuando es necesaria.</p>
+        </div>
+
+        <div class="reveal">
+            <p>Este sitio ofrece un <strong>sistema gramatical unificado</strong> que describe el japonés desde su propia estructura, y un <strong>enfoque inductivo</strong> que parte de situaciones reales para que descubras los patrones por ti mismo.</p>
+        </div>
+
+        <div class="features reveal">
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h4>Predicado como centro</h4>
+                <p>El predicado es el único elemento obligatorio. El japonés no tiene sujeto sintáctico. Aprendes a construir desde el centro hacia afuera.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔍</div>
+                <h4>Enfoque inductivo</h4>
+                <p>Situación → «¿Qué es esto?» → Descubrimiento → Uso. No memorización de reglas abstractas.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔊</div>
+                <h4>Audio integrado</h4>
+                <p>Escucha cualquier texto japonés con un clic. Usa la síntesis de voz de tu navegador.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🌐</div>
+                <h4>Complementos con posposiciones</h4>
+                <p>Sin «sujeto» ni «objeto directo». Usamos el sistema de complementos (<span style="font-family:'Noto Sans JP'">〜が</span>, <span style="font-family:'Noto Sans JP'">〜を</span>, <span style="font-family:'Noto Sans JP'">〜に</span>…) que refleja cómo funciona realmente el japonés.</p>
             </div>
         </div>
-    </header>
-    
-    <!-- Main Content -->
-    <main class="main-content">
-        
-        <!-- Introducción -->
-        <section class="section">
-            <h2>¿Qué hace diferente a este sitio?</h2>
-            
-            <div class="principle-box">
-                <span class="jp">述語の運用能力に重点を置く</span>
-                El enfoque se centra en la capacidad de operar el <strong>predicado</strong>.
-            </div>
-            
-            <p>La mayoría de los cursos de japonés para hispanohablantes intentan explicar el japonés usando conceptos del español: "sujeto", "objeto directo", "verbo auxiliar"... Pero estos conceptos <strong>no funcionan</strong> en japonés.</p>
-            
-            <p>Este sitio ofrece un <strong>sistema gramatical unificado</strong> que describe el japonés desde su propia estructura, y un <strong>enfoque inductivo</strong> que parte de situaciones reales para que descubras los patrones por ti mismo.</p>
-            
-            <div class="features">
-                <div class="feature-card">
-                    <div class="feature-icon">🎯</div>
-                    <h3>Predicado como centro</h3>
-                    <p>El predicado es el único elemento obligatorio. Aprendes a construir desde el centro hacia afuera.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🔍</div>
-                    <h3>Enfoque inductivo</h3>
-                    <p>Situación → "¿Qué es esto?" → Descubrimiento → Uso. No memorización de reglas.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🔊</div>
-                    <h3>Audio integrado</h3>
-                    <p>Escucha cualquier texto japonés con un clic. Usa la síntesis de voz de tu navegador.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🌐</div>
-                    <h3>Sin "sujeto" ni "objeto"</h3>
-                    <p>Usamos el sistema de complementos con posposiciones. Así funciona realmente el japonés.</p>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Cómo funciona -->
-        <section class="section">
-            <h2>¿Cómo funciona el aprendizaje?</h2>
-            
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ===== SECTION: HOW IT WORKS ===== -->
+<section id="method">
+    <div class="container">
+        <div class="reveal">
+            <div class="sec-num">02</div>
+            <h2 class="sec-title">¿Cómo funciona el aprendizaje?</h2>
+            <p class="sec-lead">No explicamos reglas para que las memorices. Te presentamos situaciones para que descubras los patrones.</p>
+        </div>
+
+        <div class="reveal">
             <h3>En lugar de esto:</h3>
-            <div class="note" style="background: #FEE2E2; border-color: #FECACA;">
-                "El adjetivo negativo ない se añade a la forma de conexión del verbo para expresar negación..."
+            <div class="ng-block">
+                <div class="ng-marker">✗ Enfoque tradicional</div>
+                <p style="margin:0.5rem 0 0; color:var(--ink);">«El adjetivo negativo ない se añade a la forma de conexión del verbo para expresar negación...»</p>
             </div>
-            
+        </div>
+
+        <div class="reveal">
             <h3>Hacemos esto:</h3>
-            <div class="scene">
+            <div class="scene-card">
                 <span class="scene-label">Situación</span>
                 <p class="scene-context">Tomas un sorbo de café. Está más frío de lo que esperabas.</p>
                 <p class="scene-jp">
@@ -281,64 +297,135 @@
                 </p>
                 <p class="scene-es">Hmm, no está caliente.</p>
             </div>
-            
-            <div class="question">
-                <span class="jp">熱い</span> (caliente) → <span class="jp">熱くない</span> (no está caliente). ¿Qué cambió?
-            </div>            
 
-            
-            <p>Primero <strong>ves</strong> el uso real. Luego te <strong>preguntas</strong>. Después <strong>descubres</strong> el patrón. Finalmente, lo <strong>usas</strong> en contexto.</p>
-        </section>
-        
-        <!-- Enlaces rápidos -->
-        <section class="section">
-            <h2>Explora el sitio</h2>
-            
-            <div class="quick-links">
-                <a href="aprender/index.html" class="quick-link">
-                    <span class="quick-link-icon">📚</span>
-                    <span>Etapas de aprendizaje</span>
-                </a>
-                <a href="gramatica/index.html" class="quick-link">
-                    <span class="quick-link-icon">📖</span>
-                    <span>Referencia gramatical</span>
-                </a>
-                <a href="herramientas/kana.html" class="quick-link">
-                    <span class="quick-link-icon">あ</span>
-                    <span>Tablas de Hiragana/Katakana</span>
-                </a>
-                <a href="herramientas/audio.html" class="quick-link">
-                    <span class="quick-link-icon">🔊</span>
-                    <span>Herramienta de audio</span>
-                </a>
-                <a href="docs/documento-fundamental.html" class="quick-link">
-                    <span class="quick-link-icon">📄</span>
-                    <span>Documento fundamental</span>
-                </a>
-                <a href="qa/index.html" class="quick-link">
-                    <span class="quick-link-icon">❓</span>
-                    <span>Preguntas frecuentes</span>
-                </a>
+            <div class="question-box">
+                <span class="jp">熱い</span> (caliente) → <span class="jp">熱くない</span> (no está caliente). ¿Qué cambió?
             </div>
-            
-            <p class="text-center text-muted mt-lg">
-                <span class="status-badge">🚧 Sitio en desarrollo activo</span>
-            </p>
-        </section>
-        
-    </main>
-    
-    <!-- Footer -->
-    <footer class="site-footer">
-        <p><strong>Nihongo — Japonés para Todos</strong></p>
-        <p class="jp">スペイン語話者のための日本語学習サイト</p>
-        <p style="margin-top: var(--spacing-md); font-size: 0.9rem; opacity: 0.8;">
-            Proyecto de código abierto en GitHub
+
+            <p>Primero <strong>ves</strong> el uso real. Luego te <strong>preguntas</strong>. Después <strong>descubres</strong> el patrón. Finalmente, lo <strong>usas</strong> en contexto.</p>
+        </div>
+
+        <div class="explain reveal">
+            <div class="explain-title">💡 El predicado es autosuficiente</div>
+            <p style="margin-bottom:0">Fíjate: en el ejemplo anterior, no hay «sujeto». No necesitas decir «el café» ni «esto». El predicado <span style="font-family:'Noto Sans JP';font-weight:500">熱くない</span> forma un enunciado completo por sí solo, porque la situación (el café que acabas de probar) ya proporciona toda la información necesaria. Cuando la situación ya lo da, <strong>el japonés no lo verbaliza</strong> — y si lo verbalizaras, cambiarías el significado de la frase.</p>
+        </div>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ===== SECTION: EXPLORE ===== -->
+<section id="explore">
+    <div class="container">
+        <div class="reveal">
+            <div class="sec-num">03</div>
+            <h2 class="sec-title">Explora el sitio</h2>
+            <p class="sec-lead">Desde etapas de aprendizaje hasta herramientas interactivas — todo diseñado para que pienses en japonés.</p>
+        </div>
+
+        <div class="quick-links reveal">
+            <a href="aprender/index.html" class="quick-link">
+                <span class="quick-link-icon">📚</span>
+                <span>Etapas de aprendizaje</span>
+            </a>
+            <a href="gramatica/index.html" class="quick-link">
+                <span class="quick-link-icon">📖</span>
+                <span>Referencia gramatical</span>
+            </a>
+            <a href="gramatica/sujeto-japones-guia.html" class="quick-link">
+                <span class="quick-link-icon">💡</span>
+                <span>Guía 1 — ¿Sujeto? El predicado como centro</span>
+            </a>
+            <a href="gramatica/wa-ga.html" class="quick-link">
+                <span class="quick-link-icon">は</span>
+                <span>Guía 2 — は・が</span>
+            </a>
+            <a href="gramatica/mo.html" class="quick-link">
+                <span class="quick-link-icon">も</span>
+                <span>Guía 3 — も</span>
+            </a>
+            <a href="gramatica/terminologia.html" class="quick-link">
+                <span class="quick-link-icon">📋</span>
+                <span>Terminología gramatical</span>
+            </a>
+            <a href="gramatica/documento_fundamental.html" class="quick-link">
+                <span class="quick-link-icon">📄</span>
+                <span>Documento fundamental</span>
+            </a>
+            <a href="herramientas/index.html" class="quick-link">
+                <span class="quick-link-icon">あ</span>
+                <span>Tablas de Hiragana/Katakana</span>
+            </a>
+            <a href="herramientas/katakana-aprender.html" class="quick-link">
+                <span class="quick-link-icon">🎯</span>
+                <span>Aprende Katakana</span>
+            </a>
+            <a href="qa/index.html" class="quick-link">
+                <span class="quick-link-icon">❓</span>
+                <span>Preguntas frecuentes</span>
+            </a>
+        </div>
+
+        <div class="conclusion-box reveal">
+            <h3>Tu nuevo punto de partida para el japonés</h3>
+            <ol class="steps-list">
+                <li><strong>Olvida la caja del «Sujeto».</strong><br>
+                    El japonés no tiene sujeto sintáctico. El predicado es autosuficiente: <span style="font-family:'Noto Sans JP'">飲む</span>, <span style="font-family:'Noto Sans JP'">寒い</span>, <span style="font-family:'Noto Sans JP'">痛い</span> son enunciados completos por sí solos.</li>
+                <li><strong>Diseña el enunciado desde la situación.</strong><br>
+                    No traduzcas del español quitando piezas. Empieza desde cero: ¿qué necesito <em>verbalizar</em> aquí y ahora? Si la situación ya lo proporciona, no lo digas.</li>
+                <li><strong>Usa <span style="font-family:'Noto Sans JP'">が</span> como complemento, no como «sujeto».</strong><br>
+                    Cuando falta una pieza esencial para completar el predicado, usa el complemento con <span style="font-family:'Noto Sans JP'">が</span>: señala el elemento al que apunta el predicado. No es un sujeto — es información que se añade solo cuando es necesaria.</li>
+                <li><strong>Recuerda: decir de más cambia el significado.</strong><br>
+                    En japonés, «no verbalizar» es la forma neutra. Verbalizar lo que la situación ya proporciona genera un significado pragmático nuevo.</li>
+            </ol>
+        </div>
+
+        <p style="text-align:center; margin-top:2rem;">
+            <span class="status-badge">🚧 Sitio en desarrollo activo</span>
         </p>
-    </footer>
-    
-    <!-- Scripts -->
-    <script src="js/speech.js"></script>
-    
+    </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+    <p class="footer-title"><strong>日本語 — Japonés para Todos</strong></p>
+    <p class="footer-jp">スペイン語話者のための日本語学習サイト</p>
+    <nav class="footer-nav" aria-label="Navegación del pie de página">
+        <a href="aprender/index.html">Aprender</a>
+        <a href="gramatica/index.html">Gramática</a>
+        <a href="herramientas/index.html">Herramientas</a>
+        <a href="qa/index.html">FAQ</a>
+    </nav>
+    <p class="footer-copy">© 2026 Japonés para Todos — Proyecto de código abierto en GitHub</p>
+</footer>
+
+<!-- ===== SCRIPTS ===== -->
+<script>
+// Scroll reveal
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+reveals.forEach(el => observer.observe(el));
+
+// Speech synthesis (simplified inline version)
+document.querySelectorAll('.speak-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const text = btn.getAttribute('data-text');
+    if ('speechSynthesis' in window && text) {
+      const u = new SpeechSynthesisUtterance(text);
+      u.lang = 'ja-JP';
+      u.rate = 0.9;
+      speechSynthesis.speak(u);
+    }
+  });
+});
+</script>
+
 </body>
 </html>
