@@ -1,55 +1,647 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gramática | 文法 — Japonés para Todos</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/base.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Referencia gramatical de japonés para hispanohablantes. Un sistema que describe el japonés desde su propia lógica, sin imponer conceptos del español.">
+<title>Referencia Gramatical — 日本語 Japonés para Todos</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@400;700&family=DM+Serif+Display:ital@0;1&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+<!-- Shared styles -->
+<link rel="stylesheet" href="../css/common.css">
+
+<style>
+/* ===== GRAMATICA INDEX: hero ===== */
+.hero::before { content: '文法'; }
+.hero { min-height: 60vh; }
+.hero-sub { margin-bottom: 1.5rem; }
+
+/* ===== STRUCTURE FORMULA ===== */
+.formula-section {
+  padding: clamp(3rem, 6vw, 5rem) 0;
+  background: #fff;
+  border-bottom: 1px solid var(--light-gray);
+}
+.formula-title {
+  font-family: 'DM Serif Display', 'Noto Serif JP', serif;
+  font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+  text-align: center;
+  margin-bottom: 0.3rem;
+}
+.formula-title-jp {
+  display: block;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 0.75em;
+  color: var(--warm-gray);
+  font-weight: 400;
+  margin-top: 0.2em;
+}
+.formula-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 2.5rem auto 1rem;
+  max-width: 780px;
+}
+.formula-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  text-decoration: none;
+  transition: transform 0.3s;
+}
+.formula-block:hover { transform: translateY(-3px); }
+.formula-chip {
+  border-radius: 10px;
+  padding: 0.7rem 1.2rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-align: center;
+  min-width: 100px;
+  line-height: 1.3;
+  transition: box-shadow 0.3s;
+}
+.formula-block:hover .formula-chip { box-shadow: 0 4px 16px rgba(0,0,0,0.12); }
+.formula-jp {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--warm-gray);
+}
+.chip-topico {
+  background: linear-gradient(135deg, #e0f0f3 0%, #d0e8ed 100%);
+  color: var(--teal);
+  border: 1.5px dashed var(--teal);
+}
+.chip-complemento {
+  background: linear-gradient(135deg, #e0f0f3 0%, #d0e8ed 100%);
+  color: var(--teal);
+  border: 1.5px dashed var(--teal);
+}
+.chip-predicado {
+  background: linear-gradient(135deg, #e8f4f7 0%, var(--teal-light) 100%);
+  color: var(--teal-dark);
+  border: 2px solid var(--teal);
+  font-size: 1.05rem;
+  font-weight: 700;
+  padding: 0.85rem 1.6rem;
+}
+.chip-predicado + .formula-jp { color: var(--teal-dark); font-weight: 700; }
+.chip-final {
+  background: linear-gradient(135deg, #fef9f0 0%, #fff7ed 100%);
+  color: var(--gold);
+  border: 1.5px dashed var(--gold);
+}
+.formula-plus {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.4rem;
+  color: var(--light-gray);
+  user-select: none;
+  line-height: 1;
+  margin-top: -0.4rem;
+}
+.formula-legend {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.85rem;
+  color: var(--warm-gray);
+}
+.formula-legend .optional {
+  display: inline-block;
+  border: 1.5px dashed var(--light-gray);
+  border-radius: 6px;
+  padding: 0.1rem 0.6rem;
+  font-size: 0.82rem;
+  margin-right: 0.3rem;
+  vertical-align: middle;
+}
+.formula-legend .required {
+  display: inline-block;
+  background: var(--teal);
+  color: #fff;
+  border-radius: 6px;
+  padding: 0.1rem 0.6rem;
+  font-size: 0.82rem;
+  margin-right: 0.3rem;
+  vertical-align: middle;
+}
+
+/* ===== PREDICATE DETAIL ===== */
+.predicate-detail {
+  max-width: 580px;
+  margin: 2.5rem auto 0;
+  background: linear-gradient(135deg, #e8f4f7 0%, var(--teal-light) 100%);
+  border: 2px solid var(--teal);
+  border-radius: 14px;
+  padding: 1.5rem 2rem;
+  color: var(--ink);
+  position: relative;
+  overflow: hidden;
+}
+.predicate-detail::after {
+  content: '述部';
+  position: absolute;
+  font-family: 'Noto Serif JP', serif;
+  font-size: 7rem;
+  font-weight: 900;
+  opacity: 0.05;
+  bottom: -0.8rem;
+  right: -0.3rem;
+  pointer-events: none;
+  color: var(--teal);
+}
+.predicate-detail-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
+  color: var(--teal-dark);
+  font-weight: 700;
+}
+.predicate-eq {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+.pred-chip {
+  border-radius: 8px;
+  padding: 0.45rem 0.9rem;
+  font-size: 0.88rem;
+  text-align: center;
+}
+.pred-nucleo { background: var(--accent); color: #fff; font-weight: 700; }
+.pred-func {
+  background: rgba(22, 105, 122, 0.1);
+  color: var(--teal-dark);
+  border: 2px dashed var(--teal);
+  font-weight: 600;
+}
+.pred-plus { color: var(--light-gray); font-family: 'DM Serif Display', serif; font-size: 1.2rem; }
+.predicate-sub {
+  text-align: center;
+  margin-top: 0.8rem;
+  font-size: 0.88rem;
+  color: var(--warm-gray);
+  font-weight: 500;
+}
+
+/* ===== APPROACH SECTION ===== */
+.approach-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+  margin: 2rem 0;
+}
+.approach-item { display: flex; gap: 0.8rem; align-items: flex-start; }
+.approach-icon {
+  flex-shrink: 0;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  margin-top: 0.15rem;
+}
+.approach-no {
+  background: #faf0ee;
+  color: var(--accent);
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+}
+.approach-yes { background: #eef4f2; color: var(--success); }
+.approach-label { font-size: 0.95rem; line-height: 1.5; }
+.approach-label strong {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--warm-gray);
+  margin-bottom: 0.1rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+/* ===== PAGE GRID ===== */
+.page-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+.page-item {
+  display: grid;
+  grid-template-columns: 3.2rem 1fr auto;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.2rem 1.5rem;
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid var(--light-gray);
+  text-decoration: none;
+  color: var(--ink);
+  transition: all 0.3s;
+}
+a.page-item:hover {
+  background: var(--teal-light);
+  border-color: var(--teal);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+}
+a.page-item:hover .page-num { background: var(--teal); color: #fff; }
+.page-item.upcoming { opacity: 0.55; cursor: default; }
+.page-item.upcoming:hover {
+  background: #fff;
+  border-color: var(--light-gray);
+  transform: none;
+  box-shadow: none;
+}
+.page-num {
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.15rem;
+  background: var(--light-gray);
+  color: var(--warm-gray);
+  transition: all 0.3s;
+  flex-shrink: 0;
+}
+.page-item.active .page-num { background: var(--teal); color: #fff; }
+.page-info { min-width: 0; }
+.page-title-text {
+  font-family: 'DM Serif Display', 'Noto Serif JP', serif;
+  font-size: 1.05rem;
+  line-height: 1.35;
+  margin-bottom: 0.15rem;
+}
+.page-title-text .jp-tag {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 400;
+  color: var(--warm-gray);
+  margin-left: 0.5rem;
+}
+.page-desc {
+  font-size: 0.92rem;
+  color: var(--warm-gray);
+  line-height: 1.5;
+  margin: 0;
+}
+.page-status {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.8rem;
+  border-radius: 100px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.status-ready { background: #eef4f2; color: var(--success); }
+.status-next {
+  background: linear-gradient(135deg, #fef9f0 0%, #fff7ed 100%);
+  color: var(--gold);
+  border: 1px solid #e8d5b8;
+}
+.status-soon { background: var(--light-gray); color: var(--warm-gray); }
+
+/* ===== DOC LINK ===== */
+.doc-link-box {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  background: linear-gradient(135deg, #fef9f0 0%, #fff7ed 100%);
+  border: 1px solid #e8d5b8;
+  border-radius: 12px;
+  padding: 1.2rem 1.5rem;
+  margin: 2.5rem 0;
+  text-decoration: none;
+  color: var(--ink);
+  transition: all 0.3s;
+}
+.doc-link-box:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,0.06); }
+.doc-icon { font-size: 2rem; flex-shrink: 0; }
+.doc-info { min-width: 0; }
+.doc-info strong { display: block; font-size: 0.95rem; margin-bottom: 0.15rem; }
+.doc-info span { font-size: 0.9rem; color: var(--warm-gray); }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 700px) {
+  .approach-grid { grid-template-columns: 1fr; }
+  .page-item { grid-template-columns: 2.6rem 1fr; }
+  .page-status { grid-column: 2; margin-top: -0.3rem; justify-self: start; }
+  .formula-chip { min-width: 80px; padding: 0.55rem 0.8rem; font-size: 0.85rem; }
+  .chip-predicado { padding: 0.65rem 1rem; font-size: 0.95rem; }
+  .predicate-detail { padding: 1.2rem 1.3rem; }
+}
+@media (max-width: 480px) { .formula-plus { font-size: 1rem; } }
+</style>
 </head>
 <body>
-    
-    <header class="site-header">
-        <h1>Referencia Gramatical <span class="jp">文法</span></h1>
-        <p>Sistema terminológico unificado para la gramática japonesa</p>
-    </header>
-    
-    <nav class="main-nav">
-        <div class="nav-container">
-            <ul class="nav-list">
-                <li><a href="../index.html">Inicio</a></li>
-                <li><a href="index.html" class="active">Gramática</a></li>
-                <li><a href="../aprender/index.html">Aprender</a></li>
-                <li><a href="../herramientas/kana.html">Herramientas</a></li>
-            </ul>
+
+<!-- ===== BREADCRUMB ===== -->
+<nav class="breadcrumb" aria-label="Ruta de navegación">
+  <div class="breadcrumb-inner">
+    <a href="../index.html">Inicio</a>
+    <span class="separator">›</span>
+    <span class="current">Gramática</span>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<header class="hero" id="hero">
+  <div class="hero-badge">日本語の文法を体系的に理解する</div>
+  <h1>
+    Referencia Gramatical
+    <span class="jp">文法リファレンス</span>
+  </h1>
+  <p class="hero-sub">
+    Un sistema terminológico unificado que describe el japonés desde su propia lógica.<br>
+    Sin «sujeto». Sin «verbo auxiliar». Solo la estructura real.
+  </p>
+  <div class="hero-scroll">
+    <a href="#structure">Explorar <div class="arrow"></div></a>
+  </div>
+</header>
+
+<!-- ===== STRUCTURE FORMULA ===== -->
+<section class="formula-section" id="structure">
+  <div class="container">
+    <div class="reveal">
+      <h2 class="formula-title">
+        La estructura de la oración japonesa
+        <span class="formula-title-jp">日本語の文の構造</span>
+      </h2>
+    </div>
+
+    <div class="formula-wrap reveal">
+      <div class="formula-block">
+        <div class="formula-chip chip-topico">Tópico</div>
+        <span class="formula-jp">話題（は）</span>
+      </div>
+      <span class="formula-plus">+</span>
+      <div class="formula-block">
+        <div class="formula-chip chip-complemento">Complemento</div>
+        <span class="formula-jp">補語（が・を・に…）</span>
+      </div>
+      <span class="formula-plus">+</span>
+      <div class="formula-block">
+        <div class="formula-chip chip-predicado">Predicado</div>
+        <span class="formula-jp">述部 ★ obligatorio</span>
+      </div>
+      <span class="formula-plus">+</span>
+      <div class="formula-block">
+        <div class="formula-chip chip-final">Expr. final</div>
+        <span class="formula-jp">文末表現（よ・ね…）</span>
+      </div>
+    </div>
+
+    <p class="formula-legend reveal">
+      <span class="optional">&nbsp;</span> opcional &nbsp;&nbsp;
+      <span class="required">&nbsp;</span> obligatorio
+    </p>
+
+    <div class="predicate-detail reveal">
+      <div class="predicate-detail-title">Dentro del predicado (述部)</div>
+      <div class="predicate-eq">
+        <span class="pred-chip pred-nucleo">Núcleo del predicado</span>
+        <span class="pred-plus">+</span>
+        <span class="pred-chip pred-func">Expr. funcionales</span>
+      </div>
+      <p class="predicate-sub">
+        述部の核（V・A・Na・N）＋ 述語機能表現（ない・た/て・ます…）
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== APPROACH ===== -->
+<section id="approach">
+  <div class="container">
+    <div class="reveal">
+      <div class="sec-num">01</div>
+      <h2 class="sec-title">Un sistema gramatical propio del japonés</h2>
+      <p class="sec-lead">No imponemos conceptos del español. Describimos el japonés desde su lógica interna.</p>
+    </div>
+
+    <div class="approach-grid reveal">
+      <div class="approach-item">
+        <div class="approach-icon approach-no">ES</div>
+        <div class="approach-label">
+          <strong>No adoptamos</strong>
+          Sujeto (<em>主語</em>)
         </div>
-    </nav>
-    
-    <main class="main-content">
-        <section class="section">
-            <h2>Contenido en desarrollo <span class="jp">準備中</span></h2>
-            
-            <p>Esta sección contendrá la referencia gramatical completa:</p>
-            
-            <ul>
-                <li><strong>Estructura del predicado</strong> — El centro de la oración japonesa</li>
-                <li><strong>Sistema de complementos</strong> — が, を, に, で, へ, から, まで, と</li>
-                <li><strong>Las 4 clases del núcleo</strong> — V, A, Na, N</li>
-                <li><strong>Expresiones funcionales</strong> — ない, た, ます, だ...</li>
-                <li><strong>Expresiones finales</strong> — よ, ね, か...</li>
-                <li><strong>Tablas de conjugación</strong></li>
-            </ul>
-            
-            <p class="text-muted mt-lg">🚧 Próximamente...</p>
-        </section>
-    </main>
-    
-    <footer class="site-footer">
-        <p><strong>日本語 — Japonés para Todos</strong></p>
-        <p class="jp">スペイン語話者のための日本語学習サイト</p>
-    </footer>
-    
+      </div>
+      <div class="approach-item">
+        <div class="approach-icon approach-yes">JP</div>
+        <div class="approach-label">
+          <strong>Adoptamos</strong>
+          Tópico (<em>話題</em>) + Complementos (<em>補語</em>)
+        </div>
+      </div>
+      <div class="approach-item">
+        <div class="approach-icon approach-no">ES</div>
+        <div class="approach-label">
+          <strong>No adoptamos</strong>
+          Verbo auxiliar (<em>助動詞</em>)
+        </div>
+      </div>
+      <div class="approach-item">
+        <div class="approach-icon approach-yes">JP</div>
+        <div class="approach-label">
+          <strong>Adoptamos</strong>
+          Expresión funcional (<em>述語機能表現</em>)
+        </div>
+      </div>
+      <div class="approach-item">
+        <div class="approach-icon approach-no">ES</div>
+        <div class="approach-label">
+          <strong>No adoptamos</strong>
+          Partícula final (<em>終助詞</em>)
+        </div>
+      </div>
+      <div class="approach-item">
+        <div class="approach-icon approach-yes">JP</div>
+        <div class="approach-label">
+          <strong>Adoptamos</strong>
+          Expresión final (<em>文末表現</em>)
+        </div>
+      </div>
+      <div class="approach-item">
+        <div class="approach-icon approach-no">ES</div>
+        <div class="approach-label">
+          <strong>No adoptamos</strong>
+          Adjetivo verbal (<em>形容動詞</em>)
+        </div>
+      </div>
+      <div class="approach-item">
+        <div class="approach-icon approach-yes">JP</div>
+        <div class="approach-label">
+          <strong>Adoptamos</strong>
+          Nominal adjetival (<em>形容名詞</em>)
+        </div>
+      </div>
+    </div>
+
+    <div class="explain reveal">
+      <div class="explain-title">💡 ¿Estilo ordinario primero?</div>
+      <p style="margin-bottom:0">Sí. En este sistema, el <strong>estilo ordinario</strong> (<span style="font-family:'Noto Sans JP'">普通体</span>) se estudia <em>antes</em> que el estilo cortés (<span style="font-family:'Noto Sans JP'">丁寧体</span>). La razón: sin dominar el estilo ordinario, no puedes construir oraciones subordinadas ni modificaciones nominales — es decir, no puedes avanzar más allá de frases simples. El estilo cortés se añade después como una capa funcional, usando el marcador de cortesía <span style="font-family:'Noto Sans JP'">ます</span> y el declarativo cortés <span style="font-family:'Noto Sans JP'">です</span>.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ===== PAGES ===== -->
+<section id="pages">
+  <div class="container">
+    <div class="reveal">
+      <div class="sec-num">02</div>
+      <h2 class="sec-title">Guías gramaticales</h2>
+      <p class="sec-lead">Cada guía explora un aspecto del sistema gramatical con ejemplos prácticos, comparaciones con el español y explicaciones inductivas.</p>
+    </div>
+
+    <div class="page-grid reveal">
+
+      <!-- 1. Sujeto guide — READY -->
+      <a href="sujeto-japones-guia.html" class="page-item active">
+        <div class="page-num">1</div>
+        <div class="page-info">
+          <div class="page-title-text">¿Sujeto? — El predicado como centro <span class="jp-tag">述語中心</span></div>
+          <p class="page-desc">Por qué el japonés no tiene sujeto sintáctico. El predicado es autosuficiente, y los complementos se añaden solo cuando la situación lo requiere.</p>
+        </div>
+        <span class="page-status status-ready">✓ Disponible</span>
+      </a>
+
+      <!-- 2. wa ga — READY -->
+      <a href="wa-ga.html" class="page-item active">
+        <div class="page-num">2</div>
+        <div class="page-info">
+          <div class="page-title-text">は・が — Funciones detalladas <span class="jp-tag">取り立て後置詞と主格後置詞</span></div>
+          <p class="page-desc">Tópico, contraste, complemento nominativo, foco. Cuándo y por qué aparece cada posposición — incluyendo subordinadas, doble nominativo y el declarativo だ.</p>
+        </div>
+        <span class="page-status status-ready">✓ Disponible</span>
+      </a>
+
+      <!-- 2b. mo — READY -->
+      <a href="mo.html" class="page-item active">
+        <div class="page-num">2b</div>
+        <div class="page-info">
+          <div class="page-title-text">も — Adición e inclusión <span class="jp-tag">添加・包含・全否定</span></div>
+          <p class="page-desc">も como sustituto de は y が. Adición positiva («también»), adición negativa («tampoco») y negación total («ni siquiera»).</p>
+        </div>
+        <span class="page-status status-ready">✓ Disponible</span>
+      </a>
+
+      <!-- 3. Predicado: 4 clases — NEXT -->
+      <div class="page-item upcoming">
+        <div class="page-num">3</div>
+        <div class="page-info">
+          <div class="page-title-text">El núcleo del predicado — 4 clases <span class="jp-tag">述部の核</span></div>
+          <p class="page-desc">Verbo (V), Adjetivo (A), Nominal adjetival (Na) y Nombre (N). Cómo cada uno forma predicados y el papel del declarativo だ.</p>
+        </div>
+        <span class="page-status status-next">Siguiente</span>
+      </div>
+
+      <!-- 4. Expresiones funcionales -->
+      <div class="page-item upcoming">
+        <div class="page-num">4</div>
+        <div class="page-info">
+          <div class="page-title-text">Expresiones funcionales del predicado <span class="jp-tag">述語機能表現</span></div>
+          <p class="page-desc">ない (negación), た/て (perfectivo), ます (cortesía), う/よう (volitivo) y ば (condicional). Las piezas que se acoplan al núcleo.</p>
+        </div>
+        <span class="page-status status-soon">Próximamente</span>
+      </div>
+
+      <!-- 5. Formas conjugadas -->
+      <div class="page-item upcoming">
+        <div class="page-num">5</div>
+        <div class="page-info">
+          <div class="page-title-text">Sistema de formas conjugadas <span class="jp-tag">活用形の体系</span></div>
+          <p class="page-desc">Forma declarativa, forma de enlace, formas de conexión. Cómo cambian los verbos, adjetivos y el declarativo para acoplarse entre sí.</p>
+        </div>
+        <span class="page-status status-soon">Próximamente</span>
+      </div>
+
+      <!-- 6. Posposiciones -->
+      <div class="page-item upcoming">
+        <div class="page-num">6</div>
+        <div class="page-info">
+          <div class="page-title-text">Posposiciones — El sistema de complementos <span class="jp-tag">後置詞</span></div>
+          <p class="page-desc">が, を, に, で, へ, から, まで, と — cada posposición y su función. Sin «sujeto» ni «objeto directo»: solo relaciones con el predicado.</p>
+        </div>
+        <span class="page-status status-soon">Próximamente</span>
+      </div>
+
+      <!-- 7. Modificación nominal -->
+      <div class="page-item upcoming">
+        <div class="page-num">7</div>
+        <div class="page-info">
+          <div class="page-title-text">Modificación nominal y oraciones complejas <span class="jp-tag">名詞修飾と複文</span></div>
+          <p class="page-desc">Cómo el japonés coloca una oración entera delante de un nombre — sin pronombres relativos. La estructura のだ y las construcciones con て.</p>
+        </div>
+        <span class="page-status status-soon">Próximamente</span>
+      </div>
+
+      <!-- 8. Expresiones finales -->
+      <div class="page-item upcoming">
+        <div class="page-num">8</div>
+        <div class="page-info">
+          <div class="page-title-text">Expresiones finales <span class="jp-tag">文末表現</span></div>
+          <p class="page-desc">よ, ね, よね, か, な(ぁ), かな — cómo el hablante indica su intención al presentar la información. La clave de la naturalidad.</p>
+        </div>
+        <span class="page-status status-soon">Próximamente</span>
+      </div>
+
+    </div>
+
+    <a href="documento_fundamental_v2.html" class="doc-link-box reveal">
+      <span class="doc-icon">📄</span>
+      <div class="doc-info">
+        <strong>Documento fundamental — 述語機能表現の体系 v2.0</strong>
+        <span>El sistema terminológico unificado completo. La base teórica de todas las guías de este sitio.</span>
+      </div>
+    </a>
+
+    <p style="text-align:center; margin-top:1.5rem;">
+      <span class="status-badge">🚧 Sitio en desarrollo activo — nuevas guías en preparación</span>
+    </p>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+  <p class="footer-title"><a href="../index.html"><strong>日本語 — Japonés para Todos</strong></a></p>
+  <p class="footer-jp">スペイン語話者のための日本語学習サイト</p>
+  <nav class="footer-nav" aria-label="Navegación del pie de página">
+    <a href="../index.html">Inicio</a>
+    <a href="../aprender/index.html">Aprender</a>
+    <a href="index.html">Gramática</a>
+    <a href="../herramientas/index.html">Herramientas</a>
+    <a href="../qa/index.html">FAQ</a>
+  </nav>
+  <p class="footer-copy">© 2026 Japonés para Todos — Proyecto de código abierto en GitHub</p>
+</footer>
+
+<script>
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+reveals.forEach(el => observer.observe(el));
+</script>
+
 </body>
 </html>
