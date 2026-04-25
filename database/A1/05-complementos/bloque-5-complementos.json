@@ -1,0 +1,662 @@
+{
+  "bloque": 5,
+  "título": "補語と後置詞 — Los complementos posposicionales",
+  "descripción": "Introducción de los complementos marcados por posposición. Principio organizador: las posposiciones vienen DESPUÉS del nominal (al contrario de las preposiciones españolas). Los complementos más importantes de A1: を (acusativo), が (nominativo), に (locativo/directivo/temporal/dativo), で (locativo de actividad/instrumental), から (ablativo), まで (terminativo).",
+
+  "principio_organizador": "En español las preposiciones preceden al nominal: 'bebo café', 'voy a Tokio'. En japonés las posposiciones siguen al nominal: コーヒーを飲む, 東京に行く. Esta inversión es un cambio estructural profundo para el hispanohablante. Además, el complemento nominativo (が) marca en japonés lo que en español podría ser sujeto, objeto indirecto o complemento de verbo pseudo-impersonal ('me gusta', 'se me entiende').",
+
+  "nota_sobre_が_y_好き": "猫が好きだ no tiene equivalente estructural español. 好き (Na) predica una propiedad de relación. El referente (yo/tú/él) no se codifica; が marca el estímulo (los gatos). Traducción: 'Me gustan los gatos' — pero esa traducción oculta que en japonés no hay verbo 'gustar' ni pronombre indirecto.",
+
+  "nota_sobre_に_vs_で": "Distinción fundamental para hispanohablantes: に marca localización existencial (dónde algo existe o reside: いる/ある/住む); で marca localización de actividad (dónde ocurre una acción: 勉強する/食べる/働く). En español 'en' cubre ambas funciones sin distinción.",
+
+  "conjuntos": [
+    {
+      "id": "DS-COMP-01",
+      "título": "を — el complemento acusativo con verbos transitivos",
+      "objetivo": "を marca el complemento acusativo de los verbos transitivos (V). Es el caso más transparente para hispanohablantes — corresponde en general al complemento directo.",
+      "descubrimiento": "コーヒーを飲む, ご飯を食べる, 本を読む, 音楽を聞く. La posposición を siempre va DESPUÉS del nominal. ¿Qué tienen en común todos los predicados de este conjunto?",
+      "sistematización": "を marca el complemento acusativo. En estos ejemplos: verbo transitivo + complemento acusativo. El nominal viene antes del predicado; を va adherido al nominal. Orden: [complemento acusativo + を] + [predicado].",
+      "ids_entradas": ["A1-5-001", "A1-5-002", "A1-5-003", "A1-5-004", "A1-5-005"]
+    },
+    {
+      "id": "DS-COMP-02",
+      "título": "が — el complemento nominativo con predicados de estado",
+      "objetivo": "が marca el complemento nominativo. Con predicados de estado y experiencia, が marca el estímulo o la entidad relevante — no necesariamente el 'sujeto' en el sentido español.",
+      "descubrimiento": "日本語が分かる, 猫が好きだ, 水が欲しい. が aparece con los tres tipos de predicado (V, Na, A). ¿Qué traducción da el español? ¿Tiene sujeto explícito la frase japonesa?",
+      "sistematización": "が marca el complemento nominativo. Con predicados de experiencia/estado (好きだ, 分かる, 欲しい), が señala el estímulo o la entidad relevante. El referente (la persona que experimenta) no se codifica — se recupera del contexto.",
+      "nota": "La función de が aquí no es 'sujeto activo' sino 'elemento relevante para el predicado'. Esta distinción es crucial y será profundizada al introducir は en el Bloque 6.",
+      "ids_entradas": ["A1-5-006", "A1-5-007", "A1-5-008", "A1-5-009", "A1-5-010"]
+    },
+    {
+      "id": "DS-COMP-03",
+      "título": "に (1) — locativo existencial y directivo",
+      "objetivo": "に marca dos funciones relacionadas: la dirección (東京に行く) y la localización donde algo existe o reside (部屋にいる, 日本に住む). La distinción con で se establecerá en DS-COMP-04.",
+      "descubrimiento": "東京に行く, 部屋にいる, 日本に住む, 7時に起きる. に aparece con situaciones muy distintas. ¿Qué tienen en común? ¿Y cuándo se usa で en vez de に?",
+      "sistematización": "に cubre: (1) dirección hacia la que se mueve (東京に行く), (2) punto en que algo existe o reside (部屋にいる, 日本に住む), (3) momento temporal (7時に起きる). En todos los casos, に marca un PUNTO (destino, ubicación, momento) — no un espacio en el que ocurre una actividad.",
+      "ids_entradas": ["A1-5-011", "A1-5-012", "A1-5-013", "A1-5-014", "A1-5-015"]
+    },
+    {
+      "id": "DS-COMP-04",
+      "título": "で (1) — locativo de actividad e instrumental",
+      "objetivo": "で marca el lugar donde ocurre una actividad (≠ に, que marca el lugar donde algo existe). También marca el medio o instrumento.",
+      "descubrimiento": "図書館で勉強する, カフェでコーヒーを飲む, バスで行く, 日本語で話す. Compara: 部屋にいる (に) vs 部屋で勉強する (で). ¿Por qué la diferencia?",
+      "sistematización": "で: (1) localización de la actividad — el espacio en que ocurre un evento activo. (2) medio o instrumento. La regla: に = punto de referencia / existencia; で = escenario de actividad / medio.",
+      "ids_entradas": ["A1-5-016", "A1-5-017", "A1-5-018", "A1-5-019"]
+    },
+    {
+      "id": "DS-COMP-05",
+      "título": "から y まで — ablativo y terminativo",
+      "objetivo": "から marca el origen o punto de partida; まで marca el punto de llegada o límite. Ambas pueden aparecer juntas o por separado.",
+      "descubrimiento": "大阪から来る, 9時から勉強する, 駅まで歩く. から y まで son complementarios. ¿Pueden aparecer en la misma oración?",
+      "sistematización": "から = origen / punto de partida (espacial o temporal). まで = límite / punto de llegada. Pueden combinarse: 9時から5時まで = de 9 a 5.",
+      "ids_entradas": ["A1-5-020", "A1-5-021", "A1-5-022"]
+    },
+    {
+      "id": "DS-COMP-06",
+      "título": "が vs を — el mismo nominal, función distinta según el predicado",
+      "objetivo": "El descubrimiento clave: la posposición que acompaña a un nominal depende del predicado, no del nominal. El mismo referente puede ser が o を según la relación que establece el predicado.",
+      "descubrimiento": "猫が好きだ / 猫を飼う. 日本語が分かる / 日本語を話す. El mismo nominal (猫, 日本語) aparece con が y con を. ¿Qué determina cuál se usa?",
+      "sistematización": "が vs を no es una propiedad del nominal sino del predicado. 好きだ (Na) y 分かる (V-estado) seleccionan が para su complemento. 飼う (V-transitivo) y 話す (V-transitivo) seleccionan を. La distinción refleja la naturaleza semántica del predicado.",
+      "ids_entradas": ["A1-5-023", "A1-5-024", "A1-5-025", "A1-5-026"]
+    }
+  ],
+
+  "entradas": [
+    {
+      "id": "A1-5-001", "bloque": 5, "conjunto": "DS-COMP-01", "clase": "V",
+      "japonés": "コーヒーを飲む。", "furigana": "コーヒーをのむ。", "romaji": "Kōhī wo nomu.",
+      "español": "Tomo café. / Bebo café.",
+      "audio_text": "コーヒーを飲む",
+      "situación": { "descripción": "Cada mañana, antes de salir de casa, tomas un café.", "tipo": "describir hábito", "entorno": "casa — mañana" },
+      "predicado": { "núcleo": "飲む", "clase": "V", "grupo": 1, "expresiones_funcionales": [], "expresiones_finales": [] },
+      "complementos": [
+        { "núcleo": "コーヒー", "furigana": "コーヒー", "posposición": "を", "función": "acusativo" }
+      ],
+      "tópico": null, "registro": "informal",
+      "descubrimiento": "コーヒーを飲む: la posposición を viene DESPUÉS de コーヒー. En español 'bebo café': la preposición viene ANTES ('de', 'a', etc.) o no existe. ¿Qué diferencia estructural implica esto?",
+      "sistematización": "Orden: [nominal + posposición] + predicado. コーヒー (nominal) + を (posposición acusativa) + 飲む (predicado). La posposición está adherida al nominal, no separada de él.",
+      "vocabulario": [
+        { "jp": "コーヒー", "furigana": "コーヒー", "es": "café (bebida)", "clase": "N", "jlpt": "N5" },
+        { "jp": "飲む", "furigana": "のむ", "es": "beber / tomar", "clase": "V", "grupo": 1, "jlpt": "N5" }
+      ],
+      "notas_hispanohablante": "En español las preposiciones van antes del nominal: 'una taza DE café'. En japonés las posposiciones van después: コーヒーを (café + を). Esta inversión es sistemática — siempre: nominal + posposición.",
+      "interferencia_española": true,
+      "pares_contraste": ["A1-5-002", "A1-5-006"],
+      "calidad": { "naturalidad": 3, "validado": false },
+      "metadatos": { "jlpt": "N5", "tags": ["V", "を", "acusativo", "DS-COMP-01"], "creado": "2026-04-23", "versión": 1 }
+    },
+    {
+      "id": "A1-5-002", "bloque": 5, "conjunto": "DS-COMP-01", "clase": "V",
+      "japonés": "ご飯を食べる。", "furigana": "ごはんをたべる。", "romaji": "Gohan wo taberu.",
+      "español": "Como arroz. / Voy a comer.",
+      "audio_text": "ご飯を食べる",
+      "situación": { "descripción": "Es la hora del almuerzo. Vas a comer.", "tipo": "describir acción habitual", "entorno": "cualquiera" },
+      "predicado": { "núcleo": "食べる", "clase": "V", "grupo": 2, "expresiones_funcionales": [], "expresiones_finales": [] },
+      "complementos": [
+        { "núcleo": "ご飯", "furigana": "ごはん", "posposición": "を", "función": "acusativo" }
+      ],
+      "tópico": null, "registro": "informal",
+      "descubrimiento": "ご飯を食べる. を después de ご飯, antes del predicado. El complemento acusativo siempre precede al predicado.",
+      "sistematización": "Patrón acusativo confirmado: [nominal + を] precede al predicado.",
+      "vocabulario": [
+        { "jp": "ご飯", "furigana": "ごはん", "es": "arroz cocido / comida", "clase": "N", "jlpt": "N5" },
+        { "jp": "食べる", "furigana": "たべる", "es": "comer", "clase": "V", "grupo": 2, "jlpt": "N5" }
+      ],
+      "notas_hispanohablante": null, "interferencia_española": false,
+      "pares_contraste": ["A1-5-001", "A1-5-003"],
+      "calidad": { "naturalidad": 3, "validado": false },
+      "metadatos": { "jlpt": "N5", "tags": ["V", "を", "acusativo", "DS-COMP-01"], "creado": "2026-04-23", "versión": 1 }
+    },
+    {
+      "id": "A1-5-003", "bloque": 5, "conjunto": "DS-COMP-01", "clase": "V",
+      "japonés": "本を読む。", "furigana": "ほんをよむ。", "romaji": "Hon wo yomu.",
+      "español": "Leo un libro. / Leo libros.",
+      "audio_text": "本を読む",
+      "situación": { "descripción": "Los fines de semana siempre lees.", "tipo": "describir hábito", "entorno": "casa" },
+      "predicado": { "núcleo": "読む", "clase": "V", "grupo": 1, "expresiones_funcionales": [], "expresiones_finales": [] },
+      "complementos": [
+        { "núcleo": "本", "furigana": "ほん", "posposición": "を", "función": "acusativo" }
+      ],
+      "tópico": null, "registro": "informal",
+      "descubrimiento": null,
+      "sistematización": "本を読む: acusativo を + verbo transitivo. Patrón confirmado.",
+      "vocabulario": [
+        { "jp": "本", "furigana": "ほん", "es": "libro", "clase": "N", "jlpt": "N5" },
+        { "jp": "読む", "furigana": "よむ", "es": "leer", "clase": "V", "grupo": 1, "jlpt": "N5" }
+      ],
+      "notas_hispanohablante": null, "interferencia_española": false,
+      "pares_contraste": ["A1-5-002", "A1-5-004"],
+      "calidad": { "naturalidad": 3, "validado": false },
+      "metadatos": { "jlpt": "N5", "tags": ["V", "を", "acusativo", "DS-COMP-01"], "creado": "2026-04-23", "versión": 1 }
+    },
+    {
+      "id": "A1-5-004", "bloque": 5, "conjunto": "DS-COMP-01", "clase": "V",
+      "japonés": "音楽を聞く。", "furigana": "おんがくをきく。", "romaji": "Ongaku wo kiku.",
+      "español": "Escucho música.",
+      "audio_text": "音楽を聞く",
+      "situación": { "descripción": "Mientras haces los deberes, pones música de fondo.", "tipo": "describir hábito", "entorno": "casa — estudio" },
+      "predicado": { "núcleo": "聞く", "clase": "V", "grupo": 1, "expresiones_funcionales": [], "expresiones_finales": [] },
+      "complementos": [
+        { "núcleo": "音楽", "furigana": "おんがく", "posposición": "を", "función": "acusativo" }
+      ],
+      "tópico": null, "registro": "informal",
+      "descubrimiento": null,
+      "sistematización": "音楽を聞く. Acusativo を + V.",
+      "vocabulario": [
+        { "jp": "音楽", "furigana": "おんがく", "es": "música", "clase": "N", "jlpt": "N5" },
+        { "jp": "聞く", "furigana": "きく", "es": "escuchar / oír / preguntar", "clase": "V", "grupo": 1, "jlpt": "N5" }
+      ],
+      "notas_hispanohablante": null, "interferencia_española": false,
+      "pares_contraste": ["A1-5-003", "A1-5-005"],
+      "calidad": { "naturalidad": 3, "validado": false },
+      "metadatos": { "jlpt": "N5", "tags": ["V", "を", "acusativo", "DS-COMP-01"], "creado": "2026-04-23", "versión": 1 }
+    },
+    {
+      "id": "A1-5-005", "bloque": 5, "conjunto": "DS-COMP-01", "clase": "V",
+      "japonés": "日本語を勉強する。", "furigana": "にほんごをべんきょうする。", "romaji": "Nihongo wo benkyō suru.",
+      "español": "Estudio japonés.",
+      "audio_text": "日本語を勉強する",
+      "situación": { "descripción": "Llevas tiempo estudiando japonés.", "tipo": "describir actividad habitual", "entorno": "cualquiera" },
+      "predicado": { "núcleo": "勉強する", "clase": "V", "grupo": "irregular", "expresiones_funcionales": [], "expresiones_finales": [] },
+      "complementos": [
+        { "núcleo": "日本語", "furigana": "にほんご", "posposición": "を", "función": "acusativo" }
+      ],
+      "tópico": null, "registro": "informal",
+      "descubrimiento": "勉強する = 勉強 (N) + する (V-irregular). Muchos verbos japoneses son compuestos de N + する. El complemento acusativo marca lo que se estudia.",
+      "sistematización": "N + する forma verbos compuestos muy productivos en japonés: 勉強する (estudiar), 料理する (cocinar), 運動する (hacer ejercicio)...",
+      "vocabulario": [
+        { "jp": "日本語", "furigana": "にほんご", "es": "japonés (idioma)", "clase": "N", "jlpt": "N5" },
+        { "jp": "勉強する", "furigana": "べんきょうする", "es": "estudiar", "clase": "V", "grupo": "irregular", "nota": "N+する compuesto", "jlpt": "N5" }
+      ],
+      "notas_hispanohablante": "日本語を勉強する muestra el patrón N + する muy productivo. En español hay verbos simples ('estudiar', 'cocinar'); en japonés muchos son nominales más する.",
+      "interferencia_española": false,
+      "pares_contraste": ["A1-5-003", "A1-5-023"],
+      "calidad": { "naturalidad": 3, "validado": false },
+      "metadatos": { "jlpt": "N5", "tags": ["V", "を", "acusativo", "する-compuesto", "DS-COMP-01"], "creado": "2026-04-23", "versión": 1 }
+    },
+    {
+      "id": "A1-5-006", "bloque": 5, "conjunto": "DS-COMP-02", "clase": "V",
+      "japonés": "日本語が分かる。", "furigana": "にほんごがわかる。", "romaji": "Nihongo ga wakaru.",
+      "español": "Entiendo japonés. / Se me entiende el japonés.",
+      "audio_text": "日本語が分かる",
+      "situación": { "descripción": "Alguien te habla en japonés y lo entiendes.", "tipo": "constatar comprensión", "entorno": "cualquiera" },
+      "predicado": { "núcleo": "分かる", "clase": "V", "grupo": 1, "expresiones_funcionales": [], "expresiones_finales": [] },
+      "complementos": [
+        { "núcleo": "日本語", "furigana": "にほんご", "posposición": "が", "función": "nominativo" }
+      ],
+      "tópico": null, "registro": "informal",
+      "descubrimiento": "日本語が分かる — が, no を. ¿Por qué no 日本語を分かる? Compara con 日本語を勉強する (を). ¿Qué diferencia hay entre 勉強する y 分かる?",
+      "sistematización": "分かる es un verbo de estado, no de acción. El estado 'entender' se predica con が marcando lo que se entiende (el japonés). 勉強する es una acción sobre un objeto → を. La diferencia が/を refleja la diferencia estado/acción.",
+      "vocabulario": [
+        { "jp": "日本語", "furigana": "にほんご", "es": "japonés (idioma)", "clase": "N", "jlpt": "N5" },
+        { "jp": "分かる", "furigana": "わかる", "es": "entender / comprender / ser claro", "clase": "V", "grupo": 1, "jlpt": "N5" }
+      ],
+      "notas_hispanohablante": "En español 'Entiendo japonés' tiene un complemento directo (japonés). En japonés 日本語が分かる tiene un complemento nominativo (が). El japonés trata 'entender' como un estado que afecta al sujeto, no como una acción que el sujeto ejerce sobre el objeto.",
+      "interferencia_española": true,
+      "pares_contraste": ["A1-5-005", "A1-5-007", "A1-5-023"],
+      "calidad": { "naturalidad": 3, "validado": false },
+      "metadatos": { "jlpt": "N5", "tags": ["V", "が", "nominativo", "verbo-estado", "DS-COMP-02"], "creado": "2026-04-23", "versión": 1 }
+    },
+    {
+      "id": "A1-5-007", "bloque": 5, "conjunto": "DS-COMP-02", "clase": "Na",
+      "japonés": "猫が好きだ。", "furigana": "ねこがすきだ。", "romaji": "Neko ga suki da.",
+      "español": "Me gustan los gatos.",
+      "audio_text": "猫が好きだ",
+      "situación": { "descripción": "Alguien te pregunta si tienes mascota. Dices que te encantan los gatos.", "tipo": "expresar preferencia", "entorno": "casual" },
+      "predicado": { "núcleo": "好き", "clase": "Na", "expresiones_funcionales": ["だ"], "expresiones_finales": [] },
+      "complementos": [
+        { "núcleo": "猫", "furigana": "ねこ", "posposición": "が", "función": "nominativo" }
+      ],
+      "tópico": null, "registro": "informal",
+      "descubrimiento": "猫が好きだ — Na predicate (好きだ) + complemento nominativo (猫が). En español 'me gustan los gatos' tiene: sujeto gramatical (los gatos), objeto indirecto (me), verbo (gustan). En japonés: solo 猫が (nominativo) + 好きだ (predicado). ¿Dónde están el 'me' y el 'gustan'?",
+      "sistematización": "好きだ predica una propiedad de relación. が marca el estímulo (los gatos). El experienciador (yo) no se codifica — se recupera del contexto. No hay equivalente a 'gustar' como verbo.",
+      "vocabulario": [
+        { "jp": "猫", "furigana": "ねこ", "es": "gato", "clase": "N", "jlpt": "N5" },
+        { "jp": "好き", "furigana": "すき", "es": "querido / que gusta", "clase": "Na", "jlpt": "N5" }
+      ],
+      "notas_hispanohablante": "Este ejemplo concentra las diferencias más profundas entre español y japonés: (1) No hay verbo equivalente a 'gustar'. (2) Los gatos son el complemento nominativo (が), no el sujeto activo. (3) 'me' (el experienciador) no existe en la oración — es contexto. Aprender 猫が好きだ de memoria es altamente recomendable.",
+      "interferencia_española": true,
+      "pares_contraste": ["A1-0-012", "A1-5-006", "A1-5-024"],
+      "calidad": { "naturalidad": 3, "validado": false },
+      "metadatos": { "jlpt": "N5", "tags": ["Na", "が", "nominativo", "好き", "interferencia-alta", "DS-COMP-02"], "creado": "2026-04-23", "versión": 1 }
+    },
+    {
+      "id": "A1-5-008", "bloque": 5, "conjunto": "DS-COMP-02", "clase": "A",
+      "japonés": "水が欲しい。", "furigana": "みずがほしい。", "romaji": "Mizu ga hoshii.",
+      "español": "Quiero agua. / Tengo sed.",
+      "audio_text": "水が欲しい",
+      "situación": { "descripción": "Llevas mucho tiempo caminando. Tienes mucha sed.", "tipo": "expresar necesidad", "entorno": "exterior" },
+      "predicado": { "núcleo": "欲しい", "clase": "A", "expresiones_funcionales": [], "expresiones_finales": [] },
+      "complementos": [
+        { "núcleo": "水", "furigana": "みず", "posposición": "が", "función": "nominativo" }
+      ],
+      "tópico": null, "registro": "informal",
+      "descubrimiento": "水が欲しい — A predicate (欲しい) + が. En español 'quiero agua' usa el verbo 'querer' + CD. En japonés 欲しい es un adjetivo ('deseado') + が nominativo. ¿El clase A puede tomar complemento con が?",
+      "sistematización": "Sí: algunos adjetivos A toman complemento nominativo (が). 欲しい (deseado, que se quiere): el objeto deseado se marca con が. No con を — porque 欲しい es A, no V transitivo.",
+      "vocabulario": [
+        { "jp": "水", "furigana": "みず", "es": "agua", "clase": "N", "jlpt": "N5" },
+        { "jp": "欲しい", "furigana": "ほしい", "es": "que se desea / querido", "clase": "A", "jlpt": "N4" }
+      ],
+      "notas_hispanohablante": "欲しい es adjetivo, no verbo. 'Quiero' en español es verbo activo; 欲しい describe un estado ('es deseado/apetecido'). Por eso toma が y no を.",
+      "interferencia_española": true,
+      "pares_contraste": ["A1-5-007", "A1-5-009"],
+      "calidad": { "naturalidad": 3, "validado": false },
+      "metadatos": { "jlpt": "N4", "tags": ["A", "が", "nominativo", "欲しい", "DS-COMP-02"], "creado": "2026-04-23", "versión": 1 }
+    },
+    {
+      "id": "A1-5-009", "bloque": 5, "conjunto": "DS-COMP-02", "clase": "Na",
+      "japonés": "音楽が好きだ。", "furigana": "おんがくがすきだ。", "romaji": "Ongaku ga suki da.",
+      "español": "Me gusta la música.",
+      "audio_text": "音楽が好きだ",
+      "situación": { "descripción": "Alguien te pregunta por tus aficiones.", "tipo": "expresar preferencia", "entorno": "casual" },
+      "predicado": { "núcleo": "好き", "clase": "Na", "expresiones_funcionales": ["だ"], "expresiones_finales": [] },
+      "complementos": [
+        { "núcleo": "音楽", "furigana": "おんがく", "posposición": "が", "función": "nominativo" }
+      ],
+      "tópico": null, "registro": "informal",
+      "descubrimiento": "音楽が好きだ — mismo patrón que 猫が好きだ. が + 好きだ (Na). ¿Puedes predecir 音楽が嫌いだ?",
+      "sistematización": "好きだ y 嫌いだ siempre toman complemento con が. El par 好き/嫌い forma el eje de preferencia en japonés.",
+      "vocabulario": [
+        { "jp": "音楽", "furigana": "おんがく", "es": "música", "clase": "N", "jlpt": "N5" },
+        { "jp": "好き", "furigana": "すき", "es": "que gusta", "clase": "Na", "jlpt": "N5" }
+      ],
+      "notas_hispanohablante": null, "interferencia_española": false,
+      "pares_contraste": ["A1-5-007", "A1-5-010"],
+      "calidad": { "naturalidad": 3, "validado": false },
+      "metadatos": { "jlpt": "N5", "tags": ["Na", "が", "nominativo", "好き", "DS-COMP-02"], "creado": "2026-04-23", "versión": 1 }
+    },
+    {
+      "id": "A1-5-010", "bloque": 5, "conjunto": "DS-COMP-02", "clase": "Na",
+      "japonés": "辛いものが苦手だ。", "furigana": "からいものがにがてだ。", "romaji": "Karai mono ga nigate da.",
+      "español": "Se me dan mal las cosas picantes. / No soy bueno con el picante.",
+      "audio_text": "辛いものが苦手だ",
+      "situación": { "descripción": "Te invitan a comer comida muy picante. Explicas que no toleras bien el picante.", "tipo": "explicar intolerancia/dificultad", "entorno": "comida" },
+      "predicado": { "núcleo": "苦手", "clase": "Na", "expresiones_funcionales": ["だ"], "expresiones_finales": [] },
+      "complementos": [
+        { "núcleo": "辛いもの", "furigana": "からいもの", "posposición": "が", "función": "nominativo" }
+      ],
+      "tópico": null, "registro": "informal",
+      "descubrimiento": "辛いもの = 辛い (A) + もの (N: 'cosa'). 苦手だ (Na) + が. 苦手 es lo opuesto de 得意 (bueno en algo). ¿Qué dice esto de la estructura de preferencia/habilidad en japonés?",
+      "sistematización": "La clase Na de evaluación y preferencia (好き, 嫌い, 得意, 苦手, 好き...) toma complemento nominativo con が. No hay equivalente estructural español — son predicados sin verbo de 'gustar/odiar'.",
+      "vocabulario": [
+        { "jp": "辛い", "furigana": "からい", "es": "picante", "clase": "A", "jlpt": "N4" },
+        { "jp": "もの", "furigana": "もの", "es": "cosa / objeto", "clase": "N", "jlpt": "N4" },
+        { "jp": "苦手", "furigana": "にがて", "es": "que se le da mal / difícil para uno", "clase": "Na", "jlpt": "N3" }
+      ],
+      "notas_hispanohablante": "苦手だ no tiene equivalente directo en español. 'Se me da mal' o 'No soy bueno con' son aproximaciones. Junto con 好き/嫌い/得意 forma un sistema de evaluación subjetiva que en japonés usa predicados Na y が.",
+      "interferencia_española": true,
+      "pares_contraste": ["A1-0-015", "A1-5-007", "A1-5-009"],
+      "calidad": { "naturalidad": 3, "validado": false },
+      "metadatos": { "jlpt": "N3", "tags": ["Na", "が", "nominativo", "evaluación-subjetiva", "DS-COMP-02"], "creado": "2026-04-23", "versión": 1 }
+    },
+    {
+      "id": "A1-5-011", "bloque": 5, "conjunto": "DS-COMP-03", "clase": "V",
+      "japonés": "東京に行く。", "furigana": "とうきょうにいく。", "romaji": "Tōkyō ni iku.",
+      "español": "Voy a Tokio.",
+      "audio_text": "東京に行く",
+      "situación": { "descripción": "El próximo fin de semana vas a Tokio.", "tipo": "describir plan", "entorno": "casual" },
+      "predicado": { "núcleo": "行く", "clase": "V", "grupo": 1, "expresiones_funcionales": [], "expresiones_finales": [] },
+      "complementos": [
+        { "núcleo": "東京", "furigana": "とうきょう", "posposición": "に", "función": "directivo" }
+      ],
+      "tópico": null, "registro": "informal",
+      "descubrimiento": "東京に行く — に después de 東京. Marca la dirección del movimiento. Compara con 東京で (que vendrá después): ¿cuándo se usa に y cuándo で?",
+      "sistematización": "に directivo: marca el destino o dirección del movimiento. Verbos de movimiento (行く, 来る, 帰る, 着く...) toman に para el destino.",
+      "vocabulario": [
+        { "jp": "東京", "furigana": "とうきょう", "es": "Tokio", "clase": "N", "jlpt": "N5" },
+        { "jp": "行く", "furigana": "いく", "es": "ir", "clase": "V", "grupo": 1, "jlpt": "N5" }
+      ],
+      "notas_hispanohablante": "En español 'a Tokio' usa la preposición 'a' antes del lugar. En japonés 東京に usa la posposición に después del lugar. La función es equivalente; la posición es inversa.",
+      "interferencia_española": true,
+      "pares_contraste": ["A1-5-012", "A1-5-016"],
+      "calidad": { "naturalidad": 3, "validado": false },
+      "metadatos": { "jlpt": "N5", "tags": ["V", "に", "directivo", "DS-COMP-03"], "creado": "2026-04-23", "versión": 1 }
+    },
+    {
+      "id": "A1-5-012", "bloque": 5, "conjunto": "DS-COMP-03", "clase": "V",
+      "japonés": "部屋にいる。", "furigana": "へやにいる。", "romaji": "Heya ni iru.",
+      "español": "Estoy en la habitación.",
+      "audio_text": "部屋にいる",
+      "situación": { "descripción": "Alguien te llama desde otra habitación. Dices que estás en tu cuarto.", "tipo": "indicar ubicación propia", "entorno": "casa" },
+      "predicado": { "núcleo": "いる", "clase": "V", "grupo": 2, "nota_semántica": "verbo de existencia (animado)", "expresiones_funcionales": [], "expresiones_finales": [] },
+      "complementos": [
+        { "núcleo": "部屋", "furigana": "へや", "posposición": "に", "función": "locativo-existencial" }
+      ],
+      "tópico": null, "registro": "informal",
+      "descubrimiento": "部屋にいる — に para localización existencial. Compara: 部屋で勉強する (で + actividad). ¿La diferencia entre いる y いく?",
+      "sistematización": "に locativo-existencial: indica dónde se encuentra algo (いる para animados, ある para inanimados). No indica actividad. Contraste: 部屋にいる (estar en la habitación) vs 部屋で勉強する (estudiar en la habitación).",
+      "vocabulario": [
+        { "jp": "部屋", "furigana": "へや", "es": "habitación / cuarto", "clase": "N", "jlpt": "N5" },
+        { "jp": "いる", "furigana": "いる", "es": "estar / haber (animados)", "clase": "V", "grupo": 2, "jlpt": "N5" }
+      ],
+      "notas_hispanohablante": "En español 'en la habitación' usa la misma preposición 'en' tanto para 'estar' como para 'estudiar'. En japonés: に para existencia, で para actividad. Es una distinción que el español no marca con preposiciones diferentes.",
+      "interferencia_española": true,
+      "pares_contraste": ["A1-5-011", "A1-5-016"],
+      "calidad": { "naturalidad": 3, "validado": false },
+      "metadatos": { "jlpt": "N5", "tags": ["V", "に", "locativo-existencial", "いる", "DS-COMP-03"], "creado": "2026-04-23", "versión": 1 }
+    },
+    {
+      "id": "A1-5-013", "bloque": 5, "conjunto": "DS-COMP-03", "clase": "V",
+      "japonés": "7時に起きる。", "furigana": "しちじにおきる。", "romaji": "Shichi-ji ni okiru.",
+      "español": "Me levanto a las 7.",
+      "audio_text": "7時に起きる",
+      "situación": { "descripción": "Describes tu rutina de mañana.", "tipo": "describir rutina", "entorno": "cualquiera" },
+      "predicado": { "núcleo": "起きる", "clase": "V", "grupo": 2, "expresiones_funcionales": [], "expresiones_finales": [] },
+      "complementos": [
+        { "núcleo": "7時", "furigana": "しちじ", "posposición": "に", "función": "temporal" }
+      ],
+      "tópico": null, "registro": "informal",
+      "descubrimiento": "7時に起きる — に para el momento temporal. El mismo に marca destino (東京に), ubicación (部屋に) y momento (7時に). ¿Qué tienen en común estas funciones?",
+      "sistematización": "に temporal: marca el momento en que ocurre un evento (hora, fecha...). La unidad conceptual: に marca un PUNTO — de destino, de ubicación, o de tiempo. En español: 'a las 7' (preposición 'a' antes del tiempo). En japonés: 7時に (posposición に después).",
+      "vocabulario": [
+        { "jp": "7時", "furigana": "しちじ", "es": "las 7 (en punto)", "clase": "N", "jlpt": "N5" },
+        { "jp": "起きる", "furigana": "おきる", "es": "levantarse / despertarse", "clase": "V", "grupo": 2, "jlpt": "N5" }
+      ],
+      "notas_hispanohablante": "En español 'a las 7' usa 'a' tanto para hora ('a las 7') como para destino ('voy a Tokio'). En japonés, ambas funciones también usan に. La equivalencia es notable.",
+      "interferencia_española": false,
+      "pares_contraste": ["A1-5-011", "A1-5-012"],
+      "calidad": { "naturalidad": 3, "validado": false },
+      "metadatos": { "jlpt": "N5", "tags": ["V", "に", "temporal", "DS-COMP-03"], "creado": "2026-04-23", "versión": 1 }
+    },
+    {
+      "id": "A1-5-014", "bloque": 5, "conjunto": "DS-COMP-03", "clase": "V",
+      "japonés": "友達に話す。", "furigana": "ともだちにはなす。", "romaji": "Tomodachi ni hanasu.",
+      "español": "Le cuento a un amigo. / Hablo con un amigo.",
+      "audio_text": "友達に話す",
+      "situación": { "descripción": "Guardas un secreto pero decides contárselo a tu mejor amigo.", "tipo": "comunicar información", "entorno": "casual" },
+      "predicado": { "núcleo": "話す", "clase": "V", "grupo": 1, "expresiones_funcionales": [], "expresiones_finales": [] },
+      "complementos": [
+        { "núcleo": "友達", "furigana": "ともだち", "posposición": "に", "función": "dativo" }
+      ],
+      "tópico": null, "registro": "informal",
+      "descubrimiento": "友達に話す — に dativo (el destinatario de la comunicación). En español 'le cuento a un amigo' usa 'a' para el objeto indirecto. En japonés: に.",
+      "sistematización": "に dativo: marca el destinatario o receptor de una acción de transferencia o comunicación (話す, 送る, 教える, 見せる...). Diferente del に directivo (destino físico) pero mismo marcador.",
+      "vocabulario": [
+        { "jp": "友達", "furigana": "ともだち", "es": "amigo", "clase": "N", "jlpt": "N5" },
+        { "jp": "話す", "furigana": "はなす", "es": "hablar / contar", "clase": "V", "grupo": 1, "jlpt": "N5" }
+      ],
+      "notas_hispanohablante": "En español el objeto indirecto usa 'a' más el pronombre clítico (le). En japonés: nominal + に. Sin pronombre clítico.",
+      "interferencia_española": true,
+      "pares_contraste": ["A1-5-011", "A1-5-015"],
+      "calidad": { "naturalidad": 3, "validado": false },
+      "metadatos": { "jlpt": "N5", "tags": ["V", "に", "dativo", "DS-COMP-03"], "creado": "2026-04-23", "versión": 1 }
+    },
+    {
+      "id": "A1-5-015", "bloque": 5, "conjunto": "DS-COMP-03", "clase": "V",
+      "japonés": "日本に住む。", "furigana": "にほんにすむ。", "romaji": "Nihon ni sumu.",
+      "español": "Vivo en Japón.",
+      "audio_text": "日本に住む",
+      "situación": { "descripción": "Llevas años viviendo en Japón.", "tipo": "describir situación de residencia", "entorno": "cualquiera" },
+      "predicado": { "núcleo": "住む", "clase": "V", "grupo": 1, "expresiones_funcionales": [], "expresiones_finales": [] },
+      "complementos": [
+        { "núcleo": "日本", "furigana": "にほん", "posposición": "に", "función": "locativo-existencial" }
+      ],
+      "tópico": null, "registro": "informal",
+      "descubrimiento": "日本に住む — に con 住む (residir). ¿Por qué に y no で? 住む es un verbo de 'residencia/existencia localizada', no de actividad.",
+      "sistematización": "住む, いる, ある → に (verbos de estado/existencia localizada). 勉強する, 食べる, 働く → で (verbos de actividad con locus). Clave: ¿el verbo predica existencia/estado o actividad?",
+      "vocabulario": [
+        { "jp": "日本", "furigana": "にほん", "es": "Japón", "clase": "N", "jlpt": "N5" },
+        { "jp": "住む", "furigana": "すむ", "es": "vivir / residir", "clase": "V", "grupo": 1, "jlpt": "N4" }
+      ],
+      "notas_hispanohablante": "En español 'en Japón' funciona igual para 'vivir' y para 'trabajar'. En japonés 日本に住む (に) / 日本で働く (で). La distinción に/で es léxicamente determinada por el predicado.",
+      "interferencia_española": true,
+      "pares_contraste": ["A1-5-012", "A1-5-016"],
+      "calidad": { "naturalidad": 3, "validado": false },
+      "metadatos": { "jlpt": "N4", "tags": ["V", "に", "locativo-existencial", "住む", "DS-COMP-03"], "creado": "2026-04-23", "versión": 1 }
+    },
+    {
+      "id": "A1-5-016", "bloque": 5, "conjunto": "DS-COMP-04", "clase": "V",
+      "japonés": "図書館で勉強する。", "furigana": "としょかんでべんきょうする。", "romaji": "Toshokan de benkyō suru.",
+      "español": "Estudio en la biblioteca.",
+      "audio_text": "図書館で勉強する",
+      "situación": { "descripción": "Tu sitio preferido para estudiar es la biblioteca.", "tipo": "describir hábito", "entorno": "biblioteca" },
+      "predicado": { "núcleo": "勉強する", "clase": "V", "grupo": "irregular", "expresiones_funcionales": [], "expresiones_finales": [] },
+      "complementos": [
+        { "núcleo": "図書館", "furigana": "としょかん", "posposición": "で", "función": "locativo" }
+      ],
+      "tópico": null, "registro": "informal",
+      "descubrimiento": "図書館で勉強する — で para el lugar de actividad. Compara: 図書館にいる (に, existencia). ¿La diferencia?",
+      "sistematización": "で locativo: el lugar donde ocurre una actividad activa. 図書館で勉強する (活動の場所). Con いる/ある: 図書館にいる (存在の場所). Regla: actividad → で; existencia → に.",
+      "vocabulario": [
+        { "jp": "図書館", "furigana": "としょかん", "es": "biblioteca", "clase": "N", "jlpt": "N4" },
+        { "jp": "勉強する", "furigana": "べんきょうする", "es": "estudiar", "clase": "V", "grupo": "irregular", "jlpt": "N5" }
+      ],
+      "notas_hispanohablante": "図書館で — で locativo de actividad. Vs. 図書館に — に locativo de existencia. El español usa 'en' para ambos. El japonés distingue con posposiciones distintas.",
+      "interferencia_española": true,
+      "pares_contraste": ["A1-5-012", "A1-5-015", "A1-5-017"],
+      "calidad": { "naturalidad": 3, "validado": false },
+      "metadatos": { "jlpt": "N4", "tags": ["V", "で", "locativo", "DS-COMP-04"], "creado": "2026-04-23", "versión": 1 }
+    },
+    {
+      "id": "A1-5-017", "bloque": 5, "conjunto": "DS-COMP-04", "clase": "V",
+      "japonés": "バスで行く。", "furigana": "バスでいく。", "romaji": "Basu de iku.",
+      "español": "Voy en autobús.",
+      "audio_text": "バスで行く",
+      "situación": { "descripción": "Alguien te pregunta cómo vas al trabajo.", "tipo": "describir medio de transporte", "entorno": "casual" },
+      "predicado": { "núcleo": "行く", "clase": "V", "grupo": 1, "expresiones_funcionales": [], "expresiones_finales": [] },
+      "complementos": [
+        { "núcleo": "バス", "furigana": "バス", "posposición": "で", "función": "instrumental" }
+      ],
+      "tópico": null, "registro": "informal",
+      "descubrimiento": "バスで行く — で instrumental (el medio de transporte). Compare con 東京に行く (に directivo). Una sola oración puede tener ambos: 東京にバスで行く.",
+      "sistematización": "で instrumental: el medio, herramienta o método con que se realiza la acción. バスで (en autobús), 電車で (en tren), 日本語で (en japonés), 箸で食べる (comer con palillos).",
+      "vocabulario": [
+        { "jp": "バス", "furigana": "バス", "es": "autobús", "clase": "N", "jlpt": "N5" },
+        { "jp": "行く", "furigana": "いく", "es": "ir", "clase": "V", "grupo": 1, "jlpt": "N5" }
+      ],
+      "notas_hispanohablante": "En español 'en autobús' usa la preposición 'en'. En japonés バスで usa で. Misma función; posposición vs preposición.",
+      "interferencia_española": false,
+      "pares_contraste": ["A1-5-011", "A1-5-016", "A1-5-018"],
+      "calidad": { "naturalidad": 3, "validado": false },
+      "metadatos": { "jlpt": "N5", "tags": ["V", "で", "instrumental", "transporte", "DS-COMP-04"], "creado": "2026-04-23", "versión": 1 }
+    },
+    {
+      "id": "A1-5-018", "bloque": 5, "conjunto": "DS-COMP-04", "clase": "V",
+      "japonés": "日本語で話す。", "furigana": "にほんごではなす。", "romaji": "Nihongo de hanasu.",
+      "español": "Hablo en japonés.",
+      "audio_text": "日本語で話す",
+      "situación": { "descripción": "En clase, el profesor pide que hables en japonés.", "tipo": "describir modo de comunicación", "entorno": "aula" },
+      "predicado": { "núcleo": "話す", "clase": "V", "grupo": 1, "expresiones_funcionales": [], "expresiones_finales": [] },
+      "complementos": [
+        { "núcleo": "日本語", "furigana": "にほんご", "posposición": "で", "función": "instrumental" }
+      ],
+      "tópico": null, "registro": "informal",
+      "descubrimiento": "日本語で話す — で instrumental con el idioma. El mismo で que バスで行く. ¿La unidad conceptual?",
+      "sistematización": "で instrumental: el medio con que se actúa, ya sea físico (バス, 箸) o simbólico (日本語, メール). La unidad: で = el instrumento/medio de la acción.",
+      "vocabulario": [
+        { "jp": "日本語", "furigana": "にほんご", "es": "japonés (idioma)", "clase": "N", "jlpt": "N5" },
+        { "jp": "話す", "furigana": "はなす", "es": "hablar", "clase": "V", "grupo": 1, "jlpt": "N5" }
+      ],
+      "notas_hispanohablante": "En español 'en japonés' usa 'en'. En japonés 日本語で usa で instrumental. La misma posposición funciona para transporte y lengua — unidad del instrumental.",
+      "interferencia_española": false,
+      "pares_contraste": ["A1-5-017", "A1-5-016"],
+      "calidad": { "naturalidad": 3, "validado": false },
+      "metadatos": { "jlpt": "N5", "tags": ["V", "で", "instrumental", "idioma", "DS-COMP-04"], "creado": "2026-04-23", "versión": 1 }
+    },
+    {
+      "id": "A1-5-019", "bloque": 5, "conjunto": "DS-COMP-04", "clase": "V",
+      "japonés": "カフェでコーヒーを飲む。", "furigana": "カフェでコーヒーをのむ。", "romaji": "Kafe de kōhī wo nomu.",
+      "español": "Bebo café en una cafetería.",
+      "audio_text": "カフェでコーヒーを飲む",
+      "situación": { "descripción": "Tu lugar favorito para trabajar es una cafetería con café.", "tipo": "describir hábito", "entorno": "cafetería" },
+      "predicado": { "núcleo": "飲む", "clase": "V", "grupo": 1, "expresiones_funcionales": [], "expresiones_finales": [] },
+      "complementos": [
+        { "núcleo": "カフェ", "furigana": "カフェ", "posposición": "で", "función": "locativo" },
+        { "núcleo": "コーヒー", "furigana": "コーヒー", "posposición": "を", "función": "acusativo" }
+      ],
+      "tópico": null, "registro": "informal",
+      "descubrimiento": "Dos complementos: で (lugar) + を (objeto). Ambos preceden al predicado. ¿Cuál va antes?",
+      "sistematización": "El orden de los complementos en japonés es relativamente libre, pero la tendencia es: [locativo-で/に] + [acusativo-を] + predicado. La posposición marca la función — el orden es secundario.",
+      "vocabulario": [
+        { "jp": "カフェ", "furigana": "カフェ", "es": "cafetería", "clase": "N", "jlpt": "N4" },
+        { "jp": "コーヒー", "furigana": "コーヒー", "es": "café (bebida)", "clase": "N", "jlpt": "N5" },
+        { "jp": "飲む", "furigana": "のむ", "es": "beber", "clase": "V", "grupo": 1, "jlpt": "N5" }
+      ],
+      "notas_hispanohablante": "En japonés se puede tener varios complementos en la misma oración — cada uno con su posposición propia. No hay distinción de orden obligatorio entre complementos del mismo nivel.",
+      "interferencia_española": false,
+      "pares_contraste": ["A1-5-001", "A1-5-016"],
+      "calidad": { "naturalidad": 3, "validado": false },
+      "metadatos": { "jlpt": "N4", "tags": ["V", "で", "を", "dos-complementos", "DS-COMP-04"], "creado": "2026-04-23", "versión": 1 }
+    },
+    {
+      "id": "A1-5-020", "bloque": 5, "conjunto": "DS-COMP-05", "clase": "V",
+      "japonés": "大阪から来た。", "furigana": "おおさかからきた。", "romaji": "Ōsaka kara kita.",
+      "español": "Vine de Osaka. / Soy de Osaka.",
+      "audio_text": "大阪から来た",
+      "situación": { "descripción": "Te presentas a alguien nuevo. Vienes de Osaka.", "tipo": "indicar procedencia", "entorno": "presentación" },
+      "predicado": { "núcleo": "来る", "clase": "V", "grupo": "irregular", "expresiones_funcionales": ["た"], "expresiones_finales": [] },
+      "complementos": [
+        { "núcleo": "大阪", "furigana": "おおさか", "posposición": "から", "función": "ablativo" }
+      ],
+      "tópico": null, "registro": "informal",
+      "descubrimiento": "大阪から来た — から ablativo (origen del movimiento). から = 'desde / de'. En español 'de Osaka' usa 'de' antes. En japonés 大阪から usa から después.",
+      "sistematización": "から ablativo: marca el punto de partida — espacial (大阪から来る), temporal (9時から始まる). Opuesto y complementario de に (destino) y まで (límite).",
+      "vocabulario": [
+        { "jp": "大阪", "furigana": "おおさか", "es": "Osaka", "clase": "N", "jlpt": "N4" },
+        { "jp": "来る", "furigana": "くる", "es": "venir", "clase": "V", "grupo": "irregular", "jlpt": "N5" }
+      ],
+      "notas_hispanohablante": "から = 'de/desde'. En español 'de Osaka' (preposición antes). En japonés 大阪から (posposición después).",
+      "interferencia_española": false,
+      "pares_contraste": ["A1-5-011", "A1-5-021"],
+      "calidad": { "naturalidad": 3, "validado": false },
+      "metadatos": { "jlpt": "N4", "tags": ["V", "から", "ablativo", "DS-COMP-05"], "creado": "2026-04-23", "versión": 1 }
+    },
+    {
+      "id": "A1-5-021", "bloque": 5, "conjunto": "DS-COMP-05", "clase": "V",
+      "japonés": "9時から勉強する。", "furigana": "くじからべんきょうする。", "romaji": "Ku-ji kara benkyō suru.",
+      "español": "Estudio desde las 9.",
+      "audio_text": "9時から勉強する",
+      "situación": { "descripción": "Tienes un bloque de estudio que empieza a las 9.", "tipo": "describir rutina", "entorno": "cualquiera" },
+      "predicado": { "núcleo": "勉強する", "clase": "V", "grupo": "irregular", "expresiones_funcionales": [], "expresiones_finales": [] },
+      "complementos": [
+        { "núcleo": "9時", "furigana": "くじ", "posposición": "から", "función": "ablativo-temporal" }
+      ],
+      "tópico": null, "registro": "informal",
+      "descubrimiento": "9時から勉強する — から temporal. El mismo から que para origen espacial. ¿El patrón?",
+      "sistematización": "から temporal: marca el inicio de un período. Como に temporal (punto exacto), から temporal (punto de inicio). Contraste: 9時に起きる (a las 9, punto exacto) vs 9時から勉強する (desde las 9, inicio del período).",
+      "vocabulario": [
+        { "jp": "9時", "furigana": "くじ", "es": "las 9 (en punto)", "clase": "N", "jlpt": "N5" },
+        { "jp": "勉強する", "furigana": "べんきょうする", "es": "estudiar", "clase": "V", "jlpt": "N5" }
+      ],
+      "notas_hispanohablante": null, "interferencia_española": false,
+      "pares_contraste": ["A1-5-013", "A1-5-020", "A1-5-022"],
+      "calidad": { "naturalidad": 3, "validado": false },
+      "metadatos": { "jlpt": "N5", "tags": ["V", "から", "ablativo-temporal", "DS-COMP-05"], "creado": "2026-04-23", "versión": 1 }
+    },
+    {
+      "id": "A1-5-022", "bloque": 5, "conjunto": "DS-COMP-05", "clase": "V",
+      "japonés": "駅まで歩く。", "furigana": "えきまであるく。", "romaji": "Eki made aruku.",
+      "español": "Camino hasta la estación.",
+      "audio_text": "駅まで歩く",
+      "situación": { "descripción": "Cuando hace buen tiempo, prefieres caminar hasta la estación.", "tipo": "describir hábito", "entorno": "exterior" },
+      "predicado": { "núcleo": "歩く", "clase": "V", "grupo": 1, "expresiones_funcionales": [], "expresiones_finales": [] },
+      "complementos": [
+        { "núcleo": "駅", "furigana": "えき", "posposición": "まで", "función": "terminativo" }
+      ],
+      "tópico": null, "registro": "informal",
+      "descubrimiento": "駅まで歩く — まで terminativo. まで = 'hasta'. ¿Puedes combinar から y まで?",
+      "sistematización": "から ... まで: desde ... hasta. Espacial: 大阪から東京まで (de Osaka a Tokio). Temporal: 9時から5時まで (de 9 a 5). Son posposiciones simétricas.",
+      "vocabulario": [
+        { "jp": "駅", "furigana": "えき", "es": "estación (de tren/metro)", "clase": "N", "jlpt": "N5" },
+        { "jp": "歩く", "furigana": "あるく", "es": "caminar / andar", "clase": "V", "grupo": 1, "jlpt": "N4" }
+      ],
+      "notas_hispanohablante": "まで = 'hasta'. En español 'hasta la estación' (preposición antes). En japonés 駅まで (posposición después).",
+      "interferencia_española": false,
+      "pares_contraste": ["A1-5-021"],
+      "calidad": { "naturalidad": 3, "validado": false },
+      "metadatos": { "jlpt": "N4", "tags": ["V", "まで", "terminativo", "DS-COMP-05"], "creado": "2026-04-23", "versión": 1 }
+    },
+    {
+      "id": "A1-5-023", "bloque": 5, "conjunto": "DS-COMP-06", "clase": "Na",
+      "japonés": "猫が好きだ。", "furigana": "ねこがすきだ。", "romaji": "Neko ga suki da.",
+      "español": "Me gustan los gatos.",
+      "audio_text": "猫が好きだ",
+      "situación": { "descripción": "Describes tu animal preferido.", "tipo": "expresar preferencia", "entorno": "casual" },
+      "predicado": { "núcleo": "好き", "clase": "Na", "expresiones_funcionales": ["だ"], "expresiones_finales": [] },
+      "complementos": [
+        { "núcleo": "猫", "furigana": "ねこ", "posposición": "が", "función": "nominativo" }
+      ],
+      "tópico": null, "registro": "informal",
+      "descubrimiento": "猫が好きだ (が) vs 猫を飼う (を, entrada siguiente). Los gatos son el mismo referente. ¿Por qué cambia la posposición?",
+      "sistematización": "La posposición depende del predicado, no del nominal. 好きだ (Na, estado de preferencia) → が. 飼う (V, acción transitiva sobre el objeto) → を. El nominal 猫 participa de manera diferente en cada predicado.",
+      "vocabulario": [
+        { "jp": "猫", "furigana": "ねこ", "es": "gato", "clase": "N", "jlpt": "N5" },
+        { "jp": "好き", "furigana": "すき", "es": "que gusta", "clase": "Na", "jlpt": "N5" }
+      ],
+      "notas_hispanohablante": "En español 'me gustan los gatos' y 'tengo gatos' ambos tienen complemento directo (los gatos). En japonés: が (gustar) / を (tener/criar). La distinción es semánticamente más precisa.",
+      "interferencia_española": true,
+      "pares_contraste": ["A1-5-007", "A1-5-024"],
+      "calidad": { "naturalidad": 3, "validado": false },
+      "metadatos": { "jlpt": "N5", "tags": ["Na", "が", "nominativo", "contraste-が-を", "DS-COMP-06"], "creado": "2026-04-23", "versión": 1 }
+    },
+    {
+      "id": "A1-5-024", "bloque": 5, "conjunto": "DS-COMP-06", "clase": "V",
+      "japonés": "猫を飼う。", "furigana": "ねこをかう。", "romaji": "Neko wo kau.",
+      "español": "Tengo un gato. / Cría gatos.",
+      "audio_text": "猫を飼う",
+      "situación": { "descripción": "Alguien te pregunta si tienes mascota en casa.", "tipo": "describir situación de tenencia", "entorno": "casual" },
+      "predicado": { "núcleo": "飼う", "clase": "V", "grupo": 1, "expresiones_funcionales": [], "expresiones_finales": [] },
+      "complementos": [
+        { "núcleo": "猫", "furigana": "ねこ", "posposición": "を", "función": "acusativo" }
+      ],
+      "tópico": null, "registro": "informal",
+      "descubrimiento": "猫を飼う — mismo referente que 猫が好きだ, pero ahora を. 飼う es una acción activa sobre el gato. 好きだ es un estado de experiencia respecto a los gatos.",
+      "sistematización": "La distinción が/を refleja la naturaleza del predicado: estado/experiencia (が) vs acción transitiva sobre el objeto (を).",
+      "vocabulario": [
+        { "jp": "猫", "furigana": "ねこ", "es": "gato", "clase": "N", "jlpt": "N5" },
+        { "jp": "飼う", "furigana": "かう", "es": "criar / tener (animal)", "clase": "V", "grupo": 1, "jlpt": "N4" }
+      ],
+      "notas_hispanohablante": null, "interferencia_española": false,
+      "pares_contraste": ["A1-5-023", "A1-5-025"],
+      "calidad": { "naturalidad": 3, "validado": false },
+      "metadatos": { "jlpt": "N4", "tags": ["V", "を", "acusativo", "contraste-が-を", "DS-COMP-06"], "creado": "2026-04-23", "versión": 1 }
+    },
+    {
+      "id": "A1-5-025", "bloque": 5, "conjunto": "DS-COMP-06", "clase": "V",
+      "japonés": "日本語が分かる。", "furigana": "にほんごがわかる。", "romaji": "Nihongo ga wakaru.",
+      "español": "Entiendo japonés.",
+      "audio_text": "日本語が分かる",
+      "situación": { "descripción": "Alguien te habla en japonés. Lo entiendes.", "tipo": "confirmar comprensión", "entorno": "cualquiera" },
+      "predicado": { "núcleo": "分かる", "clase": "V", "grupo": 1, "expresiones_funcionales": [], "expresiones_finales": [] },
+      "complementos": [
+        { "núcleo": "日本語", "furigana": "にほんご", "posposición": "が", "función": "nominativo" }
+      ],
+      "tópico": null, "registro": "informal",
+      "descubrimiento": "日本語が分かる (が) vs 日本語を勉強する (を, entrada A1-5-005). El mismo 日本語, posposición distinta. ¿La razón?",
+      "sistematización": "分かる (V de estado/experiencia) → が. 勉強する (V de actividad deliberada) → を. 話す (V de actividad) → を también (日本語を話す). La diferencia és semántica: estado vs actividad.",
+      "vocabulario": [
+        { "jp": "日本語", "furigana": "にほんご", "es": "japonés (idioma)", "clase": "N", "jlpt": "N5" },
+        { "jp": "分かる", "furigana": "わかる", "es": "entender / comprender", "clase": "V", "grupo": 1, "jlpt": "N5" }
+      ],
+      "notas_hispanohablante": "Resumen del contraste: 日本語が分かる (estado, 'el japonés se me entiende') / 日本語を勉強する (acción, 'estudio japonés activamente') / 日本語を話す (acción, 'hablo japonés'). La posposición codifica la relación predicado-nominal con precisión.",
+      "interferencia_española": true,
+      "pares_contraste": ["A1-5-005", "A1-5-006", "A1-5-023"],
+      "calidad": { "naturalidad": 3, "validado": false },
+      "metadatos": { "jlpt": "N5", "tags": ["V", "が", "nominativo", "contraste-が-を", "DS-COMP-06"], "creado": "2026-04-23", "versión": 1 }
+    },
+    {
+      "id": "A1-5-026", "bloque": 5, "conjunto": "DS-COMP-06", "clase": "A",
+      "japonés": "この問題が難しい。", "furigana": "このもんだいがむずかしい。", "romaji": "Kono mondai ga muzukashii.",
+      "español": "Este problema es difícil.",
+      "audio_text": "この問題が難しい",
+      "situación": { "descripción": "Estás haciendo ejercicios de japonés y uno te resulta muy difícil.", "tipo": "valorar dificultad", "entorno": "estudio" },
+      "predicado": { "núcleo": "難しい", "clase": "A", "expresiones_funcionales": [], "expresiones_finales": [] },
+      "complementos": [
+        { "núcleo": "この問題", "furigana": "このもんだい", "posposición": "が", "función": "nominativo" }
+      ],
+      "tópico": null, "registro": "informal",
+      "descubrimiento": "この問題が難しい — A predicate (難しい) + が nominativo. Los adjetivos A también pueden tener complemento nominativo con が. ¿Y por qué no を?",
+      "sistematización": "A predicados de valoración (難しい, 大きい, 重い, 楽しい...) toman が para marcar el elemento que tiene esa propiedad. Nunca を — porque no hay acción transitiva.",
+      "vocabulario": [
+        { "jp": "この", "furigana": "この", "es": "este / esta", "clase": "N-modificador", "jlpt": "N5" },
+        { "jp": "問題", "furigana": "もんだい", "es": "problema / pregunta", "clase": "N", "jlpt": "N4" },
+        { "jp": "難しい", "furigana": "むずかしい", "es": "difícil", "clase": "A", "jlpt": "N4" }
+      ],
+      "notas_hispanohablante": "En español 'Este problema es difícil' tiene al sujeto gramatical ('este problema') codificado sin preposición. En japonés この問題が tiene が — siempre marcado, nunca 'desnudo'.",
+      "interferencia_española": false,
+      "pares_contraste": ["A1-0-010", "A1-5-006", "A1-5-025"],
+      "calidad": { "naturalidad": 3, "validado": false },
+      "metadatos": { "jlpt": "N4", "tags": ["A", "が", "nominativo", "DS-COMP-06"], "creado": "2026-04-23", "versión": 1 }
+    }
+  ]
+}

@@ -1,0 +1,1147 @@
+{
+  "bloque": 0,
+  "título": "述語の核 — Las cuatro clases del núcleo predicativo",
+  "descripción": "Bloque fundacional. Las cuatro clases del núcleo predicativo (A, Na, N, V) se presentan en paralelo desde el primer contacto. Ninguna clase es más 'básica' que las demás.",
+
+  "principio_organizador": "En japonés el predicado puede tener cuatro tipos de núcleo: adjetivo (A), nominal adjetival (Na), nominal (N) y verbo (V). En español, los predicados son esencialmente verbales — los adjetivos y los sustantivos necesitan 'ser/estar' para funcionar como predicado. En japonés no: 寒い, 静かだ, 雨だ, 食べる son predicados completos con la misma categoría gramatical. Esta es la primera y más importante diferencia estructural.",
+
+  "nota_sobre_だ": "El だ en 静かだ y 雨だ NO es el núcleo predicativo — es la expresión funcional declarativa. El núcleo es 静か (Na) y 雨 (N) respectivamente. だ marca la predicación nominal, no constituye el predicado. En los adjetivos (A) y los verbos (V), el núcleo ya incluye su propia forma predicativa sin necesitar だ.",
+
+  "conjuntos": [
+
+    {
+      "id": "DS-CORE-01",
+      "título": "Las cuatro clases en un mismo contexto",
+      "objetivo": "El estudiante descubre de inmediato que el predicado japonés no es necesariamente verbal. Las cuatro clases producen oraciones completas igualmente válidas.",
+      "descubrimiento": "Las cuatro oraciones de abajo son oraciones completas. ¿Qué tienen de diferente? ¿Qué tienen de igual? ¿Cuál de las cuatro 'se parece más' al español? ¿Por qué las otras tres sorprenden?",
+      "sistematización": "El predicado japonés tiene cuatro tipos de núcleo: A (adjetivo), Na (nominal adjetival + だ), N (nominal + だ), V (verbo). Todos producen oraciones autosuficientes. En español, solo el verbo es núcleo predicativo 'nativo' — los adjetivos y sustantivos necesitan 'ser/estar'. En japonés no existe esa dependencia.",
+      "nota_hispanohablante": "En español 'Está frío' requiere 'está' (verbo). 'Está tranquilo' requiere 'está'. 'Es lluvia' no existe — se dice 'Llueve' (verbo). En japonés 寒い, 静かだ, 雨だ funcionan sin ningún verbo equivalente a 'ser/estar'. El adjetivo y el sustantivo ya son predicados por sí mismos.",
+      "ids_entradas": ["A1-0-001", "A1-0-002", "A1-0-003", "A1-0-004"]
+    },
+
+    {
+      "id": "DS-CORE-02",
+      "título": "Adjetivos (A) como predicado completo",
+      "objetivo": "El adjetivo japonés es predicado sin necesitar verbo. Expresa propiedades con conjugación propia.",
+      "descubrimiento": "寒い, 暑い, 眠い, 痛い, おいしい. Cada una es una oración completa. En español necesitarías 'está frío', 'tengo sueño', 'duele'... ¿Cuál es la diferencia estructural?",
+      "sistematización": "Los adjetivos en japonés (clase A) funcionan directamente como predicado. No necesitan cópula. Tienen conjugación propia: 高い (afirmativo) → 高くない (negativo) → 高かった (perfectivo). Esta conjugación los distingue radicalmente de los adjetivos en español.",
+      "nota_hispanohablante": "En español, el adjetivo NUNCA es predicado por sí solo: necesita 'estar/ser/tener/hacer'. En japonés, el adjetivo ES el predicado. 眠い (tengo sueño / me da sueño) no tiene equivalente verbal en español — es simplemente el adjetivo solo.",
+      "ids_entradas": ["A1-0-005", "A1-0-006", "A1-0-007", "A1-0-008", "A1-0-009", "A1-0-010"]
+    },
+
+    {
+      "id": "DS-CORE-03",
+      "título": "Nominales adjetivales (Na) como predicado completo",
+      "objetivo": "El Na más だ forma un predicado completo. だ es expresión funcional declarativa, no el núcleo.",
+      "descubrimiento": "静かだ, 元気だ, 好きだ, きれいだ. El だ aparece en todas. ¿Qué es el núcleo — 静か o だ? ¿Cómo lo sabes?",
+      "sistematización": "Na es el núcleo; だ es la expresión funcional declarativa. Prueba: el núcleo cambia (静か/元気/好き), だ es constante. Na se conjuga a través de だ: 静かだ → 静かじゃない → 静かだった.",
+      "nota_hispanohablante": "静か no tiene equivalente exacto en español — es un adjetivo que no puede conjugarse solo (no termina en -い). Requiere だ para predicar. Esto lo hace diferente de la clase A, aunque ambos sean 'adjetivos' conceptualmente.",
+      "ids_entradas": ["A1-0-011", "A1-0-012", "A1-0-013", "A1-0-014", "A1-0-015"]
+    },
+
+    {
+      "id": "DS-CORE-04",
+      "título": "Nominales (N) como predicado completo",
+      "objetivo": "Un sustantivo más だ es un predicado completo. No hay 'ser/estar' — だ es simplemente la marca de predicación nominal.",
+      "descubrimiento": "雨だ, 学生だ, 休みだ. ¿Es だ el verbo 'ser'? ¿Por qué no? Compara: en español 'Es lluvia' no existe — decimos 'Llueve'. En japonés 雨だ sí existe. ¿Qué dice eso sobre la gramática japonesa?",
+      "sistematización": "だ no es el verbo 'ser'. Es la expresión funcional declarativa para los núcleos Na y N. Marca que el núcleo (sustantivo o nominal adjetival) está funcionando como predicado. Sin だ, 雨 sería una exclamación o un tema suelto, no un predicado.",
+      "nota_hispanohablante": "En español el sustantivo como predicado requiere obligatoriamente 'ser': 'Soy estudiante', 'Es lluvia' (*). En japonés 学生だ y 雨だ son estructuras directas: N + declarativo. No hay verbo 'ser' en juego — solo la marca de predicación.",
+      "ids_entradas": ["A1-0-016", "A1-0-017", "A1-0-018", "A1-0-019", "A1-0-020"]
+    },
+
+    {
+      "id": "DS-CORE-05",
+      "título": "Verbos (V) como predicado completo",
+      "objetivo": "El verbo japonés, como los demás núcleos, forma predicado sin necesitar sujeto explícito.",
+      "descubrimiento": "食べる, 行く, 寝る, 帰る. En español cada una necesita sujeto ('como', 'voy', 'me duermo', 'vuelvo'). En japonés el verbo no codifica persona. ¿Qué establece entonces quién come, va, duerme?",
+      "sistematización": "El verbo (V) es el cuarto tipo de núcleo predicativo. Como A, Na, N, no requiere sujeto explícito. La diferencia: el verbo tiene su propia conjugación compleja (grupos 1, 2 e irregulares) y no usa だ.",
+      "nota_hispanohablante": "A diferencia del español, el verbo japonés NO codifica la persona gramaticalmente. 食べる puede significar 'como', 'comes', 'come', 'comemos'... La situación establece el referente. Esto es lo mismo que ocurre con A, Na y N: ningún núcleo predicativo japonés necesita especificar la persona.",
+      "ids_entradas": ["A1-0-021", "A1-0-022", "A1-0-023", "A1-0-024", "A1-0-025"]
+    },
+
+    {
+      "id": "DS-CORE-06",
+      "título": "El mismo predicado — las cuatro clases en contraste directo",
+      "objetivo": "Ver las cuatro clases lado a lado con situaciones análogas consolida que son paralelas, no jerárquicas.",
+      "descubrimiento": "Compara los cuatro grupos: A sin だ, Na con だ, N con だ, V sin だ. ¿Qué patrón ves en el uso de だ? ¿Por qué A y V no lo usan?",
+      "sistematización": "だ acompaña a Na y N porque esas clases no tienen forma predicativa propia. A tiene conjugación propia (termina en -い conjugable). V tiene conjugación verbal propia. Na y N necesitan だ para convertirse en predicado.",
+      "nota_hispanohablante": "Este es el punto de consolidación: A y V son predicados 'autónomos'; Na y N predican a través de だ. En todos los casos, la situación — no la gramática — establece el referente.",
+      "ids_entradas": ["A1-0-026", "A1-0-027", "A1-0-028", "A1-0-029"]
+    }
+
+  ],
+
+  "entradas": [
+
+    {
+      "id": "A1-0-001",
+      "bloque": 0,
+      "conjunto": "DS-CORE-01",
+      "clase": "A",
+
+      "japonés": "寒い。",
+      "furigana": "さむい。",
+      "romaji": "Samui.",
+      "español": "Hace frío. / Qué frío.",
+      "audio_text": "寒い",
+
+      "situación": {
+        "descripción": "Sales a la calle en invierno. Una ráfaga de aire frío te golpea.",
+        "tipo": "reacción espontánea a sensación",
+        "entorno": "exterior — invierno"
+      },
+
+      "predicado": {
+        "núcleo": "寒い",
+        "clase": "A",
+        "expresiones_funcionales": [],
+        "expresiones_finales": []
+      },
+
+      "complementos": [],
+      "tópico": null,
+      "registro": "informal",
+
+      "descubrimiento": "寒い es una oración completa. En español necesitas 'Hace frío' o 'Qué frío hace'. ¿Por qué en japonés basta con un adjetivo?",
+      "sistematización": "寒い (adjetivo, clase A) es directamente el predicado. No necesita cópula. La clase A tiene forma predicativa propia.",
+
+      "vocabulario": [
+        { "jp": "寒い", "furigana": "さむい", "es": "frío (sensación)", "clase": "A", "jlpt": "N5" }
+      ],
+
+      "notas_hispanohablante": "En español 'frío' solo es predicado con 'hace' o 'está': 'Hace frío', 'Está frío'. En japonés 寒い es predicado por sí solo — el adjetivo ES la oración.",
+      "interferencia_española": true,
+
+      "pares_contraste": ["A1-0-002", "A1-0-003", "A1-0-004"],
+
+      "calidad": { "naturalidad": 3, "validado": false },
+      "metadatos": {
+        "jlpt": "N5",
+        "tags": ["A", "predicado-solo", "reacción-espontánea", "DS-CORE-01"],
+        "creado": "2026-04-23", "versión": 1
+      }
+    },
+
+    {
+      "id": "A1-0-002",
+      "bloque": 0,
+      "conjunto": "DS-CORE-01",
+      "clase": "Na",
+
+      "japonés": "静かだ。",
+      "furigana": "しずかだ。",
+      "romaji": "Shizuka da.",
+      "español": "Está tranquilo. / Qué silencioso.",
+      "audio_text": "静かだ",
+
+      "situación": {
+        "descripción": "Entras a una biblioteca. El silencio es llamativo.",
+        "tipo": "reacción espontánea a entorno",
+        "entorno": "biblioteca"
+      },
+
+      "predicado": {
+        "núcleo": "静か",
+        "clase": "Na",
+        "expresiones_funcionales": ["だ"],
+        "expresiones_finales": []
+      },
+
+      "complementos": [],
+      "tópico": null,
+      "registro": "informal",
+
+      "descubrimiento": "El núcleo es 静か, no だ. ¿Cómo sabes que 静か es el núcleo? (Pista: ¿qué cambia entre 静かだ, 元気だ, 好きだ?)",
+      "sistematización": "静か es clase Na (nominal adjetival). No tiene forma predicativa propia — necesita だ para predicar. El núcleo es 静か; だ es la expresión funcional declarativa.",
+
+      "vocabulario": [
+        { "jp": "静か", "furigana": "しずか", "es": "tranquilo / silencioso", "clase": "Na", "jlpt": "N5" }
+      ],
+
+      "notas_hispanohablante": "En español 'Está tranquilo' usa el verbo 'estar'. En japonés 静かだ no tiene ningún equivalente a 'estar'. El だ no es un verbo — es la marca de predicación nominal.",
+      "interferencia_española": true,
+
+      "pares_contraste": ["A1-0-001", "A1-0-003", "A1-0-004", "A1-0-011"],
+
+      "calidad": { "naturalidad": 3, "validado": false },
+      "metadatos": {
+        "jlpt": "N5",
+        "tags": ["Na", "だ", "predicado-solo", "DS-CORE-01"],
+        "creado": "2026-04-23", "versión": 1
+      }
+    },
+
+    {
+      "id": "A1-0-003",
+      "bloque": 0,
+      "conjunto": "DS-CORE-01",
+      "clase": "N",
+
+      "japonés": "雨だ。",
+      "furigana": "あめだ。",
+      "romaji": "Ame da.",
+      "español": "Llueve. / Es lluvia. / Está lloviendo.",
+      "audio_text": "雨だ",
+
+      "situación": {
+        "descripción": "Miras por la ventana. Está lloviendo.",
+        "tipo": "constatar situación",
+        "entorno": "interior — mirando al exterior"
+      },
+
+      "predicado": {
+        "núcleo": "雨",
+        "clase": "N",
+        "expresiones_funcionales": ["だ"],
+        "expresiones_finales": []
+      },
+
+      "complementos": [],
+      "tópico": null,
+      "registro": "informal",
+
+      "descubrimiento": "雨 es 'lluvia' (sustantivo). ¿Cómo es posible que 'lluvia' solo sea una oración completa? En español necesitarías 'Llueve' (verbo).",
+      "sistematización": "雨 (sustantivo, clase N) más だ forma un predicado completo. Traducciones posibles: 'llueve', 'está lloviendo', 'es lluvia'. El español fuerza un verbo; el japonés predica directamente con el sustantivo.",
+
+      "vocabulario": [
+        { "jp": "雨", "furigana": "あめ", "es": "lluvia", "clase": "N", "jlpt": "N5" }
+      ],
+
+      "notas_hispanohablante": "En español 'lluvia' no puede ser predicado solo — se necesita el verbo 'llover'. En japonés 雨だ es una oración completa y perfectamente natural. El sustantivo predica directamente, con だ como marca de predicación.",
+      "interferencia_española": true,
+
+      "pares_contraste": ["A1-0-001", "A1-0-002", "A1-0-004", "A1-0-016"],
+
+      "calidad": { "naturalidad": 3, "validado": false },
+      "metadatos": {
+        "jlpt": "N5",
+        "tags": ["N", "だ", "predicado-solo", "DS-CORE-01"],
+        "creado": "2026-04-23", "versión": 1
+      }
+    },
+
+    {
+      "id": "A1-0-004",
+      "bloque": 0,
+      "conjunto": "DS-CORE-01",
+      "clase": "V",
+
+      "japonés": "食べる。",
+      "furigana": "たべる。",
+      "romaji": "Taberu.",
+      "español": "Como. / Voy a comer.",
+      "audio_text": "食べる",
+
+      "situación": {
+        "descripción": "Alguien te ofrece comida. Aceptas.",
+        "tipo": "aceptar ofrecimiento",
+        "entorno": "casual"
+      },
+
+      "predicado": {
+        "núcleo": "食べる",
+        "clase": "V",
+        "expresiones_funcionales": [],
+        "expresiones_finales": []
+      },
+
+      "complementos": [],
+      "tópico": null,
+      "registro": "informal",
+
+      "descubrimiento": "食べる es el único de los cuatro que 'se parece' al español (un verbo como predicado). Pero ¿qué le falta comparado con 'Como' en español?",
+      "sistematización": "食べる (verbo, clase V) es predicado sin sujeto codificado. A diferencia del español, el verbo japonés no marca persona. Igual que A, Na, N: es la situación quien establece el referente.",
+
+      "vocabulario": [
+        { "jp": "食べる", "furigana": "たべる", "es": "comer", "clase": "V", "grupo": 2, "jlpt": "N5" }
+      ],
+
+      "notas_hispanohablante": "食べる parece familiar (verbo = predicado), pero tiene una diferencia clave: no codifica persona. 'Como' en español tiene 'yo' implícito en la terminación -o. 食べる no tiene ningún equivalente a esa marca.",
+      "interferencia_española": true,
+
+      "pares_contraste": ["A1-0-001", "A1-0-002", "A1-0-003"],
+
+      "calidad": { "naturalidad": 3, "validado": false },
+      "metadatos": {
+        "jlpt": "N5",
+        "tags": ["V", "predicado-solo", "DS-CORE-01"],
+        "creado": "2026-04-23", "versión": 1
+      }
+    },
+
+    {
+      "id": "A1-0-005",
+      "bloque": 0,
+      "conjunto": "DS-CORE-02",
+      "clase": "A",
+
+      "japonés": "暑い。",
+      "furigana": "あつい。",
+      "romaji": "Atsui.",
+      "español": "Qué calor. / Hace calor.",
+      "audio_text": "暑い",
+
+      "situación": {
+        "descripción": "Es agosto. Sales a la calle al mediodía.",
+        "tipo": "reacción espontánea a sensación",
+        "entorno": "exterior — verano"
+      },
+
+      "predicado": { "núcleo": "暑い", "clase": "A", "expresiones_funcionales": [], "expresiones_finales": [] },
+      "complementos": [], "tópico": null, "registro": "informal",
+
+      "descubrimiento": "暑い — 寒い. Los dos son adjetivos de temperatura que son predicados completos. ¿Ves el patrón de la clase A?",
+      "sistematización": "Clase A: adjetivos que terminan en -い y pueden funcionar directamente como predicado.",
+
+      "vocabulario": [{ "jp": "暑い", "furigana": "あつい", "es": "caluroso / hace calor", "clase": "A", "jlpt": "N5" }],
+
+      "notas_hispanohablante": "En español 'caluroso' no es predicado solo. Se necesita 'Hace calor' o 'Está caluroso'. En japonés 暑い es suficiente.",
+      "interferencia_española": true,
+
+      "pares_contraste": ["A1-0-001", "A1-0-006", "A1-0-007"],
+
+      "calidad": { "naturalidad": 3, "validado": false },
+      "metadatos": { "jlpt": "N5", "tags": ["A", "predicado-solo", "sensación", "DS-CORE-02"], "creado": "2026-04-23", "versión": 1 }
+    },
+
+    {
+      "id": "A1-0-006",
+      "bloque": 0,
+      "conjunto": "DS-CORE-02",
+      "clase": "A",
+
+      "japonés": "眠い。",
+      "furigana": "ねむい。",
+      "romaji": "Nemui.",
+      "español": "Tengo sueño. / Qué sueño.",
+      "audio_text": "眠い",
+
+      "situación": {
+        "descripción": "Son las 2 de la tarde en clase. Se te cierran los ojos.",
+        "tipo": "expresar estado interno",
+        "entorno": "aula"
+      },
+
+      "predicado": { "núcleo": "眠い", "clase": "A", "expresiones_funcionales": [], "expresiones_finales": [] },
+      "complementos": [], "tópico": null, "registro": "informal",
+
+      "descubrimiento": "En español dices 'Tengo sueño' — un verbo (tener) más un sustantivo. En japonés 眠い es un adjetivo solo. ¿Qué implica eso sobre cómo el japonés categoriza las sensaciones?",
+      "sistematización": "El japonés expresa muchas sensaciones que el español verbaliza ('tener hambre', 'tener sueño') directamente con adjetivos: 眠い, 痛い, お腹すいた...",
+
+      "vocabulario": [{ "jp": "眠い", "furigana": "ねむい", "es": "somnoliento / tengo sueño", "clase": "A", "jlpt": "N4" }],
+
+      "notas_hispanohablante": "眠い no tiene equivalente adjetival directo en español. Lo más cercano es 'somnoliento' (raramente usado) o la construcción verbal 'tengo sueño'. El japonés categoriza esto como propiedad (adjetivo), no como posesión (verbo).",
+      "interferencia_española": true,
+
+      "pares_contraste": ["A1-0-007", "A1-0-008"],
+
+      "calidad": { "naturalidad": 3, "validado": false },
+      "metadatos": { "jlpt": "N4", "tags": ["A", "predicado-solo", "sensación-corporal", "DS-CORE-02"], "creado": "2026-04-23", "versión": 1 }
+    },
+
+    {
+      "id": "A1-0-007",
+      "bloque": 0,
+      "conjunto": "DS-CORE-02",
+      "clase": "A",
+
+      "japonés": "痛い。",
+      "furigana": "いたい。",
+      "romaji": "Itai.",
+      "español": "Duele. / Ay. / Me duele.",
+      "audio_text": "痛い",
+
+      "situación": {
+        "descripción": "Te golpeas el codo contra la mesa.",
+        "tipo": "reacción de dolor",
+        "entorno": "cualquiera"
+      },
+
+      "predicado": { "núcleo": "痛い", "clase": "A", "expresiones_funcionales": [], "expresiones_finales": [] },
+      "complementos": [], "tópico": null, "registro": "informal",
+
+      "descubrimiento": "En español 'Duele' es un verbo. En japonés 痛い es un adjetivo. La misma realidad, categoría gramatical distinta en cada lengua.",
+      "sistematización": "痛い (doloroso / que duele) es un adjetivo-predicado. El español usa el verbo 'doler'; el japonés usa el adjetivo 痛い. Diferentes categorías para la misma experiencia.",
+
+      "vocabulario": [{ "jp": "痛い", "furigana": "いたい", "es": "doloroso / duele", "clase": "A", "jlpt": "N4" }],
+
+      "notas_hispanohablante": "Este ejemplo ilustra perfectamente por qué no se puede traducir estructura por estructura. 'Duele' es verbo en español; 痛い es adjetivo en japonés. Si el estudiante busca el verbo en japonés, no lo encontrará.",
+      "interferencia_española": true,
+
+      "pares_contraste": ["A1-0-006", "A1-0-008"],
+
+      "calidad": { "naturalidad": 3, "validado": false },
+      "metadatos": { "jlpt": "N4", "tags": ["A", "predicado-solo", "sensación-corporal", "DS-CORE-02"], "creado": "2026-04-23", "versión": 1 }
+    },
+
+    {
+      "id": "A1-0-008",
+      "bloque": 0,
+      "conjunto": "DS-CORE-02",
+      "clase": "A",
+
+      "japonés": "おいしい。",
+      "furigana": "おいしい。",
+      "romaji": "Oishii.",
+      "español": "Está rico. / ¡Qué bueno!",
+      "audio_text": "おいしい",
+
+      "situación": {
+        "descripción": "Das el primer bocado a algo que te han preparado.",
+        "tipo": "reacción espontánea a sabor",
+        "entorno": "comida"
+      },
+
+      "predicado": { "núcleo": "おいしい", "clase": "A", "expresiones_funcionales": [], "expresiones_finales": [] },
+      "complementos": [], "tópico": null, "registro": "informal",
+
+      "descubrimiento": "おいしい como reacción espontánea. Una palabra, una emoción, una oración.",
+      "sistematización": "Clase A: un adjetivo solo puede expresar una reacción completa. No hay sujeto, no hay objeto, no hay verbo auxiliar.",
+
+      "vocabulario": [{ "jp": "おいしい", "furigana": "おいしい", "es": "delicioso / rico", "clase": "A", "jlpt": "N5" }],
+
+      "notas_hispanohablante": "En español necesitas 'Está rico' (verbo) o 'Qué rico' (exclamación fragmentaria). En japonés おいしい es una oración gramaticalmente completa, no un fragmento.",
+      "interferencia_española": true,
+
+      "pares_contraste": ["A1-0-005", "A1-0-006"],
+
+      "calidad": { "naturalidad": 3, "validado": false },
+      "metadatos": { "jlpt": "N5", "tags": ["A", "predicado-solo", "reacción-espontánea", "DS-CORE-02"], "creado": "2026-04-23", "versión": 1 }
+    },
+
+    {
+      "id": "A1-0-009",
+      "bloque": 0,
+      "conjunto": "DS-CORE-02",
+      "clase": "A",
+
+      "japonés": "楽しい。",
+      "furigana": "たのしい。",
+      "romaji": "Tanoshii.",
+      "español": "Es divertido. / ¡Qué bien!",
+      "audio_text": "楽しい",
+
+      "situación": {
+        "descripción": "Estás en un festival. Lo estás pasando genial.",
+        "tipo": "expresar estado emocional",
+        "entorno": "evento social"
+      },
+
+      "predicado": { "núcleo": "楽しい", "clase": "A", "expresiones_funcionales": [], "expresiones_finales": [] },
+      "complementos": [], "tópico": null, "registro": "informal",
+
+      "descubrimiento": "楽しい — un adjetivo que describe una experiencia emocional. Predicado completo.",
+      "sistematización": "El japonés expresa estados emocionales con adjetivos directamente: 楽しい, 悲しい, 嬉しい... Sin verbo auxiliar.",
+
+      "vocabulario": [{ "jp": "楽しい", "furigana": "たのしい", "es": "divertido / alegre", "clase": "A", "jlpt": "N4" }],
+
+      "notas_hispanohablante": "En español 'divertido' como predicado necesita 'es/está': 'Es divertido'. En japonés 楽しい predica directamente.",
+      "interferencia_española": false,
+
+      "pares_contraste": ["A1-0-008", "A1-0-010"],
+
+      "calidad": { "naturalidad": 3, "validado": false },
+      "metadatos": { "jlpt": "N4", "tags": ["A", "predicado-solo", "emoción", "DS-CORE-02"], "creado": "2026-04-23", "versión": 1 }
+    },
+
+    {
+      "id": "A1-0-010",
+      "bloque": 0,
+      "conjunto": "DS-CORE-02",
+      "clase": "A",
+
+      "japonés": "難しい。",
+      "furigana": "むずかしい。",
+      "romaji": "Muzukashii.",
+      "español": "Es difícil. / Qué difícil.",
+      "audio_text": "難しい",
+
+      "situación": {
+        "descripción": "Estás mirando un problema de matemáticas. No ves la solución.",
+        "tipo": "constatar dificultad",
+        "entorno": "estudio"
+      },
+
+      "predicado": { "núcleo": "難しい", "clase": "A", "expresiones_funcionales": [], "expresiones_finales": [] },
+      "complementos": [], "tópico": null, "registro": "informal",
+
+      "descubrimiento": "難しい — adjetivo, predicado. El problema (el objeto) no se menciona porque ya está claro por la situación.",
+      "sistematización": "Clase A confirmada: adjetivo como predicado completo, sin referencia explícita al objeto.",
+
+      "vocabulario": [{ "jp": "難しい", "furigana": "むずかしい", "es": "difícil", "clase": "A", "jlpt": "N4" }],
+
+      "notas_hispanohablante": "'Es difícil' en español necesita el verbo 'es'. En japonés 難しい predica directamente.",
+      "interferencia_española": false,
+
+      "pares_contraste": ["A1-0-009"],
+
+      "calidad": { "naturalidad": 3, "validado": false },
+      "metadatos": { "jlpt": "N4", "tags": ["A", "predicado-solo", "DS-CORE-02"], "creado": "2026-04-23", "versión": 1 }
+    },
+
+    {
+      "id": "A1-0-011",
+      "bloque": 0,
+      "conjunto": "DS-CORE-03",
+      "clase": "Na",
+
+      "japonés": "元気だ。",
+      "furigana": "げんきだ。",
+      "romaji": "Genki da.",
+      "español": "Estoy bien. / Estoy de buenas.",
+      "audio_text": "元気だ",
+
+      "situación": {
+        "descripción": "Alguien te pregunta cómo estás. Estás bien.",
+        "tipo": "responder a saludo",
+        "entorno": "casual"
+      },
+
+      "predicado": { "núcleo": "元気", "clase": "Na", "expresiones_funcionales": ["だ"], "expresiones_finales": [] },
+      "complementos": [], "tópico": null, "registro": "informal",
+
+      "descubrimiento": "元気 es el núcleo, だ la expresión funcional. Compara: 静かだ / 元気だ / 好きだ. ¿Qué cambia? ¿Qué permanece igual?",
+      "sistematización": "En 元気だ el núcleo es 元気 (Na). だ es constante — es la marca de predicación. El núcleo varía; だ no.",
+
+      "vocabulario": [{ "jp": "元気", "furigana": "げんき", "es": "bien / con energía / saludable", "clase": "Na", "jlpt": "N5" }],
+
+      "notas_hispanohablante": "元気 no existe como adjetivo en español — es un concepto que mezcla 'estar bien', 'tener energía', 'estar saludable'. Un ejemplo de cómo el japonés categoriza distinto.",
+      "interferencia_española": false,
+
+      "pares_contraste": ["A1-0-002", "A1-0-012", "A1-0-013"],
+
+      "calidad": { "naturalidad": 3, "validado": false },
+      "metadatos": { "jlpt": "N5", "tags": ["Na", "だ", "predicado-solo", "DS-CORE-03"], "creado": "2026-04-23", "versión": 1 }
+    },
+
+    {
+      "id": "A1-0-012",
+      "bloque": 0,
+      "conjunto": "DS-CORE-03",
+      "clase": "Na",
+
+      "japonés": "好きだ。",
+      "furigana": "すきだ。",
+      "romaji": "Suki da.",
+      "español": "Me gusta. / Lo quiero.",
+      "audio_text": "好きだ",
+
+      "situación": {
+        "descripción": "Alguien te pregunta si te gusta el café. Sí, te gusta.",
+        "tipo": "expresar preferencia",
+        "entorno": "casual"
+      },
+
+      "predicado": { "núcleo": "好き", "clase": "Na", "expresiones_funcionales": ["だ"], "expresiones_finales": [] },
+      "complementos": [], "tópico": null, "registro": "informal",
+
+      "descubrimiento": "En español 'Me gusta' requiere el verbo 'gustar'. En japonés 好きだ es un nominal adjetival — no hay verbo de 'gustar'. ¿Cómo traduce el japonés este concepto?",
+      "sistematización": "好き (Na) significa literalmente 'querido / apreciado'. 好きだ predica esa propiedad. La estructura es radicalmente distinta del español 'gustar'.",
+
+      "vocabulario": [{ "jp": "好き", "furigana": "すき", "es": "querido / que gusta / favorito", "clase": "Na", "jlpt": "N5" }],
+
+      "notas_hispanohablante": "好きだ es uno de los casos donde la interferencia española es más fuerte: el estudiante busca un verbo equivalente a 'gustar'. No existe. 好き es un nominal adjetival que predica una propiedad de la relación entre el referente y el objeto.",
+      "interferencia_española": true,
+
+      "pares_contraste": ["A1-0-011", "A1-0-013"],
+
+      "calidad": { "naturalidad": 3, "validado": false },
+      "metadatos": { "jlpt": "N5", "tags": ["Na", "だ", "predicado-solo", "preferencia", "DS-CORE-03"], "creado": "2026-04-23", "versión": 1 }
+    },
+
+    {
+      "id": "A1-0-013",
+      "bloque": 0,
+      "conjunto": "DS-CORE-03",
+      "clase": "Na",
+
+      "japonés": "大変だ。",
+      "furigana": "たいへんだ。",
+      "romaji": "Taihen da.",
+      "español": "Es horrible. / Qué difícil. / Es terrible.",
+      "audio_text": "大変だ",
+
+      "situación": {
+        "descripción": "Tu amigo te cuenta que tiene tres exámenes mañana. Reaccionas.",
+        "tipo": "reacción empática",
+        "entorno": "conversación casual"
+      },
+
+      "predicado": { "núcleo": "大変", "clase": "Na", "expresiones_funcionales": ["だ"], "expresiones_finales": [] },
+      "complementos": [], "tópico": null, "registro": "informal",
+
+      "descubrimiento": "大変 es Na. El だ siempre aparece. ¿Puedes ya predecir la forma negativa? (Pista: Na → じゃない)",
+      "sistematización": "大変だ: 大変 (Na) + だ. La conjugación: 大変だ → 大変じゃない → 大変だった.",
+
+      "vocabulario": [{ "jp": "大変", "furigana": "たいへんだ", "es": "terrible / muy duro / difícil en extremo", "clase": "Na", "jlpt": "N4" }],
+
+      "notas_hispanohablante": "大変 tiene un rango semántico amplio: 'terrible', 'muy difícil', 'tremendo'. No tiene un equivalente exacto en español.",
+      "interferencia_española": false,
+
+      "pares_contraste": ["A1-0-011", "A1-0-012"],
+
+      "calidad": { "naturalidad": 3, "validado": false },
+      "metadatos": { "jlpt": "N4", "tags": ["Na", "だ", "predicado-solo", "DS-CORE-03"], "creado": "2026-04-23", "versión": 1 }
+    },
+
+    {
+      "id": "A1-0-014",
+      "bloque": 0,
+      "conjunto": "DS-CORE-03",
+      "clase": "Na",
+
+      "japonés": "きれいだ。",
+      "furigana": "きれいだ。",
+      "romaji": "Kirei da.",
+      "español": "Es bonito. / Está limpio. / Qué bonito.",
+      "audio_text": "きれいだ",
+
+      "situación": {
+        "descripción": "Ves un cuadro en una galería. Te parece muy bello.",
+        "tipo": "reacción estética",
+        "entorno": "museo o galería"
+      },
+
+      "predicado": { "núcleo": "きれい", "clase": "Na", "expresiones_funcionales": ["だ"], "expresiones_finales": [] },
+      "complementos": [], "tópico": null, "registro": "informal",
+
+      "descubrimiento": "きれい termina en -い igual que los adjetivos de clase A. ¿Es clase A o Na? ¿Cómo lo distingues?",
+      "sistematización": "きれい es clase Na, aunque termina en -い. La prueba: no se conjuga como A (*きれくない es incorrecto → se dice きれいじゃない). Na siempre usa だ/じゃない/だった.",
+      "nota_gramatical": "Error frecuente: きれくない (*) en vez de きれいじゃない. La terminación -い no garantiza la clase A.",
+
+      "vocabulario": [{ "jp": "きれい", "furigana": "きれい", "es": "bonito / limpio / bello", "clase": "Na", "jlpt": "N5" }],
+
+      "notas_hispanohablante": "きれい es el ejemplo clásico que muestra que terminar en -い NO significa clase A. Los estudiantes hispanohablantes cometen frecuentemente el error de conjugarlo como adjetivo A.",
+      "interferencia_española": false,
+
+      "pares_contraste": ["A1-0-005", "A1-0-011"],
+
+      "calidad": { "naturalidad": 3, "validado": false },
+      "metadatos": { "jlpt": "N5", "tags": ["Na", "だ", "predicado-solo", "error-frecuente", "DS-CORE-03"], "creado": "2026-04-23", "versión": 1 }
+    },
+
+    {
+      "id": "A1-0-015",
+      "bloque": 0,
+      "conjunto": "DS-CORE-03",
+      "clase": "Na",
+
+      "japonés": "上手だ。",
+      "furigana": "じょうずだ。",
+      "romaji": "Jōzu da.",
+      "español": "Es bueno en eso. / Lo hace bien.",
+      "audio_text": "上手だ",
+
+      "situación": {
+        "descripción": "Ves a alguien tocar la guitarra con mucha habilidad.",
+        "tipo": "valorar habilidad ajena",
+        "entorno": "cualquiera"
+      },
+
+      "predicado": { "núcleo": "上手", "clase": "Na", "expresiones_funcionales": ["だ"], "expresiones_finales": [] },
+      "complementos": [], "tópico": null, "registro": "informal",
+
+      "descubrimiento": "上手だ — Na confirmado. El patrón Na + だ es ahora reconocible.",
+      "sistematización": "Confirmación del patrón Na: núcleo invariable (上手) + だ como marca de predicación.",
+
+      "vocabulario": [{ "jp": "上手", "furigana": "じょうず", "es": "hábil / bueno en algo", "clase": "Na", "jlpt": "N5" }],
+
+      "notas_hispanohablante": "Nota: 上手だ se usa para valorar la habilidad de otros, no la propia. Decirse 上手だ a uno mismo suena arrogante en japonés.",
+      "interferencia_española": false,
+
+      "pares_contraste": ["A1-0-011", "A1-0-014"],
+
+      "calidad": { "naturalidad": 3, "validado": false },
+      "metadatos": { "jlpt": "N5", "tags": ["Na", "だ", "predicado-solo", "pragmática", "DS-CORE-03"], "creado": "2026-04-23", "versión": 1 }
+    },
+
+    {
+      "id": "A1-0-016",
+      "bloque": 0,
+      "conjunto": "DS-CORE-04",
+      "clase": "N",
+
+      "japonés": "本物だ。",
+      "furigana": "ほんものだ。",
+      "romaji": "Honmono da.",
+      "español": "Es de verdad. / Es auténtico.",
+      "audio_text": "本物だ",
+
+      "situación": {
+        "descripción": "En un mercado, alguien te dice que una bolsa de marca es original.",
+        "tipo": "afirmar autenticidad",
+        "entorno": "comercio"
+      },
+
+      "predicado": { "núcleo": "本物", "clase": "N", "expresiones_funcionales": ["だ"], "expresiones_finales": [] },
+      "complementos": [], "tópico": null, "registro": "informal",
+
+      "descubrimiento": "本物 es 'la cosa real/original'. Es un sustantivo. Con だ forma predicado. ¿En qué se diferencia de Na + だ?",
+      "sistematización": "N + だ: el sustantivo funciona como núcleo predicativo. Formalmente igual que Na + だ. La diferencia es léxica: Na no puede modificar directamente un nombre sin な; N sí puede directamente.",
+
+      "vocabulario": [{ "jp": "本物", "furigana": "ほんもの", "es": "original / auténtico / lo real", "clase": "N", "jlpt": "N3" }],
+
+      "notas_hispanohablante": "En español 'Es auténtico' usa el verbo 'ser'. En japonés 本物だ predica directamente sin ningún verbo equivalente.",
+      "interferencia_española": true,
+
+      "pares_contraste": ["A1-0-003", "A1-0-017", "A1-0-018"],
+
+      "calidad": { "naturalidad": 3, "validado": false },
+      "metadatos": { "jlpt": "N3", "tags": ["N", "だ", "predicado-solo", "DS-CORE-04"], "creado": "2026-04-23", "versión": 1 }
+    },
+
+    {
+      "id": "A1-0-017",
+      "bloque": 0,
+      "conjunto": "DS-CORE-04",
+      "clase": "N",
+
+      "japonés": "学生だ。",
+      "furigana": "がくせいだ。",
+      "romaji": "Gakusei da.",
+      "español": "Soy estudiante. / Es estudiante.",
+      "audio_text": "学生だ",
+
+      "situación": {
+        "descripción": "Alguien pregunta a qué te dedicas. Eres estudiante.",
+        "tipo": "identificarse",
+        "entorno": "presentación casual"
+      },
+
+      "predicado": { "núcleo": "学生", "clase": "N", "expresiones_funcionales": ["だ"], "expresiones_finales": [] },
+      "complementos": [], "tópico": null, "registro": "informal",
+
+      "descubrimiento": "学生だ — el sustantivo 'estudiante' más だ. Traducciones posibles: 'Soy estudiante', 'Es estudiante', 'Eres estudiante'. ¿Cómo decide el contexto cuál es?",
+      "sistematización": "学生だ no especifica persona. La situación (presentación propia → 'soy'; hablar de otro → 'es') establece el referente. だ no es el verbo 'ser'.",
+
+      "vocabulario": [{ "jp": "学生", "furigana": "がくせい", "es": "estudiante", "clase": "N", "jlpt": "N5" }],
+
+      "notas_hispanohablante": "Este es el ejemplo que los libros tradicionales presentan primero: 私は学生です. Pero aquí lo vemos en su forma esencial: 学生だ, sin tópico, sin cortesía. El だ no es 'ser' — es la marca de predicación nominal.",
+      "interferencia_española": true,
+
+      "pares_contraste": ["A1-0-003", "A1-0-016", "A1-0-018"],
+
+      "calidad": { "naturalidad": 3, "validado": false },
+      "metadatos": { "jlpt": "N5", "tags": ["N", "だ", "predicado-solo", "DS-CORE-04"], "creado": "2026-04-23", "versión": 1 }
+    },
+
+    {
+      "id": "A1-0-018",
+      "bloque": 0,
+      "conjunto": "DS-CORE-04",
+      "clase": "N",
+
+      "japonés": "休みだ。",
+      "furigana": "やすみだ。",
+      "romaji": "Yasumi da.",
+      "español": "Es un día libre. / Tengo el día libre.",
+      "audio_text": "休みだ",
+
+      "situación": {
+        "descripción": "Alguien te pregunta si trabajas hoy. No trabajas — es tu día libre.",
+        "tipo": "explicar situación",
+        "entorno": "casual"
+      },
+
+      "predicado": { "núcleo": "休み", "clase": "N", "expresiones_funcionales": ["だ"], "expresiones_finales": [] },
+      "complementos": [], "tópico": null, "registro": "informal",
+
+      "descubrimiento": "休み es 'descanso / día libre'. Con だ predica directamente. En español necesitarías 'Tengo el día libre' (verbo 'tener').",
+      "sistematización": "N + だ confirma el patrón. Sustantivo como núcleo predicativo.",
+
+      "vocabulario": [{ "jp": "休み", "furigana": "やすみ", "es": "descanso / día libre / vacaciones", "clase": "N", "jlpt": "N5" }],
+
+      "notas_hispanohablante": "En español 'libre' como predicado necesita el verbo: 'Estoy libre', 'Tengo el día libre'. En japonés 休みだ predica directamente.",
+      "interferencia_española": true,
+
+      "pares_contraste": ["A1-0-017", "A1-0-019"],
+
+      "calidad": { "naturalidad": 3, "validado": false },
+      "metadatos": { "jlpt": "N5", "tags": ["N", "だ", "predicado-solo", "DS-CORE-04"], "creado": "2026-04-23", "versión": 1 }
+    },
+
+    {
+      "id": "A1-0-019",
+      "bloque": 0,
+      "conjunto": "DS-CORE-04",
+      "clase": "N",
+
+      "japonés": "嘘だ。",
+      "furigana": "うそだ。",
+      "romaji": "Uso da.",
+      "español": "¡Mentira! / No puede ser. / ¿En serio?",
+      "audio_text": "嘘だ",
+
+      "situación": {
+        "descripción": "Un amigo te cuenta algo increíble. Reaccionas con incredulidad.",
+        "tipo": "reacción de incredulidad",
+        "entorno": "conversación casual"
+      },
+
+      "predicado": { "núcleo": "嘘", "clase": "N", "expresiones_funcionales": ["だ"], "expresiones_finales": [] },
+      "complementos": [], "tópico": null, "registro": "informal",
+
+      "descubrimiento": "嘘 es 'mentira'. 嘘だ es una reacción emocional completa. ¿Qué tan diferente sería en español?",
+      "sistematización": "嘘だ es natural en japonés como exclamación reactiva. El sustantivo + だ puede expresar reacciones emocionales directamente.",
+
+      "vocabulario": [{ "jp": "嘘", "furigana": "うそ", "es": "mentira / broma", "clase": "N", "jlpt": "N4" }],
+
+      "notas_hispanohablante": "嘘だ como exclamación es equivalente a '¡Mentira!' o '¡No me digas!' en español. Muestra que N + だ no es solo para identificarse — también expresa reacciones.",
+      "interferencia_española": false,
+
+      "pares_contraste": ["A1-0-016", "A1-0-018"],
+
+      "calidad": { "naturalidad": 3, "validado": false },
+      "metadatos": { "jlpt": "N4", "tags": ["N", "だ", "predicado-solo", "reacción-emocional", "DS-CORE-04"], "creado": "2026-04-23", "versión": 1 }
+    },
+
+    {
+      "id": "A1-0-020",
+      "bloque": 0,
+      "conjunto": "DS-CORE-04",
+      "clase": "N",
+
+      "japonés": "最高だ。",
+      "furigana": "さいこうだ。",
+      "romaji": "Saikō da.",
+      "español": "¡Es lo mejor! / ¡Genial! / ¡Increíble!",
+      "audio_text": "最高だ",
+
+      "situación": {
+        "descripción": "Acabas de ver el concierto de tu artista favorito. Sale al escenario.",
+        "tipo": "reacción de entusiasmo",
+        "entorno": "concierto"
+      },
+
+      "predicado": { "núcleo": "最高", "clase": "N",
+        "nota_clase": "最高 funciona en japonés moderno como N en predicación directa, aunque gramaticalmente puede analizarse también como Na. Se presenta como N por su comportamiento predicativo más frecuente.",
+        "expresiones_funcionales": ["だ"], "expresiones_finales": []
+      },
+      "complementos": [], "tópico": null, "registro": "informal",
+
+      "descubrimiento": "最高 = 'el máximo / lo mejor'. 最高だ como predicado completo y reacción emocional.",
+      "sistematización": "N/Na + だ puede ser una reacción emocional breve y poderosa. No siempre es una descripción objetiva.",
+
+      "vocabulario": [{ "jp": "最高", "furigana": "さいこう", "es": "lo mejor / máximo / genial", "clase": "N", "jlpt": "N2" }],
+
+      "notas_hispanohablante": "最高だ es una de las expresiones más frecuentes en japonés oral contemporáneo. Equivale a '¡Lo mejor!' o '¡Increíble!'.",
+      "interferencia_española": false,
+
+      "pares_contraste": ["A1-0-019"],
+
+      "calidad": { "naturalidad": 3, "validado": false },
+      "metadatos": { "jlpt": "N2", "tags": ["N", "だ", "predicado-solo", "reacción-emocional", "DS-CORE-04"], "creado": "2026-04-23", "versión": 1 }
+    },
+
+    {
+      "id": "A1-0-021",
+      "bloque": 0,
+      "conjunto": "DS-CORE-05",
+      "clase": "V",
+
+      "japonés": "行く。",
+      "furigana": "いく。",
+      "romaji": "Iku.",
+      "español": "Voy. / Sí, voy.",
+      "audio_text": "行く",
+
+      "situación": {
+        "descripción": "Alguien te pregunta si vas con ellos. Confirmas.",
+        "tipo": "confirmar plan",
+        "entorno": "casual"
+      },
+
+      "predicado": { "núcleo": "行く", "clase": "V", "grupo": 1, "expresiones_funcionales": [], "expresiones_finales": [] },
+      "complementos": [], "tópico": null, "registro": "informal",
+
+      "descubrimiento": "行く, como A, Na, N: predicado autosuficiente. ¿Qué lo hace diferente de los otros tres tipos? ¿Qué tienen en común todos?",
+      "sistematización": "Clase V: el verbo es el cuarto tipo de núcleo predicativo. A diferencia de A, V tiene conjugación de grupos (G1, G2, irregulares). A diferencia de Na y N, V no usa だ.",
+
+      "vocabulario": [{ "jp": "行く", "furigana": "いく", "es": "ir", "clase": "V", "grupo": 1, "jlpt": "N5" }],
+
+      "notas_hispanohablante": "行く comparte con los otros tres tipos la autosuficiencia como predicado. La diferencia: en español el verbo es el ÚNICO tipo de predicado nativo. En japonés es uno de cuatro equivalentes.",
+      "interferencia_española": false,
+
+      "pares_contraste": ["A1-0-001", "A1-0-002", "A1-0-003", "A1-0-022"],
+
+      "calidad": { "naturalidad": 3, "validado": false },
+      "metadatos": { "jlpt": "N5", "tags": ["V", "predicado-solo", "DS-CORE-05"], "creado": "2026-04-23", "versión": 1 }
+    },
+
+    {
+      "id": "A1-0-022",
+      "bloque": 0,
+      "conjunto": "DS-CORE-05",
+      "clase": "V",
+
+      "japonés": "寝る。",
+      "furigana": "ねる。",
+      "romaji": "Neru.",
+      "español": "Me voy a dormir.",
+      "audio_text": "寝る",
+
+      "situación": {
+        "descripción": "Son las 11 de la noche. Anuncias que te vas a la cama.",
+        "tipo": "anunciar acción inminente",
+        "entorno": "casa"
+      },
+
+      "predicado": { "núcleo": "寝る", "clase": "V", "grupo": 2, "expresiones_funcionales": [], "expresiones_finales": [] },
+      "complementos": [], "tópico": null, "registro": "informal",
+
+      "descubrimiento": "El verbo V, como A, puede expresar una reacción o situación sin mencionar a nadie explícitamente.",
+      "sistematización": "Clase V confirma el patrón: predicado autosuficiente, sin sujeto gramatical, sin cópula.",
+
+      "vocabulario": [{ "jp": "寝る", "furigana": "ねる", "es": "dormir / acostarse", "clase": "V", "grupo": 2, "jlpt": "N5" }],
+
+      "notas_hispanohablante": null,
+      "interferencia_española": false,
+
+      "pares_contraste": ["A1-0-021", "A1-0-023"],
+
+      "calidad": { "naturalidad": 3, "validado": false },
+      "metadatos": { "jlpt": "N5", "tags": ["V", "predicado-solo", "DS-CORE-05"], "creado": "2026-04-23", "versión": 1 }
+    },
+
+    {
+      "id": "A1-0-023",
+      "bloque": 0,
+      "conjunto": "DS-CORE-05",
+      "clase": "V",
+
+      "japonés": "飲む。",
+      "furigana": "のむ。",
+      "romaji": "Nomu.",
+      "español": "Lo tomo. / Bebo.",
+      "audio_text": "飲む",
+
+      "situación": {
+        "descripción": "Te ofrecen algo de beber. Aceptas.",
+        "tipo": "aceptar ofrecimiento",
+        "entorno": "casual"
+      },
+
+      "predicado": { "núcleo": "飲む", "clase": "V", "grupo": 1, "expresiones_funcionales": [], "expresiones_finales": [] },
+      "complementos": [], "tópico": null, "registro": "informal",
+
+      "descubrimiento": null,
+      "sistematización": "V: predicado verbal sin complemento explícito — el objeto (lo que se bebe) es recuperable del contexto.",
+
+      "vocabulario": [{ "jp": "飲む", "furigana": "のむ", "es": "beber / tomar", "clase": "V", "grupo": 1, "jlpt": "N5" }],
+      "notas_hispanohablante": null,
+      "interferencia_española": false,
+
+      "pares_contraste": ["A1-0-021", "A1-0-024"],
+
+      "calidad": { "naturalidad": 3, "validado": false },
+      "metadatos": { "jlpt": "N5", "tags": ["V", "predicado-solo", "DS-CORE-05"], "creado": "2026-04-23", "versión": 1 }
+    },
+
+    {
+      "id": "A1-0-024",
+      "bloque": 0,
+      "conjunto": "DS-CORE-05",
+      "clase": "V",
+
+      "japonés": "帰る。",
+      "furigana": "かえる。",
+      "romaji": "Kaeru.",
+      "español": "Me voy a casa.",
+      "audio_text": "帰る",
+
+      "situación": {
+        "descripción": "Es tarde. Anuncias que te marchas a casa.",
+        "tipo": "anunciar partida",
+        "entorno": "social — casa ajena"
+      },
+
+      "predicado": { "núcleo": "帰る", "clase": "V", "grupo": 1, "expresiones_funcionales": [], "expresiones_finales": [] },
+      "complementos": [], "tópico": null, "registro": "informal",
+
+      "descubrimiento": "帰る incluye léxicamente la idea de 'volver al origen'. No hace falta especificar 'a casa'.",
+      "sistematización": "V: 帰る (volver al origen) es predicado completo. El destino ya está incluido en el significado léxico del verbo.",
+
+      "vocabulario": [{ "jp": "帰る", "furigana": "かえる", "es": "volver a casa / regresar", "clase": "V", "grupo": 1, "jlpt": "N5" }],
+      "notas_hispanohablante": null,
+      "interferencia_española": false,
+
+      "pares_contraste": ["A1-0-021", "A1-0-022"],
+
+      "calidad": { "naturalidad": 3, "validado": false },
+      "metadatos": { "jlpt": "N5", "tags": ["V", "predicado-solo", "DS-CORE-05"], "creado": "2026-04-23", "versión": 1 }
+    },
+
+    {
+      "id": "A1-0-025",
+      "bloque": 0,
+      "conjunto": "DS-CORE-05",
+      "clase": "V",
+
+      "japonés": "食べる。",
+      "furigana": "たべる。",
+      "romaji": "Taberu.",
+      "español": "Como. / Voy a comer.",
+      "audio_text": "食べる",
+
+      "situación": {
+        "descripción": "Te ofrecen comida. Aceptas.",
+        "tipo": "aceptar ofrecimiento",
+        "entorno": "casual"
+      },
+
+      "predicado": { "núcleo": "食べる", "clase": "V", "grupo": 2, "expresiones_funcionales": [], "expresiones_finales": [] },
+      "complementos": [], "tópico": null, "registro": "informal",
+
+      "descubrimiento": null,
+      "sistematización": "食べる completa la clase V del bloque 0. Los cuatro tipos de predicado han sido presentados.",
+
+      "vocabulario": [{ "jp": "食べる", "furigana": "たべる", "es": "comer", "clase": "V", "grupo": 2, "jlpt": "N5" }],
+      "notas_hispanohablante": null,
+      "interferencia_española": false,
+
+      "pares_contraste": ["A1-0-001", "A1-0-002", "A1-0-003"],
+
+      "calidad": { "naturalidad": 3, "validado": false },
+      "metadatos": { "jlpt": "N5", "tags": ["V", "predicado-solo", "DS-CORE-05"], "creado": "2026-04-23", "versión": 1 }
+    },
+
+    {
+      "id": "A1-0-026",
+      "bloque": 0,
+      "conjunto": "DS-CORE-06",
+      "clase": "A",
+
+      "japonés": "熱い。",
+      "furigana": "あつい。",
+      "romaji": "Atsui.",
+      "español": "Está caliente (quema).",
+      "audio_text": "熱い",
+
+      "situación": {
+        "descripción": "Das el primer sorbo al café. Quema.",
+        "tipo": "reacción a temperatura",
+        "entorno": "comida / bebida"
+      },
+
+      "predicado": { "núcleo": "熱い", "clase": "A", "expresiones_funcionales": [], "expresiones_finales": [] },
+      "complementos": [], "tópico": null, "registro": "informal",
+
+      "descubrimiento": "熱い (A) — sin だ. Compara con el siguiente: 嫌いだ (Na) — con だ. ¿Por qué uno tiene だ y el otro no?",
+      "sistematización": "A tiene forma predicativa propia (la terminación -い). No necesita だ. Na necesita だ porque no tiene forma predicativa propia.",
+
+      "vocabulario": [{ "jp": "熱い", "furigana": "あつい", "es": "caliente (quema) / ardiente", "clase": "A", "jlpt": "N5" }],
+      "notas_hispanohablante": null,
+      "interferencia_española": false,
+
+      "pares_contraste": ["A1-0-027", "A1-0-028", "A1-0-029"],
+
+      "calidad": { "naturalidad": 3, "validado": false },
+      "metadatos": { "jlpt": "N5", "tags": ["A", "predicado-solo", "DS-CORE-06", "contraste-con-NA"], "creado": "2026-04-23", "versión": 1 }
+    },
+
+    {
+      "id": "A1-0-027",
+      "bloque": 0,
+      "conjunto": "DS-CORE-06",
+      "clase": "Na",
+
+      "japonés": "嫌いだ。",
+      "furigana": "きらいだ。",
+      "romaji": "Kirai da.",
+      "español": "No me gusta. / Lo detesto.",
+      "audio_text": "嫌いだ",
+
+      "situación": {
+        "descripción": "Alguien te pregunta si te gusta el café. No, lo odias.",
+        "tipo": "expresar aversión",
+        "entorno": "casual"
+      },
+
+      "predicado": { "núcleo": "嫌い", "clase": "Na", "expresiones_funcionales": ["だ"], "expresiones_finales": [] },
+      "complementos": [], "tópico": null, "registro": "informal",
+
+      "descubrimiento": "嫌い (Na) requiere だ. 熱い (A) no. Compara la conjugación negativa: 熱くない vs 嫌いじゃない. ¿Lo ves?",
+      "sistematización": "Prueba definitiva de clase: A → くない; Na → じゃない. La negación revela la clase con claridad.",
+
+      "vocabulario": [{ "jp": "嫌い", "furigana": "きらい", "es": "detestado / que no gusta", "clase": "Na", "jlpt": "N5" }],
+
+      "notas_hispanohablante": "嫌いだ y 好きだ son una pareja: preferencia positiva vs negativa. Ambas Na, ambas sin verbo equivalente a 'gustar/detestar'.",
+      "interferencia_española": true,
+
+      "pares_contraste": ["A1-0-012", "A1-0-026", "A1-0-028"],
+
+      "calidad": { "naturalidad": 3, "validado": false },
+      "metadatos": { "jlpt": "N5", "tags": ["Na", "だ", "predicado-solo", "DS-CORE-06", "contraste-con-A"], "creado": "2026-04-23", "versión": 1 }
+    },
+
+    {
+      "id": "A1-0-028",
+      "bloque": 0,
+      "conjunto": "DS-CORE-06",
+      "clase": "N",
+
+      "japonés": "夢だ。",
+      "furigana": "ゆめだ。",
+      "romaji": "Yume da.",
+      "español": "Es un sueño. / ¡Qué sueño!",
+      "audio_text": "夢だ",
+
+      "situación": {
+        "descripción": "Te enteras de que has ganado un viaje a Japón. Reaccionas con incredulidad feliz.",
+        "tipo": "reacción emocional",
+        "entorno": "cualquiera"
+      },
+
+      "predicado": { "núcleo": "夢", "clase": "N", "expresiones_funcionales": ["だ"], "expresiones_finales": [] },
+      "complementos": [], "tópico": null, "registro": "informal",
+
+      "descubrimiento": "夢 (sueño / ensueño) + だ. N con だ. Compara los tres: 熱い (A, sin だ), 嫌いだ (Na, con だ), 夢だ (N, con だ).",
+      "sistematización": "A: no usa だ (tiene forma predicativa propia). Na y N: usan だ (necesitan marca de predicación). Esta distribución de だ es la clave para identificar la clase.",
+
+      "vocabulario": [{ "jp": "夢", "furigana": "ゆめ", "es": "sueño / ensueño", "clase": "N", "jlpt": "N4" }],
+      "notas_hispanohablante": null,
+      "interferencia_española": false,
+
+      "pares_contraste": ["A1-0-026", "A1-0-027", "A1-0-029"],
+
+      "calidad": { "naturalidad": 3, "validado": false },
+      "metadatos": { "jlpt": "N4", "tags": ["N", "だ", "predicado-solo", "DS-CORE-06"], "creado": "2026-04-23", "versión": 1 }
+    },
+
+    {
+      "id": "A1-0-029",
+      "bloque": 0,
+      "conjunto": "DS-CORE-06",
+      "clase": "V",
+
+      "japonés": "分かる。",
+      "furigana": "わかる。",
+      "romaji": "Wakaru.",
+      "español": "Entiendo. / Lo entiendo.",
+      "audio_text": "分かる",
+
+      "situación": {
+        "descripción": "Alguien te explica algo. Lo entiendes.",
+        "tipo": "confirmar comprensión",
+        "entorno": "cualquiera"
+      },
+
+      "predicado": { "núcleo": "分かる", "clase": "V", "grupo": 1, "expresiones_funcionales": [], "expresiones_finales": [] },
+      "complementos": [], "tópico": null, "registro": "informal",
+
+      "descubrimiento": "Ahora tienes los cuatro en este conjunto: 熱い (A), 嫌いだ (Na), 夢だ (N), 分かる (V). ¿Puedes formular la regla del だ a partir de estos cuatro?",
+      "sistematización": "Regla del だ: A y V tienen forma predicativa propia → no usan だ. Na y N no tienen forma predicativa propia → usan だ. Esta regla es la base del sistema predicativo japonés.",
+
+      "vocabulario": [{ "jp": "分かる", "furigana": "わかる", "es": "entender / comprender", "clase": "V", "grupo": 1, "jlpt": "N5" }],
+
+      "notas_hispanohablante": "分かる es literalmente 'se distingue / se aclara'. En español lo traducimos como 'entiendo', que es un verbo activo. En japonés 分かる es más pasivo — el significado 'llega' por sí solo.",
+      "interferencia_española": false,
+
+      "pares_contraste": ["A1-0-026", "A1-0-027", "A1-0-028"],
+
+      "calidad": { "naturalidad": 3, "validado": false },
+      "metadatos": { "jlpt": "N5", "tags": ["V", "predicado-solo", "DS-CORE-06", "consolidación-cuatro-clases"], "creado": "2026-04-23", "versión": 1 }
+    }
+
+  ]
+}

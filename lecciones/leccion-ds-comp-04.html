@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>で (1) — locativo de actividad e instrumental — Japonés para Todos</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;700&family=DM+Serif+Display:ital@0;1&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+/* ── TOKENS ── */
+:root {
+  --teal:#3a8fa0; --teal-dark:#1d5f6e; --teal-light:#d6eef3;
+  --accent:#c8703a; --ink:#1a1a1a; --warm-gray:#6b6560;
+  --light-gray:#e8e4df; --bg:#faf8f5; --white:#fff;
+  --font-jp:'Noto Sans JP',sans-serif;
+  --font-jp-s:'Noto Serif JP',serif;
+  --font-disp:'DM Serif Display',serif;
+  --font-body:'Source Sans 3',sans-serif;
+  --radius:12px; --shadow:0 4px 24px rgba(0,0,0,0.08);
+}
+*, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; }
+body { font-family:var(--font-body); font-size:1.05rem; line-height:1.75;
+        color:var(--ink); background:var(--bg); -webkit-font-smoothing:antialiased; }
+.container { max-width:760px; margin:0 auto; padding:0 clamp(1.25rem,5vw,2.5rem); }
+h2 { font-family:var(--font-disp); font-size:clamp(1.5rem,4vw,2rem);
+      line-height:1.2; margin:2.5rem 0 0.7rem; }
+h3 { font-family:var(--font-disp); font-size:1.1rem; color:var(--teal-dark);
+      margin:2rem 0 0.6rem; }
+p { margin-bottom:0.8rem; }
+ruby rt { font-size:0.6em; color:var(--warm-gray); }
+
+/* ── HEADER ── */
+.lesson-header {
+  background:linear-gradient(160deg,var(--teal-dark) 0%,var(--teal) 100%);
+  color:#fff; padding:clamp(2.5rem,8vw,4rem) clamp(1.25rem,5vw,2.5rem) clamp(1.5rem,4vw,2.5rem);
+  position:relative; overflow:hidden;
+}
+.lesson-header::before {
+  content:'語'; font-family:var(--font-jp-s); font-size:clamp(7rem,18vw,12rem);
+  font-weight:900; opacity:0.07; position:absolute; bottom:-1rem; right:0;
+  line-height:1; pointer-events:none; color:#fff;
+}
+.lesson-header-inner { max-width:760px; margin:0 auto; }
+.lesson-meta { font-size:0.8rem; opacity:0.7; letter-spacing:0.08em;
+                text-transform:uppercase; margin-bottom:0.5rem; }
+.lesson-header h1 { font-family:var(--font-disp); font-size:clamp(1.6rem,5vw,2.4rem);
+                     line-height:1.15; margin-bottom:0.6rem; }
+.lesson-lead { font-size:1rem; opacity:0.88; max-width:540px; line-height:1.65; }
+.objetivo { background:rgba(255,255,255,0.12); border-radius:8px;
+             padding:0.8rem 1rem; font-size:0.95rem; margin-top:1rem;
+             border-left:3px solid rgba(255,255,255,0.4); }
+
+/* ── BREADCRUMB ── */
+.breadcrumb { background:var(--white); border-bottom:1px solid var(--light-gray);
+               padding:0.7rem clamp(1.25rem,5vw,2.5rem); font-size:0.85rem;
+               color:var(--warm-gray); }
+.breadcrumb a { color:var(--teal); text-decoration:none; }
+.breadcrumb a:hover { text-decoration:underline; }
+.breadcrumb .sep { margin:0 0.3rem; opacity:0.4; }
+
+/* ── SECTION ── */
+.lesson-section { padding:clamp(2rem,5vw,3.5rem) 0;
+                   border-top:1px solid var(--light-gray); }
+.lesson-section:first-of-type { border-top:none; }
+.section-tag { font-size:0.75rem; font-weight:700; letter-spacing:0.12em;
+                text-transform:uppercase; color:var(--accent);
+                display:block; margin-bottom:0.4rem; }
+
+/* ── EXAMPLE CARDS ── */
+.example-grid { display:grid; gap:1rem; margin:1.2rem 0; }
+.example-card {
+  background:var(--white); border:1px solid var(--light-gray);
+  border-radius:var(--radius); padding:1.2rem 1.3rem;
+  box-shadow:0 2px 12px rgba(0,0,0,0.05);
+  transition:box-shadow .25s;
+}
+.example-card:hover { box-shadow:var(--shadow); }
+.card-header { display:flex; justify-content:space-between;
+                align-items:center; margin-bottom:0.6rem; }
+.cls-pill { display:inline-block; padding:.12rem .55rem; border-radius:100px;
+             font-size:.78rem; font-weight:700; font-family:var(--font-body); }
+.speak-btn { width:34px; height:34px; border-radius:50%; border:1.5px solid #ccc;
+              background:#f5f5f5; cursor:pointer; font-size:0.95rem;
+              display:flex; align-items:center; justify-content:center;
+              transition:.25s; flex-shrink:0; }
+.speak-btn:hover { background:var(--teal); color:#fff; border-color:var(--teal);
+                    transform:scale(1.08); }
+.speak-btn.playing { background:var(--teal); color:#fff;
+                      animation:pulse .8s infinite; }
+@keyframes pulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.1)} }
+.card-situation { font-size:.88rem; color:var(--warm-gray); font-style:italic;
+                   margin-bottom:.5rem; }
+.card-jp { font-family:var(--font-jp); font-size:1.5rem; font-weight:500;
+            line-height:1.3; margin-bottom:.3rem; }
+.jp-text { font-family:var(--font-jp); }
+.card-es { font-size:.94rem; color:var(--warm-gray); font-style:italic; }
+.card-note { font-size:.88rem; color:var(--warm-gray); margin-top:.6rem;
+              padding:.5rem .7rem; background:#f8f6f3; border-radius:6px;
+              border-left:2px solid var(--accent); }
+.note-label { font-size:.72rem; font-weight:700; letter-spacing:.1em;
+               text-transform:uppercase; color:var(--accent); margin-right:.3rem; }
+
+/* ── DISCOVERY & SYSTEM BOXES ── */
+.discovery-box, .system-box, .hispanohablante-box {
+  border-radius:var(--radius); padding:1.2rem 1.4rem; margin:1.2rem 0;
+}
+.discovery-box {
+  background:linear-gradient(135deg,#fff9f4,#fdf0e8);
+  border:1px solid #e8c8a8; border-left:4px solid var(--accent);
+}
+.system-box {
+  background:linear-gradient(135deg,#edf7fb,var(--teal-light));
+  border:1px solid #b0d8e8; border-left:4px solid var(--teal);
+}
+.hispanohablante-box {
+  background:#f5f0ff; border:1px solid #c9aee6; border-left:4px solid #7b4ea0;
+}
+.box-label { font-size:.73rem; font-weight:700; letter-spacing:.14em;
+              text-transform:uppercase; margin-bottom:.7rem; color:var(--warm-gray); }
+.discovery-box .box-label { color:var(--accent); }
+.system-box .box-label { color:var(--teal-dark); }
+.hispanohablante-box .box-label { color:#7b4ea0; }
+
+/* ── VOCAB TABLE ── */
+.vocab-section { margin:2rem 0 1rem; }
+.vocab-table { width:100%; border-collapse:collapse; font-size:.95rem;
+                background:var(--white); border-radius:var(--radius);
+                overflow:hidden; box-shadow:0 2px 12px rgba(0,0,0,.05); }
+.vocab-table thead { background:var(--teal-light); }
+.vocab-table th { padding:.7rem 1rem; text-align:left; font-size:.82rem;
+                   font-weight:700; color:var(--teal-dark);
+                   border-bottom:2px solid var(--teal); }
+.vocab-table td { padding:.7rem 1rem; border-bottom:1px solid var(--light-gray); }
+.vocab-table tbody tr:last-child td { border-bottom:none; }
+.vocab-table tbody tr:hover { background:#faf8f5; }
+.vocab-jp { font-family:var(--font-jp); font-size:1.05rem; }
+.vocab-jlpt { color:var(--warm-gray); font-size:.85rem; }
+
+/* ── LESSON FOOTER NAV ── */
+.lesson-footer { background:var(--white); border-top:1px solid var(--light-gray);
+                  padding:1.5rem 0; margin-top:2rem; }
+.lesson-footer-inner { max-width:760px; margin:0 auto;
+                         padding:0 clamp(1.25rem,5vw,2.5rem);
+                         display:flex; justify-content:space-between;
+                         align-items:center; gap:.8rem; flex-wrap:wrap; }
+.nav-btn { display:inline-flex; align-items:center; gap:.4rem;
+            padding:.6rem 1.2rem; border-radius:100px; font-size:.9rem;
+            font-weight:700; text-decoration:none; transition:.25s;
+            font-family:var(--font-body); }
+.btn-prev { background:var(--light-gray); color:var(--warm-gray); }
+.btn-prev:hover { background:#d8d4cf; color:var(--ink); }
+.btn-next { background:var(--teal); color:#fff;
+             box-shadow:0 3px 12px rgba(58,143,160,.35); }
+.btn-next:hover { background:var(--teal-dark); transform:translateY(-1px); }
+.footer-id { font-size:.82rem; color:var(--warm-gray); text-align:center; }
+
+/* ── SITE FOOTER ── */
+.site-footer { background:var(--ink); color:rgba(255,255,255,.65);
+                text-align:center; padding:2rem 1.5rem; font-size:.88rem; }
+.site-footer a { color:rgba(255,255,255,.8); text-decoration:none; }
+
+/* ── SCROLL REVEAL ── */
+.reveal { opacity:0; transform:translateY(16px); transition:opacity .5s, transform .5s; }
+.reveal.visible { opacity:1; transform:none; }
+</style>
+</head>
+<body>
+
+<nav class="breadcrumb">
+  <a href="../index.html">Inicio</a>
+  <span class="sep">›</span>
+  <a href="index.html">Aprender</a>
+  <span class="sep">›</span>
+  <span>で (1) — locativo de actividad e instrumental</span>
+</nav>
+
+<header class="lesson-header">
+  <div class="lesson-header-inner">
+    <p class="lesson-meta">補語と後置詞 — Los complementos posposicionales · DS-COMP-04</p>
+    <h1>で (1) — locativo de actividad e instrumental</h1>
+    <p class="lesson-lead">で marca el lugar donde ocurre una actividad (≠ に, que marca el lugar donde algo existe). También marca el medio o instrumento.</p>
+  </div>
+</header>
+
+<main>
+
+<section class="lesson-section" id="situaciones">
+<div class="container">
+  <span class="section-tag reveal">📍 Situaciones</span>
+  <h2 class="reveal">Observa estos ejemplos</h2>
+  <p class="reveal">Escucha cada ejemplo. Todavía no analices — solo absorbe.</p>
+  <div class="example-grid reveal">
+    
+    <div class="example-card" style="border-left:4px solid #8ab9e8;">
+      <div class="card-header">
+        <span class="cls-pill" style="background:#e8f2fe;color:#1a68b0;border:1px solid #8ab9e8;">V</span>
+        <button class="speak-btn" data-text="図書館で勉強する" aria-label="Escuchar pronunciación">🔊</button>
+      </div>
+      <p class="card-situation">Tu sitio preferido para estudiar es la biblioteca.</p>
+      <p class="card-jp"><ruby class="jp-text">図書館で勉強する<rt>としょかんでべんきょうする</rt></ruby>。</p>
+      <p class="card-es">Estudio en la biblioteca.</p>
+        <p class="card-note">
+          <span class="note-label">Nota</span> 図書館で — で locativo de actividad. Vs. 図書館に — に locativo de existencia. El español usa 'en' para ambos. El japonés distingue con posposiciones distintas.
+        </p>
+    </div>
+
+    <div class="example-card" style="border-left:4px solid #8ab9e8;">
+      <div class="card-header">
+        <span class="cls-pill" style="background:#e8f2fe;color:#1a68b0;border:1px solid #8ab9e8;">V</span>
+        <button class="speak-btn" data-text="バスで行く" aria-label="Escuchar pronunciación">🔊</button>
+      </div>
+      <p class="card-situation">Alguien te pregunta cómo vas al trabajo.</p>
+      <p class="card-jp"><ruby class="jp-text">バスで行く<rt>バスでいく</rt></ruby>。</p>
+      <p class="card-es">Voy en autobús.</p>
+        <p class="card-note">
+          <span class="note-label">Nota</span> En español 'en autobús' usa la preposición 'en'. En japonés バスで usa で. Misma función; posposición vs preposición.
+        </p>
+    </div>
+
+    <div class="example-card" style="border-left:4px solid #8ab9e8;">
+      <div class="card-header">
+        <span class="cls-pill" style="background:#e8f2fe;color:#1a68b0;border:1px solid #8ab9e8;">V</span>
+        <button class="speak-btn" data-text="日本語で話す" aria-label="Escuchar pronunciación">🔊</button>
+      </div>
+      <p class="card-situation">En clase, el profesor pide que hables en japonés.</p>
+      <p class="card-jp"><ruby class="jp-text">日本語で話す<rt>にほんごではなす</rt></ruby>。</p>
+      <p class="card-es">Hablo en japonés.</p>
+        <p class="card-note">
+          <span class="note-label">Nota</span> En español 'en japonés' usa 'en'. En japonés 日本語で usa で instrumental. La misma posposición funciona para transporte y lengua — unidad del instrumental.
+        </p>
+    </div>
+
+    <div class="example-card" style="border-left:4px solid #8ab9e8;">
+      <div class="card-header">
+        <span class="cls-pill" style="background:#e8f2fe;color:#1a68b0;border:1px solid #8ab9e8;">V</span>
+        <button class="speak-btn" data-text="カフェでコーヒーを飲む" aria-label="Escuchar pronunciación">🔊</button>
+      </div>
+      <p class="card-situation">Tu lugar favorito para trabajar es una cafetería con café.</p>
+      <p class="card-jp"><ruby class="jp-text">カフェでコーヒーを飲む<rt>カフェでコーヒーをのむ</rt></ruby>。</p>
+      <p class="card-es">Bebo café en una cafetería.</p>
+        <p class="card-note">
+          <span class="note-label">Nota</span> En japonés se puede tener varios complementos en la misma oración — cada uno con su posposición propia. No hay distinción de orden obligatorio entre complementos del mismo nivel.
+        </p>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="lesson-section" id="descubrimiento">
+<div class="container">
+  <span class="section-tag reveal">🔍 Descubrimiento</span>
+  <h2 class="reveal">¿Qué observas?</h2>
+  <div class="reveal">
+    
+    <div class="discovery-box">
+      <div class="box-label">💡 Descubrimiento</div>
+      <p>図書館で勉強する, カフェでコーヒーを飲む, バスで行く, 日本語で話す. Compara: 部屋にいる (に) vs 部屋で勉強する (で). ¿Por qué la diferencia?</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="lesson-section" id="sistematizacion">
+<div class="container">
+  <span class="section-tag reveal">📐 Sistematización</span>
+  <h2 class="reveal">El patrón</h2>
+  <div class="reveal">
+    
+    <div class="system-box">
+      <div class="box-label">📐 Sistematización</div>
+      <p>で: (1) localización de la actividad — el espacio en que ocurre un evento activo. (2) medio o instrumento. La regla: に = punto de referencia / existencia; で = escenario de actividad / medio.</p>
+    </div>
+  </div>
+  
+  
+    <div class="vocab-section">
+      <h3>Vocabulario de esta lección</h3>
+      <table class="vocab-table">
+        <thead>
+          <tr>
+            <th>Japonés</th><th>Español</th><th>Clase</th><th>JLPT</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="vocab-jp"><ruby>図書館<rt>としょかん</rt></ruby></td><td>biblioteca</td><td><span class="cls-pill" style="background:#fef3e8;color:#b05c1a;border:1px solid #e8b87a;">N</span></td><td class="vocab-jlpt">N4</td></tr>
+<tr><td class="vocab-jp"><ruby>勉強する<rt>べんきょうする</rt></ruby></td><td>estudiar</td><td><span class="cls-pill" style="background:#e8f2fe;color:#1a68b0;border:1px solid #8ab9e8;">V</span></td><td class="vocab-jlpt">N5</td></tr>
+<tr><td class="vocab-jp"><ruby>バス<rt>バス</rt></ruby></td><td>autobús</td><td><span class="cls-pill" style="background:#fef3e8;color:#b05c1a;border:1px solid #e8b87a;">N</span></td><td class="vocab-jlpt">N5</td></tr>
+<tr><td class="vocab-jp"><ruby>行く<rt>いく</rt></ruby></td><td>ir</td><td><span class="cls-pill" style="background:#e8f2fe;color:#1a68b0;border:1px solid #8ab9e8;">V</span></td><td class="vocab-jlpt">N5</td></tr>
+<tr><td class="vocab-jp"><ruby>日本語<rt>にほんご</rt></ruby></td><td>japonés (idioma)</td><td><span class="cls-pill" style="background:#fef3e8;color:#b05c1a;border:1px solid #e8b87a;">N</span></td><td class="vocab-jlpt">N5</td></tr>
+<tr><td class="vocab-jp"><ruby>話す<rt>はなす</rt></ruby></td><td>hablar</td><td><span class="cls-pill" style="background:#e8f2fe;color:#1a68b0;border:1px solid #8ab9e8;">V</span></td><td class="vocab-jlpt">N5</td></tr>
+<tr><td class="vocab-jp"><ruby>カフェ<rt>カフェ</rt></ruby></td><td>cafetería</td><td><span class="cls-pill" style="background:#fef3e8;color:#b05c1a;border:1px solid #e8b87a;">N</span></td><td class="vocab-jlpt">N4</td></tr>
+<tr><td class="vocab-jp"><ruby>コーヒー<rt>コーヒー</rt></ruby></td><td>café (bebida)</td><td><span class="cls-pill" style="background:#fef3e8;color:#b05c1a;border:1px solid #e8b87a;">N</span></td><td class="vocab-jlpt">N5</td></tr>
+<tr><td class="vocab-jp"><ruby>飲む<rt>のむ</rt></ruby></td><td>beber</td><td><span class="cls-pill" style="background:#e8f2fe;color:#1a68b0;border:1px solid #8ab9e8;">V</span></td><td class="vocab-jlpt">N5</td></tr>
+        </tbody>
+      </table>
+    </div>
+</div>
+</section>
+
+</main>
+
+<footer class="lesson-footer">
+  <div class="lesson-footer-inner">
+    <a href="leccion-ds-comp-03.html" class="nav-btn btn-prev">← Anterior</a>
+    <span class="footer-id">DS-COMP-04</span>
+    <a href="leccion-ds-comp-05.html" class="nav-btn btn-next">Siguiente →</a>
+  </div>
+</footer>
+
+<footer class="site-footer">
+  <p><a href="../index.html">日本語 — Japonés para Todos</a></p>
+</footer>
+
+<script>
+// TTS
+const synth = window.speechSynthesis;
+function getJPVoice() {
+  return synth.getVoices().find(v => v.lang.startsWith('ja')) || null;
+}
+document.querySelectorAll('.speak-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    if (synth.speaking) synth.cancel();
+    const u = new SpeechSynthesisUtterance(btn.dataset.text);
+    u.lang = 'ja-JP'; u.rate = 0.85;
+    const v = getJPVoice(); if (v) u.voice = v;
+    btn.classList.add('playing');
+    u.onend = u.onerror = () => btn.classList.remove('playing');
+    synth.speak(u);
+  });
+});
+if (synth.onvoiceschanged !== undefined) synth.onvoiceschanged = () => {};
+
+// Scroll reveal
+const obs = new IntersectionObserver(es => {
+  es.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
