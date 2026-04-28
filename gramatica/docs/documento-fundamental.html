@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Documento fundamental del proyecto Japonés para Todos. Filosofía, enfoque inductivo, estructura del japonés, sistema de complementos y secuencia de aprendizaje.">
+<title>Documento Fundamental — 基礎文書 | Japonés para Todos</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@400;700&family=DM+Serif+Display:ital@0;1&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+<!-- Shared styles -->
+<link rel="stylesheet" href="../css/common.css">
+
+<style>
+/* ===== HERO ===== */
+.hero::before { content: '基礎'; }
+.hero { min-height: 55vh; }
+
+/* ===== STICKY DOC NAV ===== */
+.doc-nav {
+  background: #fff;
+  border-bottom: 1px solid var(--light-gray);
+  padding: 0.6rem clamp(1.5rem, 5vw, 3rem);
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.doc-nav-inner {
+  max-width: 820px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  align-items: center;
+}
+
+.doc-nav a {
+  padding: 0.35rem 0.9rem;
+  background: var(--teal-light);
+  border-radius: 100px;
+  text-decoration: none;
+  color: var(--teal-dark);
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.25s;
+  white-space: nowrap;
+}
+
+.doc-nav a:hover {
+  background: var(--teal);
+  color: #fff;
+}
+
+.doc-nav a.active {
+  background: var(--teal);
+  color: #fff;
+}
+
+.doc-nav-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--warm-gray);
+  margin-right: 0.4rem;
+  white-space: nowrap;
+}
+
+/* ===== SECTION WRAPPERS ===== */
+.doc-section { padding: clamp(3.5rem, 7vw, 6rem) 0; }
+.doc-section + .doc-section { border-top: 1px solid var(--light-gray); }
+
+/* ===== SCENE CARD ===== */
+.scene-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: clamp(1.4rem, 3vw, 2.2rem);
+  margin: 1.5rem 0;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+  border-left: 4px solid var(--accent);
+}
+
+.scene-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.scene-context {
+  color: var(--warm-gray);
+  font-style: italic;
+  margin-bottom: 0.8rem;
+  font-size: 0.98rem;
+}
+
+.scene-jp {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--ink);
+  margin: 0.4rem 0;
+}
+
+.scene-es {
+  color: var(--warm-gray);
+  font-style: italic;
+  font-size: 0.95rem;
+}
+
+/* ===== FLOW DIAGRAM ===== */
+.flow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, #f5f8fa 0%, var(--teal-light) 100%);
+  border-radius: 14px;
+  margin: 1.8rem 0;
+  border: 1px solid var(--light-gray);
+}
+
+.flow-box {
+  background: #fff;
+  border: 2px solid var(--light-gray);
+  border-radius: 10px;
+  padding: 0.8rem 1.3rem;
+  text-align: center;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.flow-box small {
+  display: block;
+  color: var(--warm-gray);
+  font-size: 0.82rem;
+  margin-top: 0.2rem;
+}
+
+.flow-box .jp-flow {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 0.85rem;
+  color: var(--warm-gray);
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.flow-box.core {
+  border-color: var(--teal);
+  background: linear-gradient(135deg, #e8f4f7 0%, var(--teal-light) 100%);
+}
+
+.flow-box.core strong { color: var(--teal-dark); }
+
+.flow-arrow {
+  font-size: 1.3rem;
+  color: var(--teal);
+  font-weight: 700;
+}
+
+/* ===== COMPLEMENT GRID ===== */
+.complement-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.complement-card {
+  background: #fff;
+  border: 1px solid var(--light-gray);
+  border-left: 4px solid var(--teal);
+  border-radius: 10px;
+  padding: 1.1rem 1.2rem;
+}
+
+.complement-card h5 {
+  font-family: 'DM Serif Display', 'Noto Serif JP', serif;
+  font-size: 1rem;
+  color: var(--teal-dark);
+  margin-bottom: 0.5rem;
+}
+
+.complement-card p {
+  font-size: 0.95rem;
+  margin-bottom: 0.4rem;
+  color: var(--warm-gray);
+}
+
+.complement-card p:last-child { margin-bottom: 0; }
+
+.complement-card .jp-ex {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 500;
+  color: var(--ink);
+  font-size: 1rem;
+}
+
+.complement-card small {
+  font-style: italic;
+  color: var(--warm-gray);
+  font-size: 0.88rem;
+}
+
+/* ===== DATA TABLE ===== */
+.table-wrap {
+  overflow-x: auto;
+  margin: 1.8rem 0;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  font-size: 0.97rem;
+  min-width: 480px;
+}
+
+.data-table thead {
+  background: var(--teal-light);
+}
+
+.data-table thead th {
+  padding: 1rem 1.2rem;
+  text-align: left;
+  font-weight: 700;
+  font-size: 0.88rem;
+  letter-spacing: 0.05em;
+  color: var(--teal-dark);
+  border-bottom: 2px solid var(--teal);
+}
+
+.data-table td {
+  padding: 0.85rem 1.2rem;
+  border-bottom: 1px solid var(--light-gray);
+  vertical-align: top;
+}
+
+.data-table tbody tr:last-child td { border-bottom: none; }
+.data-table tbody tr:hover { background: #faf8f5; }
+
+.data-table .class-tag {
+  display: inline-block;
+  background: var(--teal-light);
+  color: var(--teal-dark);
+  padding: 0.15rem 0.6rem;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 0.88rem;
+}
+
+/* ===== SITE GRID ===== */
+.site-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.2rem;
+  margin: 1.8rem 0;
+}
+
+.site-card {
+  background: #fff;
+  border: 1px solid var(--light-gray);
+  border-radius: 12px;
+  padding: 1.3rem 1.5rem;
+  transition: all 0.3s;
+}
+
+.site-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+  border-color: var(--teal);
+}
+
+.site-card h4 {
+  font-family: 'DM Serif Display', 'Noto Serif JP', serif;
+  font-size: 1.05rem;
+  color: var(--teal-dark);
+  margin: 0 0 0.8rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--teal-light);
+}
+
+.site-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.site-card ul li {
+  font-size: 0.95rem;
+  color: var(--warm-gray);
+  padding: 0.25rem 0;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.site-card ul li::before {
+  content: '›';
+  position: absolute;
+  left: 0;
+  color: var(--teal);
+  font-weight: 700;
+}
+
+/* ===== WARNING BOX ===== */
+.warn-block {
+  background: #fff8f0;
+  border: 1px solid #dcc8a0;
+  border-left: 5px solid var(--accent);
+  border-radius: 10px;
+  padding: 1.2rem 1.5rem;
+  margin: 1.5rem 0;
+  font-size: 0.98rem;
+}
+
+/* ===== H3 OVERRIDES for doc sections ===== */
+.doc-section h3 {
+  font-family: 'DM Serif Display', 'Noto Serif JP', serif;
+  font-size: 1.2rem;
+  margin: 2.8rem 0 0.8rem;
+  color: var(--teal-dark);
+}
+
+.doc-section h4 {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 2rem 0 0.6rem;
+  color: var(--ink);
+}
+
+.doc-section ul, .doc-section ol {
+  padding-left: 1.6rem;
+  margin-bottom: 1.2rem;
+}
+
+.doc-section li {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+/* ===== PHONEME CARD (for phonetics section) ===== */
+.phoneme-pair {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+  flex-wrap: wrap;
+}
+
+.phoneme-card {
+  flex: 1;
+  min-width: 180px;
+  background: #fff;
+  border: 1px solid var(--light-gray);
+  border-radius: 10px;
+  padding: 1rem 1.2rem;
+  text-align: center;
+}
+
+.phoneme-card .ipa {
+  font-size: 0.85rem;
+  color: var(--warm-gray);
+  margin-bottom: 0.3rem;
+}
+
+.phoneme-card .kana-big {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.2;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+  .flow { padding: 1.2rem; }
+  .flow-box { padding: 0.7rem 1rem; }
+  .doc-nav-label { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== BREADCRUMB ===== -->
+<nav class="breadcrumb" aria-label="Navegación de migas de pan">
+  <div class="breadcrumb-inner">
+    <a href="../index.html">Inicio</a>
+    <span class="separator" aria-hidden="true">›</span>
+    <a href="index.html">Documentos</a>
+    <span class="separator" aria-hidden="true">›</span>
+    <span class="current">Documento Fundamental</span>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<header class="hero">
+  <span class="hero-badge">基礎文書 — Versión 2.0</span>
+  <h1>
+    Documento Fundamental
+    <span class="jp">プロジェクトの理念と設計</span>
+  </h1>
+  <p class="hero-sub">
+    Filosofía, enfoque pedagógico y arquitectura del sitio de aprendizaje de japonés para hispanohablantes.
+  </p>
+  <div class="hero-scroll">
+    <a href="#filosofia">Comenzar <div class="arrow"></div></a>
+  </div>
+</header>
+
+<!-- ===== STICKY DOC NAV ===== -->
+<nav class="doc-nav" aria-label="Secciones del documento">
+  <div class="doc-nav-inner">
+    <span class="doc-nav-label">Secciones</span>
+    <a href="#filosofia">1. Filosofía</a>
+    <a href="#enfoque">2. Enfoque</a>
+    <a href="#estructura">3. Estructura JP</a>
+    <a href="#complementos">4. Complementos</a>
+    <a href="#secuencia">5. Secuencia</a>
+    <a href="#fonetica">6. Fonética</a>
+    <a href="#sitio">7. Sitio</a>
+  </div>
+</nav>
+
+
+<!-- =========================================================
+     1. FILOSOFÍA
+     ========================================================= -->
+<section class="doc-section" id="filosofia">
+  <div class="container">
+
+    <div class="reveal">
+      <div class="sec-num">01</div>
+      <h2 class="sec-title">Filosofía del Proyecto <span class="jp-inline">プロジェクトの理念</span></h2>
+      <p class="sec-lead">El punto de partida es describir el japonés desde su lógica interna, no desde la del español.</p>
+    </div>
+
+    <div class="conclusion-box reveal">
+      <h3>Principio fundamental</h3>
+      <p>Describir el japonés <strong>desde su propia lógica interna</strong>, sin imponer categorías de la gramática occidental.</p>
+    </div>
+
+    <div class="reveal">
+      <h3>1.2 Lo que NO hacemos</h3>
+      <ul>
+        <li><strong>No usamos «sujeto».</strong> El japonés no tiene concordancia sujeto-verbo; este concepto no funciona.</li>
+        <li><strong>No usamos «objeto directo/indirecto».</strong> Usamos el sistema de <strong>complementos</strong> con posposiciones.</li>
+        <li><strong>No comparamos «SOV vs SVO».</strong> Esta comparación presupone categorías inaplicables al japonés.</li>
+        <li><strong>No partimos de explicaciones gramaticales.</strong> Partimos de <strong>situaciones y ejemplos</strong>.</li>
+      </ul>
+
+      <h3>1.3 Lo que SÍ hacemos</h3>
+      <ul>
+        <li><strong>Predicado como centro:</strong> La oración japonesa se construye alrededor del predicado.</li>
+        <li><strong>Sistema de complementos:</strong> Cada posposición marca la función del complemento.</li>
+        <li><strong>Tópico, no sujeto:</strong> <span style="font-family:'Noto Sans JP'">は</span> marca de qué se habla, no quién realiza la acción.</li>
+        <li><strong>Aprendizaje inductivo:</strong> De la situación y el ejemplo → a la comprensión → a la producción.</li>
+      </ul>
+
+      <h3>1.4 Objetivo para el estudiante</h3>
+      <ol class="steps-list">
+        <li><strong>Comprender</strong> cómo funciona el japonés — no cómo se traduce al español.</li>
+        <li><strong>Producir</strong> oraciones construyendo desde el predicado hacia afuera.</li>
+        <li><strong>Pensar en japonés</strong> sin pasar por estructuras del español.</li>
+      </ol>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- =========================================================
+     2. ENFOQUE PEDAGÓGICO
+     ========================================================= -->
+<section class="doc-section" id="enfoque">
+  <div class="container">
+
+    <div class="reveal">
+      <div class="sec-num">02</div>
+      <h2 class="sec-title">Enfoque Pedagógico: Aprendizaje Inductivo <span class="jp-inline">帰納的学習</span></h2>
+      <p class="sec-lead">No partimos de reglas abstractas. Partimos de situaciones reales para que el estudiante descubra los patrones.</p>
+    </div>
+
+    <div class="reveal">
+      <h3>2.1 El problema del enfoque tradicional</h3>
+      <div class="warn-block">
+        <strong>Método tradicional:</strong> Explicación gramatical → Ejemplo → Ejercicio (drill).<br>
+        Resultado: el estudiante «sabe la regla» pero no puede usarla de forma natural.
+      </div>
+
+      <h3>2.2 Nuestro enfoque: Situación → Descubrimiento → Comprensión</h3>
+
+      <div class="flow">
+        <div class="flow-box">
+          <strong>1. Situación</strong>
+          <small>«En este contexto, se dice así»</small>
+        </div>
+        <span class="flow-arrow">→</span>
+        <div class="flow-box">
+          <strong>2. Curiosidad</strong>
+          <small>«¿Qué es esto? ¿Por qué?»</small>
+        </div>
+        <span class="flow-arrow">→</span>
+        <div class="flow-box">
+          <strong>3. Descubrimiento</strong>
+          <small>«Ah, funciona así»</small>
+        </div>
+        <span class="flow-arrow">→</span>
+        <div class="flow-box core">
+          <strong>4. Uso</strong>
+          <small>Producción en contexto</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <h3>2.3 Ejemplo del enfoque inductivo</h3>
+
+      <div class="ng-block">
+        <div class="ng-marker">✗ Enfoque tradicional</div>
+        <p style="margin:0.5rem 0 0; color:var(--ink);">«El adjetivo negativo <span style="font-family:'Noto Sans JP'">ない</span> se añade a la forma de conexión del verbo para expresar negación. Por ejemplo: <span style="font-family:'Noto Sans JP'">食べない</span>.»</p>
+      </div>
+
+      <div class="ok-block" style="border-color:var(--teal); background:var(--teal-light);">
+        <div class="ok-marker" style="color:var(--teal)">✓ Enfoque inductivo</div>
+
+        <div class="scene-card" style="margin-top:1rem">
+          <span class="scene-label">Situación</span>
+          <p class="scene-context">Tu amigo te ofrece carne. No comes carne.</p>
+          <p class="scene-jp">肉は食べ<strong>ない</strong>んだよ。</p>
+          <p class="scene-es">¿Carne?, es que no como carne.</p>
+        </div>
+
+        <div class="scene-card">
+          <span class="scene-label">Situación</span>
+          <p class="scene-context">Te preguntan si vas a la fiesta. No vas a ir.</p>
+          <p class="scene-jp">行か<strong>ない</strong>。</p>
+          <p class="scene-es">No voy.</p>
+        </div>
+      </div>
+
+      <div class="question-box">
+        ¿Qué tienen en común <span style="font-family:'Noto Sans JP';font-weight:500">食べない</span> e <span style="font-family:'Noto Sans JP';font-weight:500">行かない</span>?<br>
+        ¿Qué parte indica «no»? — El estudiante <strong>descubre</strong> el patrón. Luego confirmamos y sistematizamos.
+      </div>
+    </div>
+
+    <div class="reveal">
+      <h3>2.4 Principios del enfoque</h3>
+      <ol class="steps-list">
+        <li><strong>Situación primero:</strong> Siempre comenzar con un contexto comunicativo real.</li>
+        <li><strong>Ejemplo antes que explicación:</strong> El estudiante ve el uso antes de la regla.</li>
+        <li><strong>Despertar la curiosidad:</strong> «¿Qué es esto?» es más poderoso que «Memoriza esto».</li>
+        <li><strong>Descubrimiento guiado:</strong> El estudiante encuentra el patrón con nuestra ayuda.</li>
+        <li><strong>Sistematización posterior:</strong> La explicación gramatical viene después, para confirmar.</li>
+        <li><strong>Práctica en contexto:</strong> No drills mecánicos, sino uso en situaciones.</li>
+      </ol>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- =========================================================
+     3. ESTRUCTURA DE LA ORACIÓN
+     ========================================================= -->
+<section class="doc-section" id="estructura">
+  <div class="container">
+
+    <div class="reveal">
+      <div class="sec-num">03</div>
+      <h2 class="sec-title">Estructura de la Oración Japonesa <span class="jp-inline">日本語の文構造</span></h2>
+      <p class="sec-lead">El predicado es el único elemento que no puede omitirse. Todo lo demás es opcional.</p>
+    </div>
+
+    <div class="reveal">
+      <h3>3.1 El predicado: único elemento obligatorio</h3>
+
+      <div class="note-block">
+        <div class="note-title">Principio central</div>
+        <p style="font-family:'Noto Sans JP';font-size:1.05rem;margin-bottom:0.5rem">述部は文の必須要素である</p>
+        <p style="margin:0">El predicado es el único elemento que no puede omitirse.</p>
+      </div>
+
+      <div class="scene-card">
+        <span class="scene-label">Situación</span>
+        <p class="scene-context">Miras por la ventana. Está lloviendo.</p>
+        <p class="scene-jp">雨だ。</p>
+        <p class="scene-es">(Es) lluvia. / Llueve.</p>
+      </div>
+
+      <div class="explain">
+        <div class="explain-title">💡 Una oración completa con solo el predicado</div>
+        <p style="margin:0">No hay «sujeto», no hace falta. El predicado <span style="font-family:'Noto Sans JP';font-weight:500">雨だ</span> es un enunciado autosuficiente; la situación proporciona todo el contexto necesario.</p>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <h3>3.2 Estructura básica</h3>
+
+      <div class="flow">
+        <div class="flow-box">
+          <span class="jp-flow">話題</span>
+          <strong>Tópico</strong>
+          <small>(opcional)</small>
+        </div>
+        <span class="flow-arrow">+</span>
+        <div class="flow-box">
+          <span class="jp-flow">補語</span>
+          <strong>Complementos</strong>
+          <small>(opcionales)</small>
+        </div>
+        <span class="flow-arrow">+</span>
+        <div class="flow-box core">
+          <span class="jp-flow">述部</span>
+          <strong>Predicado</strong>
+          <small>OBLIGATORIO</small>
+        </div>
+        <span class="flow-arrow">+</span>
+        <div class="flow-box">
+          <span class="jp-flow">文末表現</span>
+          <strong>Expresiones finales</strong>
+          <small>(opcionales)</small>
+        </div>
+      </div>
+
+      <h3>3.3 El predicado se compone de:</h3>
+
+      <div class="flow">
+        <div class="flow-box core">
+          <span class="jp-flow">述部の核</span>
+          <strong>Núcleo del predicado</strong>
+          <small>V, A, Na o N</small>
+        </div>
+        <span class="flow-arrow">+</span>
+        <div class="flow-box">
+          <span class="jp-flow">述語機能表現</span>
+          <strong>Expresiones funcionales</strong>
+          <small>(opcionales)</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <h3>3.4 Las 4 clases del núcleo predicativo</h3>
+
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr><th>Clase</th><th>Nombre</th><th>Característica</th><th>Ejemplo</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="class-tag">V</span></td>
+              <td><span style="font-family:'Noto Sans JP'">動詞</span> verbo</td>
+              <td>Expresa acción o cambio</td>
+              <td><span style="font-family:'Noto Sans JP'">食べる、行く</span></td>
+            </tr>
+            <tr>
+              <td><span class="class-tag">A</span></td>
+              <td><span style="font-family:'Noto Sans JP'">形容詞</span> adjetivo</td>
+              <td>Termina en <span style="font-family:'Noto Sans JP'">-い</span>, se conjuga</td>
+              <td><span style="font-family:'Noto Sans JP'">高い、おいしい</span></td>
+            </tr>
+            <tr>
+              <td><span class="class-tag">Na</span></td>
+              <td><span style="font-family:'Noto Sans JP'">形容名詞</span> nominal adjetival</td>
+              <td>Requiere <span style="font-family:'Noto Sans JP'">だ</span> (declarativo)</td>
+              <td><span style="font-family:'Noto Sans JP'">静かだ、元気だ</span></td>
+            </tr>
+            <tr>
+              <td><span class="class-tag">N</span></td>
+              <td><span style="font-family:'Noto Sans JP'">名詞</span> nominal</td>
+              <td>Requiere <span style="font-family:'Noto Sans JP'">だ</span> (declarativo)</td>
+              <td><span style="font-family:'Noto Sans JP'">学生だ、雨だ</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>3.5 Expresiones funcionales básicas</h3>
+
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr><th>Expresión</th><th>Función</th><th>Ejemplo</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span style="font-family:'Noto Sans JP'">ない</span> (adjetivo negativo)</td>
+              <td>Negación</td>
+              <td><span style="font-family:'Noto Sans JP'">食べない</span></td>
+            </tr>
+            <tr>
+              <td><span style="font-family:'Noto Sans JP'">た・だ</span> (perfectivo)</td>
+              <td>Acción completada</td>
+              <td><span style="font-family:'Noto Sans JP'">食べた</span></td>
+            </tr>
+            <tr>
+              <td><span style="font-family:'Noto Sans JP'">ます</span> (marcador de cortesía)</td>
+              <td>Cortesía</td>
+              <td><span style="font-family:'Noto Sans JP'">食べます</span></td>
+            </tr>
+            <tr>
+              <td><span style="font-family:'Noto Sans JP'">だ</span> (declarativo)</td>
+              <td>Predicación N / Na</td>
+              <td><span style="font-family:'Noto Sans JP'">学生だ、静かだ</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>3.6 Expresiones finales básicas</h3>
+
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr><th>Expresión</th><th>Función</th><th>Ejemplo</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span style="font-family:'Noto Sans JP'">よ</span></td>
+              <td>Informar / afirmar</td>
+              <td><span style="font-family:'Noto Sans JP'">行くよ</span> (voy, te digo)</td>
+            </tr>
+            <tr>
+              <td><span style="font-family:'Noto Sans JP'">ね</span></td>
+              <td>Confirmar / empatía</td>
+              <td><span style="font-family:'Noto Sans JP'">暑いね</span> (hace calor, ¿no?)</td>
+            </tr>
+            <tr>
+              <td><span style="font-family:'Noto Sans JP'">か</span></td>
+              <td>Pregunta (registro llano)</td>
+              <td><span style="font-family:'Noto Sans JP'">行くか</span> (¿vas?)</td>
+            </tr>
+            <tr>
+              <td>Entonación ascendente</td>
+              <td>Pregunta (hablada)</td>
+              <td><span style="font-family:'Noto Sans JP'">行く？ / 行きます？</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- =========================================================
+     4. SISTEMA DE COMPLEMENTOS
+     ========================================================= -->
+<section class="doc-section" id="complementos">
+  <div class="container">
+
+    <div class="reveal">
+      <div class="sec-num">04</div>
+      <h2 class="sec-title">Sistema de Complementos <span class="jp-inline">補語体系</span></h2>
+      <p class="sec-lead">No hay «sujeto» ni «objeto directo»: hay complementos marcados por posposiciones.</p>
+    </div>
+
+    <div class="reveal">
+      <div class="note-block">
+        <div class="note-title">Concepto clave</div>
+        <p style="margin:0">En japonés, la <strong>posposición</strong> (<span style="font-family:'Noto Sans JP'">後置詞</span>) indica qué función cumple cada elemento en relación al predicado.</p>
+      </div>
+
+      <h3>4.2 Principales complementos</h3>
+
+      <div class="complement-grid">
+        <div class="complement-card">
+          <h5><span style="font-family:'Noto Sans JP'">が</span> — Complemento nominativo</h5>
+          <p>Indica el referente del predicado</p>
+          <p><span class="jp-ex"><span style="font-family:'Noto Sans JP'">猫<strong>が</strong>いる</span></span><br><small>hay un gato</small></p>
+        </div>
+        <div class="complement-card">
+          <h5><span style="font-family:'Noto Sans JP'">を</span> — Complemento acusativo</h5>
+          <p>Indica lo afectado por la acción</p>
+          <p><span class="jp-ex"><span style="font-family:'Noto Sans JP'">本<strong>を</strong>読む</span></span><br><small>leer un libro</small></p>
+        </div>
+        <div class="complement-card">
+          <h5><span style="font-family:'Noto Sans JP'">に</span> — Complemento dativo / locativo</h5>
+          <p>Indica destino, ubicación, tiempo</p>
+          <p><span class="jp-ex"><span style="font-family:'Noto Sans JP'">東京<strong>に</strong>住む</span></span><br><small>vivir en Tokio</small></p>
+        </div>
+        <div class="complement-card">
+          <h5><span style="font-family:'Noto Sans JP'">で</span> — Complemento instrumental / locativo</h5>
+          <p>Indica medio o lugar de acción</p>
+          <p><span class="jp-ex"><span style="font-family:'Noto Sans JP'">電車<strong>で</strong>行く</span></span><br><small>ir en tren</small></p>
+        </div>
+        <div class="complement-card">
+          <h5><span style="font-family:'Noto Sans JP'">へ</span> — Complemento direccional</h5>
+          <p>Indica dirección</p>
+          <p><span class="jp-ex"><span style="font-family:'Noto Sans JP'">北<strong>へ</strong>向かう</span></span><br><small>dirigirse al norte</small></p>
+        </div>
+        <div class="complement-card">
+          <h5><span style="font-family:'Noto Sans JP'">から</span> — Complemento ablativo</h5>
+          <p>Indica origen</p>
+          <p><span class="jp-ex"><span style="font-family:'Noto Sans JP'">東京<strong>から</strong>来た</span></span><br><small>vine de Tokio</small></p>
+        </div>
+        <div class="complement-card">
+          <h5><span style="font-family:'Noto Sans JP'">まで</span> — Complemento terminativo</h5>
+          <p>Indica punto final</p>
+          <p><span class="jp-ex"><span style="font-family:'Noto Sans JP'">大阪<strong>まで</strong>行く</span></span><br><small>ir hasta Osaka</small></p>
+        </div>
+        <div class="complement-card">
+          <h5><span style="font-family:'Noto Sans JP'">と</span> — Complemento comitativo</h5>
+          <p>Indica contraparte</p>
+          <p><span class="jp-ex"><span style="font-family:'Noto Sans JP'">友達<strong>と</strong>行く</span></span><br><small>ir con un amigo</small></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <h3>4.3 El tópico: <span style="font-family:'Noto Sans JP'">は</span></h3>
+
+      <div class="scene-card">
+        <span class="scene-label">Situación</span>
+        <p class="scene-context">Alguien pregunta por el sushi. Tú respondes sobre el sushi:</p>
+        <p class="scene-jp">寿司は、おいしいよ。</p>
+        <p class="scene-es">(Si hablamos de) el sushi, está rico.</p>
+      </div>
+
+      <p><span style="font-family:'Noto Sans JP'">は</span> no indica «quién hace la acción» — indica <strong>de qué estamos hablando</strong> (tópico).</p>
+
+      <div class="scene-card">
+        <span class="scene-label">Situación</span>
+        <p class="scene-context">Te preguntan qué te gusta. El sushi es el tema:</p>
+        <p class="scene-jp">私は寿司が好きだ。</p>
+        <p class="scene-es">Yo (en cuanto a mí), el sushi es (mi) favorito.</p>
+      </div>
+
+      <div class="question-box">
+        ¿Cuál es el «sujeto» de esta oración? — Pregunta mal planteada.<br>
+        <span style="font-family:'Noto Sans JP';font-weight:500">私は</span> = tópico (de quién hablamos) &nbsp;/&nbsp;
+        <span style="font-family:'Noto Sans JP';font-weight:500">寿司が</span> = complemento nominativo (qué es el favorito)
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- =========================================================
+     5. SECUENCIA DE APRENDIZAJE
+     ========================================================= -->
+<section class="doc-section" id="secuencia">
+  <div class="container">
+
+    <div class="reveal">
+      <div class="sec-num">05</div>
+      <h2 class="sec-title">Secuencia de Aprendizaje <span class="jp-inline">学習順序</span></h2>
+      <p class="sec-lead">Del predicado hacia afuera: construimos la oración desde lo esencial hacia la periferia.</p>
+    </div>
+
+    <div class="reveal">
+      <h3>5.1 Principio: del predicado hacia afuera</h3>
+
+      <div class="flow">
+        <div class="flow-box core"><strong>Predicado<br>solo</strong></div>
+        <span class="flow-arrow">→</span>
+        <div class="flow-box">+ Complementos</div>
+        <span class="flow-arrow">→</span>
+        <div class="flow-box">+ Tópico</div>
+        <span class="flow-arrow">→</span>
+        <div class="flow-box">+ Modificadores</div>
+        <span class="flow-arrow">→</span>
+        <div class="flow-box">Oraciones<br>complejas</div>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <h3>5.2 Secuencia detallada</h3>
+
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr><th>Etapa</th><th>Contenido</th><th>Enfoque</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>0</td><td>Fonética y escritura</td><td>Base de sonido y lectura</td></tr>
+            <tr><td>1</td><td>Marco conceptual</td><td>Estructura del predicado (sin producir aún)</td></tr>
+            <tr><td>2</td><td>Adjetivos (A) + funcionales</td><td><span style="font-family:'Noto Sans JP'">高い → 高くない → 高かった</span></td></tr>
+            <tr><td>3</td><td>Nominales adjetivales (Na) + <span style="font-family:'Noto Sans JP'">だ</span></td><td><span style="font-family:'Noto Sans JP'">静かだ → 静かじゃない</span></td></tr>
+            <tr><td>4</td><td>Nominales (N) + <span style="font-family:'Noto Sans JP'">だ</span></td><td><span style="font-family:'Noto Sans JP'">学生だ → 学生じゃない</span></td></tr>
+            <tr><td>5</td><td>Verbos (V) + funcionales</td><td><span style="font-family:'Noto Sans JP'">食べる → 食べない → 食べた</span></td></tr>
+            <tr><td>6</td><td>Complementos con posposiciones</td><td><span style="font-family:'Noto Sans JP'">本を読む、東京に行く</span></td></tr>
+            <tr><td>7</td><td>Tópico (<span style="font-family:'Noto Sans JP'">は</span>)</td><td>Estructura informativa</td></tr>
+            <tr><td>8</td><td>Estructura <span style="font-family:'Noto Sans JP'">のだ</span></td><td>Explicación y énfasis</td></tr>
+            <tr><td>9</td><td>Modificación nominal</td><td><span style="font-family:'Noto Sans JP'">[昨日買った]本</span></td></tr>
+            <tr><td>10</td><td>Adverbios</td><td>Modificación del predicado</td></tr>
+            <tr><td>11</td><td>Conectores</td><td>Enlace de oraciones</td></tr>
+            <tr><td>12</td><td>Oraciones compuestas</td><td>Coordinación</td></tr>
+            <tr><td>13</td><td>Oraciones complejas</td><td>Subordinación</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <h3>5.3 En cada etapa</h3>
+      <ol class="steps-list">
+        <li><strong>Presentar situaciones</strong> con ejemplos en contexto.</li>
+        <li><strong>Despertar curiosidad:</strong> «¿Qué pasa aquí?»</li>
+        <li><strong>Guiar el descubrimiento</strong> del patrón.</li>
+        <li><strong>Confirmar</strong> con sistematización gramatical.</li>
+        <li><strong>Practicar en contexto</strong> (no drills aislados).</li>
+        <li><strong>Practicar sin contexto</strong> (drills para automatización).</li>
+        <li><strong>Combinar</strong> con los elementos aprendidos anteriormente.</li>
+      </ol>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- =========================================================
+     6. FONÉTICA Y ESCRITURA
+     ========================================================= -->
+<section class="doc-section" id="fonetica">
+  <div class="container">
+
+    <div class="reveal">
+      <div class="sec-num">06</div>
+      <h2 class="sec-title">Fonética y Escritura <span class="jp-inline">音声と文字</span></h2>
+      <p class="sec-lead">La relación sonido-escritura se introduce desde el principio, no se deja «para después».</p>
+    </div>
+
+    <div class="reveal">
+      <h3>6.2 Herramienta de audio: Web Speech API</h3>
+
+      <div class="explain">
+        <div class="explain-title">🔊 Síntesis de voz integrada</div>
+        <p style="margin:0">El sitio utiliza la <strong>función de síntesis de voz del navegador</strong> (Web Speech API). El estudiante puede escuchar cualquier texto japonés con un clic, sin archivos de audio pregrabados.</p>
+      </div>
+
+      <h4>Funcionamiento</h4>
+      <ul>
+        <li>El navegador tiene voces japonesas integradas (o descargables).</li>
+        <li>El estudiante puede <strong>seleccionar cualquier texto</strong> y escucharlo.</li>
+        <li>Funciona en Chrome, Edge, Safari y Firefox (con variaciones).</li>
+      </ul>
+
+      <h4>Cómo usar</h4>
+      <ul>
+        <li>🔊 <strong>Botón de reproducción:</strong> junto a ejemplos y oraciones.</li>
+        <li>🎯 <strong>Seleccionar y escuchar:</strong> selecciona texto → clic en «Escuchar».</li>
+        <li>⚙️ <strong>Velocidad configurable</strong> según el nivel del estudiante.</li>
+      </ul>
+
+      <div class="warn-block">
+        <strong>Limitaciones a tener en cuenta:</strong> la calidad varía según el navegador y el sistema operativo. El <em>pitch accent</em> (acento tonal) puede no ser preciso en todas las voces. Para verificación precisa se recomienda contrastar con hablantes nativos.
+      </div>
+
+      <h3>6.3 Otras herramientas</h3>
+      <ul>
+        <li>📖 <strong>Furigana:</strong> lectura de kanji visible sobre el texto.</li>
+        <li>📚 <strong>Tablas de referencia:</strong> hiragana y katakana siempre accesibles.</li>
+      </ul>
+    </div>
+
+    <div class="reveal">
+      <h3>6.4 Fenómenos fonéticos que requieren atención</h3>
+
+      <h4>A. Vocales</h4>
+
+      <div class="complement-grid">
+        <div class="complement-card">
+          <h5><span style="font-family:'Noto Sans JP'">母音の無声化</span> — Ensordecimiento vocálico</h5>
+          <p>Las vocales <span style="font-family:'Noto Sans JP'">い</span> y <span style="font-family:'Noto Sans JP'">う</span> se ensordecen entre consonantes sordas o al final.</p>
+          <p><span style="font-family:'Noto Sans JP'">すき</span> → [s(u)ki] &nbsp;/&nbsp; <span style="font-family:'Noto Sans JP'">です</span> → [des(u)]</p>
+        </div>
+        <div class="complement-card">
+          <h5><span style="font-family:'Noto Sans JP'">長音</span> — Vocales largas</h5>
+          <p>La duración vocálica es distintiva. Una vocal larga dura el doble que una breve.</p>
+          <p><span style="font-family:'Noto Sans JP'">おばさん</span> (tía) ≠ <span style="font-family:'Noto Sans JP'">おばあさん</span> (abuela)<br>
+          <span style="font-family:'Noto Sans JP'">ビル</span> (edificio) ≠ <span style="font-family:'Noto Sans JP'">ビール</span> (cerveza)</p>
+        </div>
+      </div>
+
+      <h4>B. Acento tonal (Pitch Accent)</h4>
+
+      <div class="scene-card">
+        <span class="scene-label">Concepto clave</span>
+        <p>El japonés tiene <strong>acento tonal</strong> (<em>pitch accent</em>), no acento de intensidad como el español. Cada sílaba tiene tono alto o bajo.</p>
+        <p style="margin-top:0.5rem">
+          <span style="font-family:'Noto Sans JP'">箸</span> [はし] palillos — HL (alto-bajo)<br>
+          <span style="font-family:'Noto Sans JP'">橋</span> [はし] puente — LH (bajo-alto)
+        </p>
+      </div>
+
+      <div class="question-box">
+        El acento tonal varía según el dialecto. El sitio presenta el acento estándar de Tokio, pero el estudiante debe saber que existen variaciones regionales significativas.
+      </div>
+
+      <h4>C. Consonantes y sílabas especiales</h4>
+
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr><th>Sonido</th><th>Kana</th><th>Descripción</th><th>Nota para hispanohablantes</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>[ɕi]</td>
+              <td><span style="font-family:'Noto Sans JP'">し</span></td>
+              <td>Fricativa alveopalatal sorda</td>
+              <td>No es «si» española. Más cercana a «sh» inglesa, pero más suave.</td>
+            </tr>
+            <tr>
+              <td>[ts]</td>
+              <td><span style="font-family:'Noto Sans JP'">つ</span></td>
+              <td>Africada alveolar sorda</td>
+              <td>No es «tu». Es «ts» como en <em>tsunami</em>.</td>
+            </tr>
+            <tr>
+              <td>[ɸ]</td>
+              <td><span style="font-family:'Noto Sans JP'">ふ</span></td>
+              <td>Fricativa bilabial sorda</td>
+              <td>No es «fu» ni «ju». Se produce soplando entre los labios.</td>
+            </tr>
+            <tr>
+              <td>[h] / [ç]</td>
+              <td><span style="font-family:'Noto Sans JP'">は・へ</span></td>
+              <td>Fricativa glotal / palatal</td>
+              <td>Aspirada suave, no como la «j» española.</td>
+            </tr>
+            <tr>
+              <td>[dz] / [z]</td>
+              <td><span style="font-family:'Noto Sans JP'">ざ・ず・ぜ・ぞ</span></td>
+              <td>Africada / fricativa alveolar sonora</td>
+              <td>Varía entre [dz] y [z]. No es la «z» castellana [θ].</td>
+            </tr>
+            <tr>
+              <td>[dʑ] / [ʑ]</td>
+              <td><span style="font-family:'Noto Sans JP'">じ</span></td>
+              <td>Africada / fricativa alveopalatal sonora</td>
+              <td>Similar a la «j» de <em>joy</em> en inglés.</td>
+            </tr>
+            <tr>
+              <td>[ɾ]</td>
+              <td><span style="font-family:'Noto Sans JP'">ら行</span></td>
+              <td>Vibrante simple alveolar</td>
+              <td>Parecida a la «r» de <em>pero</em>, pero más suave. Ni «r» fuerte ni «l».</td>
+            </tr>
+            <tr>
+              <td>[ɴ] / [n] / [m] / [ŋ]</td>
+              <td><span style="font-family:'Noto Sans JP'">ん</span></td>
+              <td>Nasal (varía según contexto)</td>
+              <td>[m] ante labial, [ŋ] ante velar, etc.</td>
+            </tr>
+            <tr>
+              <td>[ʔ] + C</td>
+              <td><span style="font-family:'Noto Sans JP'">っ</span></td>
+              <td>Geminación (consonante doble)</td>
+              <td>Pausa breve antes de la consonante. <span style="font-family:'Noto Sans JP'">きて</span> ≠ <span style="font-family:'Noto Sans JP'">きって</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <h3>6.5 Relación sonido-escritura</h3>
+
+      <h4>Los tres sistemas</h4>
+      <ul>
+        <li><strong>Hiragana</strong> — Silabario básico, para palabras nativas y gramática.</li>
+        <li><strong>Katakana</strong> — Silabario para préstamos extranjeros, onomatopeyas, énfasis.</li>
+        <li><strong>Kanji</strong> — Caracteres chinos que representan significado y sonido.</li>
+      </ul>
+
+      <div class="note-block">
+        <div class="note-title">Principio para el estudiante</div>
+        <p>Un kana = una mora (unidad rítmica).</p>
+        <p style="font-family:'Noto Sans JP';font-size:1.05rem;margin-top:0.3rem">
+          さくら = 3 moras [sa-ku-ra]<br>
+          きょう = 2 moras [kyo-o] (no 3)
+        </p>
+      </div>
+
+      <p>Las tablas de hiragana y katakana, así como la herramienta de audio, están disponibles desde cualquier página del sitio.</p>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- =========================================================
+     7. ESTRUCTURA DEL SITIO
+     ========================================================= -->
+<section class="doc-section" id="sitio">
+  <div class="container">
+
+    <div class="reveal">
+      <div class="sec-num">07</div>
+      <h2 class="sec-title">Estructura del Sitio Web <span class="jp-inline">サイト構成</span></h2>
+      <p class="sec-lead">Arquitectura, navegación y principios de diseño del sitio.</p>
+    </div>
+
+    <div class="reveal">
+      <h3>7.1 Arquitectura</h3>
+
+      <div class="site-grid">
+        <div class="site-card">
+          <h4>📘 Marco Gramatical</h4>
+          <ul>
+            <li>Sistema terminológico</li>
+            <li>Estructura del predicado</li>
+            <li>Sistema de complementos</li>
+            <li>Referencia de formas</li>
+          </ul>
+        </div>
+        <div class="site-card">
+          <h4>🎯 Aprendizaje por Etapas</h4>
+          <ul>
+            <li>Situaciones + ejemplos</li>
+            <li>Descubrimiento guiado</li>
+            <li>Práctica en contexto</li>
+            <li>Conexiones cruzadas</li>
+          </ul>
+        </div>
+        <div class="site-card">
+          <h4>🔊 Fonética y Escritura</h4>
+          <ul>
+            <li>Tablas de kana</li>
+            <li>Guía de pronunciación</li>
+            <li>Herramienta de audio</li>
+            <li>Herramienta de furigana</li>
+          </ul>
+        </div>
+        <div class="site-card">
+          <h4>❓ Q&amp;A</h4>
+          <ul>
+            <li>Por tema</li>
+            <li>Dudas comunes</li>
+            <li>Búsqueda</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>7.2 Principios de navegación</h3>
+      <ul>
+        <li><strong>Interconexión:</strong> cada concepto enlaza a los conceptos relacionados.</li>
+        <li><strong>Referencia siempre accesible:</strong> tablas y herramientas disponibles desde cualquier página.</li>
+        <li><strong>Del ejemplo a la explicación:</strong> nunca al revés.</li>
+      </ul>
+    </div>
+
+    <div class="reveal">
+      <div class="conclusion-box">
+        <h3>Resumen — 要約</h3>
+        <ol class="steps-list">
+          <li>Describir el japonés <strong>desde su lógica interna</strong>, sin imponer conceptos occidentales.</li>
+          <li>El <strong>predicado como centro</strong> de la oración.</li>
+          <li><strong>Sistema de complementos</strong> marcados por posposiciones (no «sujeto/objeto»).</li>
+          <li><strong>Enfoque inductivo:</strong> Situación → Curiosidad → Descubrimiento → Uso.</li>
+          <li><strong>Secuencia A → Na → N → V</strong>, del predicado hacia afuera.</li>
+          <li><strong>Práctica en contexto</strong>, no drills aislados.</li>
+        </ol>
+      </div>
+
+      <p style="text-align:center; margin-top:2rem">
+        <span class="status-badge">🚧 Documento en desarrollo activo</span>
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+  <p class="footer-title"><a href="../index.html">日本語 — Japonés para Todos</a></p>
+  <p class="footer-jp">スペイン語話者のための日本語学習サイト</p>
+  <nav class="footer-nav" aria-label="Navegación del pie de página">
+    <a href="../index.html">Inicio</a>
+    <a href="../gramatica/index.html">Gramática</a>
+    <a href="documento-fundamental.html">Documento Fundamental</a>
+  </nav>
+  <p class="footer-copy">© 2026 Japonés para Todos — Proyecto de código abierto en GitHub</p>
+</footer>
+
+<!-- ===== SCRIPTS ===== -->
+<script>
+// Scroll reveal
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+reveals.forEach(el => observer.observe(el));
+
+// Active nav highlight
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.doc-nav a');
+
+const navObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      navLinks.forEach(a => a.classList.remove('active'));
+      const active = document.querySelector(`.doc-nav a[href="#${entry.target.id}"]`);
+      if (active) active.classList.add('active');
+    }
+  });
+}, { threshold: 0.3 });
+
+sections.forEach(s => navObserver.observe(s));
+</script>
+
+</body>
+</html>
