@@ -54,7 +54,7 @@
       "objetivo": "Grupo 1: la forma perfectiva varía según la consonante final del stem. Cuatro patrones distintos más la excepción de 行く.",
       "descubrimiento": "行った (-ku → -tta, excepción), 飲んだ (-mu → -nda), 聞いた (-ku → -ita, regular), 話した (-su → -shita). ¿Cuántos sub-patrones ves?",
       "sistematización": "G1 perfectivo: -ku→-ita (聞いた), pero 行く→行った (excepción). -mu/-nu/-bu→-nda (飲んだ). -u/-tsu/-ru→-tta (帰った). -su→-shita (話した). Los patrones son fonológicamente motivados (音便 onbin).",
-      "ids_entradas": ["A1-2-019", "A1-2-020", "A1-2-021", "A1-2-022"]
+      "ids_entradas": ["A1-2-019", "A1-2-020", "A1-2-021", "A1-2-022", "A1-2-023", "A1-2-024", "A1-2-025"]
     }
   ],
 
@@ -410,6 +410,57 @@
       "pares_contraste": ["A1-2-019", "A1-2-021"],
       "calidad": { "naturalidad": 3, "validado": false },
       "metadatos": { "jlpt": "N5", "tags": ["V", "perfectivo", "した", "grupo1", "DS-PERF-06"], "creado": "2026-04-23", "versión": 1 }
+    },
+    {
+      "id": "A1-2-023", "bloque": 2, "conjunto": "DS-PERF-06", "clase": "V",
+      "japonés": "した。", "furigana": "した。", "romaji": "Shita.",
+      "español": "Lo hice. / Sí, lo hice.",
+      "audio_text": "した",
+      "situación": { "descripción": "Tu compañero te pregunta si ya hiciste los deberes. Sí, ya los hiciste.", "tipo": "confirmar acción completada", "entorno": "estudio" },
+      "predicado": { "núcleo": "する", "clase": "V", "grupo": "irregular", "expresiones_funcionales": ["た"], "expresiones_finales": [] },
+      "complementos": [], "tópico": null, "registro": "informal",
+      "descubrimiento": "する → した (¡no *すた!). El stem perfectivo de する es し-, idéntico al stem negativo (しない). ¿Ves la simetría?",
+      "sistematización": "Irregulares en perfectivo: する→した (stem し-), 来る→来た(きた) (stem き-). El stem de perfectivo coincide en ambos casos con el stem de negativo: しない/した, こない/来た.",
+      "vocabulario": [{ "jp": "する", "furigana": "する", "es": "hacer", "clase": "V", "grupo": "irregular", "jlpt": "N5" }],
+      "notas_hispanohablante": "した como respuesta afirmativa breve es muy frecuente en japonés cotidiano. Equivale a 'Ya' o 'Sí, lo hice'.",
+      "interferencia_española": false,
+      "pares_contraste": ["A1-1-025", "A1-2-024"],
+      "calidad": { "naturalidad": 3, "validado": false },
+      "metadatos": { "jlpt": "N5", "tags": ["V", "perfectivo", "た", "irregular", "する", "DS-PERF-06"], "creado": "2026-04-27", "versión": 1 }
+    },
+    {
+      "id": "A1-2-024", "bloque": 2, "conjunto": "DS-PERF-06", "clase": "V",
+      "japonés": "来た。", "furigana": "きた。", "romaji": "Kita.",
+      "español": "Llegó. / Ya vino.",
+      "audio_text": "来た",
+      "situación": { "descripción": "Esperabas a un amigo. Por fin aparece.", "tipo": "constatar llegada", "entorno": "casual" },
+      "predicado": { "núcleo": "来る", "clase": "V", "grupo": "irregular", "expresiones_funcionales": ["た"], "expresiones_finales": [] },
+      "complementos": [], "tópico": null, "registro": "informal",
+      "descubrimiento": "来る(くる) → 来た(きた). El kanji 来 se lee くる en diccionario, pero きた en perfectivo y こない en negativo. La raíz cambia de vocal: ku→ki(perf.) / ku→ko(neg.).",
+      "sistematización": "来る: negativo こない (stem こ-), perfectivo 来た (stem き-). Los dos irregulares cambian de stem completo: する(し-/し-), 来る(こ-/き-). Son los únicos dos verbos con esta irregularidad.",
+      "vocabulario": [{ "jp": "来る", "furigana": "くる", "es": "venir", "clase": "V", "grupo": "irregular", "jlpt": "N5" }],
+      "notas_hispanohablante": "来た como exclamación ('¡Ya llegó!') es muy frecuente. La irregularidad de 来る (くる / こない / きた) debe memorizarse directamente.",
+      "interferencia_española": false,
+      "pares_contraste": ["A1-1-026", "A1-2-023"],
+      "calidad": { "naturalidad": 3, "validado": false },
+      "metadatos": { "jlpt": "N5", "tags": ["V", "perfectivo", "た", "irregular", "来る", "DS-PERF-06"], "creado": "2026-04-27", "versión": 1 }
+    },
+    {
+      "id": "A1-2-025", "bloque": 2, "conjunto": "DS-PERF-06", "clase": "V",
+      "japonés": "帰った。", "furigana": "かえった。", "romaji": "Kaetta.",
+      "español": "Volví a casa. / Ya llegué a casa.",
+      "audio_text": "帰った",
+      "situación": { "descripción": "Llegas a casa después de una larga jornada. Lo anuncias o lo confirmas.", "tipo": "anunciar llegada", "entorno": "casa" },
+      "predicado": { "núcleo": "帰る", "clase": "V", "grupo": 1, "expresiones_funcionales": ["った"], "expresiones_finales": [] },
+      "complementos": [], "tópico": null, "registro": "informal",
+      "descubrimiento": "帰る (G1, termina en -ru) → 帰った (-ru→-tta). Compara: 行く→行った (-ku→-tta, excepción). ¿En qué se diferencian los dos -tta?",
+      "sistematización": "G1 verbos en -ru, -u, -tsu: el perfectivo es -った. 帰る→帰った, 買う→買った, 待つ→待った. Este patrón -った abarca tres tipos de mora final — todos dan -った en perfectivo.",
+      "vocabulario": [{ "jp": "帰る", "furigana": "かえる", "es": "volver a casa / regresar", "clase": "V", "grupo": 1, "jlpt": "N5" }],
+      "notas_hispanohablante": "帰った cierra el panorama de los patrones onbin del G1: -ita (聞いた), -nda (飲んだ), -shita (話した), -tta (帰った). Cuatro patrones fonológicamente motivados.",
+      "interferencia_española": false,
+      "pares_contraste": ["A1-0-024", "A1-2-019", "A1-2-021"],
+      "calidad": { "naturalidad": 3, "validado": false },
+      "metadatos": { "jlpt": "N5", "tags": ["V", "perfectivo", "った", "grupo1", "onbin", "DS-PERF-06"], "creado": "2026-04-27", "versión": 1 }
     }
   ]
 }

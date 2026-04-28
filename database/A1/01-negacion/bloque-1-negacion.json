@@ -46,7 +46,7 @@
       "objetivo": "Grupo 2: stem + ない. La regularidad total del Grupo 2.",
       "descubrimiento": "食べない, 見ない, 寝ない, 起きない. Todos quitan -る y añaden -ない. ¿Cuál es el stem de 起きる?",
       "sistematización": "Grupo 2 (ichidan): stem = infinitivo sin -る. 食べる→食べ, 見る→見, 寝る→寝, 起きる→起き. Stem + ない.",
-      "ids_entradas": ["A1-1-017", "A1-1-018", "A1-1-019", "A1-1-020"]
+      "ids_entradas": ["A1-1-017", "A1-1-018", "A1-1-019"]
     },
     {
       "id": "DS-NEG-06",
@@ -54,7 +54,7 @@
       "objetivo": "Grupo 1: la vocal final del stem cambia a -a. Irregulares: しない, こない.",
       "descubrimiento": "行かない (-ku→-ka), 飲まない (-mu→-ma), 読まない (-mu→-ma), 話さない (-su→-sa). ¿El patrón? La vocal cambia a -a. ¿Y する? ¿Y 来る?",
       "sistematización": "Grupo 1: última mora del stem → mora equivalente en -a. Irregulares: する→しない (stem し-), 来る→来ない(こない) (stem こ-).",
-      "ids_entradas": ["A1-1-021", "A1-1-022", "A1-1-023", "A1-1-024", "A1-1-025"]
+      "ids_entradas": ["A1-1-020", "A1-1-021", "A1-1-022", "A1-1-023", "A1-1-024", "A1-1-025", "A1-1-026"]
     }
   ],
 
@@ -367,21 +367,21 @@
       "metadatos": { "jlpt": "N5", "tags": ["V", "negativo", "ない", "grupo2", "DS-NEG-05"], "creado": "2026-04-23", "versión": 1 }
     },
     {
-      "id": "A1-1-020", "bloque": 1, "conjunto": "DS-NEG-05", "clase": "V",
+      "id": "A1-1-020", "bloque": 1, "conjunto": "DS-NEG-06", "clase": "V",
       "japonés": "分からない。", "furigana": "わからない。", "romaji": "Wakaranai.",
       "español": "No entiendo. / No lo sé.",
       "audio_text": "分からない",
-      "situación": { "descripción": "Alguien te explica algo. No lo entiendes.", "tipo": "expresar incomprensión", "entorno": "cualquiera" },
+      "situación": { "descripción": "El profesor explica una regla gramatical. No la entiendes.", "tipo": "expresar incomprensión", "entorno": "aula" },
       "predicado": { "núcleo": "分かる", "clase": "V", "grupo": 1, "expresiones_funcionales": ["ない"], "expresiones_finales": [] },
       "complementos": [], "tópico": null, "registro": "informal",
-      "descubrimiento": "分かる (G1) → 分からない (-ru → -ra). La vocal -u de -ru cambia a -a.",
-      "sistematización": "Grupo 1, verbos en -ru: -ru → -ra + ない. 分か(ru) → 分か(ra) + ない = 分からない.",
+      "descubrimiento": "分かる termina en -る como los verbos Grupo 2. ¿Es G2? No: 分か(ru) → 分か(ra) + ない = 分からない. La vocal -u cambia a -a. Es Grupo 1.",
+      "sistematización": "分かる: G1 con terminación -ru (no confundir con G2). La prueba es la negación: G2 → stem + ない; G1-ru → vocal -u cambia a -a → 分からない.",
       "vocabulario": [{ "jp": "分かる", "furigana": "わかる", "es": "entender / comprender", "clase": "V", "grupo": 1, "jlpt": "N5" }],
       "notas_hispanohablante": "分からない es una de las frases más frecuentes del japonés cotidiano. Vale memorizarla directamente.",
       "interferencia_española": false,
       "pares_contraste": ["A1-0-029", "A1-1-021"],
       "calidad": { "naturalidad": 3, "validado": false },
-      "metadatos": { "jlpt": "N5", "tags": ["V", "negativo", "ない", "grupo1", "DS-NEG-05", "DS-NEG-06"], "creado": "2026-04-23", "versión": 1 }
+      "metadatos": { "jlpt": "N5", "tags": ["V", "negativo", "ない", "grupo1", "DS-NEG-06", "G1-ru-trampa"], "creado": "2026-04-23", "versión": 2 }
     },
     {
       "id": "A1-1-021", "bloque": 1, "conjunto": "DS-NEG-06", "clase": "V",
@@ -463,6 +463,23 @@
       "pares_contraste": ["A1-1-021", "A1-1-022"],
       "calidad": { "naturalidad": 3, "validado": false },
       "metadatos": { "jlpt": "N5", "tags": ["V", "negativo", "ない", "irregular", "する", "DS-NEG-06"], "creado": "2026-04-23", "versión": 1 }
+    },
+    {
+      "id": "A1-1-026", "bloque": 1, "conjunto": "DS-NEG-06", "clase": "V",
+      "japonés": "来ない。", "furigana": "こない。", "romaji": "Konai.",
+      "español": "No viene. / No va a venir.",
+      "audio_text": "来ない",
+      "situación": { "descripción": "Esperabas a un amigo. Pasa el tiempo y no aparece.", "tipo": "constatar ausencia", "entorno": "casual" },
+      "predicado": { "núcleo": "来る", "clase": "V", "grupo": "irregular", "expresiones_funcionales": ["ない"], "expresiones_finales": [] },
+      "complementos": [], "tópico": null, "registro": "informal",
+      "descubrimiento": "来る → 来ない (こない). El stem negativo es こ-, irregular. Compara: する→しない (stem し-), 来る→来ない (stem こ-). Dos irregulares, dos stems distintos.",
+      "sistematización": "Los dos únicos verbos completamente irregulares: する→しない (stem し-), 来る→来ない(こない) (stem こ-). Todo el resto del japonés es regular dentro de su grupo.",
+      "vocabulario": [{ "jp": "来る", "furigana": "くる", "es": "venir", "clase": "V", "grupo": "irregular", "jlpt": "N5" }],
+      "notas_hispanohablante": "来る se lee くる en diccionario pero こない en negativo. La lectura del kanji cambia: 来(く)る → 来(こ)ない. Es la irregularidad más visible del sistema verbal japonés junto con する.",
+      "interferencia_española": false,
+      "pares_contraste": ["A1-1-025"],
+      "calidad": { "naturalidad": 3, "validado": false },
+      "metadatos": { "jlpt": "N5", "tags": ["V", "negativo", "ない", "irregular", "来る", "DS-NEG-06"], "creado": "2026-04-27", "versión": 1 }
     }
   ]
 }

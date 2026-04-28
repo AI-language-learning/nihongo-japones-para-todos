@@ -7,6 +7,8 @@
 
   "nota_sobre_だ": "El だ en 静かだ y 雨だ NO es el núcleo predicativo — es la expresión funcional declarativa. El núcleo es 静か (Na) y 雨 (N) respectivamente. だ marca la predicación nominal, no constituye el predicado. En los adjetivos (A) y los verbos (V), el núcleo ya incluye su propia forma predicativa sin necesitar だ.",
 
+  "nota_sobre_jlpt": "El nivel JLPT de las entradas de este bloque corresponde al de cada ítem léxico, no al del bloque en su conjunto. En el bloque 0, el objetivo es ilustrar las cuatro clases de núcleo predicativo (A, Na, N, V); por ello se admiten ítems léxicos de nivel N4, N3 o incluso N2 cuando son culturalmente frecuentes o pragmáticamente relevantes. La complejidad estructural de todas las entradas es A1: predicado núcleo solo, sin complementos ni marcas adicionales.",
+
   "conjuntos": [
 
     {
@@ -436,7 +438,7 @@
       "vocabulario": [{ "jp": "楽しい", "furigana": "たのしい", "es": "divertido / alegre", "clase": "A", "jlpt": "N4" }],
 
       "notas_hispanohablante": "En español 'divertido' como predicado necesita 'es/está': 'Es divertido'. En japonés 楽しい predica directamente.",
-      "interferencia_española": false,
+      "interferencia_española": true,
 
       "pares_contraste": ["A1-0-008", "A1-0-010"],
 
@@ -573,7 +575,7 @@
       "descubrimiento": "大変 es Na. El だ siempre aparece. ¿Puedes ya predecir la forma negativa? (Pista: Na → じゃない)",
       "sistematización": "大変だ: 大変 (Na) + だ. La conjugación: 大変だ → 大変じゃない → 大変だった.",
 
-      "vocabulario": [{ "jp": "大変", "furigana": "たいへんだ", "es": "terrible / muy duro / difícil en extremo", "clase": "Na", "jlpt": "N4" }],
+      "vocabulario": [{ "jp": "大変", "furigana": "たいへん", "es": "terrible / muy duro / difícil en extremo", "clase": "Na", "jlpt": "N4" }],
 
       "notas_hispanohablante": "大変 tiene un rango semántico amplio: 'terrible', 'muy difícil', 'tremendo'. No tiene un equivalente exacto en español.",
       "interferencia_española": false,
@@ -980,19 +982,19 @@
       "japonés": "食べる。",
       "furigana": "たべる。",
       "romaji": "Taberu.",
-      "español": "Como. / Voy a comer.",
+      "español": "Voy a comer. / Sí, como.",
       "audio_text": "食べる",
 
       "situación": {
-        "descripción": "Te ofrecen comida. Aceptas.",
-        "tipo": "aceptar ofrecimiento",
-        "entorno": "casual"
+        "descripción": "Después de clase, un amigo te pregunta si vas a la cafetería con él. Confirmas que sí vas a comer.",
+        "tipo": "confirmar plan",
+        "entorno": "campus universitario"
       },
 
       "predicado": { "núcleo": "食べる", "clase": "V", "grupo": 2, "expresiones_funcionales": [], "expresiones_finales": [] },
       "complementos": [], "tópico": null, "registro": "informal",
 
-      "descubrimiento": null,
+      "descubrimiento": "食べる sin complemento explícito: el lugar y el qué se come ya se entienden por el contexto. V como respuesta a invitación.",
       "sistematización": "食べる completa la clase V del bloque 0. Los cuatro tipos de predicado han sido presentados.",
 
       "vocabulario": [{ "jp": "食べる", "furigana": "たべる", "es": "comer", "clase": "V", "grupo": 2, "jlpt": "N5" }],

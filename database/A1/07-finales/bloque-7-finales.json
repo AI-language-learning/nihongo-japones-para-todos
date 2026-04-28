@@ -4,6 +4,8 @@
   "descripción": "Las expresiones finales modifican todo el predicado y expresan la actitud del hablante. Son opcionales pero determinan el tono pragmático del enunciado. A1 cubre: よ (informar/afirmar), ね (confirmar/buscar empatía), か (preguntar en registro llano), な (monólogo/exclamación), y la combinación よね.",
   "principio_organizador": "Las expresiones finales operan sobre la relación entre hablante y oyente, no sobre el contenido proposicional. El predicado 食べる puede ser 食べる (neutral), 食べるよ (te informo), 食べるね (¿verdad?/confirmando), 食べるか (¿comes? — masculino/brusco), 食べるな (prohibición), 食べるかな (me pregunto si...). Cada expresión final cambia la función comunicativa, no el significado léxico.",
   "nota_registro": "か en registro llano (sin です/ます) tiene valores distintos según el género y el tono: pregunta directa (neutro), retórica, o marcadamente masculino/brusco. En el habla cotidiana, la pregunta informal frecuente es la entonación ascendente sin か. Esta distribución se señala en cada entrada.",
+
+  "nota_sobre_notación_↑": "En A1-7-011, expresiones_finales contiene '↑' en lugar de una partícula. Esto indica que la función de pregunta se realiza únicamente mediante entonación ascendente, sin ninguna partícula final escrita. '↑' es la única entrada del sistema que representa un recurso prosódico puro — todos los demás valores de expresiones_finales son partículas escritas (よ, ね, か, な, よね, かな). Esta distinción es pedagógicamente relevante: demuestra que en japonés informal la entonación puede sustituir completamente a か como marcador de pregunta.",
   "conjuntos": [
     {
       "id": "DS-FIN-01",
@@ -205,7 +207,7 @@
       "metadatos": {"jlpt": "N4","tags": ["よね","Na","afirmación-confirmación","DS-FIN-03"],"creado": "2026-04-23","versión": 1}
     },
     {
-      "id": "A1-7-010","bloque": 7,"conjunto": "DS-FIN-03","clase": "V",
+      "id": "A1-7-010","bloque": 7,"conjunto": "DS-FIN-03","clase": "N",
       "japonés": "そうだよね。","furigana": "そうだよね。","romaji": "Sō da yo ne.",
       "español": "Sí que es así, ¿verdad? / Claro que sí, ¿no?",
       "audio_text": "そうだよね",
@@ -231,7 +233,7 @@
       "descubrimiento": "行く？ — entonación ascendente sin か. En habla informal cotidiana, la entonación ascendente es la forma de preguntar más neutra y frecuente.",
       "sistematización": "Pregunta informal más frecuente: entonación ascendente sin か. 行くか sería más brusco o marcadamente masculino en muchos contextos.",
       "vocabulario": [{"jp": "行く","furigana": "いく","es": "ir","clase": "V","grupo": 1,"jlpt": "N5"}],
-      "notas_hispanohablante": "En japonés informal, la forma más frecuente de hacer preguntas es simplemente subir la entonación. か en registro llano puede sonar brusco o masculino.",
+      "notas_hispanohablante": "En japonés informal, la forma más frecuente de hacer preguntas es simplemente subir la entonación. か en registro llano puede sonar brusco o masculino. Nota sobre la notación: '↑' en expresiones_finales indica que no hay partícula escrita — la pregunta se expresa solo por la entonación ascendente. Es el único caso del sistema donde expresiones_finales contiene un símbolo prosódico en lugar de una partícula.",
       "interferencia_española": false,
       "pares_contraste": ["A1-7-012","A1-7-013"],
       "calidad": {"naturalidad": 3,"validado": false},
@@ -247,7 +249,7 @@
       "complementos": [],"tópico": null,"registro": "informal-masculino",
       "descubrimiento": "大丈夫か — か en registro llano. ¿Suena igual que 大丈夫？ con entonación ascendente?",
       "sistematización": "か en registro llano: pregunta directa. En muchos contextos suena brusco o marcadamente masculino. Las mujeres y en general en el registro neutro prefieren entonación ascendente o ですか. Pero en situaciones de urgencia o entre amigos íntimos, か es natural.",
-      "vocabulario": [{"jp": "大丈夫","furigana": "だいじょうぶ","es": "¿estás bien?","clase": "Na","jlpt": "N4"}],
+      "vocabulario": [{"jp": "大丈夫","furigana": "だいじょうぶ","es": "sin problema / está bien","clase": "Na","jlpt": "N4"}],
       "notas_hispanohablante": "か en llano ≠ neutral en todos los contextos. Como '¿Bien?' dicho muy secamente en español. La neutralidad es 大丈夫？ (con entonación ascendente) o 大丈夫ですか？",
       "interferencia_española": false,
       "pares_contraste": ["A1-7-011","A1-7-013"],
@@ -284,7 +286,7 @@
       "vocabulario": [{"jp": "おいしい","furigana": "おいしい","es": "delicioso","clase": "A","jlpt": "N5"}],
       "notas_hispanohablante": "な monológico ≈ 'Qué rico...' dicho para uno mismo (sin entonación de pregunta). La diferencia な/ね/よ es la orientación: interior, al oyente-compartiendo, al oyente-informando.",
       "interferencia_española": false,
-      "pares_contraste": ["A1-7-002","A1-7-006"],
+      "pares_contraste": ["A1-7-002","A1-7-006","A1-7-015","A1-7-016"],
       "calidad": {"naturalidad": 3,"validado": false},
       "metadatos": {"jlpt": "N4","tags": ["な","A","monólogo","emoción-interior","DS-FIN-05"],"creado": "2026-04-23","versión": 1}
     },

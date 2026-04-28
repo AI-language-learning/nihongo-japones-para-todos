@@ -9,6 +9,8 @@
 
   "nota_sobre_に_vs_で": "Distinción fundamental para hispanohablantes: に marca localización existencial (dónde algo existe o reside: いる/ある/住む); で marca localización de actividad (dónde ocurre una acción: 勉強する/食べる/働く). En español 'en' cubre ambas funciones sin distinción.",
 
+  "nota_sobre_jlpt": "El nivel JLPT de las entradas de este bloque corresponde al de cada ítem léxico, no al del bloque en su conjunto. En el bloque 5, el objetivo es ilustrar las funciones de las principales posposiciones del japonés (を, が, に, で, から, まで); por ello se admiten ítems léxicos de nivel N4 o N3 cuando son funcionalmente representativos o pragmáticamente frecuentes. La complejidad estructural de todas las entradas es A1: predicado núcleo con uno o dos complementos posposicionales, sin marcas temporales ni topicalizadores adicionales.",
+
   "conjuntos": [
     {
       "id": "DS-COMP-01",
@@ -614,21 +616,21 @@
     {
       "id": "A1-5-025", "bloque": 5, "conjunto": "DS-COMP-06", "clase": "V",
       "japonés": "日本語が分かる。", "furigana": "にほんごがわかる。", "romaji": "Nihongo ga wakaru.",
-      "español": "Entiendo japonés.",
+      "español": "Entiendo japonés. (≠ lo estudio activamente)",
       "audio_text": "日本語が分かる",
-      "situación": { "descripción": "Alguien te habla en japonés. Lo entiendes.", "tipo": "confirmar comprensión", "entorno": "cualquiera" },
+      "situación": { "descripción": "Te preguntan si puedes comunicarte en japonés. Dices que sí lo entiendes, aunque no lo estudias formalmente.", "tipo": "distinguir competencia de actividad", "entorno": "presentación" },
       "predicado": { "núcleo": "分かる", "clase": "V", "grupo": 1, "expresiones_funcionales": [], "expresiones_finales": [] },
       "complementos": [
         { "núcleo": "日本語", "furigana": "にほんご", "posposición": "が", "función": "nominativo" }
       ],
       "tópico": null, "registro": "informal",
-      "descubrimiento": "日本語が分かる (が) vs 日本語を勉強する (を, entrada A1-5-005). El mismo 日本語, posposición distinta. ¿La razón?",
-      "sistematización": "分かる (V de estado/experiencia) → が. 勉強する (V de actividad deliberada) → を. 話す (V de actividad) → を también (日本語を話す). La diferencia és semántica: estado vs actividad.",
+      "descubrimiento": "日本語が分かる (が) vs 日本語を勉強する (を, A1-5-005) / 日本語を話す (を). El mismo 日本語, posposición distinta. ¿La razón? El estado de 'entender' no es una acción del hablante sobre el objeto — es un estado que el hablante tiene respecto al objeto.",
+      "sistematización": "分かる (V de estado) → が. 勉強する / 話す (V de actividad) → を. La posposición codifica la relación predicado-nominal: estado/experiencia → が; acción transitiva → を. La diferencia es semántica: estado vs actividad.",
       "vocabulario": [
         { "jp": "日本語", "furigana": "にほんご", "es": "japonés (idioma)", "clase": "N", "jlpt": "N5" },
         { "jp": "分かる", "furigana": "わかる", "es": "entender / comprender", "clase": "V", "grupo": 1, "jlpt": "N5" }
       ],
-      "notas_hispanohablante": "Resumen del contraste: 日本語が分かる (estado, 'el japonés se me entiende') / 日本語を勉強する (acción, 'estudio japonés activamente') / 日本語を話す (acción, 'hablo japonés'). La posposición codifica la relación predicado-nominal con precisión.",
+      "notas_hispanohablante": "日本語が分かる (estado: el japonés 'se entiende') ≠ 日本語を勉強する (acción: 'estudio japonés activamente') ≠ 日本語を話す (acción: 'hablo japonés'). La posposición が vs を refleja una distinción semántica que el español no codifica morfológicamente.",
       "interferencia_española": true,
       "pares_contraste": ["A1-5-005", "A1-5-006", "A1-5-023"],
       "calidad": { "naturalidad": 3, "validado": false },

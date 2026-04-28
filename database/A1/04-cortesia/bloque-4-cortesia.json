@@ -40,7 +40,7 @@
       "objetivo": "V + ます: el masu-stem verbal más ます. El masu-stem varía entre G1 y G2.",
       "descubrimiento": "食べます, 行きます, 飲みます, 見ます, します. ¿Cuál es el masu-stem de cada uno? ¿Es el mismo que el stem negativo?",
       "sistematización": "V + ます: masu-stem + ます. Para G2: masu-stem = stem negativo (食べ-). Para G1: masu-stem termina en -i (行き-, 飲み-, 話し-). No es el mismo que el stem negativo (行か-, 飲ま-).",
-      "ids_entradas": ["A1-4-012", "A1-4-013", "A1-4-014", "A1-4-015"]
+      "ids_entradas": ["A1-4-012", "A1-4-013", "A1-4-014", "A1-4-015", "A1-4-021"]
     },
     {
       "id": "DS-CRT-05",
@@ -352,7 +352,7 @@
       "español": "No como. / No voy a comer. (registro formal)",
       "audio_text": "食べません",
       "situación": { "descripción": "En una cena formal, alguien te ofrece algo que no comes. Rechazas cortésmente.", "tipo": "rechazar ofrecimiento — registro formal", "entorno": "evento formal" },
-      "predicado": { "núcleo": "食べる", "clase": "V", "grupo": 2, "expresiones_funcionales": ["ます", "ない"], "expresiones_finales": [] },
+      "predicado": { "núcleo": "食べる", "clase": "V", "grupo": 2, "expresiones_funcionales": ["ません"], "expresiones_finales": [] },
       "complementos": [], "tópico": null, "registro": "formal",
       "descubrimiento": "食べます (af.) → 食べません (neg.). ¿Cómo se forma ません? ¿Es ます + ない?",
       "sistematización": "V negativo cortés: masu-stem + ません. ません es la forma negativa del sistema ます. No es *ますない. Es una forma fija: ます → ません.",
@@ -369,15 +369,32 @@
       "español": "No voy. / No iré. (registro formal)",
       "audio_text": "行きません",
       "situación": { "descripción": "Tu jefe te pregunta si irás a la conferencia del viernes. No puedes ir.", "tipo": "declinar — registro formal", "entorno": "trabajo" },
-      "predicado": { "núcleo": "行く", "clase": "V", "grupo": 1, "expresiones_funcionales": ["ます", "ない"], "expresiones_finales": [] },
+      "predicado": { "núcleo": "行く", "clase": "V", "grupo": 1, "expresiones_funcionales": ["ません"], "expresiones_finales": [] },
       "complementos": [], "tópico": null, "registro": "formal",
       "descubrimiento": "行きます → 行きません. El masu-stem (行き-) es invariable; solo ます cambia a ません.",
-      "sistematización": "Tabla cortés de V: 食べます/行きます (af.) → 食べません/行きません (neg.) → 食べました/行きました (perf.) → 食べませんでした/行きませんでした (neg.perf.). Las cuatro formas son el sistema ます completo.",
+      "sistematización": "Tabla cortés de V (ます-system): [af.] 食べます/行きます → [neg.] 食べません/行きません → [perf.] 食べました/行きました (→ DS-CRT-06, pendiente) → [neg.perf.] 食べませんでした/行きませんでした (→ DS-CRT-07, pendiente). Las cuatro formas son el sistema ます completo. En este bloque se cubren las dos primeras.",
       "vocabulario": [{ "jp": "行く", "furigana": "いく", "es": "ir", "clase": "V", "grupo": 1, "jlpt": "N5" }],
       "notas_hispanohablante": null, "interferencia_española": false,
       "pares_contraste": ["A1-4-012", "A1-4-019"],
       "calidad": { "naturalidad": 3, "validado": false },
       "metadatos": { "jlpt": "N5", "tags": ["V", "cortés", "negativo", "ません", "grupo1", "DS-CRT-05"], "creado": "2026-04-23", "versión": 1 }
+    },
+    {
+      "id": "A1-4-021", "bloque": 4, "conjunto": "DS-CRT-04", "clase": "V",
+      "japonés": "来ます。", "furigana": "きます。", "romaji": "Kimasu.",
+      "español": "Viene. / Va a venir. (registro formal)",
+      "audio_text": "来ます",
+      "situación": { "descripción": "Tu compañero te pregunta si el jefe vendrá a la reunión. Confirmas que sí.", "tipo": "confirmar llegada — registro formal", "entorno": "trabajo" },
+      "predicado": { "núcleo": "来る", "clase": "V", "grupo": "irregular", "expresiones_funcionales": ["ます"], "expresiones_finales": [] },
+      "complementos": [], "tópico": null, "registro": "formal",
+      "descubrimiento": "来る(くる) → 来ます(きます). El masu-stem es き-. Compara: stem negativo こ- (こない), perfectivo き- (来た), masu-stem き- (来ます). ¿Cuándo aparece き- y cuándo こ-?",
+      "sistematización": "来る: stems completos. Negativo こ- (こない/こなかった). Cortés/perfectivo き- (来ます/来た/来ませんでした). La vocal de き- y こ- distingue modo: negativo → こ-, afirmativo/cortés → き-.",
+      "vocabulario": [{ "jp": "来る", "furigana": "くる", "es": "venir", "clase": "V", "grupo": "irregular", "jlpt": "N5" }],
+      "notas_hispanohablante": "来る tiene tres lecturas del kanji: くる (diccionario), きます/きた (afirmativo/cortés), こない/こなかった (negativo). Es el verbo con más irregularidad fonológica del japonés básico.",
+      "interferencia_española": false,
+      "pares_contraste": ["A1-1-026", "A1-2-024", "A1-3-017", "A1-4-015"],
+      "calidad": { "naturalidad": 3, "validado": false },
+      "metadatos": { "jlpt": "N5", "tags": ["V", "cortés", "ます", "irregular", "来る", "DS-CRT-04"], "creado": "2026-04-27", "versión": 1 }
     }
   ]
 }

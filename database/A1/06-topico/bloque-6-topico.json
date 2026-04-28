@@ -4,6 +4,8 @@
   "descripción": "は no es posposición de complemento — es marcador de tópico. El descubrimiento central: は y が son radicalmente distintos. は puede reemplazar a が, を, に y otros complementos cuando el nominal se convierte en tema del discurso.",
   "principio_organizador": "El tópico (話題) es el elemento sobre el que versa la oración. En japonés cualquier elemento puede convertirse en tópico marcándolo con は. Cuando は sustituye a が o を, el predicado no cambia — solo cambia la estructura informativa. Esta distinción は/が no tiene equivalente directo en español.",
   "nota_sobre_は_vs_が": "La distinción opera en dos dimensiones: (1) は = tópico (lo conocido/el tema), が = foco (información nueva). (2) は puede indicar contraste implícito. Esta entrada cubre la función tópico básica; el contraste es secundario.",
+
+  "nota_sobre_の_nominalizador": "の como nominalizador aparece por primera vez en A1-6-012 (暑いのは嫌いだ). の convierte cualquier predicado en un nominal: 暑いの = 'lo caluroso / el calor', 食べるの = 'el comer'. Esta función es altamente productiva en japonés conversacional. No es una posposición de complemento — es un operador de nominalización que permite que un predicado funcione como nominal en cualquier posición.",
   "conjuntos": [
     {
       "id": "DS-TOP-01",
@@ -27,7 +29,7 @@
       "objetivo": "El acusativo を también puede convertirse en tópico con は.",
       "descubrimiento": "コーヒーを飲む → コーヒーは飲む. 肉を食べない → 肉は食べない. ¿Qué matiz añade は?",
       "sistematización": "を → は: el complemento acusativo se topicaliza. 肉は食べない implica contraste: 'la carne no la como' (implica que sí como otras cosas).",
-      "ids_entradas": ["A1-6-008","A1-6-009","A1-6-010"]
+      "ids_entradas": ["A1-6-008","A1-6-009"]
     },
     {
       "id": "DS-TOP-04",
@@ -35,7 +37,7 @@
       "objetivo": "は tiene una segunda función semántica: el contraste implícito o explícito.",
       "descubrimiento": "本は読む、でも雑誌は読まない. ¿Cómo detectas si は es tópico o contraste?",
       "sistematización": "は tópico y は contraste son la misma marca. La diferencia es de énfasis contextual. El contraste es especialmente claro con negación o con dos は en paralelo.",
-      "ids_entradas": ["A1-6-011","A1-6-012"]
+      "ids_entradas": ["A1-6-010","A1-6-011","A1-6-012"]
     },
     {
       "id": "DS-TOP-05",
@@ -179,25 +181,25 @@
     },
     {
       "id": "A1-6-007","bloque": 6,"conjunto": "DS-TOP-02","clase": "Na",
-      "japonés": "猫は好きだ、犬も好きだ。","furigana": "ねこはすきだ、いぬもすきだ。","romaji": "Neko wa suki da, inu mo suki da.",
-      "español": "Los gatos me gustan, y los perros también.",
-      "audio_text": "猫は好きだ、犬も好きだ",
-      "situación": {"descripción": "Preguntan si te gustan los animales. Te gustan gatos y perros.","tipo": "expresar preferencias múltiples","entorno": "conversación"},
+      "japonés": "犬も好きだ。","furigana": "いぬもすきだ。","romaji": "Inu mo suki da.",
+      "español": "Los perros también me gustan.",
+      "audio_text": "犬も好きだ",
+      "situación": {"descripción": "Ya dijiste que te gustan los gatos. Alguien pregunta si también te gustan los perros.","tipo": "expresar preferencia adicional","entorno": "conversación"},
       "predicado": {"núcleo": "好き","clase": "Na","expresiones_funcionales": ["だ"],"expresiones_finales": []},
       "complementos": [],
-      "tópico": {"núcleo": "猫","furigana": "ねこ","función_subyacente": "が","nota": "猫は (tópico). 犬も (adición sin contraste con も)"},
+      "tópico": {"núcleo": "犬","furigana": "いぬ","función_subyacente": "が","nota": "も marca adición sin contraste: 'también'. Diferente de は, que puede implicar contraste."},
       "registro": "informal",
-      "descubrimiento": "も = 'también'. 犬も好きだ añade sin contrastar. Compara: は (contraste posible) vs も (adición sin exclusión).",
-      "sistematización": "は y も son los dos marcadores de tópico básicos: は puede implicar contraste; も añade sin excluir.",
+      "descubrimiento": "犬も好きだ — も, no は ni が. も = 'también'. Compara: 猫が好きだ (foco nuevo) / 猫は好きだ (tópico, posible contraste) / 犬も好きだ (adición sin excluir). Tres marcadores distintos, tres funciones.",
+      "sistematización": "も marca adición: 'también X'. は puede implicar contraste ('X sí, pero...'). も no implica restricción — añade sin excluir. Los dos marcadores de tópico básicos de A1: は (contraste posible) y も (adición sin exclusión).",
       "vocabulario": [
         {"jp": "犬","furigana": "いぬ","es": "perro","clase": "N","jlpt": "N5"},
         {"jp": "も","furigana": "も","es": "también / incluso","clase": "partícula","jlpt": "N5"}
       ],
-      "notas_hispanohablante": "も = 'también'. Es la contrapartida de は sin contraste. Los dos marcadores de tópico básicos de A1: は y も.",
+      "notas_hispanohablante": "も = 'también'. Contrasta con は: は puede decir 'esto sí, pero...'; も dice 'esto también'. En español 'también' vs el énfasis de 'esto sí'.",
       "interferencia_española": false,
       "pares_contraste": ["A1-6-002","A1-6-011"],
       "calidad": {"naturalidad": 3,"validado": false},
-      "metadatos": {"jlpt": "N5","tags": ["は","も","tópico","Na","DS-TOP-02"],"creado": "2026-04-23","versión": 1}
+      "metadatos": {"jlpt": "N5","tags": ["も","tópico-aditivo","Na","DS-TOP-02"],"creado": "2026-04-27","versión": 2}
     },
     {
       "id": "A1-6-008","bloque": 6,"conjunto": "DS-TOP-03","clase": "V",
@@ -240,27 +242,26 @@
       "metadatos": {"jlpt": "N5","tags": ["は","tópico-de-を","V","contraste","DS-TOP-03"],"creado": "2026-04-23","versión": 1}
     },
     {
-      "id": "A1-6-010","bloque": 6,"conjunto": "DS-TOP-03","clase": "V",
-      "japonés": "本は読む、でも雑誌は読まない。","furigana": "ほんはよむ、でもざっしはよまない。","romaji": "Hon wa yomu, demo zasshi wa yomanai.",
-      "español": "Libros sí leo, pero revistas no.",
-      "audio_text": "本は読む、でも雑誌は読まない",
-      "situación": {"descripción": "Alguien te pregunta si lees mucho. Distingues qué lees y qué no.","tipo": "distinguir hábitos","entorno": "conversación"},
+      "id": "A1-6-010","bloque": 6,"conjunto": "DS-TOP-04","clase": "V",
+      "japonés": "本は読む。","furigana": "ほんはよむ。","romaji": "Hon wa yomu.",
+      "español": "Libros sí leo. / Eso sí lo leo.",
+      "audio_text": "本は読む",
+      "situación": {"descripción": "Alguien te pregunta si lees mucho. Dices que libros sí — dando a entender que otras cosas (revistas, manga) quizás no.","tipo": "afirmar con contraste implícito","entorno": "conversación"},
       "predicado": {"núcleo": "読む","clase": "V","grupo": 1,"expresiones_funcionales": [],"expresiones_finales": []},
       "complementos": [],
-      "tópico": {"núcleo": "本","furigana": "ほん","función_subyacente": "を","nota": "Dos は en contraste explícito: 本は vs 雑誌は"},
+      "tópico": {"núcleo": "本","furigana": "ほん","función_subyacente": "を","nota": "本を読む → 本は読む. は topicaliza el acusativo y añade contraste: 'libros sí, pero otras cosas no necesariamente'."},
       "registro": "informal",
-      "descubrimiento": "Dos は en contraste explícito: 本は読む / 雑誌は読まない. El uso más claro del は de contraste.",
-      "sistematización": "は de contraste explícito: dos nominales se comparan directamente con は en cada uno.",
+      "descubrimiento": "本は読む — は en afirmativo con contraste implícito. ¿Qué queda sin decir? Que otras cosas (雑誌、マンガ...) no necesariamente se leen. El contraste está implícito en la entonación y el contexto.",
+      "sistematización": "は de contraste implícito en afirmativo: 本は読む = 'libros sí leo' (implica restricción). Idéntico mecanismo a ビールは好きだ (A1-6-011). El contraste no necesita explicitarse — は lo codifica.",
       "vocabulario": [
         {"jp": "本","furigana": "ほん","es": "libro","clase": "N","jlpt": "N5"},
-        {"jp": "でも","furigana": "でも","es": "pero","clase": "conector","jlpt": "N5"},
-        {"jp": "雑誌","furigana": "ざっし","es": "revista","clase": "N","jlpt": "N4"}
+        {"jp": "読む","furigana": "よむ","es": "leer","clase": "V","grupo": 1,"jlpt": "N5"}
       ],
-      "notas_hispanohablante": "'Libros sí, revistas no' — en español el contraste se expresa con 'sí/no'. En japonés は marca gramaticalmente el contraste en cada término.",
+      "notas_hispanohablante": "En español 'Libros sí leo' usa el adverbio 'sí' para el contraste. En japonés は codifica el mismo contraste gramaticalmente, sin adverbio adicional.",
       "interferencia_española": false,
-      "pares_contraste": ["A1-6-008","A1-6-009"],
+      "pares_contraste": ["A1-6-009","A1-6-011"],
       "calidad": {"naturalidad": 3,"validado": false},
-      "metadatos": {"jlpt": "N4","tags": ["は","contraste-explícito","V","DS-TOP-03"],"creado": "2026-04-23","versión": 1}
+      "metadatos": {"jlpt": "N5","tags": ["は","contraste-implícito","V","DS-TOP-04"],"creado": "2026-04-27","versión": 2}
     },
     {
       "id": "A1-6-011","bloque": 6,"conjunto": "DS-TOP-04","clase": "Na",

@@ -36,7 +36,7 @@
       "objetivo": "V neg.perf.: el stem negativo (ya conocido) más なかった.",
       "descubrimiento": "行かなかった, 飲まなかった, 食べなかった, しなかった. ¿Qué parte es el stem negativo y qué parte es el perfectivo?",
       "sistematización": "V neg.perf.: stem-a (G1) o stem (G2) + なかった. El stem negativo es invariable; solo ない cambia a なかった. Irregulares: しなかった, 来なかった(こなかった).",
-      "ids_entradas": ["A1-3-012", "A1-3-013", "A1-3-014", "A1-3-015"]
+      "ids_entradas": ["A1-3-012", "A1-3-013", "A1-3-014", "A1-3-015", "A1-3-017"]
     },
     {
       "id": "DS-PNEG-05",
@@ -271,7 +271,7 @@
     {
       "id": "A1-3-015", "bloque": 3, "conjunto": "DS-PNEG-04", "clase": "V",
       "japonés": "しなかった。", "furigana": "しなかった。", "romaji": "Shinakatta.",
-      "español": "No lo hice. / No lo hice.",
+      "español": "No lo hice. / No hice nada.",
       "audio_text": "しなかった",
       "situación": { "descripción": "Te olvidaste de hacer algo que debías hacer.", "tipo": "reconocer omisión", "entorno": "casual" },
       "predicado": { "núcleo": "する", "clase": "V", "grupo": "irregular", "expresiones_funcionales": ["なかった"], "expresiones_finales": [] },
@@ -285,21 +285,38 @@
       "metadatos": { "jlpt": "N5", "tags": ["V", "perfectivo-negativo", "なかった", "irregular", "する", "DS-PNEG-04"], "creado": "2026-04-23", "versión": 1 }
     },
     {
-      "id": "A1-3-016", "bloque": 3, "conjunto": "DS-PNEG-05", "clase": "A",
-      "japonés": "分かった。", "furigana": "わかった。", "romaji": "Wakatta.",
-      "español": "Entendí. / Ahora entiendo. / Entendido.",
-      "audio_text": "分かった",
-      "situación": { "descripción": "Alguien te explica algo. De repente lo entiendes.",  "tipo": "constatar comprensión", "entorno": "cualquiera" },
-      "predicado": { "núcleo": "分かる", "clase": "V", "grupo": 1, "expresiones_funcionales": ["った"], "expresiones_finales": [] },
+      "id": "A1-3-016", "bloque": 3, "conjunto": "DS-PNEG-05", "clase": "V",
+      "japonés": "分からなかった。", "furigana": "わからなかった。", "romaji": "Wakaranakatta.",
+      "español": "No entendí. / No lo entendí.",
+      "audio_text": "分からなかった",
+      "situación": { "descripción": "El profesor explicó algo. En ese momento no lo entendiste — luego sí.", "tipo": "reconocer comprensión retrospectiva", "entorno": "aula" },
+      "predicado": { "núcleo": "分かる", "clase": "V", "grupo": 1, "expresiones_funcionales": ["なかった"], "expresiones_finales": [] },
       "complementos": [], "tópico": null, "registro": "informal",
-      "descubrimiento": "分かる → 分かった. El par 分かる / 分からない / 分かった / 分からなかった es uno de los más frecuentes en japonés. ¿Puedes construir la tabla completa de 食べる? ¿Y de 寒い? ¿Y de 静か? ¿Y de 学生?",
-      "sistematización": "Consolidación final: cada núcleo predicativo (A, Na, N, V) tiene una tabla de cuatro formas. Las irregularidades reales son pocas: いい→よ-, 行く→行った, する→し-, 来る→こ-/き-. Todo lo demás es perfectamente sistemático.",
+      "descubrimiento": "分かる / 分からない / 分かった / 分からなかった. Las cuatro formas del mismo verbo. ¿Puedes completar la misma tabla para 食べる? ¿Y para 寒い? ¿Y para 静か? ¿Y para 学生?",
+      "sistematización": "Consolidación final: cada núcleo predicativo tiene una tabla de cuatro formas (afirmativo / negativo / perfectivo / perfectivo-negativo). Las irregularidades reales del sistema son mínimas: いい→よ-, 行く→行った, する→し-, 来る→こ-/き-. Todo lo demás es perfectamente sistemático.",
       "vocabulario": [{ "jp": "分かる", "furigana": "わかる", "es": "entender / comprender", "clase": "V", "grupo": 1, "jlpt": "N5" }],
-      "notas_hispanohablante": "分かった como exclamación ('¡Ya entiendo!', 'De acuerdo', 'Entendido') es una de las palabras más frecuentes del japonés. Vale memorizarla directamente.",
+      "notas_hispanohablante": "分からなかった es tan frecuente como 分からない y 分かった. El par 分かった / 分からなかった cubre las dos respuestas posibles a una explicación pasada.",
       "interferencia_española": false,
-      "pares_contraste": ["A1-0-029", "A1-1-020"],
+      "pares_contraste": ["A1-0-029", "A1-1-020", "A1-2-025"],
       "calidad": { "naturalidad": 3, "validado": false },
-      "metadatos": { "jlpt": "N5", "tags": ["V", "perfectivo", "った", "grupo1", "consolidación", "DS-PNEG-05"], "creado": "2026-04-23", "versión": 1 }
+      "metadatos": { "jlpt": "N5", "tags": ["V", "perfectivo-negativo", "なかった", "grupo1", "consolidación", "DS-PNEG-05"], "creado": "2026-04-27", "versión": 1 }
+    },
+    {
+      "id": "A1-3-017", "bloque": 3, "conjunto": "DS-PNEG-04", "clase": "V",
+      "japonés": "来なかった。", "furigana": "こなかった。", "romaji": "Konakatta.",
+      "español": "No vino. / No apareció.",
+      "audio_text": "来なかった",
+      "situación": { "descripción": "Quedaste con un amigo. No se presentó.", "tipo": "constatar ausencia pasada", "entorno": "casual" },
+      "predicado": { "núcleo": "来る", "clase": "V", "grupo": "irregular", "expresiones_funcionales": ["なかった"], "expresiones_finales": [] },
+      "complementos": [], "tópico": null, "registro": "informal",
+      "descubrimiento": "こない (neg.) → こなかった (neg.perf.). El stem こ- no cambia; ない → なかった. La tabla completa de 来る: 来る / こない / 来た(きた) / こなかった.",
+      "sistematización": "来る irregular completo: 来る(くる) / こない / きた / こなかった. Los dos irregulares (する・来る) quedan ahora completamente tabulados en sus cuatro formas.",
+      "vocabulario": [{ "jp": "来る", "furigana": "くる", "es": "venir", "clase": "V", "grupo": "irregular", "jlpt": "N5" }],
+      "notas_hispanohablante": "La tabla completa de 来る muestra la irregularidad total: くる/こない/きた/こなかった. Las cuatro formas tienen lecturas diferentes del mismo kanji 来.",
+      "interferencia_española": false,
+      "pares_contraste": ["A1-1-026", "A1-2-024", "A1-3-015"],
+      "calidad": { "naturalidad": 3, "validado": false },
+      "metadatos": { "jlpt": "N5", "tags": ["V", "perfectivo-negativo", "なかった", "irregular", "来る", "DS-PNEG-04"], "creado": "2026-04-27", "versión": 1 }
     }
   ]
 }
