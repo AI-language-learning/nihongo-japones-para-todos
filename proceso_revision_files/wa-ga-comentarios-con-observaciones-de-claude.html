@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comentarios — wa-ga.html</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --teal-light: #E1F5EE; --teal-mid: #1D9E75; --teal-dark: #085041;
+  --amber-light: #FAEEDA; --amber-dark: #412402;
+  --red: #A32D2D; --red-light: #FCEBEB; --red-dark: #501313;
+  --green: #3B6D11; --green-light: #EAF3DE; --green-dark: #173404;
+  --purple: #5B3D99; --purple-light: #EEE8FA; --purple-dark: #2A1660;
+  --gray-100: #F1EFE8; --gray-200: #D3D1C7; --gray-400: #888780;
+  --gray-700: #444441; --ink: #1a1a18; --bg: #f7f6f2; --white: #ffffff;
+  --radius-sm: 6px; --radius-md: 10px; --radius-lg: 14px;
+}
+body { font-family: 'Source Sans 3', system-ui, sans-serif; background: var(--bg); color: var(--ink); font-size: 15px; line-height: 1.6; }
+header { background: var(--white); border-bottom: 1px solid var(--gray-200); padding: 20px 24px 16px; position: sticky; top: 0; z-index: 100; }
+.header-top { display: flex; align-items: baseline; gap: 12px; margin-bottom: 12px; }
+.header-top h1 { font-size: 17px; font-weight: 600; }
+.file-tag { font-family: 'DM Mono', monospace; font-size: 12px; color: #0F6E56; background: var(--teal-light); padding: 2px 8px; border-radius: var(--radius-sm); }
+.legend { display: flex; gap: 16px; flex-wrap: wrap; font-size: 12px; color: var(--gray-400); margin-bottom: 12px; }
+.legend-item { display: flex; align-items: center; gap: 5px; }
+.dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
+.dot-original { background: var(--teal-mid); }
+.dot-comentario { background: #EF9F27; }
+.dot-claude { background: var(--purple); }
+.dot-pendiente { background: var(--red); }
+.dot-resuelto { background: var(--green); }
+.toolbar { display: flex; gap: 6px; flex-wrap: wrap; }
+.filter-btn { font-family: inherit; font-size: 12px; font-weight: 500; padding: 4px 13px; border-radius: 20px; border: 1px solid var(--gray-200); background: var(--gray-100); color: var(--gray-700); cursor: pointer; transition: all 0.15s; }
+.filter-btn:hover { background: var(--white); border-color: var(--gray-400); }
+.filter-btn.active { background: var(--ink); color: var(--white); border-color: var(--ink); }
+.stats { padding: 12px 24px; display: flex; gap: 20px; font-size: 13px; color: var(--gray-400); border-bottom: 1px solid var(--gray-200); background: var(--white); }
+.stats strong { color: var(--ink); }
+.stat-pend { color: var(--red); } .stat-res { color: var(--green); }
+main { max-width: 800px; margin: 0 auto; padding: 20px 16px 60px; }
+.card { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-lg); margin-bottom: 8px; overflow: hidden; transition: border-color 0.15s; }
+.card:hover { border-color: var(--gray-400); }
+.card.hidden { display: none; }
+.card-header { display: flex; align-items: flex-start; gap: 10px; padding: 12px 16px; cursor: pointer; user-select: none; }
+.card-num { font-size: 11px; font-weight: 600; min-width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+.num-pendiente { background: var(--red-light); color: var(--red-dark); }
+.num-resuelto  { background: var(--green-light); color: var(--green-dark); }
+.card-meta { flex: 1; min-width: 0; }
+.card-badges { display: flex; align-items: center; gap: 6px; margin-bottom: 5px; flex-wrap: wrap; }
+.badge { font-size: 11px; font-weight: 500; padding: 2px 8px; border-radius: 10px; white-space: nowrap; }
+.badge-section   { background: var(--teal-light); color: var(--teal-dark); }
+.badge-location  { background: var(--gray-100); color: var(--gray-700); font-family: 'DM Mono', monospace; font-size: 10px; }
+.badge-pendiente { background: var(--red-light); color: var(--red); }
+.badge-resuelto  { background: var(--green-light); color: var(--green); }
+.card-preview { font-size: 13px; color: var(--gray-700); line-height: 1.45; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.chevron { font-size: 18px; color: var(--gray-400); transition: transform 0.2s; flex-shrink: 0; line-height: 1; margin-top: 4px; }
+.chevron.open { transform: rotate(90deg); }
+.card-body { display: none; padding: 0 16px 14px; }
+.card-body.open { display: block; }
+.block { border-radius: var(--radius-md); padding: 10px 14px; margin-bottom: 8px; }
+.block-label { font-size: 10px; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; margin-bottom: 5px; }
+.block p { font-size: 13.5px; line-height: 1.55; }
+.block-original { background: var(--teal-light); border-left: 3px solid var(--teal-mid); }
+.block-original .block-label { color: var(--teal-dark); }
+.block-original p { color: var(--teal-dark); font-style: italic; }
+.block-comentario { background: var(--amber-light); border-left: 3px solid #EF9F27; }
+.block-comentario .block-label { color: #633806; }
+.block-comentario p { color: var(--amber-dark); }
+.block-claude { background: var(--purple-light); border-left: 3px solid var(--purple); }
+.block-claude .block-label { color: var(--purple-dark); }
+.block-claude p { color: var(--purple-dark); }
+.block-nota { background: var(--green-light); border-left: 3px solid var(--green); }
+.block-nota .block-label { color: var(--green-dark); }
+.block-nota p { color: var(--green-dark); font-size: 12.5px; }
+.empty { text-align: center; padding: 48px 0; color: var(--gray-400); font-size: 14px; }
+footer { text-align: center; padding: 24px; font-size: 12px; color: var(--gray-400); border-top: 1px solid var(--gray-200); }
+</style>
+</head>
+<body>
+<header>
+  <div class="header-top">
+    <h1>Revisión de contenidos</h1>
+    <span class="file-tag">wa-ga.html</span>
+  </div>
+  <div class="legend">
+    <div class="legend-item"><div class="dot dot-original"></div> Texto original</div>
+    <div class="legend-item"><div class="dot dot-comentario"></div> Comentario del lector</div>
+    <div class="legend-item"><div class="dot dot-claude"></div> Opinión de Claude</div>
+    <div class="legend-item"><div class="dot dot-pendiente"></div> Pendiente</div>
+    <div class="legend-item"><div class="dot dot-resuelto"></div> Resuelto</div>
+  </div>
+  <div class="toolbar" id="toolbar"></div>
+</header>
+<div class="stats">
+  <span><strong id="vis-count">23</strong> comentarios</span>
+  <span class="stat-pend"><strong id="pend-count">18</strong> pendientes</span>
+  <span class="stat-res"><strong id="res-count">5</strong> resueltos</span>
+</div>
+<main id="main"></main>
+<footer>Generado a partir de la revisión de wa-ga.html · junio 2026</footer>
+<script>
+const data = [
+  {
+    n:1, status:'pendiente', section:'Hero', secId:'hero',
+    location:'#hero .hero-sub',
+    original:'El foco es ahora: ¿cuándo y por qué aparece cada posposición en la posición donde el español pondría un sujeto?',
+    comentario:'Esta pregunta confunde más que otra cosa. Propuesta: «Pasaremos a continuación a ver el uso y significado de dos posposiciones, は y が, y a contrastarlas.»',
+    claude:'La crítica es justa. La pregunta original arrastra el malentendido que la guía intenta deshacer: presupone que は y が "aparecen donde el español pondría un sujeto", que es exactamente la equiparación incorrecta. La propuesta del lector evita esa trampa. Corrección necesaria.'
+  },
+  {
+    n:2, status:'pendiente', section:'Puente / intro', secId:'hero',
+    location:'#intro .note-block p:last-child',
+    original:'Partiendo de esa base, analizaremos qué función cumplen realmente las posposición は y が, y su equivalencia, o no, con el sujeto en el español.',
+    comentario:'Propuesta: «Partiendo de esa base, pasaremos ahora a analizar las posposiciones は y が. Es el momento propicio, dado que a menudo acompañan a lo que en el español se corresponde con el sujeto... pero no en el caso del japonés, como acabamos de ver. Es por esto que resultan especialmente confusas para los hispanohablantes.»',
+    claude:'La propuesta mejora la transición. Sin embargo, también contiene "a menudo acompañan a lo que en el español se corresponde con el sujeto", que repite el mismo sesgo del original: parte de la perspectiva del español. Una formulación más precisa: «...dado que en superficie suelen ocupar la posición donde el español colocaría un sujeto». El resto de la propuesta es una mejora clara.'
+  },
+  {
+    n:3, status:'resuelto', section:'Origen semántico', secId:'hero',
+    location:'#origen .sec-lead',
+    original:'Antes de entrar en cada función en detalle, conviene fijar el punto de partida de cada posposición. Las distintas funciones que tienen en contexto son derivaciones de un único significado central.',
+    comentario:'Propuesta: «Antes de entrar en cada función, veremos el origen y significado de cada posposición, dado que las funciones y usos se derivan de ello.»',
+    claude:'La propuesta es más directa. El original tiene un tono formulaico. Acuerdo con la sustitución.',
+    nota:'Aplicado en la versión actual.'
+  },
+  {
+    n:4, status:'pendiente', section:'Sec 01 — は tópico', secId:'sec1',
+    location:'#sec1 .sym-pair (彼女は来なかった / 彼女が来なかった)',
+    original:'「彼女は来なかった。」Ella no vino. (implica: los demás sí) ≠ 「彼女が来なかった。」Fue ella quien no vino. (foco de identificación)',
+    comentario:'Al menos en español estas dos oraciones dicen exactamente lo mismo — la equiparación es incorrecta.',
+    claude:'La observación es correcta en cuanto al español, pero no es un error de la guía sino un límite del español como lengua de llegada: は y が marcan una distinción que el español no puede codificar morfológicamente. El par mínimo japonés es real; las dos traducciones son aproximaciones, no equivalencias exactas. El problema es que el texto no lo dice, y el lector interpreta las traducciones como si fueran equivalentes. La solución no es cambiar las traducciones sino añadir una nota explícita: que la diferencia es gramatical en japonés (は vs が) y que ninguna traducción española la captura de forma limpia.'
+  },
+  {
+    n:5, status:'pendiente', section:'Sec 01 — は tópico', secId:'sec1',
+    location:'#sec1 .explain (¿Por qué は siempre implica contraste en negación?)',
+    original:'En español, esta diferencia se suele marcar con énfasis prosódico: «Hoy no voy» (énfasis en «hoy») vs. «No voy» (sin énfasis temporal).',
+    comentario:'Este párrafo no funciona porque los ejemplos en japonés llevan ambos 今日.',
+    claude:'El lector da en el clavo. El par mínimo que se analiza es 今日は行かない vs. 今日がダメだ — los dos llevan 今日, así que la analogía con la presencia/ausencia del elemento temporal en español es un falso paralelo. El párrafo intenta ilustrar una diferencia real pero con un ejemplo mal construido. Hay que reescribirlo o eliminarlo.'
+  },
+  {
+    n:6, status:'pendiente', section:'Sec 01 — は tópico', secId:'sec1',
+    location:'#sec1 .reveal (frase final sobre は)',
+    original:'Esto muestra que は no es una categoría única y fija, sino una posposición cuya función se determina en cada posición y contexto.',
+    comentario:'«Posposición» y «posición» en la misma oración: choca.',
+    claude:'Correcto. Propuesta: «...sino una posposición cuya función varía según el lugar en el enunciado y el contexto discursivo.»'
+  },
+  {
+    n:7, status:'pendiente', section:'Sec 02 — は contraste', secId:'sec2',
+    location:'#sec2 .case-card (日本語は発音は簡単だ)',
+    original:'[Ejemplo 日本語は発音は簡単だ con análisis del doble は]',
+    comentario:'¡Parece la misma estructura que 象は鼻が長い! Si lo entiendo bien, 日本語は発音は簡単だ expresa «Del japonés, al menos la pronunciación es fácil», y no «La pronunciación del japonés es fácil». ¿Es correcto?',
+    claude:'La lectura del lector es correcta. La confusión con 象は鼻が長い es comprensible pero el mecanismo es distinto: en 象は鼻が長い el primer は establece el marco tópico y が marca el complemento nominativo interno. En 日本語は発音は簡単だ los dos は operan al mismo nivel: el primero es tópico general y el segundo es contrastivo («al menos la pronunciación, a diferencia de otros aspectos»). El texto ya lo explica, pero vale la pena que la explicación responda directamente a esa pregunta, que es previsible en cualquier lector atento.'
+  },
+  {
+    n:8, status:'pendiente', section:'Sec 03 — は estructura compleja', secId:'sec3',
+    location:'#sec3 .reveal (mención a Guía 1)',
+    original:'En la Guía 1 se introdujo que が marca el complemento nominativo del predicado',
+    comentario:'Estaría bien enlazar las guías al mencionarlas.',
+    claude:'Acuerdo. Mejora de navegabilidad sencilla y sin coste. Añadir el enlace.'
+  },
+  {
+    n:9, status:'pendiente', section:'Sec 03 — は estructura compleja', secId:'sec3',
+    location:'#sec3 .data-table (fila 頭がいい)',
+    original:'(lit. la buena cabeza)  [versión que vio el lector: «la cabeza buena»]',
+    comentario:'Debería ser: (lit. buena cabeza)',
+    claude:'El lector vio una versión anterior con «la cabeza buena». La versión actual ya ha cambiado a «la buena cabeza». Sin embargo, ninguna de las dos es correcta como lit.: ambas son construcciones españolas. El lit. debe reflejar la estructura del japonés: 頭／が／いい = sustantivo + predicado. El orden japonés es [nominal] + [adjetivo predicativo], y el lit. debería reproducirlo: «la cabeza, buena». Esa coma es la que separa el nominal del predicado y refleja la estructura real de は〜が〜 + adjetivo. «Buena cabeza» es español natural, no una traducción literal.'
+  },
+  {
+    n:10, status:'pendiente', section:'Sec 03 — は estructura compleja', secId:'sec3',
+    location:'#sec3 .data-table (fila 背が高い)',
+    original:'Tanaka es alto.',
+    comentario:'Debería aclarar: «Tanaka es alto. (lit. de estatura alta)»',
+    claude:'Añadir un lit. es útil pedagógicamente, pero «de estatura alta» es una paráfrasis española, no un lit. en el sentido que usa la guía. El lit. de 背が高い debería ser «la estatura, alta» (背／が／高い): el nominal 背 [estatura] es el complemento nominativo del predicado 高い. Ese lit. —siguiendo el mismo formato que los demás— mostraría al lector por qué が aparece con 背, que es exactamente el punto de la sección.'
+  },
+  {
+    n:11, status:'pendiente', section:'Sec 03 — は estructura compleja', secId:'sec3',
+    location:'#sec3 .data-table (fila 足が速い)',
+    original:'(lit. las piernas rápidas)  [versión que vio el lector: «los pies rápidos»]',
+    comentario:'Debería ser: (lit. las piernas rápidas)',
+    claude:'El lector vio una versión anterior con «los pies rápidos» y propone «las piernas rápidas». La versión actual ya tiene «las piernas rápidas». Sin embargo, la cuestión no es de español sino de japonés: 足 se escribe con el kanji que designa el pie (la parte del cuerpo desde el tobillo), no la pierna (脚). En 足が速い, la referencia es a los pies como los que se mueven rápido. Cambiar a «piernas» introduce una imprecisión respecto al japonés. Además, como en los demás casos, el lit. debería reproducir la estructura japonesa: «los pies, rápidos» (足／が／速い).'
+  },
+  {
+    n:12, status:'pendiente', section:'Sec 03 — は estructura compleja', secId:'sec3',
+    location:'#sec3 .reveal (El marco con は)',
+    original:'El marco con は no tiene que ser una persona.',
+    comentario:'Debería ser: «El marco con は no tiene por qué ser una persona.»',
+    claude:'Correcto. «No tiene que ser» es ambiguo entre obligación y necesidad. «No tiene por qué ser» es la expresión correcta aquí. Corrección menor pero precisa.'
+  },
+  {
+    n:13, status:'pendiente', section:'Sec 03 — は estructura compleja', secId:'sec3',
+    location:'#sec3 .dialogue (春は桜がきれいだ)',
+    original:'En primavera, los cerezos son preciosos. (lit. «De la primavera, los cerezos son bonitos.»)',
+    comentario:'Hay inconsistencia: «preciosos» en la traducción pero «bonitos» en el literal. Elegir uno.',
+    claude:'La inconsistencia es real y hay que corregirla. Y la elección no es arbitraria: el lit. debe reflejar きれいだ, que significa «bonito / hermoso / limpio», no «precioso» (connotación más intensa en español). El lit. con «bonito» es el correcto para きれいだ. La traducción libre debería ser coherente con eso: «bonito» o «hermoso» en ambos lugares.'
+  },
+  {
+    n:14, status:'pendiente', section:'Sec 04 — が foco', secId:'sec4',
+    location:'#sec4 .dialogue (この仕事、誰ができる？)',
+    original:'B: Hanako puede. (de los candidatos, ella)',
+    comentario:'Para ser coherente con lo explicado antes, debería decir: «B: Hanako es quien puede. (de los candidatos, ella)»',
+    claude:'La incoherencia es real. La sección explica que が en identificación exhaustiva equivale a «es X quien...» en español, pero la traducción de la respuesta usa «Hanako puede», que es neutra y podría corresponder igual a は. La traducción debería mostrar el valor identificativo que acaba de explicarse: «Es Hanako quien puede» o «Hanako es quien puede». Corrección necesaria.'
+  },
+  {
+    n:15, status:'pendiente', section:'Sec 04 — が foco', secId:'sec4',
+    location:'#sec4 .explain (oraciones hendidas)',
+    original:'En español, la identificación exhaustiva se expresa a menudo con énfasis prosódico... con oraciones hendidas («Es Yamada quien…»)',
+    comentario:'¿Qué son las oraciones hendidas? El término no se explica.',
+    claude:'El término es de la gramática descriptiva española y no es de uso común fuera de contextos académicos. El ejemplo entre paréntesis («Es Yamada quien…») ya ilustra el concepto. Lo más limpio: eliminar el término técnico y dejar solo el ejemplo con una descripción: «construcciones del tipo Es X quien…».'
+  },
+  {
+    n:16, status:'pendiente', section:'Sec 04 — が foco', secId:'sec4',
+    location:'#sec4 .dialogue (やっぱり、これがいい)',
+    original:'やっぱり、これがいい → Al final, este es el que me gusta.\nやっぱり、これはいい → Al final, este está bien.',
+    comentario:'Después de leer el punto 04, parece que が siempre crea una oración con un relativo tipo «que, quien, cual». ¿Es eso correcto?',
+    claude:'No, y la confusión es comprensible: la sec. 04 se centra en el uso identificativo de が, donde ese efecto de relativo sí aparece. Pero が tiene otros usos donde no ocurre: como complemento nominativo de predicados de preferencia (好きだ, できる) o en subordinadas donde es obligatorio por razones estructurales, sin carga identificativa. El lector ha generalizado correctamente el patrón de esta sección. Una nota que aclare que el efecto de relativo es específico del uso identificativo, y no de が en general, evitaría esta confusión.'
+  },
+  {
+    n:17, status:'pendiente', section:'Sec 06 — 誰が / Aは', secId:'sec6',
+    location:'#sec6 .case-card (Aは来る？)',
+    original:'「Aは来る？」es una pregunta de predicado.',
+    comentario:'¿Qué significa «una pregunta de predicado»? Así de entrada, choca. Leyendo el resto se termina entendiendo, pero el concepto necesita una breve introducción.',
+    claude:'El término se lanza sin contexto y es opaco para el lector no especializado. El lector acaba entendiéndolo por el desarrollo posterior, lo que significa que la explicación llega tarde. Propuesta: sustituir por una descripción directa desde el principio: «「Aは来る？」es una pregunta en la que A ya está establecido como tópico y lo que se pregunta es si el predicado (venir) se cumple para A.»'
+  },
+  {
+    n:18, status:'pendiente', section:'Sec 06 — 誰が / Aは', secId:'sec6',
+    location:'#sec6 .explain (La razón es precisa)',
+    original:'「Aが来る。」llena el hueco nominativo de 来る',
+    comentario:'¿No debería ser: «「A」llena el hueco nominativo de 来る»? (sin が en la cita)',
+    claude:'La distinción es técnicamente válida: lo que llena el hueco nominativo es el nominal A, no A+が. が es el marcador que señala esa función, no parte del argumento en sí. Si se quiere ser estricto, la corrección es apropiada: «A llena el hueco nominativo de 来る, señalado por が.» Es una imprecisión menor de formulación, no un error conceptual, pero en una guía que hace distinciones finas de este tipo, la precisión importa.'
+  },
+  {
+    n:19, status:'pendiente', section:'Sec 06 — 誰が / Aは', secId:'sec6',
+    location:'#sec6 .data-table (fila Función de は)',
+    original:'Extrae un elemento identificable de un conjunto presupuesto y afirma el predicado solo para ese elemento',
+    comentario:'¿Siempre afirma? ¿Qué pasa en negaciones con は?',
+    claude:'Observación muy pertinente. La sec. 02 ya explica que は con negación implica contraste («Hoy no voy, quizá otro día sí»): は puede tanto afirmar como negar el predicado para el elemento extraído. La tabla resumen usa «afirma», que es inconsistente con esa explicación. Corrección: «Extrae un elemento identificable de un conjunto presupuesto y predica (afirma o niega) el predicado solo para ese elemento.»'
+  },
+  {
+    n:20, status:'pendiente', section:'Sec 07 — Doble nominativo', secId:'sec7',
+    location:'#sec7 .dialogue (魚は私が好きだ)',
+    original:'El pescado, yo le tengo cariño.',
+    comentario:'No se entiende como traducción al español.',
+    claude:'La traducción no funciona. Es un intento de calco estructural del japonés que no produce español comprensible. El mismo bloque ya ofrece la alternativa «Del pescado, a mí me gusta» unas líneas después. Esa es la traducción que debería aparecer en el diálogo directamente.'
+  },
+  {
+    n:21, status:'pendiente', section:'Sec 07 — Doble nominativo', secId:'sec7',
+    location:'#sec7 .data-table (fila できる)',
+    original:'Él sabe cocinar.',
+    comentario:'¿No debería ser «Él puede cocinar.»? できる es potencial, no conocimiento.',
+    claude:'La cuestión no es de español sino de cómo se entiende できる en japonés. 料理ができる no expresa permiso ni posibilidad circunstancial: expresa capacidad adquirida. En japonés, できる para habilidades aprendidas se traduce habitualmente con «saber» en español (saber cocinar, saber conducir, saber nadar), no con «poder», que en español suena a permiso o a posibilidad situacional. «Sabe cocinar» es la traducción más fiel al significado de できる en este contexto. Si el lector entiende que できる equivale a saber en el sentido de conocimiento intelectual, eso sí merecería una nota aclaratoria, pero la traducción en sí es correcta.'
+  },
+  {
+    n:22, status:'pendiente', section:'Sec 07 — Doble nominativo', secId:'sec7',
+    location:'#sec7 .data-table (fila 得意だ)',
+    original:'Tanaka se le da bien la matemática.',
+    comentario:'Debería ser: «A Tanaka se le da bien la matemática.» o «Tanaka se le dan bien las matemáticas.»',
+    claude:'Ambas correcciones son válidas y apuntan a errores reales. (1) Falta la «A» inicial: «darse bien» rige objeto indirecto con preposición en español («A Tanaka se le da bien»). (2) «Las matemáticas» en plural es más natural que «la matemática». Y hay un tercer error que el lector no menciona: la concordancia verbal. Con «las matemáticas» en plural, el verbo también concuerda en plural: «se le dan bien». La forma corregida completa: «A Tanaka se le dan bien las matemáticas.»'
+  },
+  {
+    n:23, status:'pendiente', section:'Sec 08 — は vs が con だ', secId:'sec8',
+    location:'#sec8 .case-card (私はウナギだ)',
+    original:'Gramaticalmente, esta oración afirma que «yo soy una anguila», lo cual es biológicamente absurdo... que podría tener sentido si el camarero lleva la anguila y busca a quién dársela.',
+    comentario:'(1) Cuidado: afirmar «yo = anguila» puede llevar al alumno a equiparar は con el verbo ser. (2) La situación descrita sería más clara con «si el camarero trajera el plato de anguila y buscara a quién servírselo».',
+    claude:'(1) El riesgo existe, pero el párrafo siguiente ya lo deshace al explicar que lo que funciona es は como tópico situacional, no como cópula. El problema real es de presentación: el arranque da pie al malentendido antes de corregirlo. Una pequeña reescritura ayudaría: «Literalmente diría que yo soy una anguila —lo cual es absurdo—, pero eso no es lo que は está haciendo aquí.» (2) La observación sobre la situación del camarero es correcta: «lleva la anguila y busca a quién dársela» describe mal la situación de restaurante. La propuesta del lector («trajera el plato de anguila y buscara a quién servírselo») es más precisa y usa el subjuntivo apropiado para una hipótesis.'
+  }
+];
+
+const filters = [
+  { label:'Todos', key:'all' }, { label:'Pendientes', key:'pendiente' }, { label:'Resueltos', key:'resuelto' },
+  { label:'Hero / intro', key:'hero' }, { label:'Sec 01', key:'sec1' }, { label:'Sec 02', key:'sec2' },
+  { label:'Sec 03', key:'sec3' }, { label:'Sec 04', key:'sec4' }, { label:'Sec 06', key:'sec6' },
+  { label:'Sec 07', key:'sec7' }, { label:'Sec 08', key:'sec8' },
+];
+
+function buildToolbar() {
+  const tb = document.getElementById('toolbar');
+  filters.forEach(f => {
+    const btn = document.createElement('button');
+    btn.className = 'filter-btn' + (f.key === 'all' ? ' active' : '');
+    btn.textContent = f.label;
+    btn.onclick = () => applyFilter(f.key, btn);
+    tb.appendChild(btn);
+  });
+}
+
+function buildCards() {
+  const main = document.getElementById('main');
+  main.innerHTML = '';
+  data.forEach(item => {
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.dataset.status = item.status;
+    card.dataset.secId = item.secId;
+    const notaHtml = item.nota
+      ? `<div class="block block-nota"><div class="block-label">Nota</div><p>${item.nota}</p></div>` : '';
+    card.innerHTML = `
+      <div class="card-header" onclick="toggle(this)">
+        <div class="card-num num-${item.status}">${item.n}</div>
+        <div class="card-meta">
+          <div class="card-badges">
+            <span class="badge badge-section">${item.section}</span>
+            <span class="badge badge-location">${item.location}</span>
+            <span class="badge badge-${item.status}">${item.status === 'pendiente' ? 'Pendiente' : 'Resuelto'}</span>
+          </div>
+          <div class="card-preview">${trunc(item.original, 95)}</div>
+        </div>
+        <span class="chevron">›</span>
+      </div>
+      <div class="card-body">
+        <div class="block block-original">
+          <div class="block-label">Texto original (wa-ga.html)</div>
+          <p>${item.original}</p>
+        </div>
+        <div class="block block-comentario">
+          <div class="block-label">Comentario del lector</div>
+          <p>${item.comentario}</p>
+        </div>
+        <div class="block block-claude">
+          <div class="block-label">Opinión de Claude</div>
+          <p>${item.claude}</p>
+        </div>
+        ${notaHtml}
+      </div>
+    `;
+    main.appendChild(card);
+  });
+  updateCounts();
+}
+
+function toggle(header) {
+  const body = header.nextElementSibling;
+  const ch = header.querySelector('.chevron');
+  const open = body.classList.toggle('open');
+  ch.classList.toggle('open', open);
+}
+
+function applyFilter(key, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.card').forEach(c => {
+    const show = key === 'all' || c.dataset.status === key || c.dataset.secId === key;
+    c.classList.toggle('hidden', !show);
+  });
+  updateCounts();
+}
+
+function updateCounts() {
+  const visible = [...document.querySelectorAll('.card:not(.hidden)')];
+  document.getElementById('vis-count').textContent = visible.length;
+  document.getElementById('pend-count').textContent = visible.filter(c => c.dataset.status === 'pendiente').length;
+  document.getElementById('res-count').textContent  = visible.filter(c => c.dataset.status === 'resuelto').length;
+  const main = document.getElementById('main');
+  let empty = main.querySelector('.empty');
+  if (visible.length === 0) {
+    if (!empty) { empty = document.createElement('div'); empty.className = 'empty'; empty.textContent = 'No hay comentarios en esta categoría.'; main.appendChild(empty); }
+  } else { if (empty) empty.remove(); }
+}
+
+function trunc(str, n) { return str.length > n ? str.slice(0, n) + '…' : str; }
+
+buildToolbar();
+buildCards();
+</script>
+</body>
+</html>

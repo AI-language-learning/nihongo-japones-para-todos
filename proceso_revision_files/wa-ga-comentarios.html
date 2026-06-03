@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comentarios — wa-ga.html</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --teal:        #0F6E56;
+  --teal-light:  #E1F5EE;
+  --teal-mid:    #1D9E75;
+  --teal-dark:   #085041;
+  --amber:       #BA7517;
+  --amber-light: #FAEEDA;
+  --amber-dark:  #412402;
+  --red:         #A32D2D;
+  --red-light:   #FCEBEB;
+  --red-dark:    #501313;
+  --green:       #3B6D11;
+  --green-light: #EAF3DE;
+  --green-dark:  #173404;
+  --gray-100:    #F1EFE8;
+  --gray-200:    #D3D1C7;
+  --gray-400:    #888780;
+  --gray-700:    #444441;
+  --gray-900:    #2C2C2A;
+  --ink:         #1a1a18;
+  --bg:          #f7f6f2;
+  --white:       #ffffff;
+  --radius-sm:   6px;
+  --radius-md:   10px;
+  --radius-lg:   14px;
+}
+
+body {
+  font-family: 'Source Sans 3', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 15px;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* ── HEADER ── */
+header {
+  background: var(--white);
+  border-bottom: 1px solid var(--gray-200);
+  padding: 20px 24px 16px;
+  position: sticky; top: 0; z-index: 100;
+}
+.header-top {
+  display: flex; align-items: baseline; gap: 12px;
+  margin-bottom: 12px;
+}
+.header-top h1 {
+  font-size: 17px; font-weight: 600; color: var(--ink);
+}
+.header-top .file-tag {
+  font-family: 'DM Mono', monospace;
+  font-size: 12px; color: var(--teal);
+  background: var(--teal-light);
+  padding: 2px 8px; border-radius: var(--radius-sm);
+}
+
+/* ── LEGEND ── */
+.legend {
+  display: flex; gap: 16px; flex-wrap: wrap;
+  font-size: 12px; color: var(--gray-400);
+  margin-bottom: 12px;
+}
+.legend-item { display: flex; align-items: center; gap: 5px; }
+.dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
+.dot-original   { background: var(--teal-mid); }
+.dot-comentario { background: #EF9F27; }
+.dot-pendiente  { background: var(--red); }
+.dot-resuelto   { background: var(--green); }
+
+/* ── TOOLBAR ── */
+.toolbar {
+  display: flex; gap: 6px; flex-wrap: wrap;
+}
+.filter-btn {
+  font-family: inherit;
+  font-size: 12px; font-weight: 500;
+  padding: 4px 13px;
+  border-radius: 20px;
+  border: 1px solid var(--gray-200);
+  background: var(--gray-100);
+  color: var(--gray-700);
+  cursor: pointer; transition: all 0.15s;
+}
+.filter-btn:hover { background: var(--white); border-color: var(--gray-400); }
+.filter-btn.active {
+  background: var(--ink); color: var(--white);
+  border-color: var(--ink);
+}
+
+/* ── STATS BAR ── */
+.stats {
+  padding: 12px 24px;
+  display: flex; gap: 20px;
+  font-size: 13px; color: var(--gray-400);
+  border-bottom: 1px solid var(--gray-200);
+  background: var(--white);
+}
+.stats strong { color: var(--ink); }
+.stats .stat-pend { color: var(--red); }
+.stats .stat-res  { color: var(--green); }
+
+/* ── MAIN ── */
+main {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 20px 16px 60px;
+}
+
+/* ── CARD ── */
+.card {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  margin-bottom: 8px;
+  overflow: hidden;
+  transition: border-color 0.15s;
+}
+.card:hover { border-color: var(--gray-400); }
+.card.hidden { display: none; }
+
+.card-header {
+  display: flex; align-items: flex-start; gap: 10px;
+  padding: 12px 16px;
+  cursor: pointer; user-select: none;
+}
+.card-num {
+  font-size: 11px; font-weight: 600;
+  min-width: 26px; height: 26px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; margin-top: 1px;
+}
+.num-pendiente { background: var(--red-light);   color: var(--red-dark); }
+.num-resuelto  { background: var(--green-light);  color: var(--green-dark); }
+
+.card-meta { flex: 1; min-width: 0; }
+.card-badges {
+  display: flex; align-items: center; gap: 6px;
+  margin-bottom: 5px; flex-wrap: wrap;
+}
+.badge {
+  font-size: 11px; font-weight: 500; padding: 2px 8px;
+  border-radius: 10px; white-space: nowrap;
+}
+.badge-section    { background: var(--teal-light);   color: var(--teal-dark); }
+.badge-location   { background: var(--gray-100);      color: var(--gray-700);
+                    font-family: 'DM Mono', monospace; font-size: 10px; }
+.badge-pendiente  { background: var(--red-light);     color: var(--red); }
+.badge-resuelto   { background: var(--green-light);   color: var(--green); }
+
+.card-preview {
+  font-size: 13px; color: var(--gray-700);
+  line-height: 1.45;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+
+.chevron {
+  font-size: 18px; color: var(--gray-400);
+  transition: transform 0.2s; flex-shrink: 0;
+  line-height: 1; margin-top: 4px;
+}
+.chevron.open { transform: rotate(90deg); }
+
+/* ── CARD BODY ── */
+.card-body { display: none; padding: 0 16px 14px; }
+.card-body.open { display: block; }
+
+.block {
+  border-radius: var(--radius-md);
+  padding: 10px 14px;
+  margin-bottom: 8px;
+}
+.block-label {
+  font-size: 10px; font-weight: 600;
+  letter-spacing: 0.07em; text-transform: uppercase;
+  margin-bottom: 5px;
+}
+.block p { font-size: 13.5px; line-height: 1.55; }
+
+.block-original {
+  background: var(--teal-light);
+  border-left: 3px solid var(--teal-mid);
+}
+.block-original .block-label { color: var(--teal-dark); }
+.block-original p { color: var(--teal-dark); font-style: italic; }
+
+.block-comentario {
+  background: var(--amber-light);
+  border-left: 3px solid #EF9F27;
+}
+.block-comentario .block-label { color: #633806; }
+.block-comentario p { color: var(--amber-dark); }
+
+.block-resuelto-note {
+  background: var(--green-light);
+  border-left: 3px solid var(--green);
+  margin-top: 4px;
+}
+.block-resuelto-note .block-label { color: var(--green-dark); }
+.block-resuelto-note p { color: var(--green-dark); font-size: 12.5px; }
+
+/* ── EMPTY ── */
+.empty {
+  text-align: center; padding: 48px 0;
+  color: var(--gray-400); font-size: 14px;
+}
+
+/* ── FOOTER ── */
+footer {
+  text-align: center; padding: 24px;
+  font-size: 12px; color: var(--gray-400);
+  border-top: 1px solid var(--gray-200);
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-top">
+    <h1>Revisión de contenidos</h1>
+    <span class="file-tag">wa-ga.html</span>
+  </div>
+  <div class="legend">
+    <div class="legend-item"><div class="dot dot-original"></div> Texto original</div>
+    <div class="legend-item"><div class="dot dot-comentario"></div> Comentario del lector</div>
+    <div class="legend-item"><div class="dot dot-pendiente"></div> Pendiente</div>
+    <div class="legend-item"><div class="dot dot-resuelto"></div> Resuelto</div>
+  </div>
+  <div class="toolbar" id="toolbar"></div>
+</header>
+
+<div class="stats">
+  <span><strong id="vis-count">23</strong> comentarios</span>
+  <span class="stat-pend"><strong id="pend-count">18</strong> pendientes</span>
+  <span class="stat-res"><strong id="res-count">5</strong> resueltos</span>
+</div>
+
+<main id="main"></main>
+
+<footer>Generado a partir de la revisión de wa-ga.html · junio 2026</footer>
+
+<script>
+const data = [
+  {
+    n:1, status:'pendiente', section:'Hero', secId:'hero',
+    location:'#hero .hero-sub',
+    original:'El foco es ahora: ¿cuándo y por qué aparece cada posposición en la posición donde el español pondría un sujeto?',
+    comentario:'Esta pregunta confunde más que otra cosa. Propuesta: «Pasaremos a continuación a ver el uso y significado de dos posposiciones, は y が, y a contrastarlas.»'
+  },
+  {
+    n:2, status:'pendiente', section:'Puente / intro', secId:'hero',
+    location:'#intro .note-block p:last-child',
+    original:'Partiendo de esa base, analizaremos qué función cumplen realmente las posposición は y が, y su equivalencia, o no, con el sujeto en el español.',
+    comentario:'Propuesta: «Partiendo de esa base, pasaremos ahora a analizar las posposiciones は y が. Es el momento propicio, dado que a menudo acompañan a lo que en el español se corresponde con el sujeto... pero no en el caso del japonés, como acabamos de ver. Es por esto que resultan especialmente confusas para los hispanohablantes.»'
+  },
+  {
+    n:3, status:'resuelto', section:'Origen semántico', secId:'hero',
+    location:'#origen .sec-lead',
+    original:'Antes de entrar en cada función en detalle, conviene fijar el punto de partida de cada posposición. Las distintas funciones que tienen en contexto son derivaciones de un único significado central.',
+    comentario:'Propuesta: «Antes de entrar en cada función, veremos el origen y significado de cada posposición, dado que las funciones y usos se derivan de ello.»',
+    nota:'Aplicado en la versión actual.'
+  },
+  {
+    n:4, status:'pendiente', section:'Sec 01 — は tópico', secId:'sec1',
+    location:'#sec1 .dialogue (Ella no vino)',
+    original:'«Ella no vino, los demás sí.» = «Fue ella quien no vino.»',
+    comentario:'Al menos en español estas dos oraciones dicen exactamente lo mismo — la equiparación es incorrecta.'
+  },
+  {
+    n:5, status:'pendiente', section:'Sec 01 — は tópico', secId:'sec1',
+    location:'#sec1 (párrafo sobre 今日は)',
+    original:'En español, esta diferencia se suele marcar con énfasis prosódico: «Hoy no voy» (énfasis en «hoy») vs. «No voy» (sin énfasis temporal).',
+    comentario:'Este párrafo no funciona porque los ejemplos en japonés llevan ambos 今日.'
+  },
+  {
+    n:6, status:'pendiente', section:'Sec 01 — は tópico', secId:'sec1',
+    location:'#sec1 (frase final de la sección)',
+    original:'Esto muestra que は no es una categoría única y fija, sino una posposición cuya función se determina en cada posición y contexto.',
+    comentario:'«Posposición» y «posición» en la misma oración: choca.'
+  },
+  {
+    n:7, status:'pendiente', section:'Sec 02 — は contraste (doble は)', secId:'sec2',
+    location:'#sec2 .case-card (日本語は発音は簡単だ)',
+    original:'[Ejemplo 日本語は発音は簡単だ]',
+    comentario:'¡Parece la misma estructura que 象は鼻が長い! Si lo entiendo bien, 日本語は発音は簡単だ expresa «Del japonés, al menos la pronunciación es fácil», y no «La pronunciación del japonés es fácil». ¿Es correcto?'
+  },
+  {
+    n:8, status:'pendiente', section:'Sec 03 — は estructura compleja', secId:'sec3',
+    location:'#sec3 (mención a Guía 1 en el cuerpo del texto)',
+    original:'En la Guía 1 se introdujo que が marca el complemento nominativo del predicado',
+    comentario:'Estaría bien enlazar las guías al mencionarlas.'
+  },
+  {
+    n:9, status:'pendiente', section:'Sec 03 — は estructura compleja', secId:'sec3',
+    location:'#sec3 .dialogue (頭がいい)',
+    original:'(lit. la cabeza buena)',
+    comentario:'Debería ser: (lit. buena cabeza)'
+  },
+  {
+    n:10, status:'pendiente', section:'Sec 03 — は estructura compleja', secId:'sec3',
+    location:'#sec3 .dialogue (背が高い)',
+    original:'Tanaka es alto.',
+    comentario:'Debería aclarar: «Tanaka es alto. (lit. de estatura alta)»'
+  },
+  {
+    n:11, status:'pendiente', section:'Sec 03 — は estructura compleja', secId:'sec3',
+    location:'#sec3 .dialogue (足が速い)',
+    original:'(lit. los pies rápidos)',
+    comentario:'Debería ser: (lit. las piernas rápidas)'
+  },
+  {
+    n:12, status:'pendiente', section:'Sec 03 — は estructura compleja', secId:'sec3',
+    location:'#sec3 .explain (El marco con は)',
+    original:'El marco con は no tiene que ser una persona.',
+    comentario:'Debería ser: «El marco con は no tiene por qué ser una persona.»'
+  },
+  {
+    n:13, status:'pendiente', section:'Sec 03 — は estructura compleja', secId:'sec3',
+    location:'#sec3 .dialogue (春は桜がきれいだ)',
+    original:'En primavera, los cerezos son preciosos. (lit. «De la primavera, los cerezos son bonitos.»)',
+    comentario:'Hay inconsistencia: «preciosos» en la traducción pero «bonitos» en el literal. Elegir uno.'
+  },
+  {
+    n:14, status:'pendiente', section:'Sec 04 — が foco', secId:'sec4',
+    location:'#sec4 .dialogue (この仕事、誰ができる)',
+    original:'B: Hanako puede. (de los candidatos, ella)',
+    comentario:'Para ser coherente con lo explicado antes, debería decir: «B: Hanako es quien puede. (de los candidatos, ella)»'
+  },
+  {
+    n:15, status:'pendiente', section:'Sec 04 — が foco', secId:'sec4',
+    location:'#sec4 .explain (oraciones hendidas)',
+    original:'...con oraciones hendidas («Es Yamada quien…»)...',
+    comentario:'¿Qué son las oraciones hendidas? El término no se explica.'
+  },
+  {
+    n:16, status:'pendiente', section:'Sec 04 — が foco', secId:'sec4',
+    location:'#sec4 (やっぱり、これがいい vs. これはいい)',
+    original:'やっぱり、これがいい → Al final, este es el que me gusta.\nやっぱり、これはいい → Al final, este está bien.',
+    comentario:'Después de leer el punto 04, parece que が siempre crea una oración con un relativo tipo «que, quien, cual». ¿Es eso correcto?'
+  },
+  {
+    n:17, status:'pendiente', section:'Sec 06 — 誰が / Aは', secId:'sec6',
+    location:'#sec6 (introducción de la sección)',
+    original:'「Aは来る？」es una pregunta de predicado.',
+    comentario:'¿Qué significa «una pregunta de predicado»? Así de entrada, choca. Leyendo el resto se termina entendiendo, pero el concepto necesita una breve introducción.'
+  },
+  {
+    n:18, status:'pendiente', section:'Sec 06 — 誰が / Aは', secId:'sec6',
+    location:'#sec6 .table (columna が)',
+    original:'「Aが来る。」llena el hueco nominativo de 来る',
+    comentario:'¿No debería ser: «「A」llena el hueco nominativo de 来る»? (sin が en la cita)'
+  },
+  {
+    n:19, status:'pendiente', section:'Sec 06 — 誰が / Aは', secId:'sec6',
+    location:'#sec6 .table (fila Función de は)',
+    original:'Extrae un elemento identificable de un conjunto presupuesto y afirma el predicado solo para ese elemento',
+    comentario:'¿Siempre afirma? ¿Qué pasa en negaciones con は?'
+  },
+  {
+    n:20, status:'pendiente', section:'Sec 07 — Doble nominativo', secId:'sec7',
+    location:'#sec7 .dialogue (魚は、私は好きだ)',
+    original:'El pescado, yo le tengo cariño.',
+    comentario:'No se entiende como traducción al español.'
+  },
+  {
+    n:21, status:'pendiente', section:'Sec 07 — Doble nominativo', secId:'sec7',
+    location:'#sec7 .dialogue (料理ができる)',
+    original:'Él sabe cocinar.',
+    comentario:'¿No debería ser «Él puede cocinar.»? できる es potencial, no conocimiento.'
+  },
+  {
+    n:22, status:'pendiente', section:'Sec 07 — Doble nominativo', secId:'sec7',
+    location:'#sec7 .dialogue (田中は数学が得意だ)',
+    original:'Tanaka se le da bien la matemática.',
+    comentario:'Debería ser: «A Tanaka se le da bien la matemática.» o «Tanaka se le dan bien las matemáticas.»'
+  },
+  {
+    n:23, status:'pendiente', section:'Sec 08 — は vs が con だ', secId:'sec8',
+    location:'#sec8 .case-card (私はウナギだ)',
+    original:'Gramaticalmente, esta oración afirma que «yo soy una anguila», lo cual es biológicamente absurdo... que podría tener sentido si el camarero lleva la anguila y busca a quién dársela.',
+    comentario:'(1) Cuidado: afirmar «yo = anguila» puede llevar al alumno a equiparar は con el verbo ser. (2) La situación descrita sería más clara así: «si el camarero trajera el plato de anguila y buscara a quién servírselo».'
+  }
+];
+
+const filters = [
+  { label:'Todos',      key:'all' },
+  { label:'Pendientes', key:'pendiente' },
+  { label:'Resueltos',  key:'resuelto' },
+  { label:'Hero / intro', key:'hero' },
+  { label:'Sec 01',    key:'sec1' },
+  { label:'Sec 02',    key:'sec2' },
+  { label:'Sec 03',    key:'sec3' },
+  { label:'Sec 04',    key:'sec4' },
+  { label:'Sec 06',    key:'sec6' },
+  { label:'Sec 07',    key:'sec7' },
+  { label:'Sec 08',    key:'sec8' },
+];
+
+let activeFilter = 'all';
+
+function buildToolbar() {
+  const tb = document.getElementById('toolbar');
+  filters.forEach(f => {
+    const btn = document.createElement('button');
+    btn.className = 'filter-btn' + (f.key === 'all' ? ' active' : '');
+    btn.textContent = f.label;
+    btn.onclick = () => applyFilter(f.key);
+    tb.appendChild(btn);
+  });
+}
+
+function buildCards() {
+  const main = document.getElementById('main');
+  main.innerHTML = '';
+  data.forEach(item => {
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.dataset.status = item.status;
+    card.dataset.secId = item.secId;
+
+    const notaHtml = item.nota
+      ? `<div class="block block-resuelto-note"><div class="block-label">Nota</div><p>${item.nota}</p></div>`
+      : '';
+
+    card.innerHTML = `
+      <div class="card-header" onclick="toggle(this)">
+        <div class="card-num num-${item.status}">${item.n}</div>
+        <div class="card-meta">
+          <div class="card-badges">
+            <span class="badge badge-section">${item.section}</span>
+            <span class="badge badge-location">${item.location}</span>
+            <span class="badge badge-${item.status}">${item.status === 'pendiente' ? 'Pendiente' : 'Resuelto'}</span>
+          </div>
+          <div class="card-preview">${trunc(item.original, 95)}</div>
+        </div>
+        <span class="chevron">›</span>
+      </div>
+      <div class="card-body">
+        <div class="block block-original">
+          <div class="block-label">Texto original (wa-ga.html)</div>
+          <p>${item.original}</p>
+        </div>
+        <div class="block block-comentario">
+          <div class="block-label">Comentario del lector</div>
+          <p>${item.comentario}</p>
+        </div>
+        ${notaHtml}
+      </div>
+    `;
+    main.appendChild(card);
+  });
+  updateCounts();
+}
+
+function toggle(header) {
+  const body = header.nextElementSibling;
+  const ch   = header.querySelector('.chevron');
+  const open = body.classList.toggle('open');
+  ch.classList.toggle('open', open);
+}
+
+function applyFilter(key) {
+  activeFilter = key;
+  document.querySelectorAll('.filter-btn').forEach(b => {
+    b.classList.toggle('active', b.textContent.trim() === filters.find(f=>f.key===key)?.label);
+  });
+  document.querySelectorAll('.card').forEach(c => {
+    const show = key === 'all'
+      || c.dataset.status === key
+      || c.dataset.secId === key;
+    c.classList.toggle('hidden', !show);
+  });
+  updateCounts();
+}
+
+function updateCounts() {
+  const visible = [...document.querySelectorAll('.card:not(.hidden)')];
+  const pend = visible.filter(c => c.dataset.status === 'pendiente').length;
+  const res  = visible.filter(c => c.dataset.status === 'resuelto').length;
+  document.getElementById('vis-count').textContent  = visible.length;
+  document.getElementById('pend-count').textContent = pend;
+  document.getElementById('res-count').textContent  = res;
+
+  const main = document.getElementById('main');
+  let empty = main.querySelector('.empty');
+  if (visible.length === 0) {
+    if (!empty) {
+      empty = document.createElement('div');
+      empty.className = 'empty';
+      empty.textContent = 'No hay comentarios en esta categoría.';
+      main.appendChild(empty);
+    }
+  } else {
+    if (empty) empty.remove();
+  }
+}
+
+function trunc(str, n) {
+  return str.length > n ? str.slice(0, n) + '…' : str;
+}
+
+buildToolbar();
+buildCards();
+</script>
+</body>
+</html>
