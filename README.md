@@ -17,15 +17,14 @@ Este sitio ofrece un enfoque único para aprender japonés, basado en:
 ```
 nihongo-japones-para-todos/
 ├── index.html              # Página principal
-├── css/
-│   └── base.css            # Sistema de diseño
-├── js/
-│   └── speech.js           # Web Speech API (audio)
-├── docs/                   # Documentos fundamentales
-├── gramatica/              # Referencia gramatical
-├── aprender/               # Contenido por etapas
-├── herramientas/           # Audio, kana, furigana
-└── qa/                     # Preguntas frecuentes
+├── css/                    # common.css (sitio) · base.css (aprender, kana)
+├── js/speech.js            # Web Speech API (audio)
+├── gramatica/              # Guías, terminología y documento fundamental
+├── aprender/               # Mapa de etapas
+├── lecciones/              # Lecciones — GENERADAS, no editar a mano
+├── database/A1/            # Fuente de las lecciones (JSON por bloque)
+├── generate_lessons.py     # database/ → lecciones/
+└── herramientas/           # Tablas de kana
 ```
 
 ## 技術 | Tecnología

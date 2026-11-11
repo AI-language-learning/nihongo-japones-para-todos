@@ -8,8 +8,9 @@ Uso:
     python3 generate_lessons.py
 
 Salida:
-    output/leccion-ds-core-01.html
-    output/leccion-ds-core-02.html
+    lecciones/index.html
+    lecciones/leccion-ds-core-01.html
+    lecciones/leccion-ds-core-02.html
     ...
 """
 
@@ -409,7 +410,9 @@ ruby rt {{ font-size:0.6em; color:var(--warm-gray); }}
 <nav class="breadcrumb">
   <a href="../index.html">Inicio</a>
   <span class="sep">›</span>
-  <a href="index.html">Aprender</a>
+  <a href="../aprender/index.html">Aprender</a>
+  <span class="sep">›</span>
+  <a href="index.html">Lecciones</a>
   <span class="sep">›</span>
   <span>{esc(titulo)}</span>
 </nav>
@@ -501,6 +504,115 @@ document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
 
 # ─────────────────────────────────────────────
+# ÍNDICE DE LECCIONES
+# ─────────────────────────────────────────────
+def render_index(all_conjuntos):
+    """Genera lecciones/index.html: todas las lecciones agrupadas por bloque."""
+    bloques = []          # [(título, [(conjunto, n_ejemplos, archivo)])]
+    for bloque_titulo, conj, entries in all_conjuntos:
+        if not bloques or bloques[-1][0] != bloque_titulo:
+            bloques.append((bloque_titulo, []))
+        fname = f"leccion-{conjunto_to_slug(conj['id'])}.html"
+        bloques[-1][1].append((conj, len(entries), fname))
+
+    secciones = []
+    for n, (bloque_titulo, items) in enumerate(bloques):
+        jp, _, es = bloque_titulo.partition(" — ")
+        if not es:
+            jp, es = "", bloque_titulo
+        filas = "\n".join(
+            f'        <li><a href="{esc(fname)}">'
+            f'<span class="li-title">{esc(conj.get("título", conj["id"]))}</span>'
+            f'<span class="li-meta">{esc(conj["id"])} · {k} ejemplos</span></a></li>'
+            for conj, k, fname in items)
+        secciones.append(f"""
+    <section class="bloque">
+      <div class="bloque-head">
+        <span class="bloque-num">{n}</span>
+        <div>
+          <h2>{esc(es)}</h2>
+          <p class="bloque-jp">{esc(jp)}</p>
+        </div>
+      </div>
+      <ol class="leccion-list">
+{filas}
+      </ol>
+    </section>""")
+
+    total = sum(len(items) for _, items in bloques)
+    primera = bloques[0][1][0][2] if bloques else "#"
+
+    return f"""<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lecciones — Japonés para Todos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@400;700&family=DM+Serif+Display:ital@0;1&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/common.css">
+<style>
+.idx-header {{ background:linear-gradient(170deg,#1a1a2e 0%,#2c2c4a 45%,#16697a 100%); color:#fff; padding:3.5rem 1.5rem 3rem; text-align:center; }}
+.idx-header h1 {{ font-family:'DM Serif Display','Noto Serif JP',serif; font-size:clamp(2rem,5vw,3rem); line-height:1.2; margin:0 0 .4rem; }}
+.idx-header .jp {{ font-family:'Noto Serif JP',serif; color:rgba(255,255,255,.75); font-size:1.1rem; }}
+.idx-header p.lead {{ max-width:640px; margin:1rem auto 1.6rem; color:rgba(255,255,255,.85); }}
+.idx-main {{ max-width:820px; margin:0 auto; padding:2.5rem clamp(1.2rem,5vw,3rem) 4rem; }}
+.bloque {{ margin-bottom:2.5rem; padding:0; }}
+.bloque-head {{ display:flex; gap:1rem; align-items:center; margin-bottom:.8rem; }}
+.bloque-num {{ flex:none; width:2.6rem; height:2.6rem; border-radius:50%; background:var(--teal); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:700; }}
+.bloque h2 {{ font-family:'DM Serif Display','Noto Serif JP',serif; font-size:1.3rem; line-height:1.3; margin:0; }}
+.bloque-jp {{ font-family:'Noto Sans JP',sans-serif; color:var(--warm-gray); font-size:.9rem; margin:0; }}
+.leccion-list {{ list-style:none; margin:0; padding:0; background:#fff; border-radius:12px; box-shadow:0 2px 16px rgba(0,0,0,.05); overflow:hidden; }}
+.leccion-list li + li {{ border-top:1px solid var(--light-gray); }}
+.leccion-list a {{ display:flex; justify-content:space-between; align-items:baseline; gap:1rem; padding:.85rem 1.2rem; color:var(--ink); text-decoration:none; }}
+.leccion-list a:hover {{ background:var(--teal-light); }}
+.li-title {{ font-weight:600; }}
+.li-meta {{ flex:none; font-size:.8rem; color:var(--warm-gray); white-space:nowrap; }}
+@media (max-width:600px) {{ .leccion-list a {{ flex-direction:column; gap:.1rem; }} }}
+</style>
+</head>
+<body>
+
+<nav class="breadcrumb" aria-label="Ruta de navegación">
+  <div class="breadcrumb-inner">
+    <a href="../index.html">Inicio</a>
+    <span class="separator">›</span>
+    <a href="../aprender/index.html">Aprender</a>
+    <span class="separator">›</span>
+    <span class="current">Lecciones</span>
+  </div>
+</nav>
+
+<header class="idx-header">
+  <h1>Lecciones</h1>
+  <p class="jp">レッスン一覧 — 入門</p>
+  <p class="lead">{total} lecciones breves en {len(bloques)} bloques. Cada una parte de situaciones reales: primero observas, luego descubres el patrón.</p>
+  <a href="{esc(primera)}" class="btn btn-primary">Empezar por la primera</a>
+</header>
+
+<main class="idx-main">
+{"".join(secciones)}
+</main>
+
+<footer class="site-footer">
+  <p class="footer-title"><a href="../index.html"><strong>日本語 — Japonés para Todos</strong></a></p>
+  <p class="footer-jp">スペイン語話者のための日本語学習サイト</p>
+  <nav class="footer-nav" aria-label="Navegación del pie de página">
+    <a href="../index.html">Inicio</a>
+    <a href="../aprender/index.html">Aprender</a>
+    <a href="index.html">Lecciones</a>
+    <a href="../gramatica/index.html">Gramática</a>
+    <a href="../herramientas/kana.html">Herramientas</a>
+  </nav>
+  <p class="footer-copy">© 2026 Japonés para Todos — Proyecto de código abierto en GitHub</p>
+</footer>
+
+</body>
+</html>"""
+
+
+# ─────────────────────────────────────────────
 # MAIN
 # ─────────────────────────────────────────────
 def build_all_conjuntos():
@@ -550,6 +662,9 @@ def main():
         out.write_text(html, encoding="utf-8")
 
         print(f"  ✓  {filename}  ({len(entries)} ejemplos)")
+
+    (OUTPUT_DIR / "index.html").write_text(render_index(all_conjuntos), encoding="utf-8")
+    print("  ✓  index.html  (índice de lecciones)")
 
     print(f"\n✅ {n} lecciones generadas en '{OUTPUT_DIR}/'")
 
