@@ -6,196 +6,145 @@
 <title>Lecciones — Japonés para Todos</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@400;700&family=DM+Serif+Display:ital@0;1&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../css/common.css">
-<style>
-.idx-header { background:linear-gradient(170deg,#1a1a2e 0%,#2c2c4a 45%,#16697a 100%); color:#fff; padding:3.5rem 1.5rem 3rem; text-align:center; }
-.idx-header h1 { font-family:'DM Serif Display','Noto Serif JP',serif; font-size:clamp(2rem,5vw,3rem); line-height:1.2; margin:0 0 .4rem; }
-.idx-header .jp { font-family:'Noto Serif JP',serif; color:rgba(255,255,255,.75); font-size:1.1rem; }
-.idx-header p.lead { max-width:640px; margin:1rem auto 1.6rem; color:rgba(255,255,255,.85); }
-.idx-main { max-width:820px; margin:0 auto; padding:2.5rem clamp(1.2rem,5vw,3rem) 4rem; }
-.bloque { margin-bottom:2.5rem; padding:0; }
-.bloque-head { display:flex; gap:1rem; align-items:center; margin-bottom:.8rem; }
-.bloque-num { flex:none; width:2.6rem; height:2.6rem; border-radius:50%; background:var(--teal); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:700; }
-.bloque h2 { font-family:'DM Serif Display','Noto Serif JP',serif; font-size:1.3rem; line-height:1.3; margin:0; }
-.bloque-jp { font-family:'Noto Sans JP',sans-serif; color:var(--warm-gray); font-size:.9rem; margin:0; }
-.leccion-list { list-style:none; margin:0; padding:0; background:#fff; border-radius:12px; box-shadow:0 2px 16px rgba(0,0,0,.05); overflow:hidden; }
-.leccion-list li + li { border-top:1px solid var(--light-gray); }
-.leccion-list a { display:flex; justify-content:space-between; align-items:baseline; gap:1rem; padding:.85rem 1.2rem; color:var(--ink); text-decoration:none; }
-.leccion-list a:hover { background:var(--teal-light); }
-.li-title { font-weight:600; }
-.li-meta { flex:none; font-size:.8rem; color:var(--warm-gray); white-space:nowrap; }
-@media (max-width:600px) { .leccion-list a { flex-direction:column; gap:.1rem; } }
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&family=M+PLUS+Rounded+1c:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/aprender.css">
 </head>
 <body>
 
-<nav class="breadcrumb" aria-label="Ruta de navegación">
-  <div class="breadcrumb-inner">
-    <a href="../index.html">Inicio</a>
-    <span class="separator">›</span>
-    <a href="../aprender/index.html">Aprender</a>
-    <span class="separator">›</span>
-    <span class="current">Lecciones</span>
-  </div>
+<nav class="migas" aria-label="Ruta de navegación">
+  <a href="../index.html">Inicio</a> <span>›</span>
+  <span>Lecciones</span>
 </nav>
 
-<header class="idx-header">
-  <h1>Lecciones</h1>
-  <p class="jp">レッスン一覧 — 入門</p>
-  <p class="lead">45 lecciones breves en 8 bloques. Cada una parte de situaciones reales: primero observas, luego descubres el patrón.</p>
-  <a href="leccion-ds-core-01.html" class="btn btn-primary">Empezar por la primera</a>
+<header class="cab">
+  <div class="ancho">
+    <h1>Lecciones</h1>
+    <p class="lead">45 lecciones cortas. En cada una escuchas frases reales, las repites y descubres cómo funcionan.</p>
+    <p><a href="leccion-ds-core-01.html" class="boton">▶ Empezar por la primera</a></p>
+  </div>
 </header>
 
-<main class="idx-main">
+<main class="ancho">
 
-    <section class="bloque">
-      <div class="bloque-head">
-        <span class="bloque-num">0</span>
-        <div>
-          <h2>Las cuatro clases del núcleo predicativo</h2>
-          <p class="bloque-jp">述語の核</p>
-        </div>
-      </div>
-      <ol class="leccion-list">
-        <li><a href="leccion-ds-core-01.html"><span class="li-title">Las cuatro clases en un mismo contexto</span><span class="li-meta">DS-CORE-01 · 4 ejemplos</span></a></li>
-        <li><a href="leccion-ds-core-02.html"><span class="li-title">Adjetivos (A) como predicado completo</span><span class="li-meta">DS-CORE-02 · 6 ejemplos</span></a></li>
-        <li><a href="leccion-ds-core-03.html"><span class="li-title">Nominales adjetivales (Na) como predicado completo</span><span class="li-meta">DS-CORE-03 · 5 ejemplos</span></a></li>
-        <li><a href="leccion-ds-core-04.html"><span class="li-title">Nominales (N) como predicado completo</span><span class="li-meta">DS-CORE-04 · 5 ejemplos</span></a></li>
-        <li><a href="leccion-ds-core-05.html"><span class="li-title">Verbos (V) como predicado completo</span><span class="li-meta">DS-CORE-05 · 5 ejemplos</span></a></li>
-        <li><a href="leccion-ds-core-06.html"><span class="li-title">El mismo predicado — las cuatro clases en contraste directo</span><span class="li-meta">DS-CORE-06 · 4 ejemplos</span></a></li>
-      </ol>
-    </section>
-    <section class="bloque">
-      <div class="bloque-head">
-        <span class="bloque-num">1</span>
-        <div>
-          <h2>La negación en las cuatro clases predicativas</h2>
-          <p class="bloque-jp">否定形</p>
-        </div>
-      </div>
-      <ol class="leccion-list">
-        <li><a href="leccion-ds-neg-01.html"><span class="li-title">Las cuatro negaciones en paralelo</span><span class="li-meta">DS-NEG-01 · 4 ejemplos</span></a></li>
-        <li><a href="leccion-ds-neg-02.html"><span class="li-title">La negación de clase A — 〜くない</span><span class="li-meta">DS-NEG-02 · 5 ejemplos</span></a></li>
-        <li><a href="leccion-ds-neg-03.html"><span class="li-title">La negación de clase Na — 〜じゃない</span><span class="li-meta">DS-NEG-03 · 4 ejemplos</span></a></li>
-        <li><a href="leccion-ds-neg-04.html"><span class="li-title">La negación de clase N — 〜じゃない</span><span class="li-meta">DS-NEG-04 · 3 ejemplos</span></a></li>
-        <li><a href="leccion-ds-neg-05.html"><span class="li-title">La negación verbal (V) — Grupo 2</span><span class="li-meta">DS-NEG-05 · 3 ejemplos</span></a></li>
-        <li><a href="leccion-ds-neg-06.html"><span class="li-title">La negación verbal (V) — Grupo 1 e irregulares</span><span class="li-meta">DS-NEG-06 · 7 ejemplos</span></a></li>
-      </ol>
-    </section>
-    <section class="bloque">
-      <div class="bloque-head">
-        <span class="bloque-num">2</span>
-        <div>
-          <h2>El perfectivo en las cuatro clases predicativas</h2>
-          <p class="bloque-jp">完了形</p>
-        </div>
-      </div>
-      <ol class="leccion-list">
-        <li><a href="leccion-ds-perf-01.html"><span class="li-title">Los cuatro perfectivos en paralelo</span><span class="li-meta">DS-PERF-01 · 4 ejemplos</span></a></li>
-        <li><a href="leccion-ds-perf-02.html"><span class="li-title">El perfectivo de clase A — 〜かった</span><span class="li-meta">DS-PERF-02 · 5 ejemplos</span></a></li>
-        <li><a href="leccion-ds-perf-03.html"><span class="li-title">El perfectivo de clase Na — 〜だった</span><span class="li-meta">DS-PERF-03 · 3 ejemplos</span></a></li>
-        <li><a href="leccion-ds-perf-04.html"><span class="li-title">El perfectivo de clase N — 〜だった</span><span class="li-meta">DS-PERF-04 · 3 ejemplos</span></a></li>
-        <li><a href="leccion-ds-perf-05.html"><span class="li-title">El perfectivo verbal (V) — Grupo 2</span><span class="li-meta">DS-PERF-05 · 3 ejemplos</span></a></li>
-        <li><a href="leccion-ds-perf-06.html"><span class="li-title">El perfectivo verbal (V) — Grupo 1: variaciones</span><span class="li-meta">DS-PERF-06 · 7 ejemplos</span></a></li>
-      </ol>
-    </section>
-    <section class="bloque">
-      <div class="bloque-head">
-        <span class="bloque-num">3</span>
-        <div>
-          <h2>El perfectivo negativo en las cuatro clases</h2>
-          <p class="bloque-jp">否定完了形</p>
-        </div>
-      </div>
-      <ol class="leccion-list">
-        <li><a href="leccion-ds-pneg-01.html"><span class="li-title">Los cuatro perfectivos negativos en paralelo</span><span class="li-meta">DS-PNEG-01 · 4 ejemplos</span></a></li>
-        <li><a href="leccion-ds-pneg-02.html"><span class="li-title">Perfectivo negativo de clase A</span><span class="li-meta">DS-PNEG-02 · 3 ejemplos</span></a></li>
-        <li><a href="leccion-ds-pneg-03.html"><span class="li-title">Perfectivo negativo de clases Na y N</span><span class="li-meta">DS-PNEG-03 · 4 ejemplos</span></a></li>
-        <li><a href="leccion-ds-pneg-04.html"><span class="li-title">Perfectivo negativo verbal (V)</span><span class="li-meta">DS-PNEG-04 · 5 ejemplos</span></a></li>
-        <li><a href="leccion-ds-pneg-05.html"><span class="li-title">Consolidación — la tabla completa de las cuatro clases</span><span class="li-meta">DS-PNEG-05 · 1 ejemplos</span></a></li>
-      </ol>
-    </section>
-    <section class="bloque">
-      <div class="bloque-head">
-        <span class="bloque-num">4</span>
-        <div>
-          <h2>El registro de cortesía en las cuatro clases predicativas</h2>
-          <p class="bloque-jp">丁寧語</p>
-        </div>
-      </div>
-      <ol class="leccion-list">
-        <li><a href="leccion-ds-crt-01.html"><span class="li-title">Los cuatro predicados corteses en paralelo</span><span class="li-meta">DS-CRT-01 · 4 ejemplos</span></a></li>
-        <li><a href="leccion-ds-crt-02.html"><span class="li-title">Clase A con です</span><span class="li-meta">DS-CRT-02 · 4 ejemplos</span></a></li>
-        <li><a href="leccion-ds-crt-03.html"><span class="li-title">Clases Na y N con です</span><span class="li-meta">DS-CRT-03 · 3 ejemplos</span></a></li>
-        <li><a href="leccion-ds-crt-04.html"><span class="li-title">Clase V con ます</span><span class="li-meta">DS-CRT-04 · 5 ejemplos</span></a></li>
-        <li><a href="leccion-ds-crt-05.html"><span class="li-title">La negación cortés — dos sistemas paralelos</span><span class="li-meta">DS-CRT-05 · 5 ejemplos</span></a></li>
-      </ol>
-    </section>
-    <section class="bloque">
-      <div class="bloque-head">
-        <span class="bloque-num">5</span>
-        <div>
-          <h2>Los complementos posposicionales</h2>
-          <p class="bloque-jp">補語と後置詞</p>
-        </div>
-      </div>
-      <ol class="leccion-list">
-        <li><a href="leccion-ds-comp-01.html"><span class="li-title">を — el complemento acusativo con verbos transitivos</span><span class="li-meta">DS-COMP-01 · 5 ejemplos</span></a></li>
-        <li><a href="leccion-ds-comp-02.html"><span class="li-title">が — el complemento nominativo con predicados de estado</span><span class="li-meta">DS-COMP-02 · 5 ejemplos</span></a></li>
-        <li><a href="leccion-ds-comp-03.html"><span class="li-title">に (1) — locativo existencial y directivo</span><span class="li-meta">DS-COMP-03 · 5 ejemplos</span></a></li>
-        <li><a href="leccion-ds-comp-04.html"><span class="li-title">で (1) — locativo de actividad e instrumental</span><span class="li-meta">DS-COMP-04 · 4 ejemplos</span></a></li>
-        <li><a href="leccion-ds-comp-05.html"><span class="li-title">から y まで — ablativo y terminativo</span><span class="li-meta">DS-COMP-05 · 3 ejemplos</span></a></li>
-        <li><a href="leccion-ds-comp-06.html"><span class="li-title">が vs を — el mismo nominal, función distinta según el predicado</span><span class="li-meta">DS-COMP-06 · 4 ejemplos</span></a></li>
-      </ol>
-    </section>
-    <section class="bloque">
-      <div class="bloque-head">
-        <span class="bloque-num">6</span>
-        <div>
-          <h2>El tópico は y su contraste con が</h2>
-          <p class="bloque-jp">話題</p>
-        </div>
-      </div>
-      <ol class="leccion-list">
-        <li><a href="leccion-ds-top-01.html"><span class="li-title">は como tópico — de qué se habla</span><span class="li-meta">DS-TOP-01 · 4 ejemplos</span></a></li>
-        <li><a href="leccion-ds-top-02.html"><span class="li-title">は sustituyendo a が</span><span class="li-meta">DS-TOP-02 · 3 ejemplos</span></a></li>
-        <li><a href="leccion-ds-top-03.html"><span class="li-title">は sustituyendo a を</span><span class="li-meta">DS-TOP-03 · 2 ejemplos</span></a></li>
-        <li><a href="leccion-ds-top-04.html"><span class="li-title">は de contraste — esto sí, pero...</span><span class="li-meta">DS-TOP-04 · 3 ejemplos</span></a></li>
-        <li><a href="leccion-ds-top-05.html"><span class="li-title">私は vs 私が — el contraste paradigmático</span><span class="li-meta">DS-TOP-05 · 4 ejemplos</span></a></li>
-      </ol>
-    </section>
-    <section class="bloque">
-      <div class="bloque-head">
-        <span class="bloque-num">7</span>
-        <div>
-          <h2>Las expresiones finales</h2>
-          <p class="bloque-jp">文末表現</p>
-        </div>
-      </div>
-      <ol class="leccion-list">
-        <li><a href="leccion-ds-fin-01.html"><span class="li-title">よ — informar, afirmar, contradiciendo</span><span class="li-meta">DS-FIN-01 · 4 ejemplos</span></a></li>
-        <li><a href="leccion-ds-fin-02.html"><span class="li-title">ね — confirmar, buscar empatía, suavizar</span><span class="li-meta">DS-FIN-02 · 4 ejemplos</span></a></li>
-        <li><a href="leccion-ds-fin-03.html"><span class="li-title">よね — informar y confirmar simultáneamente</span><span class="li-meta">DS-FIN-03 · 2 ejemplos</span></a></li>
-        <li><a href="leccion-ds-fin-04.html"><span class="li-title">か — preguntar (y sus variantes)</span><span class="li-meta">DS-FIN-04 · 3 ejemplos</span></a></li>
-        <li><a href="leccion-ds-fin-05.html"><span class="li-title">な — monólogo, exclamación, prohibición</span><span class="li-meta">DS-FIN-05 · 3 ejemplos</span></a></li>
-        <li><a href="leccion-ds-fin-06.html"><span class="li-title">Combinaciones y el efecto del registro cortés</span><span class="li-meta">DS-FIN-06 · 4 ejemplos</span></a></li>
-      </ol>
-    </section>
+  <section class="bloque">
+    <div class="bloque-cab">
+      <span class="bloque-n">1</span>
+      <div><h2>Las cuatro clases del núcleo predicativo</h2><p lang="ja">述語の核</p></div>
+    </div>
+    <ol class="lista">
+        <li><a href="leccion-ds-core-01.html"><span class="li-t">Las cuatro clases en un mismo contexto</span><span class="li-m">4 frases</span></a></li>
+        <li><a href="leccion-ds-core-02.html"><span class="li-t">Adjetivos (A) como predicado completo</span><span class="li-m">6 frases</span></a></li>
+        <li><a href="leccion-ds-core-03.html"><span class="li-t">Nominales adjetivales (Na) como predicado completo</span><span class="li-m">5 frases</span></a></li>
+        <li><a href="leccion-ds-core-04.html"><span class="li-t">Nominales (N) como predicado completo</span><span class="li-m">5 frases</span></a></li>
+        <li><a href="leccion-ds-core-05.html"><span class="li-t">Verbos (V) como predicado completo</span><span class="li-m">5 frases</span></a></li>
+        <li><a href="leccion-ds-core-06.html"><span class="li-t">El mismo predicado — las cuatro clases en contraste directo</span><span class="li-m">4 frases</span></a></li>
+    </ol>
+  </section>
+  <section class="bloque">
+    <div class="bloque-cab">
+      <span class="bloque-n">2</span>
+      <div><h2>La negación en las cuatro clases predicativas</h2><p lang="ja">否定形</p></div>
+    </div>
+    <ol class="lista">
+        <li><a href="leccion-ds-neg-01.html"><span class="li-t">Las cuatro negaciones en paralelo</span><span class="li-m">4 frases</span></a></li>
+        <li><a href="leccion-ds-neg-02.html"><span class="li-t">La negación de clase A — 〜くない</span><span class="li-m">5 frases</span></a></li>
+        <li><a href="leccion-ds-neg-03.html"><span class="li-t">La negación de clase Na — 〜じゃない</span><span class="li-m">4 frases</span></a></li>
+        <li><a href="leccion-ds-neg-04.html"><span class="li-t">La negación de clase N — 〜じゃない</span><span class="li-m">3 frases</span></a></li>
+        <li><a href="leccion-ds-neg-05.html"><span class="li-t">La negación verbal (V) — Grupo 2</span><span class="li-m">3 frases</span></a></li>
+        <li><a href="leccion-ds-neg-06.html"><span class="li-t">La negación verbal (V) — Grupo 1 e irregulares</span><span class="li-m">7 frases</span></a></li>
+    </ol>
+  </section>
+  <section class="bloque">
+    <div class="bloque-cab">
+      <span class="bloque-n">3</span>
+      <div><h2>El perfectivo en las cuatro clases predicativas</h2><p lang="ja">完了形</p></div>
+    </div>
+    <ol class="lista">
+        <li><a href="leccion-ds-perf-01.html"><span class="li-t">Los cuatro perfectivos en paralelo</span><span class="li-m">4 frases</span></a></li>
+        <li><a href="leccion-ds-perf-02.html"><span class="li-t">El perfectivo de clase A — 〜かった</span><span class="li-m">5 frases</span></a></li>
+        <li><a href="leccion-ds-perf-03.html"><span class="li-t">El perfectivo de clase Na — 〜だった</span><span class="li-m">3 frases</span></a></li>
+        <li><a href="leccion-ds-perf-04.html"><span class="li-t">El perfectivo de clase N — 〜だった</span><span class="li-m">3 frases</span></a></li>
+        <li><a href="leccion-ds-perf-05.html"><span class="li-t">El perfectivo verbal (V) — Grupo 2</span><span class="li-m">3 frases</span></a></li>
+        <li><a href="leccion-ds-perf-06.html"><span class="li-t">El perfectivo verbal (V) — Grupo 1: variaciones</span><span class="li-m">7 frases</span></a></li>
+    </ol>
+  </section>
+  <section class="bloque">
+    <div class="bloque-cab">
+      <span class="bloque-n">4</span>
+      <div><h2>El perfectivo negativo en las cuatro clases</h2><p lang="ja">否定完了形</p></div>
+    </div>
+    <ol class="lista">
+        <li><a href="leccion-ds-pneg-01.html"><span class="li-t">Los cuatro perfectivos negativos en paralelo</span><span class="li-m">4 frases</span></a></li>
+        <li><a href="leccion-ds-pneg-02.html"><span class="li-t">Perfectivo negativo de clase A</span><span class="li-m">3 frases</span></a></li>
+        <li><a href="leccion-ds-pneg-03.html"><span class="li-t">Perfectivo negativo de clases Na y N</span><span class="li-m">4 frases</span></a></li>
+        <li><a href="leccion-ds-pneg-04.html"><span class="li-t">Perfectivo negativo verbal (V)</span><span class="li-m">5 frases</span></a></li>
+        <li><a href="leccion-ds-pneg-05.html"><span class="li-t">Consolidación — la tabla completa de las cuatro clases</span><span class="li-m">1 frases</span></a></li>
+    </ol>
+  </section>
+  <section class="bloque">
+    <div class="bloque-cab">
+      <span class="bloque-n">5</span>
+      <div><h2>El registro de cortesía en las cuatro clases predicativas</h2><p lang="ja">丁寧語</p></div>
+    </div>
+    <ol class="lista">
+        <li><a href="leccion-ds-crt-01.html"><span class="li-t">Los cuatro predicados corteses en paralelo</span><span class="li-m">4 frases</span></a></li>
+        <li><a href="leccion-ds-crt-02.html"><span class="li-t">Clase A con です</span><span class="li-m">4 frases</span></a></li>
+        <li><a href="leccion-ds-crt-03.html"><span class="li-t">Clases Na y N con です</span><span class="li-m">3 frases</span></a></li>
+        <li><a href="leccion-ds-crt-04.html"><span class="li-t">Clase V con ます</span><span class="li-m">5 frases</span></a></li>
+        <li><a href="leccion-ds-crt-05.html"><span class="li-t">La negación cortés — dos sistemas paralelos</span><span class="li-m">5 frases</span></a></li>
+    </ol>
+  </section>
+  <section class="bloque">
+    <div class="bloque-cab">
+      <span class="bloque-n">6</span>
+      <div><h2>Los complementos posposicionales</h2><p lang="ja">補語と後置詞</p></div>
+    </div>
+    <ol class="lista">
+        <li><a href="leccion-ds-comp-01.html"><span class="li-t">を — el complemento acusativo con verbos transitivos</span><span class="li-m">5 frases</span></a></li>
+        <li><a href="leccion-ds-comp-02.html"><span class="li-t">が — el complemento nominativo con predicados de estado</span><span class="li-m">5 frases</span></a></li>
+        <li><a href="leccion-ds-comp-03.html"><span class="li-t">に (1) — locativo existencial y directivo</span><span class="li-m">5 frases</span></a></li>
+        <li><a href="leccion-ds-comp-04.html"><span class="li-t">で (1) — locativo de actividad e instrumental</span><span class="li-m">4 frases</span></a></li>
+        <li><a href="leccion-ds-comp-05.html"><span class="li-t">から y まで — ablativo y terminativo</span><span class="li-m">3 frases</span></a></li>
+        <li><a href="leccion-ds-comp-06.html"><span class="li-t">が vs を — el mismo nominal, función distinta según el predicado</span><span class="li-m">4 frases</span></a></li>
+    </ol>
+  </section>
+  <section class="bloque">
+    <div class="bloque-cab">
+      <span class="bloque-n">7</span>
+      <div><h2>El tópico は y su contraste con が</h2><p lang="ja">話題</p></div>
+    </div>
+    <ol class="lista">
+        <li><a href="leccion-ds-top-01.html"><span class="li-t">は como tópico — de qué se habla</span><span class="li-m">4 frases</span></a></li>
+        <li><a href="leccion-ds-top-02.html"><span class="li-t">は sustituyendo a が</span><span class="li-m">3 frases</span></a></li>
+        <li><a href="leccion-ds-top-03.html"><span class="li-t">は sustituyendo a を</span><span class="li-m">2 frases</span></a></li>
+        <li><a href="leccion-ds-top-04.html"><span class="li-t">は de contraste — esto sí, pero...</span><span class="li-m">3 frases</span></a></li>
+        <li><a href="leccion-ds-top-05.html"><span class="li-t">私は vs 私が — el contraste paradigmático</span><span class="li-m">4 frases</span></a></li>
+    </ol>
+  </section>
+  <section class="bloque">
+    <div class="bloque-cab">
+      <span class="bloque-n">8</span>
+      <div><h2>Las expresiones finales</h2><p lang="ja">文末表現</p></div>
+    </div>
+    <ol class="lista">
+        <li><a href="leccion-ds-fin-01.html"><span class="li-t">よ — informar, afirmar, contradiciendo</span><span class="li-m">4 frases</span></a></li>
+        <li><a href="leccion-ds-fin-02.html"><span class="li-t">ね — confirmar, buscar empatía, suavizar</span><span class="li-m">4 frases</span></a></li>
+        <li><a href="leccion-ds-fin-03.html"><span class="li-t">よね — informar y confirmar simultáneamente</span><span class="li-m">2 frases</span></a></li>
+        <li><a href="leccion-ds-fin-04.html"><span class="li-t">か — preguntar (y sus variantes)</span><span class="li-m">3 frases</span></a></li>
+        <li><a href="leccion-ds-fin-05.html"><span class="li-t">な — monólogo, exclamación, prohibición</span><span class="li-m">3 frases</span></a></li>
+        <li><a href="leccion-ds-fin-06.html"><span class="li-t">Combinaciones y el efecto del registro cortés</span><span class="li-m">4 frases</span></a></li>
+    </ol>
+  </section>
 </main>
 
-<footer class="site-footer">
-  <p class="footer-title"><a href="../index.html"><strong>日本語 — Japonés para Todos</strong></a></p>
-  <p class="footer-jp">スペイン語話者のための日本語学習サイト</p>
-  <nav class="footer-nav" aria-label="Navegación del pie de página">
+<footer class="pie">
+  <nav aria-label="Navegación del pie de página">
     <a href="../index.html">Inicio</a>
-    <a href="../aprender/index.html">Aprender</a>
     <a href="index.html">Lecciones</a>
-    <a href="../gramatica/index.html">Gramática</a>
-    <a href="../herramientas/kana.html">Herramientas</a>
+    <a href="../herramientas/kana.html">Kana</a>
+    <a href="../gramatica/index.html">Para profes y curiosos</a>
   </nav>
-  <p class="footer-copy">© 2026 Japonés para Todos — Proyecto de código abierto en GitHub</p>
+  <p>日本語 — Japonés para Todos</p>
 </footer>
-
 </body>
 </html>

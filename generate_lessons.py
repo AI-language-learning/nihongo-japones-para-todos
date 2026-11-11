@@ -1,27 +1,27 @@
 #!/usr/bin/env python3
 """
 generate_lessons.py
-Genera un archivo HTML por cada発見セット（conjunto de descubrimiento）
-a partir de los archivos JSON del database A1.
+Genera lecciones/ a partir de database/A1/*.json.
 
-Uso:
     python3 generate_lessons.py
 
 Salida:
     lecciones/index.html
-    lecciones/leccion-ds-core-01.html
-    lecciones/leccion-ds-core-02.html
-    ...
+    lecciones/leccion-ds-core-01.html ...
+
+Presentación (decidida el 2026-11-11):
+  - Alfabeto en primer plano, kana y kanji debajo.
+  - Notación «Hepburn con señales»: letras h, j, z y g(+e/i) marcadas,
+    vocales largas dobles, u débil de desu/masu atenuada, ん = m ante b/p/m.
+  - Estilos en css/aprender.css, comportamiento en js/leccion.js.
+No editar a mano los HTML de lecciones/: se regeneran.
 """
 
 import json
 import re
+import sys
 from pathlib import Path
 
-
-# ─────────────────────────────────────────────
-# RUTAS
-# ─────────────────────────────────────────────
 DB_FILES = [
     "database/A1/00-cuatro-clases/bloque-0-predicado-core.json",
     "database/A1/01-negacion/bloque-1-negacion.json",
@@ -36,23 +36,130 @@ DB_FILES = [
 OUTPUT_DIR = Path("lecciones")
 OUTPUT_DIR.mkdir(exist_ok=True)
 
+CLASS_NAMES = {"A": "Adjetivo", "Na": "Nominal adjetival", "N": "Nominal", "V": "Verbo"}
+
+# Qué escritura va en grande al abrir la lección: "alfa", "kana" o "kanji".
+# Plan: bloques 4-5 → "kana", 6-7 → "kanji", cuando exista la sección «kana de hoy».
+MODO_POR_BLOQUE = {0: "alfa", 1: "alfa", 2: "alfa", 3: "alfa",
+                   4: "alfa", 5: "alfa", 6: "alfa", 7: "alfa"}
+
+# Bloques en los que se muestra la pista «Suena como …»
+BLOQUES_CON_PISTA = {0, 1}
+
 
 # ─────────────────────────────────────────────
-# COLORES POR CLASE
+# NOTACIÓN
 # ─────────────────────────────────────────────
-CLASS_COLORS = {
-    "A":  {"cls": "#2e8b57", "bg": "#edf7f1", "border": "#a8d8bc"},
-    "Na": {"cls": "#7b4ea0", "bg": "#f5effe", "border": "#c9aee6"},
-    "N":  {"cls": "#b05c1a", "bg": "#fef3e8", "border": "#e8b87a"},
-    "V":  {"cls": "#1a68b0", "bg": "#e8f2fe", "border": "#8ab9e8"},
-}
+_MACRON = {"ā": "aa", "ī": "ii", "ū": "uu", "ē": "ee", "ō": "oo",
+           "Ā": "Aa", "Ī": "Ii", "Ū": "Uu", "Ē": "Ee", "Ō": "Oo"}
 
-CLASS_NAMES = {
-    "A":  "Adjetivo",
-    "Na": "Nominal adjetival",
-    "N":  "Nominal",
-    "V":  "Verbo",
+
+def lectura(romaji):
+    """Romaji de la base de datos (Hepburn con macrones) → notación del sitio."""
+    r = romaji or ""
+    for k, v in _MACRON.items():
+        r = r.replace(k, v)
+    r = re.sub(r"\bwo\b", "o", r)
+    r = re.sub(r"n(?=[bpm])", "m", r)          # ん = m ante b/p/m
+    r = re.sub(r"n'(?=[aiueoy])", "n-", r)     # ん + vocal: kin-en
+    return r
+
+
+def lectura_html(texto):
+    """Marca las letras con trampa y atenúa la u débil de desu/masu."""
+    s = esc(texto)
+    s = re.sub(r"\b([Dd]es|[Mm]as)u\b", "\\1\x00", s)
+    s = re.sub(r"(?<![sScC])[hH]|[jJ]|[zZ]|[gG](?=[eiEI])",
+               lambda m: f'<span class="t">{m.group(0)}</span>', s)
+    return s.replace("\x00", '<span class="d">u</span>')
+
+
+def tiene_trampa(texto):
+    return bool(re.search(r"(?<![sc])h|j|z|g(?=[ei])", texto.lower()))
+
+
+def suena_como(texto):
+    """Pronunciación figurada con ortografía española, solo como pista."""
+    out = []
+    for w in re.split(r"(\W+)", texto):
+        cap = w[:1].isupper()
+        x = w.lower()
+        x = x.replace("j", "dy")
+        x = re.sub(r"(?<![sc])h", "j", x)
+        x = re.sub(r"g(?=[ei])", "gu", x)
+        x = x.replace("z", "dz")
+        x = re.sub(r"ny(?=[auo])", "ñ", x)
+        x = re.sub(r"(des|mas)u$", r"\1", x)
+        out.append(x.capitalize() if cap else x)
+    return "".join(out).rstrip(".。")
+
+
+_BASE = {
+    "あ": "a", "い": "i", "う": "u", "え": "e", "お": "o",
+    "か": "ka", "き": "ki", "く": "ku", "け": "ke", "こ": "ko",
+    "が": "ga", "ぎ": "gi", "ぐ": "gu", "げ": "ge", "ご": "go",
+    "さ": "sa", "し": "shi", "す": "su", "せ": "se", "そ": "so",
+    "ざ": "za", "じ": "ji", "ず": "zu", "ぜ": "ze", "ぞ": "zo",
+    "た": "ta", "ち": "chi", "つ": "tsu", "て": "te", "と": "to",
+    "だ": "da", "ぢ": "ji", "づ": "zu", "で": "de", "ど": "do",
+    "な": "na", "に": "ni", "ぬ": "nu", "ね": "ne", "の": "no",
+    "は": "ha", "ひ": "hi", "ふ": "fu", "へ": "he", "ほ": "ho",
+    "ば": "ba", "び": "bi", "ぶ": "bu", "べ": "be", "ぼ": "bo",
+    "ぱ": "pa", "ぴ": "pi", "ぷ": "pu", "ぺ": "pe", "ぽ": "po",
+    "ま": "ma", "み": "mi", "む": "mu", "め": "me", "も": "mo",
+    "や": "ya", "ゆ": "yu", "よ": "yo",
+    "ら": "ra", "り": "ri", "る": "ru", "れ": "re", "ろ": "ro",
+    "わ": "wa", "を": "o", "ゔ": "vu",
+    "ぁ": "a", "ぃ": "i", "ぅ": "u", "ぇ": "e", "ぉ": "o",
 }
+_YOON = {"ゃ": "a", "ゅ": "u", "ょ": "o"}
+_PALATAL = {"shi": "sh", "chi": "ch", "ji": "j"}
+
+
+def kana_a_lectura(kana, verbo=False):
+    """Hiragana/katakana → notación del sitio (para el vocabulario, sin espacios)."""
+    k = "".join(chr(ord(c) - 0x60) if "ァ" <= c <= "ヶ" else c for c in (kana or ""))
+    sil = []
+    i = 0
+    while i < len(k):
+        c = k[i]
+        nxt = k[i + 1] if i + 1 < len(k) else ""
+        if c == "ふ" and nxt in "ぁぃぇぉ" and nxt:
+            sil.append("f" + _BASE[nxt]); i += 2
+        elif c in _BASE and nxt in _YOON:
+            b = _BASE[c]
+            stem = _PALATAL.get(b, b[:-1] + "y")
+            sil.append(stem + _YOON[nxt])
+            i += 2
+        elif c in _BASE:
+            sil.append(_BASE[c]); i += 1
+        elif c == "っ":
+            sil.append("Q"); i += 1
+        elif c == "ん":
+            sil.append("N"); i += 1
+        elif c == "ー":
+            sil.append("L"); i += 1
+        else:
+            i += 1                              # puntuación y otros signos
+    out = ""
+    for n, s in enumerate(sil):
+        sig = sil[n + 1] if n + 1 < len(sil) else ""
+        if s == "Q":
+            out += "t" if sig.startswith("ch") else sig[:1]
+        elif s == "N":
+            if sig[:1] in ("b", "p", "m"):
+                out += "m"
+            elif sig[:1] in ("a", "i", "u", "e", "o", "y"):
+                out += "n-"
+            else:
+                out += "n"
+        elif s == "L":
+            out += out[-1:] if out[-1:] in "aiueo" else ""
+        else:
+            out += s
+    if verbo and out.endswith("ou"):            # 思う = omou, no «omoo»
+        return out[:-2].replace("ou", "oo") + "ou"
+    return out.replace("ou", "oo")
 
 
 # ─────────────────────────────────────────────
@@ -64,180 +171,144 @@ def conjunto_to_slug(cid):
 
 
 def esc(text):
-    """Escapa caracteres HTML básicos."""
     if text is None:
         return ""
-    return (str(text)
-            .replace("&", "&amp;")
-            .replace("<", "&lt;")
-            .replace(">", "&gt;")
-            .replace('"', "&quot;"))
+    return (str(text).replace("&", "&amp;").replace("<", "&lt;")
+            .replace(">", "&gt;").replace('"', "&quot;"))
 
 
 def class_pill(clase):
-    c = CLASS_COLORS.get(clase, {})
-    return (f'<span class="cls-pill" style="'
-            f'background:{c.get("bg","#eee")};'
-            f'color:{c.get("cls","#333")};'
-            f'border:1px solid {c.get("border","#ccc")};'
-            f'">{esc(clase)}</span>')
+    if not clase:
+        return ""
+    nombre = CLASS_NAMES.get(clase, clase)
+    return (f'<span class="pill pill-{esc(clase.lower())}" title="{esc(nombre)}">'
+            f'{esc(clase)}</span>')
 
 
-def card_style(clase):
-    c = CLASS_COLORS.get(clase, {})
-    return f'border-left:4px solid {c.get("border","#ccc")};'
+def sin_punto(texto):
+    return (texto or "").rstrip("。、？！")
 
 
-def speak_btn(audio_text):
-    return (f'<button class="speak-btn" data-text="{esc(audio_text)}" '
-            f'aria-label="Escuchar pronunciación">🔊</button>')
+HEAD_FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">\n'
+              '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n'
+              '<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800'
+              '&family=M+PLUS+Rounded+1c:wght@400;500;700&display=swap" rel="stylesheet">\n'
+              '<link rel="stylesheet" href="../css/aprender.css">')
 
-
-def format_furigana(jp, furigana):
-    """
-    Devuelve el japonés con furigana en ruby si es distinto del jp llano.
-    Simplificación: muestra el furigana completo sobre el texto completo.
-    Para A1 esto es suficiente.
-    """
-    jp_clean  = jp.rstrip("。、？！")
-    fur_clean = furigana.rstrip("。、？！")
-    if jp_clean == fur_clean:
-        return f'<span class="jp-text">{esc(jp)}</span>'
-    return (f'<ruby class="jp-text">'
-            f'{esc(jp_clean)}<rt>{esc(fur_clean)}</rt>'
-            f'</ruby>{"。" if jp.endswith("。") else ""}')
+FOOTER = '''<footer class="pie">
+  <nav aria-label="Navegación del pie de página">
+    <a href="../index.html">Inicio</a>
+    <a href="index.html">Lecciones</a>
+    <a href="../herramientas/kana.html">Kana</a>
+    <a href="../gramatica/index.html">Para profes y curiosos</a>
+  </nav>
+  <p>日本語 — Japonés para Todos</p>
+</footer>'''
 
 
 # ─────────────────────────────────────────────
-# COMPONENTES HTML
+# COMPONENTES
 # ─────────────────────────────────────────────
 def render_example_card(entry):
-    clase   = entry.get("clase", "")
-    colors  = CLASS_COLORS.get(clase, {})
-    sit     = entry.get("situación", {}).get("descripción", "")
-    jp      = entry.get("japonés", "")
-    fur     = entry.get("furigana", jp)
-    es      = entry.get("español", "")
-    audio   = entry.get("audio_text", jp.rstrip("。、"))
-    note    = entry.get("notas_hispanohablante") or ""
+    clase = entry.get("clase", "")
+    sit   = entry.get("situación", {}).get("descripción", "")
+    jp    = entry.get("japonés", "")
+    fur   = entry.get("furigana", jp)
+    es    = entry.get("español", "")
+    audio = entry.get("audio_text", sin_punto(jp))
+    note  = entry.get("notas_hispanohablante") or ""
+    lec   = lectura(entry.get("romaji", ""))
 
-    note_html = ""
-    if note:
-        note_html = f'''
-        <p class="card-note">
-          <span class="note-label">Nota</span> {esc(note)}
-        </p>'''
+    pista = ""
+    if entry.get("bloque") in BLOQUES_CON_PISTA and tiene_trampa(lec):
+        pista = f'\n      <p class="ej-pista">Suena como «{esc(suena_como(lec))}»</p>'
+    nota = f'\n      <p class="ej-nota">{esc(note)}</p>' if note else ""
 
     return f'''
-    <div class="example-card" style="{card_style(clase)}">
-      <div class="card-header">
-        {class_pill(clase)}
-        {speak_btn(audio)}
-      </div>
-      <p class="card-situation">{esc(sit)}</p>
-      <p class="card-jp">{format_furigana(jp, fur)}</p>
-      <p class="card-es">{esc(es)}</p>{note_html}
-    </div>'''
+    <article class="ej">
+      <p class="ej-sit">{class_pill(clase)} {esc(sit)}</p>
+      <p class="ej-ro" lang="ja-Latn">{lectura_html(lec)}</p>
+      <p class="ej-ka" lang="ja">{esc(fur)}</p>
+      <p class="ej-kj" lang="ja">{esc(jp)}</p>
+      <p class="ej-es">{esc(es)}</p>{pista}
+      <button type="button" class="oir" data-text="{esc(audio)}">▶ Escuchar</button>{nota}
+    </article>'''
 
 
-def render_discovery_box(text):
+def render_box(clase_css, etiqueta, text):
     if not text:
         return ""
-    # Convierte preguntas numeradas en párrafos
-    parts = re.split(r'(?=\d+\.\s)', text.strip())
-    inner = "\n".join(f"<p>{esc(p.strip())}</p>" for p in parts if p.strip())
+    parts = re.split(r"(?=\d+\.\s)", text.strip())
+    inner = "\n".join(f"      <p>{esc(p.strip())}</p>" for p in parts if p.strip())
     return f'''
-    <div class="discovery-box">
-      <div class="box-label">💡 Descubrimiento</div>
-      {inner}
-    </div>'''
-
-
-def render_system_box(text):
-    if not text:
-        return ""
-    sentences = text.split(". ")
-    inner = " ".join(f"{esc(s.strip())}." if not s.strip().endswith(".") else esc(s.strip())
-                     for s in sentences if s.strip())
-    return f'''
-    <div class="system-box">
-      <div class="box-label">📐 Sistematización</div>
-      <p>{inner}</p>
+    <div class="caja {clase_css}">
+      <p class="caja-etq">{etiqueta}</p>
+{inner}
     </div>'''
 
 
 def render_vocab_table(entries):
-    """Tabla de vocabulario único de un conjunto."""
-    seen = set()
-    rows = []
+    seen, rows = set(), []
     for entry in entries:
         for v in entry.get("vocabulario", []):
             key = v.get("jp", "")
             if key in seen:
                 continue
             seen.add(key)
-            fur  = v.get("furigana", key)
-            es   = v.get("es", "")
-            cls  = v.get("clase", "")
-            jlpt = v.get("jlpt", "—")
+            fur = v.get("furigana", key)
+            cls = v.get("clase", "")
+            lec = "".join(p if re.fullmatch(r"[\s/]+", p) else kana_a_lectura(p, verbo=(cls == "V"))
+                          for p in re.split(r"([\s/]+)", fur))
+            if v.get("es", "")[:1].isupper():   # nombres propios: Tookyoo, Tanaka
+                lec = lec[:1].upper() + lec[1:]
             rows.append(
-                f'<tr>'
-                f'<td class="vocab-jp"><ruby>{esc(key)}<rt>{esc(fur)}</rt></ruby></td>'
-                f'<td>{esc(es)}</td>'
-                f'<td>{class_pill(cls) if cls else ""}</td>'
-                f'<td class="vocab-jlpt">{esc(jlpt)}</td>'
-                f'</tr>'
-            )
+                "<tr>"
+                f'<td class="v-ro" lang="ja-Latn">{lectura_html(lec)}</td>'
+                f'<td class="v-ja" lang="ja">{esc(fur)}'
+                + (f' <span class="v-kj">{esc(key)}</span>' if key != fur else "")
+                + "</td>"
+                f'<td>{esc(v.get("es", ""))}</td>'
+                f"<td>{class_pill(cls)}</td>"
+                "</tr>")
     if not rows:
         return ""
-    rows_html = "\n".join(rows)
     return f'''
-    <div class="vocab-section">
-      <h3>Vocabulario de esta lección</h3>
-      <table class="vocab-table">
-        <thead>
-          <tr>
-            <th>Japonés</th><th>Español</th><th>Clase</th><th>JLPT</th>
-          </tr>
-        </thead>
+    <div class="vocab">
+      <h3>Palabras de esta lección</h3>
+      <div class="tabla"><table>
+        <thead><tr><th>Se lee</th><th>Se escribe</th><th>Significa</th><th>Clase</th></tr></thead>
         <tbody>
-          {rows_html}
+          {chr(10).join(rows)}
         </tbody>
-      </table>
+      </table></div>
     </div>'''
 
 
+SELECTOR = '''<div class="modo" role="group" aria-label="Escritura en grande">
+    <span>Ver en grande:</span>
+    <button type="button" data-modo="alfa">Alfabeto</button>
+    <button type="button" data-modo="kana">Kana</button>
+    <button type="button" data-modo="kanji">Kanji</button>
+  </div>'''
+
+
 # ─────────────────────────────────────────────
-# PLANTILLA HTML COMPLETA
+# PÁGINA DE LECCIÓN
 # ─────────────────────────────────────────────
-def render_page(conjunto, entries, bloque_titulo, prev_url, next_url):
-    cid        = conjunto["id"]
-    titulo     = conjunto.get("título", cid)
-    objetivo   = conjunto.get("objetivo", "")
-    discovery  = conjunto.get("descubrimiento", "")
-    sistema    = conjunto.get("sistematización", "")
-    nota_hisp  = conjunto.get("nota_hispanohablante", "")
+def render_page(conjunto, entries, bloque_titulo, bloque_num, prev_url, next_url):
+    cid      = conjunto["id"]
+    titulo   = conjunto.get("título", cid)
+    objetivo = conjunto.get("objetivo", "")
+    nota     = conjunto.get("nota_hispanohablante", "")
+    modo     = MODO_POR_BLOQUE.get(bloque_num, "alfa")
 
-    slug       = conjunto_to_slug(cid)
-    filename   = f"leccion-{slug}.html"
-
-    cards_html = "\n".join(render_example_card(e) for e in entries)
-
-    objetivo_html = f'<p class="objetivo">{esc(objetivo)}</p>' if objetivo else ""
-    nota_html     = f'''
-    <div class="hispanohablante-box">
-      <div class="box-label">🇪🇸 Para hispanohablantes</div>
-      <p>{esc(nota_hisp)}</p>
-    </div>''' if nota_hisp else ""
-
-    vocab_html    = render_vocab_table(entries)
-    discovery_html = render_discovery_box(discovery)
-    system_html    = render_system_box(sistema)
-
-    prev_btn = (f'<a href="{esc(prev_url)}" class="nav-btn btn-prev">← Anterior</a>'
-                if prev_url else '<span></span>')
-    next_btn = (f'<a href="{esc(next_url)}" class="nav-btn btn-next">Siguiente →</a>'
-                if next_url else '<span></span>')
+    cards = "\n".join(render_example_card(e) for e in entries)
+    nota_html = render_box("caja-es", "Para hispanohablantes", nota)
+    prev_btn = (f'<a href="{esc(prev_url)}" class="paso">← Anterior</a>'
+                if prev_url else "<span></span>")
+    next_btn = (f'<a href="{esc(next_url)}" class="paso paso-sig">Siguiente →</a>'
+                if next_url else "<span></span>")
+    lead = f'\n    <p class="lead">{esc(objetivo)}</p>' if objetivo else ""
 
     return f'''<!DOCTYPE html>
 <html lang="es">
@@ -245,260 +316,51 @@ def render_page(conjunto, entries, bloque_titulo, prev_url, next_url):
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{esc(titulo)} — Japonés para Todos</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;700&family=DM+Serif+Display:ital@0;1&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-<style>
-/* ── TOKENS ── */
-:root {{
-  --teal:#3a8fa0; --teal-dark:#1d5f6e; --teal-light:#d6eef3;
-  --accent:#c8703a; --ink:#1a1a1a; --warm-gray:#6b6560;
-  --light-gray:#e8e4df; --bg:#faf8f5; --white:#fff;
-  --font-jp:'Noto Sans JP',sans-serif;
-  --font-jp-s:'Noto Serif JP',serif;
-  --font-disp:'DM Serif Display',serif;
-  --font-body:'Source Sans 3',sans-serif;
-  --radius:12px; --shadow:0 4px 24px rgba(0,0,0,0.08);
-}}
-*, *::before, *::after {{ box-sizing:border-box; margin:0; padding:0; }}
-html {{ scroll-behavior:smooth; }}
-body {{ font-family:var(--font-body); font-size:1.05rem; line-height:1.75;
-        color:var(--ink); background:var(--bg); -webkit-font-smoothing:antialiased; }}
-.container {{ max-width:760px; margin:0 auto; padding:0 clamp(1.25rem,5vw,2.5rem); }}
-h2 {{ font-family:var(--font-disp); font-size:clamp(1.5rem,4vw,2rem);
-      line-height:1.2; margin:2.5rem 0 0.7rem; }}
-h3 {{ font-family:var(--font-disp); font-size:1.1rem; color:var(--teal-dark);
-      margin:2rem 0 0.6rem; }}
-p {{ margin-bottom:0.8rem; }}
-ruby rt {{ font-size:0.6em; color:var(--warm-gray); }}
-
-/* ── HEADER ── */
-.lesson-header {{
-  background:linear-gradient(160deg,var(--teal-dark) 0%,var(--teal) 100%);
-  color:#fff; padding:clamp(2.5rem,8vw,4rem) clamp(1.25rem,5vw,2.5rem) clamp(1.5rem,4vw,2.5rem);
-  position:relative; overflow:hidden;
-}}
-.lesson-header::before {{
-  content:'語'; font-family:var(--font-jp-s); font-size:clamp(7rem,18vw,12rem);
-  font-weight:900; opacity:0.07; position:absolute; bottom:-1rem; right:0;
-  line-height:1; pointer-events:none; color:#fff;
-}}
-.lesson-header-inner {{ max-width:760px; margin:0 auto; }}
-.lesson-meta {{ font-size:0.8rem; opacity:0.7; letter-spacing:0.08em;
-                text-transform:uppercase; margin-bottom:0.5rem; }}
-.lesson-header h1 {{ font-family:var(--font-disp); font-size:clamp(1.6rem,5vw,2.4rem);
-                     line-height:1.15; margin-bottom:0.6rem; }}
-.lesson-lead {{ font-size:1rem; opacity:0.88; max-width:540px; line-height:1.65; }}
-.objetivo {{ background:rgba(255,255,255,0.12); border-radius:8px;
-             padding:0.8rem 1rem; font-size:0.95rem; margin-top:1rem;
-             border-left:3px solid rgba(255,255,255,0.4); }}
-
-/* ── BREADCRUMB ── */
-.breadcrumb {{ background:var(--white); border-bottom:1px solid var(--light-gray);
-               padding:0.7rem clamp(1.25rem,5vw,2.5rem); font-size:0.85rem;
-               color:var(--warm-gray); }}
-.breadcrumb a {{ color:var(--teal); text-decoration:none; }}
-.breadcrumb a:hover {{ text-decoration:underline; }}
-.breadcrumb .sep {{ margin:0 0.3rem; opacity:0.4; }}
-
-/* ── SECTION ── */
-.lesson-section {{ padding:clamp(2rem,5vw,3.5rem) 0;
-                   border-top:1px solid var(--light-gray); }}
-.lesson-section:first-of-type {{ border-top:none; }}
-.section-tag {{ font-size:0.75rem; font-weight:700; letter-spacing:0.12em;
-                text-transform:uppercase; color:var(--accent);
-                display:block; margin-bottom:0.4rem; }}
-
-/* ── EXAMPLE CARDS ── */
-.example-grid {{ display:grid; gap:1rem; margin:1.2rem 0; }}
-.example-card {{
-  background:var(--white); border:1px solid var(--light-gray);
-  border-radius:var(--radius); padding:1.2rem 1.3rem;
-  box-shadow:0 2px 12px rgba(0,0,0,0.05);
-  transition:box-shadow .25s;
-}}
-.example-card:hover {{ box-shadow:var(--shadow); }}
-.card-header {{ display:flex; justify-content:space-between;
-                align-items:center; margin-bottom:0.6rem; }}
-.cls-pill {{ display:inline-block; padding:.12rem .55rem; border-radius:100px;
-             font-size:.78rem; font-weight:700; font-family:var(--font-body); }}
-.speak-btn {{ width:34px; height:34px; border-radius:50%; border:1.5px solid #ccc;
-              background:#f5f5f5; cursor:pointer; font-size:0.95rem;
-              display:flex; align-items:center; justify-content:center;
-              transition:.25s; flex-shrink:0; }}
-.speak-btn:hover {{ background:var(--teal); color:#fff; border-color:var(--teal);
-                    transform:scale(1.08); }}
-.speak-btn.playing {{ background:var(--teal); color:#fff;
-                      animation:pulse .8s infinite; }}
-@keyframes pulse {{ 0%,100%{{transform:scale(1)}} 50%{{transform:scale(1.1)}} }}
-.card-situation {{ font-size:.88rem; color:var(--warm-gray); font-style:italic;
-                   margin-bottom:.5rem; }}
-.card-jp {{ font-family:var(--font-jp); font-size:1.5rem; font-weight:500;
-            line-height:1.3; margin-bottom:.3rem; }}
-.jp-text {{ font-family:var(--font-jp); }}
-.card-es {{ font-size:.94rem; color:var(--warm-gray); font-style:italic; }}
-.card-note {{ font-size:.88rem; color:var(--warm-gray); margin-top:.6rem;
-              padding:.5rem .7rem; background:#f8f6f3; border-radius:6px;
-              border-left:2px solid var(--accent); }}
-.note-label {{ font-size:.72rem; font-weight:700; letter-spacing:.1em;
-               text-transform:uppercase; color:var(--accent); margin-right:.3rem; }}
-
-/* ── DISCOVERY & SYSTEM BOXES ── */
-.discovery-box, .system-box, .hispanohablante-box {{
-  border-radius:var(--radius); padding:1.2rem 1.4rem; margin:1.2rem 0;
-}}
-.discovery-box {{
-  background:linear-gradient(135deg,#fff9f4,#fdf0e8);
-  border:1px solid #e8c8a8; border-left:4px solid var(--accent);
-}}
-.system-box {{
-  background:linear-gradient(135deg,#edf7fb,var(--teal-light));
-  border:1px solid #b0d8e8; border-left:4px solid var(--teal);
-}}
-.hispanohablante-box {{
-  background:#f5f0ff; border:1px solid #c9aee6; border-left:4px solid #7b4ea0;
-}}
-.box-label {{ font-size:.73rem; font-weight:700; letter-spacing:.14em;
-              text-transform:uppercase; margin-bottom:.7rem; color:var(--warm-gray); }}
-.discovery-box .box-label {{ color:var(--accent); }}
-.system-box .box-label {{ color:var(--teal-dark); }}
-.hispanohablante-box .box-label {{ color:#7b4ea0; }}
-
-/* ── VOCAB TABLE ── */
-.vocab-section {{ margin:2rem 0 1rem; }}
-.vocab-table {{ width:100%; border-collapse:collapse; font-size:.95rem;
-                background:var(--white); border-radius:var(--radius);
-                overflow:hidden; box-shadow:0 2px 12px rgba(0,0,0,.05); }}
-.vocab-table thead {{ background:var(--teal-light); }}
-.vocab-table th {{ padding:.7rem 1rem; text-align:left; font-size:.82rem;
-                   font-weight:700; color:var(--teal-dark);
-                   border-bottom:2px solid var(--teal); }}
-.vocab-table td {{ padding:.7rem 1rem; border-bottom:1px solid var(--light-gray); }}
-.vocab-table tbody tr:last-child td {{ border-bottom:none; }}
-.vocab-table tbody tr:hover {{ background:#faf8f5; }}
-.vocab-jp {{ font-family:var(--font-jp); font-size:1.05rem; }}
-.vocab-jlpt {{ color:var(--warm-gray); font-size:.85rem; }}
-
-/* ── LESSON FOOTER NAV ── */
-.lesson-footer {{ background:var(--white); border-top:1px solid var(--light-gray);
-                  padding:1.5rem 0; margin-top:2rem; }}
-.lesson-footer-inner {{ max-width:760px; margin:0 auto;
-                         padding:0 clamp(1.25rem,5vw,2.5rem);
-                         display:flex; justify-content:space-between;
-                         align-items:center; gap:.8rem; flex-wrap:wrap; }}
-.nav-btn {{ display:inline-flex; align-items:center; gap:.4rem;
-            padding:.6rem 1.2rem; border-radius:100px; font-size:.9rem;
-            font-weight:700; text-decoration:none; transition:.25s;
-            font-family:var(--font-body); }}
-.btn-prev {{ background:var(--light-gray); color:var(--warm-gray); }}
-.btn-prev:hover {{ background:#d8d4cf; color:var(--ink); }}
-.btn-next {{ background:var(--teal); color:#fff;
-             box-shadow:0 3px 12px rgba(58,143,160,.35); }}
-.btn-next:hover {{ background:var(--teal-dark); transform:translateY(-1px); }}
-.footer-id {{ font-size:.82rem; color:var(--warm-gray); text-align:center; }}
-
-/* ── SITE FOOTER ── */
-.site-footer {{ background:var(--ink); color:rgba(255,255,255,.65);
-                text-align:center; padding:2rem 1.5rem; font-size:.88rem; }}
-.site-footer a {{ color:rgba(255,255,255,.8); text-decoration:none; }}
-
-/* ── SCROLL REVEAL ── */
-.reveal {{ opacity:0; transform:translateY(16px); transition:opacity .5s, transform .5s; }}
-.reveal.visible {{ opacity:1; transform:none; }}
-</style>
+{HEAD_FONTS}
 </head>
-<body>
+<body class="modo-{modo}" data-modo-inicial="{modo}">
 
-<nav class="breadcrumb">
-  <a href="../index.html">Inicio</a>
-  <span class="sep">›</span>
-  <a href="../aprender/index.html">Aprender</a>
-  <span class="sep">›</span>
-  <a href="index.html">Lecciones</a>
-  <span class="sep">›</span>
+<nav class="migas" aria-label="Ruta de navegación">
+  <a href="../index.html">Inicio</a> <span>›</span>
+  <a href="index.html">Lecciones</a> <span>›</span>
   <span>{esc(titulo)}</span>
 </nav>
 
-<header class="lesson-header">
-  <div class="lesson-header-inner">
-    <p class="lesson-meta">{esc(bloque_titulo)} · {esc(cid)}</p>
-    <h1>{esc(titulo)}</h1>
-    <p class="lesson-lead">{esc(objetivo)}</p>
+<header class="cab">
+  <div class="ancho">
+    <p class="cab-meta">{esc(bloque_titulo)} · {esc(cid)}</p>
+    <h1>{esc(titulo)}</h1>{lead}
   </div>
 </header>
 
-<main>
+<main class="ancho">
 
-<section class="lesson-section" id="situaciones">
-<div class="container">
-  <span class="section-tag reveal">📍 Situaciones</span>
-  <h2 class="reveal">Observa estos ejemplos</h2>
-  <p class="reveal">Escucha cada ejemplo. Todavía no analices — solo absorbe.</p>
-  <div class="example-grid reveal">
-    {cards_html}
-  </div>
-</div>
-</section>
+  <section class="parte">
+    <h2>Escucha y repite</h2>
+    <p>Pulsa ▶ en cada frase y dila en voz alta. Las letras <span class="t">en color</span> no suenan como en español: <a href="../como-se-lee.html">cómo se lee</a>.</p>
+    {SELECTOR}
+    <div class="ejs">{cards}
+    </div>
+  </section>
 
-<section class="lesson-section" id="descubrimiento">
-<div class="container">
-  <span class="section-tag reveal">🔍 Descubrimiento</span>
-  <h2 class="reveal">¿Qué observas?</h2>
-  <div class="reveal">
-    {discovery_html}
-  </div>
-</div>
-</section>
+  <section class="parte">
+    <h2>¿Qué observas?</h2>{render_box("caja-desc", "Fíjate", conjunto.get("descubrimiento", ""))}
+  </section>
 
-<section class="lesson-section" id="sistematizacion">
-<div class="container">
-  <span class="section-tag reveal">📐 Sistematización</span>
-  <h2 class="reveal">El patrón</h2>
-  <div class="reveal">
-    {system_html}
-  </div>
-  {nota_html}
-  {vocab_html}
-</div>
-</section>
+  <section class="parte">
+    <h2>Cómo funciona</h2>{render_box("caja-sis", "El patrón", conjunto.get("sistematización", ""))}{nota_html}{render_vocab_table(entries)}
+  </section>
+
+  <nav class="pasos" aria-label="Lección anterior y siguiente">
+    {prev_btn}
+    <a href="index.html" class="paso-id">{esc(cid)}</a>
+    {next_btn}
+  </nav>
 
 </main>
 
-<footer class="lesson-footer">
-  <div class="lesson-footer-inner">
-    {prev_btn}
-    <span class="footer-id">{esc(cid)}</span>
-    {next_btn}
-  </div>
-</footer>
-
-<footer class="site-footer">
-  <p><a href="../index.html">日本語 — Japonés para Todos</a></p>
-</footer>
-
-<script>
-// TTS
-const synth = window.speechSynthesis;
-function getJPVoice() {{
-  return synth.getVoices().find(v => v.lang.startsWith('ja')) || null;
-}}
-document.querySelectorAll('.speak-btn').forEach(btn => {{
-  btn.addEventListener('click', () => {{
-    if (synth.speaking) synth.cancel();
-    const u = new SpeechSynthesisUtterance(btn.dataset.text);
-    u.lang = 'ja-JP'; u.rate = 0.85;
-    const v = getJPVoice(); if (v) u.voice = v;
-    btn.classList.add('playing');
-    u.onend = u.onerror = () => btn.classList.remove('playing');
-    synth.speak(u);
-  }});
-}});
-if (synth.onvoiceschanged !== undefined) synth.onvoiceschanged = () => {{}};
-
-// Scroll reveal
-const obs = new IntersectionObserver(es => {{
-  es.forEach(e => {{ if (e.isIntersecting) e.target.classList.add('visible'); }});
-}}, {{ threshold: 0.08, rootMargin: '0px 0px -20px 0px' }});
-document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-</script>
+{FOOTER}
+<script src="../js/leccion.js"></script>
 </body>
 </html>'''
 
@@ -507,166 +369,130 @@ document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 # ÍNDICE DE LECCIONES
 # ─────────────────────────────────────────────
 def render_index(all_conjuntos):
-    """Genera lecciones/index.html: todas las lecciones agrupadas por bloque."""
-    bloques = []          # [(título, [(conjunto, n_ejemplos, archivo)])]
-    for bloque_titulo, conj, entries in all_conjuntos:
+    bloques = []
+    for bloque_titulo, bloque_num, conj, entries in all_conjuntos:
         if not bloques or bloques[-1][0] != bloque_titulo:
-            bloques.append((bloque_titulo, []))
+            bloques.append((bloque_titulo, bloque_num, []))
         fname = f"leccion-{conjunto_to_slug(conj['id'])}.html"
-        bloques[-1][1].append((conj, len(entries), fname))
+        bloques[-1][2].append((conj, len(entries), fname))
 
     secciones = []
-    for n, (bloque_titulo, items) in enumerate(bloques):
+    for bloque_titulo, bloque_num, items in bloques:
         jp, _, es = bloque_titulo.partition(" — ")
         if not es:
             jp, es = "", bloque_titulo
         filas = "\n".join(
             f'        <li><a href="{esc(fname)}">'
-            f'<span class="li-title">{esc(conj.get("título", conj["id"]))}</span>'
-            f'<span class="li-meta">{esc(conj["id"])} · {k} ejemplos</span></a></li>'
+            f'<span class="li-t">{esc(conj.get("título", conj["id"]))}</span>'
+            f'<span class="li-m">{k} frases</span></a></li>'
             for conj, k, fname in items)
-        secciones.append(f"""
-    <section class="bloque">
-      <div class="bloque-head">
-        <span class="bloque-num">{n}</span>
-        <div>
-          <h2>{esc(es)}</h2>
-          <p class="bloque-jp">{esc(jp)}</p>
-        </div>
-      </div>
-      <ol class="leccion-list">
+        secciones.append(f'''
+  <section class="bloque">
+    <div class="bloque-cab">
+      <span class="bloque-n">{bloque_num + 1}</span>
+      <div><h2>{esc(es)}</h2><p lang="ja">{esc(jp)}</p></div>
+    </div>
+    <ol class="lista">
 {filas}
-      </ol>
-    </section>""")
+    </ol>
+  </section>''')
 
-    total = sum(len(items) for _, items in bloques)
-    primera = bloques[0][1][0][2] if bloques else "#"
+    total   = sum(len(items) for _, _, items in bloques)
+    primera = bloques[0][2][0][2] if bloques else "#"
 
-    return f"""<!DOCTYPE html>
+    return f'''<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Lecciones — Japonés para Todos</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@400;700&family=DM+Serif+Display:ital@0;1&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../css/common.css">
-<style>
-.idx-header {{ background:linear-gradient(170deg,#1a1a2e 0%,#2c2c4a 45%,#16697a 100%); color:#fff; padding:3.5rem 1.5rem 3rem; text-align:center; }}
-.idx-header h1 {{ font-family:'DM Serif Display','Noto Serif JP',serif; font-size:clamp(2rem,5vw,3rem); line-height:1.2; margin:0 0 .4rem; }}
-.idx-header .jp {{ font-family:'Noto Serif JP',serif; color:rgba(255,255,255,.75); font-size:1.1rem; }}
-.idx-header p.lead {{ max-width:640px; margin:1rem auto 1.6rem; color:rgba(255,255,255,.85); }}
-.idx-main {{ max-width:820px; margin:0 auto; padding:2.5rem clamp(1.2rem,5vw,3rem) 4rem; }}
-.bloque {{ margin-bottom:2.5rem; padding:0; }}
-.bloque-head {{ display:flex; gap:1rem; align-items:center; margin-bottom:.8rem; }}
-.bloque-num {{ flex:none; width:2.6rem; height:2.6rem; border-radius:50%; background:var(--teal); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:700; }}
-.bloque h2 {{ font-family:'DM Serif Display','Noto Serif JP',serif; font-size:1.3rem; line-height:1.3; margin:0; }}
-.bloque-jp {{ font-family:'Noto Sans JP',sans-serif; color:var(--warm-gray); font-size:.9rem; margin:0; }}
-.leccion-list {{ list-style:none; margin:0; padding:0; background:#fff; border-radius:12px; box-shadow:0 2px 16px rgba(0,0,0,.05); overflow:hidden; }}
-.leccion-list li + li {{ border-top:1px solid var(--light-gray); }}
-.leccion-list a {{ display:flex; justify-content:space-between; align-items:baseline; gap:1rem; padding:.85rem 1.2rem; color:var(--ink); text-decoration:none; }}
-.leccion-list a:hover {{ background:var(--teal-light); }}
-.li-title {{ font-weight:600; }}
-.li-meta {{ flex:none; font-size:.8rem; color:var(--warm-gray); white-space:nowrap; }}
-@media (max-width:600px) {{ .leccion-list a {{ flex-direction:column; gap:.1rem; }} }}
-</style>
+{HEAD_FONTS}
 </head>
 <body>
 
-<nav class="breadcrumb" aria-label="Ruta de navegación">
-  <div class="breadcrumb-inner">
-    <a href="../index.html">Inicio</a>
-    <span class="separator">›</span>
-    <a href="../aprender/index.html">Aprender</a>
-    <span class="separator">›</span>
-    <span class="current">Lecciones</span>
-  </div>
+<nav class="migas" aria-label="Ruta de navegación">
+  <a href="../index.html">Inicio</a> <span>›</span>
+  <span>Lecciones</span>
 </nav>
 
-<header class="idx-header">
-  <h1>Lecciones</h1>
-  <p class="jp">レッスン一覧 — 入門</p>
-  <p class="lead">{total} lecciones breves en {len(bloques)} bloques. Cada una parte de situaciones reales: primero observas, luego descubres el patrón.</p>
-  <a href="{esc(primera)}" class="btn btn-primary">Empezar por la primera</a>
+<header class="cab">
+  <div class="ancho">
+    <h1>Lecciones</h1>
+    <p class="lead">{total} lecciones cortas. En cada una escuchas frases reales, las repites y descubres cómo funcionan.</p>
+    <p><a href="{esc(primera)}" class="boton">▶ Empezar por la primera</a></p>
+  </div>
 </header>
 
-<main class="idx-main">
+<main class="ancho">
 {"".join(secciones)}
 </main>
 
-<footer class="site-footer">
-  <p class="footer-title"><a href="../index.html"><strong>日本語 — Japonés para Todos</strong></a></p>
-  <p class="footer-jp">スペイン語話者のための日本語学習サイト</p>
-  <nav class="footer-nav" aria-label="Navegación del pie de página">
-    <a href="../index.html">Inicio</a>
-    <a href="../aprender/index.html">Aprender</a>
-    <a href="index.html">Lecciones</a>
-    <a href="../gramatica/index.html">Gramática</a>
-    <a href="../herramientas/kana.html">Herramientas</a>
-  </nav>
-  <p class="footer-copy">© 2026 Japonés para Todos — Proyecto de código abierto en GitHub</p>
-</footer>
-
+{FOOTER}
 </body>
-</html>"""
+</html>'''
 
 
 # ─────────────────────────────────────────────
 # MAIN
 # ─────────────────────────────────────────────
 def build_all_conjuntos():
-    """Recorre todos los JSON y construye la lista ordenada de conjuntos."""
-    all_conjuntos = []   # [(bloque_titulo, conjunto, [entries])]
-
+    """[(título del bloque, nº de bloque, conjunto, [entradas])] en orden."""
+    todos = []
     for path_str in DB_FILES:
         path = Path(path_str)
         if not path.exists():
             print(f"  ⚠️  No encontrado: {path_str}")
             continue
-
         with open(path, encoding="utf-8") as f:
             db = json.load(f)
-
-        bloque_titulo = db.get("título", path.stem)
-        entry_map = {e["id"]: e for e in db.get("entradas", [])}
-
+        titulo = db.get("título", path.stem)
+        num    = db.get("bloque", 0)
+        mapa   = {e["id"]: e for e in db.get("entradas", [])}
         for conj in db.get("conjuntos", []):
-            ids     = conj.get("ids_entradas", [])
-            entries = [entry_map[i] for i in ids if i in entry_map]
-            all_conjuntos.append((bloque_titulo, conj, entries))
+            entries = [mapa[i] for i in conj.get("ids_entradas", []) if i in mapa]
+            todos.append((titulo, num, conj, entries))
+    return todos
 
-    return all_conjuntos
+
+def comprobar_notacion(all_conjuntos):
+    """Compara el romaji de cada frase con el que sale de su furigana."""
+    dudas, vistos = [], set()
+    for _, _, _, entries in all_conjuntos:
+        for e in entries:
+            if e["id"] in vistos:
+                continue
+            vistos.add(e["id"])
+            a = re.sub(r"[^a-z]", "", lectura(e.get("romaji", "")).lower())
+            b = re.sub(r"[^a-z]", "", kana_a_lectura(e.get("furigana", "")))
+            if a.replace("wa", "ha") != b.replace("wa", "ha"):   # は se lee wa
+                dudas.append((e["id"], e.get("furigana", ""), lectura(e.get("romaji", "")), b))
+    return dudas
 
 
 def main():
     print("🔨 Generando lecciones HTML...\n")
-    all_conjuntos = build_all_conjuntos()
-    n = len(all_conjuntos)
+    todos = build_all_conjuntos()
+    n = len(todos)
 
-    for i, (bloque_titulo, conj, entries) in enumerate(all_conjuntos):
-        slug     = conjunto_to_slug(conj["id"])
-        filename = f"leccion-{slug}.html"
-
-        prev_url = None
-        next_url = None
-        if i > 0:
-            prev_slug = conjunto_to_slug(all_conjuntos[i-1][1]["id"])
-            prev_url  = f"leccion-{prev_slug}.html"
-        if i < n - 1:
-            next_slug = conjunto_to_slug(all_conjuntos[i+1][1]["id"])
-            next_url  = f"leccion-{next_slug}.html"
-
-        html = render_page(conj, entries, bloque_titulo, prev_url, next_url)
-        out  = OUTPUT_DIR / filename
-        out.write_text(html, encoding="utf-8")
-
+    for i, (titulo, num, conj, entries) in enumerate(todos):
+        filename = f"leccion-{conjunto_to_slug(conj['id'])}.html"
+        prev_url = f"leccion-{conjunto_to_slug(todos[i-1][2]['id'])}.html" if i > 0 else None
+        next_url = f"leccion-{conjunto_to_slug(todos[i+1][2]['id'])}.html" if i < n - 1 else None
+        html = render_page(conj, entries, titulo, num, prev_url, next_url)
+        (OUTPUT_DIR / filename).write_text(html, encoding="utf-8")
         print(f"  ✓  {filename}  ({len(entries)} ejemplos)")
 
-    (OUTPUT_DIR / "index.html").write_text(render_index(all_conjuntos), encoding="utf-8")
+    (OUTPUT_DIR / "index.html").write_text(render_index(todos), encoding="utf-8")
     print("  ✓  index.html  (índice de lecciones)")
-
     print(f"\n✅ {n} lecciones generadas en '{OUTPUT_DIR}/'")
+
+    dudas = comprobar_notacion(todos)
+    if dudas:
+        print(f"\n⚠️  {len(dudas)} frases cuyo romaji no coincide con su furigana (revisar):")
+        for d in dudas:
+            print(f"   {d[0]}  {d[1]}  base: {d[2]}  ← kana: {d[3]}")
+    if "--estricto" in sys.argv and dudas:
+        sys.exit(1)
 
 
 if __name__ == "__main__":
