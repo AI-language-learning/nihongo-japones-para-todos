@@ -152,3 +152,27 @@ main.ancho>.bloque:last-child{padding-bottom:40px}
 .puerta-1{border-color:var(--kaki);background:var(--kaki-soft)}
 .puerta-1 b{color:var(--kaki)}
 .aviso{font-size:.85rem;color:var(--mut);text-align:center;padding:26px 0 34px;margin:0}
+
+/* ── Mapa del curso ── */
+.unidades{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));padding:26px 0 10px}
+.unidad{display:flex;gap:14px;align-items:flex-start;border:2px solid var(--line);border-radius:16px;padding:16px 18px;text-decoration:none;color:var(--fg);background:#fff}
+a.unidad:hover{border-color:var(--mizu);background:var(--mizu-soft)}
+.unidad.pronto{opacity:.65;border-style:dashed}
+.u-n{flex:none;width:2.4rem;height:2.4rem;border-radius:50%;background:var(--sol);display:flex;align-items:center;justify-content:center;font-weight:800}
+.u-tx{min-width:0}
+.u-tx h3{margin:0 0 2px;font-size:1.1rem;line-height:1.3}
+.u-tx p{margin:0}
+.u-ej{margin-top:6px!important;font-weight:700;color:var(--kaki)}
+.u-es{font-weight:400;color:var(--mut);margin-left:4px}
+.u-meta{margin-top:6px!important;font-size:.8rem;color:var(--mut)}
+.nota-mapa{margin:18px 0 40px;color:var(--mut)}
+
+/* ── Kana de hoy ── */
+.h2-ja{font-size:.85rem;font-weight:500;color:var(--mut);margin-left:6px}
+.kanas{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));margin-top:10px}
+.kana-f{display:flex;flex-direction:column;align-items:center;gap:2px;text-align:center;border:2px solid var(--line);border-radius:16px;padding:14px 10px;background:#fff}
+.k-j{font-size:2.8rem;line-height:1.1;color:var(--kaki)}
+.k-r{font-weight:800;font-size:1.15rem}
+.k-r small{font-weight:400;color:var(--mut)}
+.k-e{font-size:.8rem;color:var(--mut)}
+.k-n{font-size:.78rem;color:var(--mizu);margin-top:4px}

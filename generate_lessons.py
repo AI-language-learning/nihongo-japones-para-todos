@@ -191,6 +191,36 @@ def sin_punto(texto):
     return (texto or "").rstrip("。、？！")
 
 
+
+# ─────────────────────────────────────────────
+# UNIDADES DEL CURSO (10). Los bloques 0–7 de la base de datos son las unidades 3–10.
+# ─────────────────────────────────────────────
+UNIDADES = [
+    # (nº, título, qué podrás hacer, ejemplo romaji, ejemplo es, bloque BD o None, enlace fijo)
+    (1, "Los sonidos", "Leer el alfabeto japonés tal como lo escribimos aquí.",
+     "Hai.", "Sí.", None, "../como-se-lee.html"),
+    (2, "El esqueleto de la frase", "Ver cómo se arma una frase japonesa, de dentro hacia fuera.",
+     "", "", None, None),
+    (3, "El núcleo de la frase", "Decir frases completas con una sola palabra.",
+     "Samui.", "¡Qué frío!", 0, None),
+    (4, "Decir que no", "Negar lo que dices: no hace frío, no estoy bien, no voy.",
+     "Samukunai.", "No hace frío.", 1, None),
+    (5, "Lo que ya pasó", "Hablar del pasado: hacía frío, estaba bien, fui.",
+     "Samukatta.", "Hacía frío.", 2, None),
+    (6, "Lo que no pasó", "Negar el pasado: no hacía frío, no fui.",
+     "Samukunakatta.", "No hacía frío.", 3, None),
+    (7, "Hablar con cortesía", "Hablar con desconocidos, profesores y en el trabajo.",
+     "Samui desu.", "Hace frío.", 4, None),
+    (8, "Qué, dónde, adónde", "Añadir qué comes, adónde vas, dónde estudias.",
+     "Tookyoo ni iku.", "Voy a Tokio.", 5, None),
+    (9, "De qué estás hablando", "Elegir el tema de la frase con wa.",
+     "Sushi wa oishii.", "El sushi, qué rico.", 6, None),
+    (10, "Tu voz al final de la frase", "Sonar natural con yo, ne y ka.",
+     "Oishii ne.", "Qué rico, ¿verdad?", 7, None),
+]
+AP_BLOQUES = (0, 1, 2, 3, 4, 5, 6, 7)   # bloques cuyas notas ya están reescritas para estudiantes
+UNIDAD_DE_BLOQUE = {u[5]: u for u in UNIDADES if u[5] is not None}
+
 HEAD_FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">\n'
               '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n'
               '<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800'
@@ -302,6 +332,75 @@ SELECTOR = '''<div class="modo" role="group" aria-label="Escritura en grande">
   </div>'''
 
 
+
+# ─────────────────────────────────────────────
+# KANA DE HOY: los kana nuevos que aparecen en cada lección (máx. 5), en orden de aparición
+# ─────────────────────────────────────────────
+KANA_HOY = {}
+KANA_MAX = 5
+_PEQ = "ゃゅょャュョ"
+_LECT_ESPECIAL = {"は": "ha", "へ": "he", "を": "o", "っ": "(pausa)", "ー": "(larga)"}
+_NOTA_ESPECIAL = {"は": "Como posposición se lee wa.", "へ": "Como posposición se lee e.",
+                  "を": "Se escribe wo, pero se lee o.",
+                  "っ": "No suena: duplica la consonante siguiente (datta)."}
+
+
+def _unidades_kana(furi):
+    """Unidades de kana de una frase: letra sola o letra + ゃゅょ. Sin signos ni 'ー'."""
+    out, i = [], 0
+    while i < len(furi):
+        c = furi[i]
+        es_kana = ("\u3041" <= c <= "\u3096" or "\u30a1" <= c <= "\u30fa") and c not in _PEQ \
+            and c not in "ぁぃぅぇぉゎァィゥェォヮ"
+        if es_kana:
+            if i + 1 < len(furi) and furi[i + 1] in _PEQ:
+                out.append(c + furi[i + 1]); i += 2
+                continue
+            out.append(c)
+        i += 1
+    return out
+
+
+def calcular_kana_hoy(todos):
+    ensenados, resultado = set(), {}
+    for _, _, conj, entries in todos:
+        nuevos = []
+        for e in entries:
+            for u in _unidades_kana(e.get("furigana", "")):
+                if u not in ensenados and u not in [n[0] for n in nuevos]:
+                    nuevos.append((u, e))
+        elegidos = nuevos[:KANA_MAX]
+        for u, _ in elegidos:
+            ensenados.add(u)
+        resultado[conj["id"]] = elegidos
+    return resultado
+
+
+def render_kana_hoy(cid):
+    items = KANA_HOY.get(cid) or []
+    if not items:
+        return ""
+    fichas = []
+    for u, e in items:
+        hira = "".join(chr(ord(c) - 0x60) if "ァ" <= c <= "ヶ" else c for c in u)
+        lect = _LECT_ESPECIAL.get(hira) or kana_a_lectura(hira)
+        nota = _NOTA_ESPECIAL.get(hira, "")
+        tipo = " <small>(katakana)</small>" if "ァ" <= u[0] <= "ヶ" else ""
+        ej = lectura_html(lectura(e.get("romaji", "")).rstrip("。.？?"))
+        fichas.append(f'''
+      <div class="kana-f">
+        <span class="k-j" lang="ja">{esc(u)}</span>
+        <span class="k-r">{lectura_html(lect) if lect[0] != "(" else esc(lect)}{tipo}</span>
+        <span class="k-e">en «{ej}»</span>{f'<span class="k-n">{esc(nota)}</span>' if nota else ""}
+      </div>''')
+    return f'''
+  <section class="parte">
+    <h2>Kana de hoy <span class="h2-ja" lang="ja">今日のかな</span></h2>
+    <p>Ya los has visto en las frases. Ahora ponles nombre: mira cada letra y di su sonido. Tabla completa en <a href="../herramientas/kana.html">Kana</a>.</p>
+    <div class="kanas">{"".join(fichas)}
+    </div>
+  </section>'''
+
 # ─────────────────────────────────────────────
 # PÁGINA DE LECCIÓN
 # ─────────────────────────────────────────────
@@ -360,6 +459,7 @@ def render_page(conjunto, entries, bloque_titulo, bloque_num, prev_url, next_url
   <section class="parte">
     <h2>Cómo funciona</h2>{render_box("caja-sis", "El patrón", conjunto.get("sistematización", ""))}{nota_html}{render_vocab_table(entries)}
   </section>
+{render_kana_hoy(cid)}
 
   <nav class="pasos" aria-label="Lección anterior y siguiente">
     {prev_btn}
@@ -388,19 +488,20 @@ def render_index(all_conjuntos):
 
     secciones = []
     for bloque_titulo, bloque_num, items in bloques:
-        jp, _, es = bloque_titulo.partition(" — ")
-        if not es:
-            jp, es = "", bloque_titulo
+        jp, es = "", bloque_titulo
+        un = UNIDAD_DE_BLOQUE.get(bloque_num)
+        numero = un[0] if un else bloque_num + 1
+        jp = un[2] if un else ""
         filas = "\n".join(
             f'        <li><a href="{esc(fname)}">'
             f'<span class="li-t">{esc(conj.get("título", conj["id"]))}</span>'
             f'<span class="li-m">{k} frases</span></a></li>'
             for conj, k, fname in items)
         secciones.append(f'''
-  <section class="bloque">
+  <section class="bloque" id="unidad-{numero}">
     <div class="bloque-cab">
-      <span class="bloque-n">{bloque_num + 1}</span>
-      <div><h2>{esc(es)}</h2><p lang="ja">{esc(jp)}</p></div>
+      <span class="bloque-n">{numero}</span>
+      <div><h2>{esc(es)}</h2><p>{esc(jp)}</p></div>
     </div>
     <ol class="lista">
 {filas}
@@ -441,6 +542,73 @@ def render_index(all_conjuntos):
 </body>
 </html>'''
 
+
+
+def render_mapa(todos):
+    """aprender/index.html: el mapa de las 10 unidades."""
+    por_bloque = {}
+    for _, num, conj, entries in todos:
+        por_bloque.setdefault(num, []).append(conj)
+    tarjetas = []
+    for n, titulo, hacer, ro, es, bloque, enlace in UNIDADES:
+        if bloque is not None:
+            convs = por_bloque.get(bloque, [])
+            primera = f"../lecciones/leccion-{conjunto_to_slug(convs[0]['id'])}.html"
+            meta = f"{len(convs)} lecciones"
+            href = primera
+            estado = ""
+        elif enlace:
+            href, meta, estado = enlace, "Una página", ""
+        else:
+            href, meta, estado = None, "En preparación", " pronto"
+        ej = (f'<p class="u-ej"><span lang="ja-Latn">{lectura_html(ro)}</span> <span class="u-es">{esc(es)}</span></p>'
+              if ro else "")
+        cuerpo = f'''<span class="u-n">{n}</span>
+      <div class="u-tx">
+        <h3>{esc(titulo)}</h3>
+        <p>{esc(hacer)}</p>
+        {ej}
+        <p class="u-meta">{meta}</p>
+      </div>'''
+        if href:
+            tarjetas.append(f'    <a class="unidad" href="{esc(href)}">{cuerpo}</a>')
+        else:
+            tarjetas.append(f'    <div class="unidad{estado}">{cuerpo}</div>')
+    pie = FOOTER.replace('href="index.html">Lecciones', 'href="../lecciones/index.html">Lecciones')
+    return f'''<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mapa del curso — Japonés para Todos</title>
+{HEAD_FONTS}
+</head>
+<body>
+
+<nav class="migas" aria-label="Ruta de navegación">
+  <a href="../index.html">Inicio</a> <span>›</span>
+  <span>Mapa del curso</span>
+</nav>
+
+<header class="cab">
+  <div class="ancho">
+    <h1>Mapa del curso</h1>
+    <p class="lead">Diez unidades cortas. Empiezas por los sonidos y terminas hablando con naturalidad. Puedes seguir el orden o saltar a la que necesites.</p>
+    <p><a href="../lecciones/leccion-ds-core-01.html" class="boton">▶ Empezar la primera lección</a>
+       <a href="../lecciones/index.html" class="enlace2">Ver todas las lecciones</a></p>
+  </div>
+</header>
+
+<main class="ancho">
+  <div class="unidades">
+{chr(10).join(tarjetas)}
+  </div>
+  <p class="nota-mapa">¿Eres profe o te interesa la gramática que hay detrás? Visita <a href="../gramatica/index.html">Para profes y curiosos</a>.</p>
+</main>
+
+{pie}
+</body>
+</html>'''
 
 # ─────────────────────────────────────────────
 # MAIN
@@ -487,13 +655,13 @@ def build_all_conjuntos():
         with open(path, encoding="utf-8") as f:
             db = json.load(f)
         num    = db.get("bloque", 0)
-        titulo = bloques.get(str(num), db.get("título", path.stem))
+        titulo = UNIDAD_DE_BLOQUE[num][1] if num in UNIDAD_DE_BLOQUE else bloques.get(str(num), db.get("título", path.stem))
         mapa   = {e["id"]: e for e in db.get("entradas", [])}
         if notas:
             for e in mapa.values():
                 if e["id"] in notas:
                     e["notas_hispanohablante"] = notas[e["id"]]
-                elif e["id"].startswith("A1-0-"):
+                elif any(e["id"].startswith(f"A1-{b}-") for b in AP_BLOQUES):
                     e["notas_hispanohablante"] = ""
         for conj in db.get("conjuntos", []):
             entries = [mapa[i] for i in conj.get("ids_entradas", []) if i in mapa]
@@ -520,6 +688,7 @@ def main():
     print("🔨 Generando lecciones HTML...\n")
     todos = build_all_conjuntos()
     n = len(todos)
+    KANA_HOY.update(calcular_kana_hoy(todos))
 
     for i, (titulo, num, conj, entries) in enumerate(todos):
         filename = f"leccion-{conjunto_to_slug(conj['id'])}.html"
@@ -531,6 +700,9 @@ def main():
 
     (OUTPUT_DIR / "index.html").write_text(render_index(todos), encoding="utf-8")
     print("  ✓  index.html  (índice de lecciones)")
+    Path("aprender").mkdir(exist_ok=True)
+    Path("aprender/index.html").write_text(render_mapa(todos), encoding="utf-8")
+    print("  ✓  aprender/index.html  (mapa del curso)")
     print(f"\n✅ {n} lecciones generadas en '{OUTPUT_DIR}/'")
 
     dudas = comprobar_notacion(todos)

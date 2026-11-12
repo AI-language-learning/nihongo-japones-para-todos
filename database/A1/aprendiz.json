@@ -68,6 +68,317 @@
     "A1-0-020": "Saikoo da se oye mucho al hablar: «¡genial!», «¡lo mejor!».",
     "A1-0-021": "Iku es «voy». Es un verbo, pero se basta solo, igual que samui o ame da.",
     "A1-0-027": "Kirai da es lo contrario de suki da. Las dos son Na y ninguna usa «gustar».",
-    "A1-0-029": "Wakaru es «entiendo». En japonés es más bien «se aclara»: el sentido te llega."
+    "A1-0-029": "Wakaru es «entiendo». En japonés es más bien «se aclara»: el sentido te llega.",
+    "A1-1-001": "Samukunai: el adjetivo cambia de forma para negar, de -i a -ku.",
+    "A1-1-002": "Shizuka no cambia. Solo cambia el cierre: da pasa a ja nai.",
+    "A1-1-003": "Gakusei ja nai es «no soy estudiante», sin «ser».",
+    "A1-1-004": "Tabenai es «no como». Cada clase tiene su forma, y siempre es la misma.",
+    "A1-1-009": "Yokunai es la única excepción de los A. Apréndelo tal cual, como el español «voy» de «ir».",
+    "A1-1-011": "Suki ja nai es «no me gusta». Igual que suki da, no usa ningún verbo «gustar».",
+    "A1-1-012": "Kirei termina en -i, pero es Na: se niega con ja nai.",
+    "A1-1-013": "Kirai ja nai es «no lo odio».",
+    "A1-1-020": "Wakaranai es una de las frases más útiles: «no entiendo». Apréndela tal cual.",
+    "A1-1-025": "Suru es especial: pasa a shinai. Apréndelo tal cual.",
+    "A1-1-026": "Kuru se lee kuru, pero en la negación se lee konai. Es el cambio más visible, junto con suru.",
+    "A1-2-001": "Samukatta es «hacía frío», sin ningún verbo. El adjetivo mismo cambia.",
+    "A1-2-003": "Gakusei datta es «era estudiante», sin «ser».",
+    "A1-2-007": "Tanoshikatta es «fue divertido», sin ningún «ser».",
+    "A1-2-008": "Nakatta es «no había». Nai es un adjetivo A y cambia igual que samui.",
+    "A1-2-009": "Yokatta es «menos mal», «qué alivio». Se oye todo el día. Apréndela tal cual.",
+    "A1-2-011": "Suki datta es «me gustaba», sin verbo «gustar».",
+    "A1-2-019": "Itta es «fui». Es la única excepción del tipo -u. Apréndela tal cual.",
+    "A1-2-023": "Shita se usa mucho como respuesta corta: «sí, lo hice», «ya».",
+    "A1-2-024": "Kita se oye mucho como exclamación: «¡ya llegó!».",
+    "A1-2-025": "Kaetta cierra los cuatro finales del tipo -u: -ita, -nda, -shita, -tta.",
+    "A1-3-001": "En español cambias el verbo: «no hacía». En japonés cambia nai: samukunai → samukunakatta.",
+    "A1-3-004": "Tabenakatta es «no comí»: la raíz tabe- no cambia, solo nai → nakatta.",
+    "A1-3-016": "Wakatta («entendí») y wakaranakatta («no entendí») son las dos respuestas posibles a una explicación.",
+    "A1-3-017": "Kuru cambia de lectura según la forma: kuru, kita, konai, konakatta.",
+    "A1-4-001": "En japonés la persona no cambia con la cortesía: solo añades desu.",
+    "A1-4-003": "Gakusei desu es la versión cortés de gakusei da.",
+    "A1-4-008": "Ii desu es una respuesta muy usada en situaciones formales. También puede ser un rechazo amable: «no hace falta», «no, gracias».",
+    "A1-4-010": "Daijoobu desu sirve como respuesta y, con ka, como pregunta. Es la forma más común de ver si alguien está bien.",
+    "A1-4-011": "Nihongo no sensei desu es «profesor de japonés». Ojo al orden: primero nihongo no y después sensei, al revés que en español.",
+    "A1-4-019": "Masen es la negación de masu: tabemasu → tabemasen.",
+    "A1-4-021": "Kuru cambia: kuru, kimasu, kita, konai. Es el verbo con más cambios del japonés básico.",
+    "A1-5-005": "Benkyoo suru es «estudiar». Hay muchos verbos así: una palabra + suru («hacer»).",
+    "A1-5-006": "En español «entiendo japonés» lleva objeto directo. En japonés lleva ga: entender es un estado.",
+    "A1-5-007": "Neko ga suki da es «me gustan los gatos». No hay verbo «gustar» ni «me»: suki describe lo que sientes.",
+    "A1-5-008": "Hoshii es un adjetivo, no un verbo: «es deseado». Por eso lleva ga.",
+    "A1-5-010": "Nigate da es «se me da mal». Suki, kirai y nigate van con ga.",
+    "A1-5-012": "Heya ni iru: ni dice dónde estás. Para dónde haces algo se usa de.",
+    "A1-5-014": "Tomodachi ni hanasu es «le hablo a un amigo»: ni marca a quién, sin «le».",
+    "A1-5-019": "Una frase puede llevar varias posposiciones. Cada palabra lleva la suya.",
+    "A1-5-025": "Nihongo ga wakaru es un estado («entiendo japonés»). Nihongo o hanasu es una acción («hablo japonés»).",
+    "A1-6-002": "Neko wa suki da y neko ga suki da se traducen igual, pero no son lo mismo. Con wa, los gatos ya son el tema; con ga, los presentas como información nueva.",
+    "A1-6-003": "Watashi wa gakusei da es «soy estudiante». Watashi es el tema: de quién vas a hablar.",
+    "A1-6-005": "Nihongo wa wakaru suena a «el japonés sí lo entiendo» (quizá otras lenguas no). Nihongo ga wakaru es neutro.",
+    "A1-6-007": "Mo es «también». Wa dice «esto sí»; mo dice «esto también».",
+    "A1-6-008": "Niku wa tabenai es «la carne no la como»; se entiende que otras cosas sí.",
+    "A1-6-009": "Koohii wa nomu es «el café sí lo tomo».",
+    "A1-6-010": "En español dices «libros sí leo». En japonés basta wa, sin ningún «sí».",
+    "A1-6-012": "No convierte atsui en algo como «lo caluroso», y así puede llevar wa.",
+    "A1-6-013": "En español «me llamo Tanaka» no distingue. En japonés, wa y ga cambian el sentido.",
+    "A1-6-014": "Ga sirve para responder «¿quién es X?» y señalar a esa persona.",
+    "A1-6-015": "Dare ga kita? Con dare («quién») va ga: la respuesta es información nueva.",
+    "A1-7-005": "Atsui ne es «hace calor, ¿verdad?». Es una de las palabras más usadas al hablar.",
+    "A1-7-007": "Soo da ne es «sí, tienes razón». Es la respuesta de acuerdo más frecuente.",
+    "A1-7-009": "Daijoobu da yo ne es «está bien, ¿verdad?»: afirmas y buscas acuerdo.",
+    "A1-7-011": "Iku? es la forma más común de preguntar en tono llano: subes la voz y ya está.",
+    "A1-7-012": "Daijoobu ka suena seco, como un «¿bien?» dicho muy rápido. Lo neutro es daijoobu? con voz ascendente.",
+    "A1-7-013": "Iku ka na es «¿iré?» o «me pregunto si voy». No pregunta a nadie.",
+    "A1-7-014": "Oishii na es «qué rico…» dicho para ti. Yo habla al otro para informar; ne, para compartir; na, para ti.",
+    "A1-7-015": "Iku na es muy directo y poco cortés. Una forma más suave: ikanaide («por favor, no vayas»).",
+    "A1-7-017": "Ikimasu ka es la forma normal de preguntar con cortesía. Mucho más neutra que iku ka.",
+    "A1-7-020": "Gakusei desu ka es «¿es usted estudiante?»: la manera normal de preguntar con cortesía."
+  },
+  "DS-NEG-01": {
+    "título": "Decir que no: cuatro formas, una idea",
+    "lead": "Para negar, cada clase cambia un poquito. Escucha las cuatro negaciones y repítelas en voz alta.",
+    "descubrimiento": "Fíjate en cómo acaba cada frase: samukunai, shizuka ja nai, gakusei ja nai, tabenai.\n\n¿Qué dos frases se niegan igual? ¿Qué tienen en común shizuka da y gakusei da?",
+    "sistematización": "**A** cambia -i por -ku y añade nai: samui → samukunai.\n\n**Na** y **N** cambian da por **ja nai**: shizuka da → shizuka ja nai.\n\n**V** añade **nai** a la raíz: taberu → tabenai.\n\nNa y N se niegan igual porque las dos llevan da.",
+    "nota": "En español pones «no» delante: «no hace frío», «no como». En japonés la negación va al final, pegada al núcleo."
+  },
+  "DS-NEG-02": {
+    "título": "Samukunai, atsukunai: de -i a -kunai",
+    "lead": "Con los adjetivos A, negar es fácil: cambias la -i final por -kunai.",
+    "descubrimiento": "Escucha: atsui → atsukunai, oishii → oishikunai, muzukashii → muzukashikunai. Todos siguen el mismo camino.\n\nHay una palabra especial: ii («bueno»). ¿Cómo crees que se niega?",
+    "sistematización": "Quitas la -i final y añades **-kunai**: atsui → atsukunai.\n\nSolo hay una excepción: **ii** («bueno») se niega **yokunai**.\n\nNai es en sí un adjetivo A. Por eso termina en -i y se cambia igual que samui.",
+    "nota": "En español, «no» nunca cambia. Aquí el adjetivo sí cambia de forma: -i pasa a -ku. Yokunai hay que aprenderlo tal cual."
+  },
+  "DS-NEG-03": {
+    "título": "Genki ja nai: cambia da, no la palabra",
+    "lead": "Con las palabras Na, la palabra se queda igual. Lo que cambia es el cierre: da pasa a ja nai.",
+    "descubrimiento": "Escucha: genki ja nai, suki ja nai, kirei ja nai, kirai ja nai.\n\nCompáralas con genki da, suki da… ¿Qué parte se queda igual? ¿Qué parte cambia?",
+    "sistematización": "El núcleo (genki, suki, kirei) **no cambia**.\n\nLo que cambia es el cierre: **da → ja nai**.\n\nAsí, genki da («estoy bien») pasa a genki ja nai («no estoy bien»).",
+    "nota": "Kirei termina en -i, pero es Na, no A. Por eso se dice kirei ja nai. La negación te ayuda a saber de qué clase es una palabra."
+  },
+  "DS-NEG-04": {
+    "título": "Ame ja nai: los nombres se niegan como los Na",
+    "lead": "Con los nombres (N) pasa lo mismo que con los Na: da pasa a ja nai.",
+    "descubrimiento": "Escucha: gakusei ja nai, ame ja nai, yasumi ja nai. Es el mismo ja nai de la lección anterior.\n\nEntonces, ¿en qué se diferencian los Na y los N?",
+    "sistematización": "Na y N llevan **da**, y por eso se niegan igual, con **ja nai**.\n\nLa diferencia aparece cuando la palabra describe a un nombre. Na usa **na**: shizuka na hi, «un día tranquilo». N usa **no**: ame no hi, «un día de lluvia».\n\nEsto lo verás con calma más adelante.",
+    "nota": "En español, «no soy estudiante» lleva el verbo «ser». En japonés, gakusei ja nai es solo nombre + ja nai."
+  },
+  "DS-NEG-05": {
+    "título": "Tabenai, minai, nenai: quitas -ru y pones nai",
+    "lead": "Con los verbos tipo -ru, negar es sencillo: quitas -ru y añades nai.",
+    "descubrimiento": "Escucha: tabenai, minai, nenai, okinai. En todos desaparece el -ru y entra nai.\n\n¿Qué queda de okiru («levantarse») cuando quitas el -ru?",
+    "sistematización": "Los verbos tipo **-ru** suelen terminar en -eru o -iru: taberu, miru, neru, okiru.\n\nQuitas **-ru** y añades **nai**: taberu → tabe**nai**.\n\nCon este tipo no hay que pensar más: siempre es igual."
+  },
+  "DS-NEG-06": {
+    "título": "Ikanai, nomanai: la última vocal pasa a -a",
+    "lead": "Con los verbos tipo -u, cambias la última vocal por -a y añades nai. Dos verbos son especiales: suru y kuru.",
+    "descubrimiento": "Escucha: ikanai, nomanai, yomanai, hanasanai. Compáralos con iku, nomu, yomu, hanasu.\n\n¿Qué vocal cambia? ¿Y qué crees que pasa con suru y kuru?",
+    "sistematización": "Los verbos tipo **-u** terminan en -ku, -mu, -su… La última sílaba pasa a **-a**.\n\nPor ejemplo: iku → ika**nai**, nomu → noma**nai**, hanasu → hanasa**nai**.\n\nDos verbos son especiales y se aprenden tal cual: **suru → shinai** y **kuru → konai**."
+  },
+  "DS-PERF-01": {
+    "título": "Samukatta, shizuka datta, tabeta: lo que ya pasó",
+    "lead": "Para hablar de lo que ya pasó, cada clase cambia un poco. Escucha las cuatro formas.",
+    "descubrimiento": "Fíjate en cómo acaba cada frase: samukatta, shizuka datta, gakusei datta, tabeta.\n\n¿Cuántas formas distintas hay? ¿Cuáles se parecen?",
+    "sistematización": "**A** cambia -i por **-katta**: samui → samukatta.\n\n**Na** y **N** cambian da por **datta**: shizuka da → shizuka datta.\n\n**V** cambia el final por **-ta** (o **-da**), según el verbo.\n\nA esta forma la llamamos **perfectivo**: algo que ya está completo. No es exactamente el «pasado» del español, pero casi siempre coinciden.",
+    "nota": "En español eliges entre «hacía», «hizo», «ha hecho»… En japonés basta una forma. Samukatta puede ser «hacía frío» o «hizo frío»; la situación te lo dice."
+  },
+  "DS-PERF-02": {
+    "título": "Atsukatta, oishikatta: de -i a -katta",
+    "lead": "Con los adjetivos A, cambias la -i final por -katta.",
+    "descubrimiento": "Escucha: atsui → atsukatta, oishii → oishikatta, tanoshii → tanoshikatta.\n\n¿Qué crees que pasa con ii («bueno») y con nai («no hay»)?",
+    "sistematización": "Quitas la -i y añades **-katta**: atsui → atsukatta.\n\nEsto vale incluso para **nai**: nai → **nakatta** («no había»). Por eso sabemos que nai es un adjetivo A.\n\nUna excepción: **ii** pasa a **yokatta**.",
+    "nota": "En español no hay una forma así para los adjetivos: usas un verbo («hacía», «era»). Aquí el propio adjetivo cambia."
+  },
+  "DS-PERF-03": {
+    "título": "Genki datta: da pasa a datta",
+    "lead": "Con las palabras Na, la palabra se queda igual. Solo cambia da → datta.",
+    "descubrimiento": "Escucha: genki datta, suki datta, taihen datta.\n\n¿Qué diferencia hay entre genki da y genki datta?",
+    "sistematización": "El núcleo no cambia. Cambia el cierre: **da → datta**.\n\nGenki da («estoy bien») pasa a genki datta («estaba bien»)."
+  },
+  "DS-PERF-04": {
+    "título": "Ame datta: igual que los Na",
+    "lead": "Con los nombres (N), da también pasa a datta.",
+    "descubrimiento": "Escucha: ame datta, yume datta, yasumi datta. Es el mismo datta de la lección anterior.\n\n¿Por qué crees que Na y N coinciden otra vez?",
+    "sistematización": "Na y N llevan **da**, y por eso hacen el perfectivo igual: **datta**.\n\nEs la misma razón por la que se niegan igual, con ja nai."
+  },
+  "DS-PERF-05": {
+    "título": "Mita, neta, okita: quitas -ru y pones -ta",
+    "lead": "Con los verbos tipo -ru, quitas -ru y añades -ta.",
+    "descubrimiento": "Escucha: tabeta, mita, neta, okita.\n\n¿Qué queda de cada verbo cuando quitas -ru? ¿Te recuerda a la negación (tabenai)?",
+    "sistematización": "Quitas **-ru** y añades **-ta**: taberu → tabe**ta**.\n\nLa raíz es la misma que usabas para negar: tabe-nai, tabe-ta."
+  },
+  "DS-PERF-06": {
+    "título": "Itta, nonda, kiita: los finales del tipo -u",
+    "lead": "Los verbos tipo -u cambian de cuatro maneras al final. Cada una hace el verbo más fácil de decir.",
+    "descubrimiento": "Escucha: itta, nonda, kiita, hanashita, kaetta.\n\n¿Cuántos finales distintos oyes?",
+    "sistematización": "El final depende de cómo acaba el verbo:\n\n**-mu, -nu, -bu → -nda**: nomu → nonda.\n\n**-ku → -ita**: kiku → kiita. (Excepción: iku → **itta**.)\n\n**-su → -shita**: hanasu → hanashita.\n\n**-u, -tsu, -ru → -tta**: kaeru → kaetta.\n\nHay dos verbos especiales: suru → shita y kuru → kita.",
+    "nota": "Iku es la única excepción del tipo -u: itta, no «iita». Apréndelo tal cual."
+  },
+  "DS-PNEG-01": {
+    "título": "Samukunakatta: negar lo que pasó",
+    "lead": "Para negar el pasado, unes lo que ya sabes: negación + perfectivo. Escucha las cuatro formas.",
+    "descubrimiento": "Escucha: samukunakatta, shizuka ja nakatta, gakusei ja nakatta, tabenakatta.\n\nCompáralas con samukunai, shizuka ja nai… ¿Qué ha cambiado?",
+    "sistematización": "Ya sabes negar: samukunai, ja nai, tabenai. Ahora **nai** pasa a **nakatta**.\n\n**A**: samukunai → samuku**nakatta**.\n\n**Na** y **N**: ja nai → ja **nakatta**.\n\n**V**: tabenai → tabe**nakatta**.\n\nEn todos, lo único que cambia es **nai → nakatta**.",
+    "nota": "En español cambias el verbo: «no hacía», «no comí». En japonés cambia nai; el resto se queda igual."
+  },
+  "DS-PNEG-02": {
+    "título": "Oishikunakatta: el patrón -kunakatta",
+    "lead": "Con los adjetivos A, el patrón es -kunakatta.",
+    "descubrimiento": "Escucha: oishikunakatta, tanoshikunakatta, yokunakatta.\n\n¿Qué dos piezas ves en cada uno?",
+    "sistematización": "Cambias -i por **-kunakatta**: oishii → oishikunakatta.\n\nCon ii pasa lo mismo que antes: **yokunakatta**."
+  },
+  "DS-PNEG-03": {
+    "título": "Genki ja nakatta: ja nai pasa a ja nakatta",
+    "lead": "Con Na y N, solo cambia nai → nakatta.",
+    "descubrimiento": "Escucha: genki ja nakatta, suki ja nakatta, ame ja nakatta.\n\n¿Qué parte cambió respecto a ja nai?",
+    "sistematización": "**Ja** no cambia. **Nai** pasa a **nakatta**: genki ja nai → genki ja nakatta."
+  },
+  "DS-PNEG-04": {
+    "título": "Ikanakatta, tabenakatta: los verbos",
+    "lead": "Con los verbos, usas la misma raíz de la negación y cambias nai por nakatta.",
+    "descubrimiento": "Escucha: ikanakatta, nomanakatta, minakatta, shinakatta.\n\n¿Dónde acaba la raíz y dónde empieza nakatta?",
+    "sistematización": "Raíz de la negación + **nakatta**: ika-nai → ika**nakatta**; tabe-nai → tabe**nakatta**.\n\nLos dos especiales: **shinakatta** y **konakatta**."
+  },
+  "DS-PNEG-05": {
+    "título": "Repaso: la tabla completa",
+    "lead": "Junta todo lo que sabes de las cuatro clases.",
+    "descubrimiento": "Toma cuatro palabras: taberu, samui, shizuka, gakusei.\n\n¿Puedes completar sus cuatro formas: afirmativa, negativa, perfectiva y negativa perfectiva?",
+    "sistematización": "Casi todo es regular. Solo hay que aprender estas excepciones:\n\n**ii** → yokunai, yokatta.\n\n**iku** → itta.\n\n**suru** → shinai, shita.\n\n**kuru** → konai, kita.\n\nTodo lo demás sigue la regla de su clase."
+  },
+  "DS-CRT-01": {
+    "título": "Samui desu, tabemasu: hablar con cortesía",
+    "lead": "Con desconocidos, profesores y en el trabajo, la frase se cierra de otra manera.",
+    "descubrimiento": "Escucha: samui desu, shizuka desu, gakusei desu, tabemasu.\n\nTres usan desu y una usa masu. ¿Cuál? ¿Por qué crees que es distinta?",
+    "sistematización": "**Desu** cierra la frase cortés de A, Na y N.\n\n**Masu** cierra la frase cortés de V: los verbos tienen su propio cierre.",
+    "nota": "En español la cortesía cambia el pronombre y el verbo («tú» → «usted»). En japonés la persona no cambia: solo añades desu o masu."
+  },
+  "DS-CRT-02": {
+    "título": "Atsui desu: desu va detrás del adjetivo A",
+    "lead": "Con los adjetivos A, desu se pone detrás, sin quitar nada.",
+    "descubrimiento": "Escucha: samui desu, atsui desu, oishii desu, muzukashii desu.\n\n¿Se quita algo? Compara con shizuka desu.",
+    "sistematización": "**A + desu**: samui + desu = samui desu. No quitas nada: la -i se queda."
+  },
+  "DS-CRT-03": {
+    "título": "Genki desu, gakusei desu: desu ocupa el lugar de da",
+    "lead": "Con Na y N, desu sustituye a da.",
+    "descubrimiento": "Escucha: shizuka desu, genki desu, gakusei desu.\n\n¿Qué pasó con da? Compara con atsui desu, donde no había da.",
+    "sistematización": "**Da → desu**. El núcleo no cambia: shizuka da → shizuka desu.\n\nCon A es distinto: los A no llevan da, así que desu simplemente se añade."
+  },
+  "DS-CRT-04": {
+    "título": "Tabemasu, ikimasu: los verbos con masu",
+    "lead": "Con los verbos, el final cortés es masu.",
+    "descubrimiento": "Escucha: tabemasu, ikimasu, nomimasu, mimasu, shimasu.\n\n¿Qué parte va antes de masu? ¿Es la misma que usabas para negar?",
+    "sistematización": "**Raíz + masu**.\n\nCon tipo **-ru**, quitas -ru: taberu → tabemasu.\n\nCon tipo **-u**, la última sílaba pasa a -i: iku → ikimasu, nomu → nomimasu.\n\nEsta raíz acaba en -i, y no es la de la negación (ikanai)."
+  },
+  "DS-CRT-05": {
+    "título": "Samukunai desu, tabemasen: negar con cortesía",
+    "lead": "Negar con cortesía también tiene su forma.",
+    "descubrimiento": "Escucha: samukunai desu, genki ja nai desu, gakusei ja nai desu, tabemasen.\n\n¿Ves el patrón?",
+    "sistematización": "**A**: samukunai desu. **Na** y **N**: ja nai desu. **V**: tabemasen (masen en lugar de masu).\n\nExiste una forma aún más formal: samuku arimasen y dewa arimasen. La oirás en situaciones muy formales."
+  },
+  "DS-COMP-01": {
+    "título": "Koohii o nomu: o va detrás de lo que bebes o comes",
+    "lead": "Con o añades lo que comes, bebes o lees. Va siempre detrás de la palabra.",
+    "descubrimiento": "Escucha: koohii o nomu, gohan o taberu, hon o yomu, ongaku o kiku.\n\n¿Dónde está o? ¿Qué tienen en común los verbos?",
+    "sistematización": "**O** va pegada **detrás** de la palabra: koohii **o** nomu.\n\nMarca lo que recibe la acción: lo que bebes, comes, lees o escuchas.\n\nEl orden es siempre: **palabra + o + verbo**.\n\nA estas palabras pequeñas que van detrás las llamamos **posposiciones**.",
+    "nota": "En español las preposiciones van delante: «una taza de café». En japonés van detrás: koohii o. Siempre es palabra + posposición."
+  },
+  "DS-COMP-02": {
+    "título": "Nihongo ga wakaru: ga con lo que entiendes o sientes",
+    "lead": "Con entender, gustar o querer, usas ga en lugar de o.",
+    "descubrimiento": "Escucha: nihongo ga wakaru, neko ga suki da, mizu ga hoshii.\n\n¿Dice la frase japonesa quién entiende o quién quiere? ¿Qué traducción usa el español?",
+    "sistematización": "**Ga** marca lo que provoca el estado: lo que entiendes, lo que te gusta, lo que quieres.\n\nQuién lo siente no se dice: lo pone la situación.\n\nCon wakaru, suki da y hoshii se usa **ga**, no o.",
+    "nota": "En español «entiendo japonés» lleva un objeto directo. En japonés entender es un estado: el japonés «se entiende»."
+  },
+  "DS-COMP-03": {
+    "título": "Tookyoo ni iku: ni marca un punto",
+    "lead": "Ni señala un punto: adónde vas, dónde estás o a qué hora.",
+    "descubrimiento": "Escucha: Tookyoo ni iku, heya ni iru, Nihon ni sumu, shichiji ni okiru.\n\n¿Qué tienen en común? ¿Es un lugar donde pasa algo, o es un punto?",
+    "sistematización": "Ni marca un **punto**:\n\n**Destino**: Tookyoo ni iku («voy a Tokio»).\n\n**Lugar donde estás o vives**: heya ni iru, Nihon ni sumu.\n\n**Hora**: shichiji ni okiru («me levanto a las 7»).\n\nEn los tres casos es un punto. Para el lugar donde haces algo se usa **de** (lección siguiente).",
+    "nota": "En español «a» sirve para el destino y para la hora: «voy a Tokio», «a las 7». En japonés también: ni."
+  },
+  "DS-COMP-04": {
+    "título": "Toshokan de benkyoo suru: de es el escenario",
+    "lead": "De dice dónde pasa una actividad y con qué medio la haces.",
+    "descubrimiento": "Escucha: toshokan de benkyoo suru, kafe de koohii o nomu, basu de iku, nihongo de hanasu.\n\nCompara con heya ni iru. ¿Por qué ni en una y de en la otra?",
+    "sistematización": "**Ni** = un punto (estar, ir, hora).\n\n**De** = el escenario de una actividad, o el medio.\n\nToshokan **de** benkyoo suru: estudias allí. Basu **de** iku: vas en autobús.\n\nUna frase puede llevar varias posposiciones: kafe de koohii o nomu.",
+    "nota": "En español «en» sirve para los dos: «estoy en casa», «estudio en casa». En japonés usas ni para estar y de para hacer algo."
+  },
+  "DS-COMP-05": {
+    "título": "Oosaka kara kita: de dónde y hasta dónde",
+    "lead": "Kara marca el comienzo y made, el final.",
+    "descubrimiento": "Escucha: Oosaka kara kita, kuji kara benkyoo suru, eki made aruku.\n\n¿Se pueden usar kara y made juntas?",
+    "sistematización": "**Kara** = desde, de dónde: Oosaka kara («de Osaka»), kuji kara («desde las 9»).\n\n**Made** = hasta: eki made («hasta la estación»).\n\nSe pueden juntar: kuji kara goji made, «de 9 a 5»."
+  },
+  "DS-COMP-06": {
+    "título": "Neko ga suki, neko o kau: el verbo decide",
+    "lead": "La misma palabra puede llevar ga o o. Lo decide lo que viene después.",
+    "descubrimiento": "Escucha: neko ga suki da y neko o kau. Nihongo ga wakaru y nihongo o hanasu.\n\n¿Qué cambia entre cada pareja?",
+    "sistematización": "No depende de la palabra, sino de lo que viene después.\n\n**Suki da** y **wakaru** (sentimiento o estado) llevan **ga**.\n\n**Kau** («tener un animal») y **hanasu** («hablar») son acciones y llevan **o**."
+  },
+  "DS-TOP-01": {
+    "título": "Sushi wa oishii: wa dice de qué hablas",
+    "lead": "Wa elige el tema de la frase: «hablando de esto…».",
+    "descubrimiento": "Escucha: sushi wa oishii, neko wa suki da, watashi wa gakusei da.\n\nEn cada frase, la palabra con wa es el tema. ¿Cambia el sentido si pones ga?",
+    "sistematización": "**Wa** señala el **tópico**: de qué estás hablando.\n\nEs como decir «en cuanto al sushi…» o «hablando del sushi…».\n\nNo dice qué papel tiene esa palabra en la acción. Eso se entiende por el resto de la frase.\n\nCon **ga**, en cambio, presentas **información nueva**.",
+    "nota": "En español «el sushi está rico» no marca si el sushi ya era el tema. Tampoco marca si lo mencionas por primera vez. En japonés sí: wa o ga."
+  },
+  "DS-TOP-02": {
+    "título": "Nihongo wa wakaru: wa en lugar de ga",
+    "lead": "Si cambias ga por wa, la palabra pasa a ser el tema. A menudo suena un contraste.",
+    "descubrimiento": "Compara: nihongo ga wakaru y nihongo wa wakaru. Neko ga suki da y neko wa suki da.\n\n¿Qué cambia en el sentido?",
+    "sistematización": "Con **ga**, la palabra es información nueva.\n\nCon **wa**, la palabra es el tema, algo ya conocido.\n\nAdemás, con wa suele sonar un contraste: «esto sí, de lo demás no sé»."
+  },
+  "DS-TOP-03": {
+    "título": "Niku wa tabenai: wa en lugar de o",
+    "lead": "Con wa también puedes poner primero lo que comes o bebes. Suena a contraste.",
+    "descubrimiento": "Compara: koohii o nomu → koohii wa nomu. Niku o tabenai → niku wa tabenai.\n\n¿Qué matiz añade wa?",
+    "sistematización": "Wa sustituye a o, y la palabra pasa a ser el tema.\n\nNiku wa tabenai: «la carne no la como». Se entiende que otras cosas sí.\n\nEs una forma natural de contrastar."
+  },
+  "DS-TOP-04": {
+    "título": "Hon wa yomu: esto sí, pero…",
+    "lead": "El mismo wa sirve para contrastar: «los libros sí, las revistas no».",
+    "descubrimiento": "Escucha: hon wa yomu, biiru wa suki da.\n\nSi dices «hon wa yomu, demo zasshi wa yomanai», ¿qué contraste oyes? ¿Cómo sabes si wa es tema o contraste?",
+    "sistematización": "Wa de tema y wa de contraste son **la misma** palabra. Lo que cambia es el énfasis.\n\nEl contraste se oye mejor con una negación o con dos wa seguidas: hon wa yomu, zasshi wa yomanai.\n\nEn español usas «sí» o «en cambio»."
+  },
+  "DS-TOP-05": {
+    "título": "Watashi wa Tanaka desu, watashi ga Tanaka desu",
+    "lead": "Wa presenta; ga señala. Compara las dos frases.",
+    "descubrimiento": "Escucha: watashi wa Tanaka desu y watashi ga Tanaka desu. Y también: dare ga kita? Tanaka-san ga kita.\n\n¿Por qué lleva ga la pregunta «¿quién vino?»?",
+    "sistematización": "**Watashi wa Tanaka desu**: «me llamo Tanaka». Te presentas con naturalidad.\n\n**Watashi ga Tanaka desu**: «yo soy Tanaka» (y no otro). Respondes a «¿quién es Tanaka?».\n\nCon **dare** («quién») y **nani** («qué») se usa **ga**, porque la respuesta es información nueva."
+  },
+  "DS-FIN-01": {
+    "título": "Iku yo: yo avisa de algo que tú sabes",
+    "lead": "Yo añade «te lo digo»: sabes algo que la otra persona quizá no sabe.",
+    "descubrimiento": "Escucha: iku yo, oishii yo, daijoobu da yo.\n\n¿Qué tienen en común estas situaciones? ¿Quién sabe algo que el otro no sabe?",
+    "sistematización": "**Yo** va al final de la frase y dice: «lo sé yo, y quizá tú no».\n\nSirve para informar de algo nuevo, afirmar con seguridad o contradecir con suavidad.\n\nEs como el español «¡que sí voy!» o «te lo digo yo».",
+    "nota": "Yo no tiene un equivalente exacto en español. Lo más cercano es el énfasis de la voz: «¡Que sí voy!»."
+  },
+  "DS-FIN-02": {
+    "título": "Atsui ne: ne busca que estés de acuerdo",
+    "lead": "Ne es el «¿verdad?» japonés: buscas que la otra persona piense lo mismo.",
+    "descubrimiento": "Escucha: atsui ne, oishii ne, soo da ne.\n\n¿Qué busca el que habla? ¿Confirmación? ¿Acuerdo?",
+    "sistematización": "**Ne** dice: «creo que tú también lo ves así».\n\nSirve para confirmar, crear cercanía y suavizar.\n\nCon **yo** informas («te lo cuento»). Con **ne** compartes («lo vemos juntos»)."
+  },
+  "DS-FIN-03": {
+    "título": "Daijoobu da yo ne: informar y confirmar a la vez",
+    "lead": "Yo y ne se pueden juntar: «te lo digo, ¿verdad?».",
+    "descubrimiento": "Escucha: soo da yo ne, daijoobu da yo ne.\n\n¿Cuándo usarías yo ne en lugar de yo o ne solos?",
+    "sistematización": "**Yo ne** = informas y pides confirmación a la vez.\n\nEs más suave que yo solo y más seguro que ne solo."
+  },
+  "DS-FIN-04": {
+    "título": "Iku? Iku ka? Iku ka na?: preguntar",
+    "lead": "Para preguntar en tono llano, basta con subir la voz. Ka suena más directo.",
+    "descubrimiento": "Escucha: iku?, daijoobu ka, iku ka na.\n\n¿En qué situación dirías ka? ¿Suena igual que subir la voz sin ka?",
+    "sistematización": "En conversación normal, subir la voz al final basta: **iku?**\n\n**Ka** en tono llano suena directo, a veces seco: daijoobu ka.\n\n**Ka na** es una duda para ti mismo: «¿iré?».\n\nCon la forma cortés, **ka** suena neutro: ikimasu ka."
+  },
+  "DS-FIN-05": {
+    "título": "Oishii na, iku na: na tiene dos usos",
+    "lead": "Na sirve para hablar contigo mismo y, con un verbo, para prohibir.",
+    "descubrimiento": "Escucha: oishii na, samui na, iku na.\n\nEs la misma palabra, pero ¿notas dos significados? ¿Qué cambia?",
+    "sistematización": "Con adjetivos y nombres, **na** es un comentario para ti mismo: oishii na («qué rico…»).\n\nCon un **verbo** en forma básica, suele ser una prohibición: iku na («¡no vayas!»).\n\nLo decide la palabra de delante."
+  },
+  "DS-FIN-06": {
+    "título": "Ikimasu ka, oishii desu ne: con cortesía",
+    "lead": "Yo, ne, yo ne y ka también se usan con desu y masu.",
+    "descubrimiento": "Escucha: ikimasu ka, daijoobu desu yo, oishii desu ne.\n\n¿Cambia el significado al hablar con cortesía?",
+    "sistematización": "**Yo**, **ne** y **yo ne** van detrás de desu o masu sin cambiar de sentido.\n\n**Ka** sí cambia de tono: ikimasu ka es neutro y educado, mientras que iku ka puede sonar seco."
   }
 }

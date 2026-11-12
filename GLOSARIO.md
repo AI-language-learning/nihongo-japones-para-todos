@@ -48,8 +48,8 @@
 |---|---|
 | ます **【未決】** | 用語表は honorativo。基礎文書と文法リファレンスは marcador de cortesía |
 | 名詞 **【未決】** | 用語表は nominal（N）。文法リファレンスに nombre、レッスンとデータベースに sustantivo |
-| は **【未決】** | tópico が主。tema も併用されている |
-| が の説明 **【未決】** | ガイドは「述語が指す要素」「同定」。レッスンとデータベースは foco = información nueva |
+| は **【決定 2026-11-12】** | 学習者向けは tópico に統一。tema は使わない |
+| が の説明 **【決定 2026-11-12】** | 学習者向けは「información nueva（新しい情報）」で説明する。文法ガイドは「述語が指す要素」「同定」のまま。両者を行き来できるようにする |
 | 文体 **【未決】** | 文法リファレンスは estilo ordinario / estilo cortés。データベースは forma llana、registro llano、informal |
 | 直訳（lit.）**【未決】** | 修正メモの方針は日本語の語順のまま示す形：«En cuanto a ella, la cabeza, buena» |
 
