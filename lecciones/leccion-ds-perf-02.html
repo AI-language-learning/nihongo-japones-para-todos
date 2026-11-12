@@ -140,6 +140,24 @@
     <button type="button" class="boton" id="p-ini">▶ Empezar</button>
     <script type="application/json" id="p-datos">[{"a": "../audio/A1/A1-2-005.mp3", "t": "暑かった", "r": "Atsukatta.", "k": "あつかった。", "e": "Hacía calor."}, {"a": "../audio/A1/A1-2-006.mp3", "t": "おいしかった", "r": "Oishikatta.", "k": "おいしかった。", "e": "Estaba rico."}, {"a": "../audio/A1/A1-2-007.mp3", "t": "楽しかった", "r": "Tanoshikatta.", "k": "たのしかった。", "e": "Fue divertido."}, {"a": "../audio/A1/A1-2-008.mp3", "t": "なかった", "r": "Nakatta.", "k": "なかった。", "e": "No había."}, {"a": "../audio/A1/A1-2-009.mp3", "t": "よかった", "r": "Yokatta.", "k": "よかった。", "e": "Menos mal."}]</script>
   </section>
+  <section class="parte prueba" id="hueco">
+    <h2>Completa la frase <span class="h2-ja" lang="ja">穴埋め</span></h2>
+    <p>Lee qué significa la frase y elige la palabra que falta. Después la oirás completa.</p>
+    <div class="p-caja" id="h-caja" hidden>
+      <p class="p-cuenta" id="h-cuenta" aria-live="polite"></p>
+      <p class="h-es" id="h-es"></p>
+      <p class="h-fr" id="h-fr" lang="ja-Latn"></p>
+      <div class="p-ops h-ops" id="h-ops" role="group" aria-label="Opciones"></div>
+      <div class="p-res" id="h-res" aria-live="polite"></div>
+      <button type="button" class="paso paso-sig p-sig" id="h-sig" hidden>Siguiente →</button>
+    </div>
+    <div class="p-fin" id="h-fin" hidden>
+      <p class="p-nota" id="h-nota"></p>
+      <button type="button" class="boton p-otra" id="h-otra">Otra vez</button>
+    </div>
+    <button type="button" class="boton" id="h-ini">▶ Empezar</button>
+    <script type="application/json" id="h-datos">[{"a": "../audio/A1/A1-2-005.mp3", "t": "暑かった", "p": "Atsu", "q": "", "r": "Atsukatta.", "k": "あつかった。", "e": "Hacía calor.", "g": "sa", "ok": "katta"}, {"a": "../audio/A1/A1-2-006.mp3", "t": "おいしかった", "p": "Oishi", "q": "", "r": "Oishikatta.", "k": "おいしかった。", "e": "Estaba rico.", "g": "sa", "ok": "katta"}, {"a": "../audio/A1/A1-2-007.mp3", "t": "楽しかった", "p": "Tanoshi", "q": "", "r": "Tanoshikatta.", "k": "たのしかった。", "e": "Fue divertido.", "g": "sa", "ok": "katta"}, {"a": "../audio/A1/A1-2-008.mp3", "t": "なかった", "p": "", "q": ".", "r": "Nakatta.", "k": "なかった。", "e": "No había.", "g": "f", "ok": "nakatta"}, {"a": "../audio/A1/A1-2-009.mp3", "t": "よかった", "p": "Yo", "q": "", "r": "Yokatta.", "k": "よかった。", "e": "Menos mal.", "g": "sa", "ok": "katta"}]</script>
+  </section>
 
   <nav class="pasos" aria-label="Lección anterior y siguiente">
     <a href="leccion-ds-perf-01.html" class="paso">← Anterior</a>
@@ -160,5 +178,6 @@
 </footer>
 <script src="../js/leccion.js"></script>
 <script src="../js/practica.js"></script>
+<script src="../js/hueco.js"></script>
 </body>
 </html>

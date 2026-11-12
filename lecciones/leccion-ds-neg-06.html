@@ -178,6 +178,24 @@
     <button type="button" class="boton" id="p-ini">▶ Empezar</button>
     <script type="application/json" id="p-datos">[{"a": "../audio/A1/A1-1-020.mp3", "t": "分からない", "r": "Wakaranai.", "k": "わからない。", "e": "No entiendo."}, {"a": "../audio/A1/A1-1-021.mp3", "t": "行かない", "r": "Ikanai.", "k": "いかない。", "e": "No voy."}, {"a": "../audio/A1/A1-1-022.mp3", "t": "飲まない", "r": "Nomanai.", "k": "のまない。", "e": "No bebo."}, {"a": "../audio/A1/A1-1-023.mp3", "t": "読まない", "r": "Yomanai.", "k": "よまない。", "e": "No leo."}, {"a": "../audio/A1/A1-1-024.mp3", "t": "話さない", "r": "<span class=\"t\">H<\/span>anasanai.", "k": "はなさない。", "e": "No hablo."}, {"a": "../audio/A1/A1-1-025.mp3", "t": "しない", "r": "Shinai.", "k": "しない。", "e": "No lo hago."}, {"a": "../audio/A1/A1-1-026.mp3", "t": "来ない", "r": "Konai.", "k": "こない。", "e": "No viene."}]</script>
   </section>
+  <section class="parte prueba" id="hueco">
+    <h2>Completa la frase <span class="h2-ja" lang="ja">穴埋め</span></h2>
+    <p>Lee qué significa la frase y elige la palabra que falta. Después la oirás completa.</p>
+    <div class="p-caja" id="h-caja" hidden>
+      <p class="p-cuenta" id="h-cuenta" aria-live="polite"></p>
+      <p class="h-es" id="h-es"></p>
+      <p class="h-fr" id="h-fr" lang="ja-Latn"></p>
+      <div class="p-ops h-ops" id="h-ops" role="group" aria-label="Opciones"></div>
+      <div class="p-res" id="h-res" aria-live="polite"></div>
+      <button type="button" class="paso paso-sig p-sig" id="h-sig" hidden>Siguiente →</button>
+    </div>
+    <div class="p-fin" id="h-fin" hidden>
+      <p class="p-nota" id="h-nota"></p>
+      <button type="button" class="boton p-otra" id="h-otra">Otra vez</button>
+    </div>
+    <button type="button" class="boton" id="h-ini">▶ Empezar</button>
+    <script type="application/json" id="h-datos">[{"a": "../audio/A1/A1-1-020.mp3", "t": "分からない", "p": "Wakara", "q": "", "r": "Wakaranai.", "k": "わからない。", "e": "No entiendo.", "g": "sv", "ok": "nai"}, {"a": "../audio/A1/A1-1-021.mp3", "t": "行かない", "p": "Ika", "q": "", "r": "Ikanai.", "k": "いかない。", "e": "No voy.", "g": "sv", "ok": "nai"}, {"a": "../audio/A1/A1-1-022.mp3", "t": "飲まない", "p": "Noma", "q": "", "r": "Nomanai.", "k": "のまない。", "e": "No bebo.", "g": "sv", "ok": "nai"}, {"a": "../audio/A1/A1-1-023.mp3", "t": "読まない", "p": "Yoma", "q": "", "r": "Yomanai.", "k": "よまない。", "e": "No leo.", "g": "sv", "ok": "nai"}, {"a": "../audio/A1/A1-1-024.mp3", "t": "話さない", "p": "<span class=\"t\">H<\/span>anasa", "q": "", "r": "<span class=\"t\">H<\/span>anasanai.", "k": "はなさない。", "e": "No hablo.", "g": "sv", "ok": "nai"}, {"a": "../audio/A1/A1-1-025.mp3", "t": "しない", "p": "Shi", "q": "", "r": "Shinai.", "k": "しない。", "e": "No lo hago.", "g": "sv", "ok": "nai"}, {"a": "../audio/A1/A1-1-026.mp3", "t": "来ない", "p": "Ko", "q": "", "r": "Konai.", "k": "こない。", "e": "No viene.", "g": "sv", "ok": "nai"}]</script>
+  </section>
 
   <nav class="pasos" aria-label="Lección anterior y siguiente">
     <a href="leccion-ds-neg-05.html" class="paso">← Anterior</a>
@@ -198,5 +216,6 @@
 </footer>
 <script src="../js/leccion.js"></script>
 <script src="../js/practica.js"></script>
+<script src="../js/hueco.js"></script>
 </body>
 </html>

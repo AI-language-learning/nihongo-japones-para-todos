@@ -170,6 +170,24 @@
     <button type="button" class="boton" id="p-ini">▶ Empezar</button>
     <script type="application/json" id="p-datos">[{"a": "../audio/A1/A1-5-001.mp3", "t": "コーヒーを飲む", "r": "Koo<span class=\"t\">h<\/span>ii o nomu.", "k": "コーヒーをのむ。", "e": "Tomo café."}, {"a": "../audio/A1/A1-5-002.mp3", "t": "ご飯を食べる", "r": "Go<span class=\"t\">h<\/span>an o taberu.", "k": "ごはんをたべる。", "e": "Como arroz."}, {"a": "../audio/A1/A1-5-003.mp3", "t": "本を読む", "r": "<span class=\"t\">H<\/span>on o yomu.", "k": "ほんをよむ。", "e": "Leo un libro."}, {"a": "../audio/A1/A1-5-004.mp3", "t": "音楽を聞く", "r": "Ongaku o kiku.", "k": "おんがくをきく。", "e": "Escucho música."}, {"a": "../audio/A1/A1-5-005.mp3", "t": "日本語を勉強する", "r": "Ni<span class=\"t\">h<\/span>ongo o benkyoo suru.", "k": "にほんごをべんきょうする。", "e": "Estudio japonés."}]</script>
   </section>
+  <section class="parte prueba" id="hueco">
+    <h2>Completa la frase <span class="h2-ja" lang="ja">穴埋め</span></h2>
+    <p>Lee qué significa la frase y elige la palabra que falta. Después la oirás completa.</p>
+    <div class="p-caja" id="h-caja" hidden>
+      <p class="p-cuenta" id="h-cuenta" aria-live="polite"></p>
+      <p class="h-es" id="h-es"></p>
+      <p class="h-fr" id="h-fr" lang="ja-Latn"></p>
+      <div class="p-ops h-ops" id="h-ops" role="group" aria-label="Opciones"></div>
+      <div class="p-res" id="h-res" aria-live="polite"></div>
+      <button type="button" class="paso paso-sig p-sig" id="h-sig" hidden>Siguiente →</button>
+    </div>
+    <div class="p-fin" id="h-fin" hidden>
+      <p class="p-nota" id="h-nota"></p>
+      <button type="button" class="boton p-otra" id="h-otra">Otra vez</button>
+    </div>
+    <button type="button" class="boton" id="h-ini">▶ Empezar</button>
+    <script type="application/json" id="h-datos">[{"a": "../audio/A1/A1-5-001.mp3", "t": "コーヒーを飲む", "p": "Koo<span class=\"t\">h<\/span>ii ", "q": " nomu.", "r": "Koo<span class=\"t\">h<\/span>ii o nomu.", "k": "コーヒーをのむ。", "e": "Tomo café.", "g": "p", "ok": "o"}, {"a": "../audio/A1/A1-5-002.mp3", "t": "ご飯を食べる", "p": "Go<span class=\"t\">h<\/span>an ", "q": " taberu.", "r": "Go<span class=\"t\">h<\/span>an o taberu.", "k": "ごはんをたべる。", "e": "Como arroz.", "g": "p", "ok": "o"}, {"a": "../audio/A1/A1-5-003.mp3", "t": "本を読む", "p": "<span class=\"t\">H<\/span>on ", "q": " yomu.", "r": "<span class=\"t\">H<\/span>on o yomu.", "k": "ほんをよむ。", "e": "Leo un libro.", "g": "p", "ok": "o"}, {"a": "../audio/A1/A1-5-004.mp3", "t": "音楽を聞く", "p": "Ongaku ", "q": " kiku.", "r": "Ongaku o kiku.", "k": "おんがくをきく。", "e": "Escucho música.", "g": "p", "ok": "o"}, {"a": "../audio/A1/A1-5-005.mp3", "t": "日本語を勉強する", "p": "Ni<span class=\"t\">h<\/span>ongo ", "q": " benkyoo suru.", "r": "Ni<span class=\"t\">h<\/span>ongo o benkyoo suru.", "k": "にほんごをべんきょうする。", "e": "Estudio japonés.", "g": "p", "ok": "o"}]</script>
+  </section>
 
   <nav class="pasos" aria-label="Lección anterior y siguiente">
     <a href="leccion-ds-crt-05.html" class="paso">← Anterior</a>
@@ -190,5 +208,6 @@
 </footer>
 <script src="../js/leccion.js"></script>
 <script src="../js/practica.js"></script>
+<script src="../js/hueco.js"></script>
 </body>
 </html>

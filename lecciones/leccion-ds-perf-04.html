@@ -112,6 +112,24 @@
     <button type="button" class="boton" id="p-ini">▶ Empezar</button>
     <script type="application/json" id="p-datos">[{"a": "../audio/A1/A1-2-013.mp3", "t": "雨だった", "r": "Ame datta.", "k": "あめだった。", "e": "Llovía."}, {"a": "../audio/A1/A1-2-014.mp3", "t": "夢だった", "r": "Yume datta.", "k": "ゆめだった。", "e": "Era un sueño."}, {"a": "../audio/A1/A1-2-015.mp3", "t": "休みだった", "r": "Yasumi datta.", "k": "やすみだった。", "e": "Era día libre."}]</script>
   </section>
+  <section class="parte prueba" id="hueco">
+    <h2>Completa la frase <span class="h2-ja" lang="ja">穴埋め</span></h2>
+    <p>Lee qué significa la frase y elige la palabra que falta. Después la oirás completa.</p>
+    <div class="p-caja" id="h-caja" hidden>
+      <p class="p-cuenta" id="h-cuenta" aria-live="polite"></p>
+      <p class="h-es" id="h-es"></p>
+      <p class="h-fr" id="h-fr" lang="ja-Latn"></p>
+      <div class="p-ops h-ops" id="h-ops" role="group" aria-label="Opciones"></div>
+      <div class="p-res" id="h-res" aria-live="polite"></div>
+      <button type="button" class="paso paso-sig p-sig" id="h-sig" hidden>Siguiente →</button>
+    </div>
+    <div class="p-fin" id="h-fin" hidden>
+      <p class="p-nota" id="h-nota"></p>
+      <button type="button" class="boton p-otra" id="h-otra">Otra vez</button>
+    </div>
+    <button type="button" class="boton" id="h-ini">▶ Empezar</button>
+    <script type="application/json" id="h-datos">[{"a": "../audio/A1/A1-2-013.mp3", "t": "雨だった", "p": "Ame ", "q": ".", "r": "Ame datta.", "k": "あめだった。", "e": "Llovía.", "g": "f", "ok": "datta"}, {"a": "../audio/A1/A1-2-014.mp3", "t": "夢だった", "p": "Yume ", "q": ".", "r": "Yume datta.", "k": "ゆめだった。", "e": "Era un sueño.", "g": "f", "ok": "datta"}, {"a": "../audio/A1/A1-2-015.mp3", "t": "休みだった", "p": "Yasumi ", "q": ".", "r": "Yasumi datta.", "k": "やすみだった。", "e": "Era día libre.", "g": "f", "ok": "datta"}]</script>
+  </section>
 
   <nav class="pasos" aria-label="Lección anterior y siguiente">
     <a href="leccion-ds-perf-03.html" class="paso">← Anterior</a>
@@ -132,5 +150,6 @@
 </footer>
 <script src="../js/leccion.js"></script>
 <script src="../js/practica.js"></script>
+<script src="../js/hueco.js"></script>
 </body>
 </html>

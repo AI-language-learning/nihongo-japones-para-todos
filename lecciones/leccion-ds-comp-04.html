@@ -165,6 +165,24 @@
     <button type="button" class="boton" id="p-ini">▶ Empezar</button>
     <script type="application/json" id="p-datos">[{"a": "../audio/A1/A1-5-016.mp3", "t": "図書館で勉強する", "r": "Toshokan de benkyoo suru.", "k": "としょかんでべんきょうする。", "e": "Estudio en la biblioteca."}, {"a": "../audio/A1/A1-5-017.mp3", "t": "バスで行く", "r": "Basu de iku.", "k": "バスでいく。", "e": "Voy en autobús."}, {"a": "../audio/A1/A1-5-018.mp3", "t": "日本語で話す", "r": "Ni<span class=\"t\">h<\/span>ongo de <span class=\"t\">h<\/span>anasu.", "k": "にほんごではなす。", "e": "Hablo en japonés."}, {"a": "../audio/A1/A1-5-019.mp3", "t": "カフェでコーヒーを飲む", "r": "Kafe de koo<span class=\"t\">h<\/span>ii o nomu.", "k": "カフェでコーヒーをのむ。", "e": "Bebo café en una cafetería."}]</script>
   </section>
+  <section class="parte prueba" id="hueco">
+    <h2>Completa la frase <span class="h2-ja" lang="ja">穴埋め</span></h2>
+    <p>Lee qué significa la frase y elige la palabra que falta. Después la oirás completa.</p>
+    <div class="p-caja" id="h-caja" hidden>
+      <p class="p-cuenta" id="h-cuenta" aria-live="polite"></p>
+      <p class="h-es" id="h-es"></p>
+      <p class="h-fr" id="h-fr" lang="ja-Latn"></p>
+      <div class="p-ops h-ops" id="h-ops" role="group" aria-label="Opciones"></div>
+      <div class="p-res" id="h-res" aria-live="polite"></div>
+      <button type="button" class="paso paso-sig p-sig" id="h-sig" hidden>Siguiente →</button>
+    </div>
+    <div class="p-fin" id="h-fin" hidden>
+      <p class="p-nota" id="h-nota"></p>
+      <button type="button" class="boton p-otra" id="h-otra">Otra vez</button>
+    </div>
+    <button type="button" class="boton" id="h-ini">▶ Empezar</button>
+    <script type="application/json" id="h-datos">[{"a": "../audio/A1/A1-5-016.mp3", "t": "図書館で勉強する", "p": "Toshokan ", "q": " benkyoo suru.", "r": "Toshokan de benkyoo suru.", "k": "としょかんでべんきょうする。", "e": "Estudio en la biblioteca.", "g": "p", "ok": "de"}, {"a": "../audio/A1/A1-5-017.mp3", "t": "バスで行く", "p": "Basu ", "q": " iku.", "r": "Basu de iku.", "k": "バスでいく。", "e": "Voy en autobús.", "g": "p", "ok": "de"}, {"a": "../audio/A1/A1-5-018.mp3", "t": "日本語で話す", "p": "Ni<span class=\"t\">h<\/span>ongo ", "q": " <span class=\"t\">h<\/span>anasu.", "r": "Ni<span class=\"t\">h<\/span>ongo de <span class=\"t\">h<\/span>anasu.", "k": "にほんごではなす。", "e": "Hablo en japonés.", "g": "p", "ok": "de"}, {"a": "../audio/A1/A1-5-019.mp3", "t": "カフェでコーヒーを飲む", "p": "Kafe de koo<span class=\"t\">h<\/span>ii ", "q": " nomu.", "r": "Kafe de koo<span class=\"t\">h<\/span>ii o nomu.", "k": "カフェでコーヒーをのむ。", "e": "Bebo café en una cafetería.", "g": "p", "ok": "o"}]</script>
+  </section>
 
   <nav class="pasos" aria-label="Lección anterior y siguiente">
     <a href="leccion-ds-comp-03.html" class="paso">← Anterior</a>
@@ -185,5 +203,6 @@
 </footer>
 <script src="../js/leccion.js"></script>
 <script src="../js/practica.js"></script>
+<script src="../js/hueco.js"></script>
 </body>
 </html>

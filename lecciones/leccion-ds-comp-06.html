@@ -128,6 +128,24 @@
     <button type="button" class="boton" id="p-ini">▶ Empezar</button>
     <script type="application/json" id="p-datos">[{"a": "../audio/A1/A1-5-023.mp3", "t": "猫が好きだ", "r": "Neko ga suki da.", "k": "ねこがすきだ。", "e": "Me gustan los gatos."}, {"a": "../audio/A1/A1-5-024.mp3", "t": "猫を飼う", "r": "Neko o kau.", "k": "ねこをかう。", "e": "Tengo un gato."}, {"a": "../audio/A1/A1-5-025.mp3", "t": "日本語が分かる", "r": "Ni<span class=\"t\">h<\/span>ongo ga wakaru.", "k": "にほんごがわかる。", "e": "Entiendo japonés."}, {"a": "../audio/A1/A1-5-026.mp3", "t": "この問題が難しい", "r": "Kono mondai ga mu<span class=\"t\">z<\/span>ukashii.", "k": "このもんだいがむずかしい。", "e": "Este problema es difícil."}]</script>
   </section>
+  <section class="parte prueba" id="hueco">
+    <h2>Completa la frase <span class="h2-ja" lang="ja">穴埋め</span></h2>
+    <p>Lee qué significa la frase y elige la palabra que falta. Después la oirás completa.</p>
+    <div class="p-caja" id="h-caja" hidden>
+      <p class="p-cuenta" id="h-cuenta" aria-live="polite"></p>
+      <p class="h-es" id="h-es"></p>
+      <p class="h-fr" id="h-fr" lang="ja-Latn"></p>
+      <div class="p-ops h-ops" id="h-ops" role="group" aria-label="Opciones"></div>
+      <div class="p-res" id="h-res" aria-live="polite"></div>
+      <button type="button" class="paso paso-sig p-sig" id="h-sig" hidden>Siguiente →</button>
+    </div>
+    <div class="p-fin" id="h-fin" hidden>
+      <p class="p-nota" id="h-nota"></p>
+      <button type="button" class="boton p-otra" id="h-otra">Otra vez</button>
+    </div>
+    <button type="button" class="boton" id="h-ini">▶ Empezar</button>
+    <script type="application/json" id="h-datos">[{"a": "../audio/A1/A1-5-023.mp3", "t": "猫が好きだ", "p": "Neko ", "q": " suki da.", "r": "Neko ga suki da.", "k": "ねこがすきだ。", "e": "Me gustan los gatos.", "g": "p", "ok": "ga"}, {"a": "../audio/A1/A1-5-024.mp3", "t": "猫を飼う", "p": "Neko ", "q": " kau.", "r": "Neko o kau.", "k": "ねこをかう。", "e": "Tengo un gato.", "g": "p", "ok": "o"}, {"a": "../audio/A1/A1-5-025.mp3", "t": "日本語が分かる", "p": "Ni<span class=\"t\">h<\/span>ongo ", "q": " wakaru.", "r": "Ni<span class=\"t\">h<\/span>ongo ga wakaru.", "k": "にほんごがわかる。", "e": "Entiendo japonés.", "g": "p", "ok": "ga"}, {"a": "../audio/A1/A1-5-026.mp3", "t": "この問題が難しい", "p": "Kono mondai ", "q": " mu<span class=\"t\">z<\/span>ukashii.", "r": "Kono mondai ga mu<span class=\"t\">z<\/span>ukashii.", "k": "このもんだいがむずかしい。", "e": "Este problema es difícil.", "g": "p", "ok": "ga"}]</script>
+  </section>
 
   <nav class="pasos" aria-label="Lección anterior y siguiente">
     <a href="leccion-ds-comp-05.html" class="paso">← Anterior</a>
@@ -148,5 +166,6 @@
 </footer>
 <script src="../js/leccion.js"></script>
 <script src="../js/practica.js"></script>
+<script src="../js/hueco.js"></script>
 </body>
 </html>

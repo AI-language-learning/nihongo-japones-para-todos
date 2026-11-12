@@ -225,3 +225,10 @@ body.ver-kata .kc-n{display:none}
 .p-fin{border:2px solid var(--line);border-radius:16px;padding:16px 18px;margin:10px 0;text-align:center}
 .p-nota{font-weight:800;font-size:1.1rem;margin:0 0 10px}
 .p-caja[hidden],.p-fin[hidden],.p-sig[hidden],#p-ini[hidden]{display:none}
+/* Completa la frase */
+.h-es{margin:0 0 6px;font-weight:800;font-size:1.05rem}
+.h-fr{margin:0 0 10px;font-size:1.25rem;font-weight:800;letter-spacing:.01em}
+.p-hueco{display:inline-block;min-width:2.4em;text-align:center;border-bottom:3px solid var(--kaki);color:var(--kaki);margin:0 .1em}
+.h-ops{grid-template-columns:repeat(2,1fr)}
+.h-op{text-align:center}
+.p-caja[hidden],.p-fin[hidden],#h-ini[hidden]{display:none}

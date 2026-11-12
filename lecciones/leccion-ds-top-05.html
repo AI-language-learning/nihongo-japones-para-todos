@@ -128,6 +128,24 @@
     <button type="button" class="boton" id="p-ini">▶ Empezar</button>
     <script type="application/json" id="p-datos">[{"a": "../audio/A1/A1-6-013.mp3", "t": "私は田中です", "r": "Watashi wa Tanaka des<span class=\"d\">u<\/span>.", "k": "わたしはたなかです。", "e": "Me llamo Tanaka."}, {"a": "../audio/A1/A1-6-014.mp3", "t": "私が田中です", "r": "Watashi ga Tanaka des<span class=\"d\">u<\/span>.", "k": "わたしがたなかです。", "e": "Soy yo Tanaka."}, {"a": "../audio/A1/A1-6-015.mp3", "t": "誰が来た？", "r": "Dare ga kita?", "k": "だれがきた？", "e": "¿Quién vino?"}, {"a": "../audio/A1/A1-6-016.mp3", "t": "田中さんが来た", "r": "Tanaka-san ga kita.", "k": "たなかさんがきた。", "e": "Ha llegado Tanaka."}]</script>
   </section>
+  <section class="parte prueba" id="hueco">
+    <h2>Completa la frase <span class="h2-ja" lang="ja">穴埋め</span></h2>
+    <p>Lee qué significa la frase y elige la palabra que falta. Después la oirás completa.</p>
+    <div class="p-caja" id="h-caja" hidden>
+      <p class="p-cuenta" id="h-cuenta" aria-live="polite"></p>
+      <p class="h-es" id="h-es"></p>
+      <p class="h-fr" id="h-fr" lang="ja-Latn"></p>
+      <div class="p-ops h-ops" id="h-ops" role="group" aria-label="Opciones"></div>
+      <div class="p-res" id="h-res" aria-live="polite"></div>
+      <button type="button" class="paso paso-sig p-sig" id="h-sig" hidden>Siguiente →</button>
+    </div>
+    <div class="p-fin" id="h-fin" hidden>
+      <p class="p-nota" id="h-nota"></p>
+      <button type="button" class="boton p-otra" id="h-otra">Otra vez</button>
+    </div>
+    <button type="button" class="boton" id="h-ini">▶ Empezar</button>
+    <script type="application/json" id="h-datos">[{"a": "../audio/A1/A1-6-013.mp3", "t": "私は田中です", "p": "Watashi ", "q": " Tanaka des<span class=\"d\">u<\/span>.", "r": "Watashi wa Tanaka des<span class=\"d\">u<\/span>.", "k": "わたしはたなかです。", "e": "Me llamo Tanaka.", "g": "p", "ok": "wa"}, {"a": "../audio/A1/A1-6-014.mp3", "t": "私が田中です", "p": "Watashi ", "q": " Tanaka des<span class=\"d\">u<\/span>.", "r": "Watashi ga Tanaka des<span class=\"d\">u<\/span>.", "k": "わたしがたなかです。", "e": "Soy yo Tanaka.", "g": "p", "ok": "ga"}, {"a": "../audio/A1/A1-6-015.mp3", "t": "誰が来た？", "p": "Dare ", "q": " kita?", "r": "Dare ga kita?", "k": "だれがきた？", "e": "¿Quién vino?", "g": "p", "ok": "ga"}, {"a": "../audio/A1/A1-6-016.mp3", "t": "田中さんが来た", "p": "Tanaka-san ", "q": " kita.", "r": "Tanaka-san ga kita.", "k": "たなかさんがきた。", "e": "Ha llegado Tanaka.", "g": "p", "ok": "ga"}]</script>
+  </section>
 
   <nav class="pasos" aria-label="Lección anterior y siguiente">
     <a href="leccion-ds-top-04.html" class="paso">← Anterior</a>
@@ -148,5 +166,6 @@
 </footer>
 <script src="../js/leccion.js"></script>
 <script src="../js/practica.js"></script>
+<script src="../js/hueco.js"></script>
 </body>
 </html>

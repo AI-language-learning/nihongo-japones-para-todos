@@ -452,6 +452,75 @@ def render_prueba(entries):
     <script type="application/json" id="p-datos">{datos}</script>
   </section>'''
 
+
+# ─────────────────────────────────────────────
+# COMPLETA LA FRASE (穴埋め): elegir la partícula o la forma que falta
+# ─────────────────────────────────────────────
+HUECO_PART = ("wa", "ga", "o", "ni", "de", "kara", "made")
+HUECO_FORMA = ("da", "desu", "datta", "nai", "nakatta")
+
+
+def _hueco_de(rom):
+    """Devuelve (grupo, palabra, antes, despues) para la primera palabra que sirve, o None."""
+    r = lectura(rom)
+    for grupo, lista in (("p", HUECO_PART), ("f", HUECO_FORMA)):
+        for pal in lista:
+            pat = re.compile(r"(?<![\w-])" + pal + r"(?![\w-])", re.I)
+            m = pat.findall(r)
+            if len(m) == 1:
+                x = pat.search(r)
+                return grupo, pal, r[:x.start()], r[x.end():]
+    # palabra suelta: terminación del adjetivo o del verbo
+    m = re.fullmatch(r"([A-Za-z-]+?)(kunakatta|kunai|katta)[.?!]?", r)
+    if m:
+        return "sa", m.group(2), m.group(1), ""
+    m = re.fullmatch(r"([A-Za-z-]+?)(nakatta|nai|masu|ta|da)[.?!]?", r)
+    if m and len(m.group(1)) >= 1:
+        return "sv", m.group(2), m.group(1), ""
+    return None
+
+
+def render_hueco(entries):
+    items, vistos = [], set()
+    for e in entries:
+        h = _hueco_de(e.get("romaji", ""))
+        es = _significado_corto(e.get("español", ""))
+        if not h or not es or e.get("romaji") in vistos:
+            continue
+        vistos.add(e.get("romaji"))
+        grupo, pal, antes, despues = h
+        mp3 = Path(e.get("audio_dir", "audio/A1")) / f"{e.get('id', '')}.mp3"
+        items.append({
+            "a": f"../{mp3.as_posix()}" if mp3.exists() else "",
+            "t": e.get("audio_text", sin_punto(e.get("japonés", ""))),
+            "p": lectura_html(antes), "q": lectura_html(despues),
+            "r": lectura_html(lectura(e.get("romaji", ""))),
+            "k": e.get("furigana", e.get("japonés", "")),
+            "e": es, "g": grupo, "ok": pal,
+        })
+    if len(items) < 2:
+        return ""
+    datos = json.dumps(items, ensure_ascii=False).replace("</", "<\\/")
+    return f'''
+  <section class="parte prueba" id="hueco">
+    <h2>Completa la frase <span class="h2-ja" lang="ja">穴埋め</span></h2>
+    <p>Lee qué significa la frase y elige la palabra que falta. Después la oirás completa.</p>
+    <div class="p-caja" id="h-caja" hidden>
+      <p class="p-cuenta" id="h-cuenta" aria-live="polite"></p>
+      <p class="h-es" id="h-es"></p>
+      <p class="h-fr" id="h-fr" lang="ja-Latn"></p>
+      <div class="p-ops h-ops" id="h-ops" role="group" aria-label="Opciones"></div>
+      <div class="p-res" id="h-res" aria-live="polite"></div>
+      <button type="button" class="paso paso-sig p-sig" id="h-sig" hidden>Siguiente →</button>
+    </div>
+    <div class="p-fin" id="h-fin" hidden>
+      <p class="p-nota" id="h-nota"></p>
+      <button type="button" class="boton p-otra" id="h-otra">Otra vez</button>
+    </div>
+    <button type="button" class="boton" id="h-ini">▶ Empezar</button>
+    <script type="application/json" id="h-datos">{datos}</script>
+  </section>'''
+
 # ─────────────────────────────────────────────
 # PÁGINA DE LECCIÓN
 # ─────────────────────────────────────────────
@@ -517,7 +586,7 @@ def render_page(conjunto, entries, bloque_titulo, bloque_num, prev_url, next_url
   <section class="parte">
     <h2>Cómo funciona</h2>{render_box("caja-sis", "El patrón", conjunto.get("sistematización", ""))}{nota_html}{render_vocab_table(entries)}
   </section>
-{render_kana_hoy(cid)}{render_prueba(entries)}
+{render_kana_hoy(cid)}{render_prueba(entries)}{render_hueco(entries)}
 
   <nav class="pasos" aria-label="Lección anterior y siguiente">
     {prev_btn}
@@ -530,6 +599,7 @@ def render_page(conjunto, entries, bloque_titulo, bloque_num, prev_url, next_url
 {FOOTER}
 <script src="../js/leccion.js"></script>
 <script src="../js/practica.js"></script>
+<script src="../js/hueco.js"></script>
 </body>
 </html>'''
 

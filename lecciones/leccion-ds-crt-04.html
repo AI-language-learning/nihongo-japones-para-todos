@@ -135,6 +135,24 @@
     <button type="button" class="boton" id="p-ini">▶ Empezar</button>
     <script type="application/json" id="p-datos">[{"a": "../audio/A1/A1-4-012.mp3", "t": "行きます", "r": "Ikimasu.", "k": "いきます。", "e": "Voy."}, {"a": "../audio/A1/A1-4-013.mp3", "t": "飲みます", "r": "Nomimasu.", "k": "のみます。", "e": "Lo tomo."}, {"a": "../audio/A1/A1-4-014.mp3", "t": "見ます", "r": "Mimasu.", "k": "みます。", "e": "Lo veo."}, {"a": "../audio/A1/A1-4-015.mp3", "t": "します", "r": "Shimasu.", "k": "します。", "e": "Lo hago."}, {"a": "../audio/A1/A1-4-021.mp3", "t": "来ます", "r": "Kimasu.", "k": "きます。", "e": "Viene."}]</script>
   </section>
+  <section class="parte prueba" id="hueco">
+    <h2>Completa la frase <span class="h2-ja" lang="ja">穴埋め</span></h2>
+    <p>Lee qué significa la frase y elige la palabra que falta. Después la oirás completa.</p>
+    <div class="p-caja" id="h-caja" hidden>
+      <p class="p-cuenta" id="h-cuenta" aria-live="polite"></p>
+      <p class="h-es" id="h-es"></p>
+      <p class="h-fr" id="h-fr" lang="ja-Latn"></p>
+      <div class="p-ops h-ops" id="h-ops" role="group" aria-label="Opciones"></div>
+      <div class="p-res" id="h-res" aria-live="polite"></div>
+      <button type="button" class="paso paso-sig p-sig" id="h-sig" hidden>Siguiente →</button>
+    </div>
+    <div class="p-fin" id="h-fin" hidden>
+      <p class="p-nota" id="h-nota"></p>
+      <button type="button" class="boton p-otra" id="h-otra">Otra vez</button>
+    </div>
+    <button type="button" class="boton" id="h-ini">▶ Empezar</button>
+    <script type="application/json" id="h-datos">[{"a": "../audio/A1/A1-4-012.mp3", "t": "行きます", "p": "Iki", "q": "", "r": "Ikimasu.", "k": "いきます。", "e": "Voy.", "g": "sv", "ok": "masu"}, {"a": "../audio/A1/A1-4-013.mp3", "t": "飲みます", "p": "Nomi", "q": "", "r": "Nomimasu.", "k": "のみます。", "e": "Lo tomo.", "g": "sv", "ok": "masu"}, {"a": "../audio/A1/A1-4-014.mp3", "t": "見ます", "p": "Mi", "q": "", "r": "Mimasu.", "k": "みます。", "e": "Lo veo.", "g": "sv", "ok": "masu"}, {"a": "../audio/A1/A1-4-015.mp3", "t": "します", "p": "Shi", "q": "", "r": "Shimasu.", "k": "します。", "e": "Lo hago.", "g": "sv", "ok": "masu"}, {"a": "../audio/A1/A1-4-021.mp3", "t": "来ます", "p": "Ki", "q": "", "r": "Kimasu.", "k": "きます。", "e": "Viene.", "g": "sv", "ok": "masu"}]</script>
+  </section>
 
   <nav class="pasos" aria-label="Lección anterior y siguiente">
     <a href="leccion-ds-crt-03.html" class="paso">← Anterior</a>
@@ -155,5 +173,6 @@
 </footer>
 <script src="../js/leccion.js"></script>
 <script src="../js/practica.js"></script>
+<script src="../js/hueco.js"></script>
 </body>
 </html>

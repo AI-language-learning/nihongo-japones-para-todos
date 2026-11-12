@@ -133,6 +133,24 @@
     <button type="button" class="boton" id="p-ini">▶ Empezar</button>
     <script type="application/json" id="p-datos">[{"a": "../audio/A1/A1-3-012.mp3", "t": "行かなかった", "r": "Ikanakatta.", "k": "いかなかった。", "e": "No fui."}, {"a": "../audio/A1/A1-3-013.mp3", "t": "飲まなかった", "r": "Nomanakatta.", "k": "のまなかった。", "e": "No lo tomé."}, {"a": "../audio/A1/A1-3-014.mp3", "t": "見なかった", "r": "Minakatta.", "k": "みなかった。", "e": "No lo vi."}, {"a": "../audio/A1/A1-3-015.mp3", "t": "しなかった", "r": "Shinakatta.", "k": "しなかった。", "e": "No lo hice."}, {"a": "../audio/A1/A1-3-017.mp3", "t": "来なかった", "r": "Konakatta.", "k": "こなかった。", "e": "No vino."}]</script>
   </section>
+  <section class="parte prueba" id="hueco">
+    <h2>Completa la frase <span class="h2-ja" lang="ja">穴埋め</span></h2>
+    <p>Lee qué significa la frase y elige la palabra que falta. Después la oirás completa.</p>
+    <div class="p-caja" id="h-caja" hidden>
+      <p class="p-cuenta" id="h-cuenta" aria-live="polite"></p>
+      <p class="h-es" id="h-es"></p>
+      <p class="h-fr" id="h-fr" lang="ja-Latn"></p>
+      <div class="p-ops h-ops" id="h-ops" role="group" aria-label="Opciones"></div>
+      <div class="p-res" id="h-res" aria-live="polite"></div>
+      <button type="button" class="paso paso-sig p-sig" id="h-sig" hidden>Siguiente →</button>
+    </div>
+    <div class="p-fin" id="h-fin" hidden>
+      <p class="p-nota" id="h-nota"></p>
+      <button type="button" class="boton p-otra" id="h-otra">Otra vez</button>
+    </div>
+    <button type="button" class="boton" id="h-ini">▶ Empezar</button>
+    <script type="application/json" id="h-datos">[{"a": "../audio/A1/A1-3-012.mp3", "t": "行かなかった", "p": "Ikana", "q": "", "r": "Ikanakatta.", "k": "いかなかった。", "e": "No fui.", "g": "sa", "ok": "katta"}, {"a": "../audio/A1/A1-3-013.mp3", "t": "飲まなかった", "p": "Nomana", "q": "", "r": "Nomanakatta.", "k": "のまなかった。", "e": "No lo tomé.", "g": "sa", "ok": "katta"}, {"a": "../audio/A1/A1-3-014.mp3", "t": "見なかった", "p": "Mina", "q": "", "r": "Minakatta.", "k": "みなかった。", "e": "No lo vi.", "g": "sa", "ok": "katta"}, {"a": "../audio/A1/A1-3-015.mp3", "t": "しなかった", "p": "Shina", "q": "", "r": "Shinakatta.", "k": "しなかった。", "e": "No lo hice.", "g": "sa", "ok": "katta"}, {"a": "../audio/A1/A1-3-017.mp3", "t": "来なかった", "p": "Kona", "q": "", "r": "Konakatta.", "k": "こなかった。", "e": "No vino.", "g": "sa", "ok": "katta"}]</script>
+  </section>
 
   <nav class="pasos" aria-label="Lección anterior y siguiente">
     <a href="leccion-ds-pneg-03.html" class="paso">← Anterior</a>
@@ -153,5 +171,6 @@
 </footer>
 <script src="../js/leccion.js"></script>
 <script src="../js/practica.js"></script>
+<script src="../js/hueco.js"></script>
 </body>
 </html>

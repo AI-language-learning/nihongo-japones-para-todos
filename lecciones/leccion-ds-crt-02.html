@@ -122,6 +122,24 @@
     <button type="button" class="boton" id="p-ini">▶ Empezar</button>
     <script type="application/json" id="p-datos">[{"a": "../audio/A1/A1-4-005.mp3", "t": "暑いです", "r": "Atsui des<span class=\"d\">u<\/span>.", "k": "あついです。", "e": "Hace calor."}, {"a": "../audio/A1/A1-4-006.mp3", "t": "おいしいです", "r": "Oishii des<span class=\"d\">u<\/span>.", "k": "おいしいです。", "e": "Está rico."}, {"a": "../audio/A1/A1-4-007.mp3", "t": "難しいです", "r": "Mu<span class=\"t\">z<\/span>ukashii des<span class=\"d\">u<\/span>.", "k": "むずかしいです。", "e": "Es difícil."}, {"a": "../audio/A1/A1-4-008.mp3", "t": "いいです", "r": "Ii des<span class=\"d\">u<\/span>.", "k": "いいです。", "e": "Está bien."}]</script>
   </section>
+  <section class="parte prueba" id="hueco">
+    <h2>Completa la frase <span class="h2-ja" lang="ja">穴埋め</span></h2>
+    <p>Lee qué significa la frase y elige la palabra que falta. Después la oirás completa.</p>
+    <div class="p-caja" id="h-caja" hidden>
+      <p class="p-cuenta" id="h-cuenta" aria-live="polite"></p>
+      <p class="h-es" id="h-es"></p>
+      <p class="h-fr" id="h-fr" lang="ja-Latn"></p>
+      <div class="p-ops h-ops" id="h-ops" role="group" aria-label="Opciones"></div>
+      <div class="p-res" id="h-res" aria-live="polite"></div>
+      <button type="button" class="paso paso-sig p-sig" id="h-sig" hidden>Siguiente →</button>
+    </div>
+    <div class="p-fin" id="h-fin" hidden>
+      <p class="p-nota" id="h-nota"></p>
+      <button type="button" class="boton p-otra" id="h-otra">Otra vez</button>
+    </div>
+    <button type="button" class="boton" id="h-ini">▶ Empezar</button>
+    <script type="application/json" id="h-datos">[{"a": "../audio/A1/A1-4-005.mp3", "t": "暑いです", "p": "Atsui ", "q": ".", "r": "Atsui des<span class=\"d\">u<\/span>.", "k": "あついです。", "e": "Hace calor.", "g": "f", "ok": "desu"}, {"a": "../audio/A1/A1-4-006.mp3", "t": "おいしいです", "p": "Oishii ", "q": ".", "r": "Oishii des<span class=\"d\">u<\/span>.", "k": "おいしいです。", "e": "Está rico.", "g": "f", "ok": "desu"}, {"a": "../audio/A1/A1-4-007.mp3", "t": "難しいです", "p": "Mu<span class=\"t\">z<\/span>ukashii ", "q": ".", "r": "Mu<span class=\"t\">z<\/span>ukashii des<span class=\"d\">u<\/span>.", "k": "むずかしいです。", "e": "Es difícil.", "g": "f", "ok": "desu"}, {"a": "../audio/A1/A1-4-008.mp3", "t": "いいです", "p": "Ii ", "q": ".", "r": "Ii des<span class=\"d\">u<\/span>.", "k": "いいです。", "e": "Está bien.", "g": "f", "ok": "desu"}]</script>
+  </section>
 
   <nav class="pasos" aria-label="Lección anterior y siguiente">
     <a href="leccion-ds-crt-01.html" class="paso">← Anterior</a>
@@ -142,5 +160,6 @@
 </footer>
 <script src="../js/leccion.js"></script>
 <script src="../js/practica.js"></script>
+<script src="../js/hueco.js"></script>
 </body>
 </html>
