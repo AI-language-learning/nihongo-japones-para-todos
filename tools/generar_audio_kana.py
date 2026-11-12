@@ -5,9 +5,11 @@ Escribe audio/kana/<codepoint hex del hiragana>.mp3"""
 import glob, os, subprocess, sys, tempfile
 
 VOZ = 29
-LECTURA = {"は": "ハ", "へ": "ヘ"}   # solos, la voz los leería como partículas (wa, e)
+LECTURA = {"は": "ハ", "へ": "ヘ",   # solos, la voz los leería como partículas (wa, e)
+           "ぢゅ": "ジュ", "ぢょ": "ジョ"}   # si no, la voz los lee en dos moras (ji + yu)
 FILAS = ["あいうえお", "かきくけこ", "さしすせそ", "たちつてと", "なにぬねの", "はひふへほ", "まみむめも",
          "や　ゆ　よ", "らりるれろ", "わ　　　を", "ん", "がぎぐげご", "ざじずぜぞ", "だぢづでど", "ばびぶべぼ", "ぱぴぷぺぽ"]
+AJUSTE = {"か": (0.075, 5.85)}   # (largo de la consonante, tono); elegido de oído
 YOON = ["き", "し", "ち", "に", "ひ", "み", "り", "ぎ", "じ", "ぢ", "び", "ぴ"]
 
 
@@ -34,7 +36,10 @@ def main():
     n = 0
     for u in unidades():
         destino = f"audio/kana/{nombre(u)}.mp3"
-        aq = syn.create_audio_query(LECTURA.get(u, u), VOZ)
+        aq = syn.create_audio_query("カ" if u in AJUSTE else LECTURA.get(u, u), VOZ)
+        if u in AJUSTE:   # か: con los valores por defecto casi no se oye la vocal
+            m0 = aq.accent_phrases[0].moras[0]
+            m0.consonant_length, m0.pitch = AJUSTE[u]
         wav = syn.synthesis(aq, VOZ)
         with tempfile.NamedTemporaryFile(suffix=".wav", delete=False) as tmp:
             tmp.write(wav)
