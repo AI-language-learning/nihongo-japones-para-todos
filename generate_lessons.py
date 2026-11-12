@@ -200,7 +200,7 @@ UNIDADES = [
     (1, "Los sonidos", "Leer el alfabeto japonés tal como lo escribimos aquí.",
      "Hai.", "Sí.", None, "../como-se-lee.html"),
     (2, "El esqueleto de la frase", "Ver cómo se arma una frase japonesa, de dentro hacia fuera.",
-     "", "", None, None),
+     "Watashi wa gohan o taberu.", "Yo voy a comer arroz.", None, "../lecciones/leccion-ds-esq-01.html"),
     (3, "El núcleo de la frase", "Decir frases completas con una sola palabra.",
      "Samui.", "¡Qué frío!", 0, None),
     (4, "Decir que no", "Negar lo que dices: no hace frío, no estoy bien, no voy.",
@@ -251,7 +251,7 @@ def render_example_card(entry):
     note  = entry.get("notas_hispanohablante") or ""
     lec   = lectura(entry.get("romaji", ""))
 
-    mp3 = Path("audio/A1") / f"{entry.get('id', '')}.mp3"
+    mp3 = Path(entry.get("audio_dir", "audio/A1")) / f"{entry.get('id', '')}.mp3"
     archivo = f' data-audio="../{mp3.as_posix()}"' if mp3.exists() else ""
 
     pista = ""
@@ -421,7 +421,7 @@ def render_page(conjunto, entries, bloque_titulo, bloque_num, prev_url, next_url
                 if next_url else "<span></span>")
     lead = f'\n    <p class="lead">{esc(objetivo)}</p>' if objetivo else ""
     ayuda_inicial = ('\n    <p class="ayuda-ini">¿No sabes cómo leerlo? Mira primero <a href="../como-se-lee.html">Cómo se lee</a>: son 10 minutos.</p>'
-                     if not prev_url else "")
+                     if cid in ("DS-ESQ-01", "DS-CORE-01") else "")
 
     return f'''<!DOCTYPE html>
 <html lang="es">
@@ -518,8 +518,10 @@ def render_index(all_conjuntos):
         if bloque is not None:
             continue
         if enlace:
-            fila = (f'        <li><a href="{esc(enlace)}"><span class="li-t">Cómo se lee el alfabeto japonés</span>'
-                    f'<span class="li-m">1 página</span></a></li>')
+            nombre = "Una frase crece como una cebolla" if "leccion-" in enlace else "Cómo se lee el alfabeto japonés"
+            medida = "4 frases" if "leccion-" in enlace else "1 página"
+            fila = (f'        <li><a href="{esc(enlace.replace("../lecciones/", ""))}"><span class="li-t">{nombre}</span>'
+                    f'<span class="li-m">{medida}</span></a></li>')
         else:
             fila = ('        <li class="pronto"><span class="li-pronto"><span class="li-t">Cómo se arma una frase</span>'
                     '<span class="li-m">En preparación</span></span></li>')
@@ -536,6 +538,7 @@ def render_index(all_conjuntos):
     secciones = previas + secciones
 
     total   = sum(len(items) for _, _, items in bloques)
+    total  += 1 if Path('database/esqueleto/unidad-2.json').exists() else 0
     primera = bloques[0][2][0][2] if bloques else "#"
 
     return f'''<!DOCTYPE html>
@@ -585,7 +588,7 @@ def render_mapa(todos):
             href = primera
             estado = ""
         elif enlace:
-            href, meta, estado = enlace, "Una página", ""
+            href, meta, estado = enlace, ("1 lección" if "leccion-" in enlace else "Una página"), ""
         else:
             href, meta, estado = None, "En preparación", " pronto"
         ej = (f'<p class="u-ej"><span lang="ja-Latn">{lectura_html(ro)}</span> <span class="u-es">{esc(es)}</span></p>'
@@ -850,6 +853,22 @@ def comprobar_notacion(all_conjuntos):
     return dudas
 
 
+def generar_esqueleto():
+    """Unidad 2 (database/esqueleto/unidad-2.json): una lección propia, fuera de la base A1."""
+    p = Path("database/esqueleto/unidad-2.json")
+    if not p.exists():
+        return
+    db = json.loads(p.read_text(encoding="utf-8"))
+    entradas = {e["id"]: dict(e, audio_dir="audio/esqueleto") for e in db["entradas"]}
+    for c in db["conjuntos"]:
+        conj = dict(c, objetivo=c["lead"], nota_hispanohablante=c["nota"])
+        entries = [entradas[i] for i in c["ids_entradas"]]
+        html = render_page(conj, entries, db["título"], -1, "../como-se-lee.html",
+                           "leccion-ds-core-01.html")
+        (OUTPUT_DIR / f"leccion-{conjunto_to_slug(c['id'])}.html").write_text(html, encoding="utf-8")
+        print(f"  ✓  leccion-{conjunto_to_slug(c['id'])}.html  (unidad 2)")
+
+
 def main():
     print("🔨 Generando lecciones HTML...\n")
     todos = build_all_conjuntos()
@@ -858,12 +877,13 @@ def main():
 
     for i, (titulo, num, conj, entries) in enumerate(todos):
         filename = f"leccion-{conjunto_to_slug(conj['id'])}.html"
-        prev_url = f"leccion-{conjunto_to_slug(todos[i-1][2]['id'])}.html" if i > 0 else None
+        prev_url = f"leccion-{conjunto_to_slug(todos[i-1][2]['id'])}.html" if i > 0 else "leccion-ds-esq-01.html"
         next_url = f"leccion-{conjunto_to_slug(todos[i+1][2]['id'])}.html" if i < n - 1 else None
         html = render_page(conj, entries, titulo, num, prev_url, next_url)
         (OUTPUT_DIR / filename).write_text(html, encoding="utf-8")
         print(f"  ✓  {filename}  ({len(entries)} ejemplos)")
 
+    generar_esqueleto()
     (OUTPUT_DIR / "index.html").write_text(render_index(todos), encoding="utf-8")
     print("  ✓  index.html  (índice de lecciones)")
     Path("aprender").mkdir(exist_ok=True)

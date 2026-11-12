@@ -1,0 +1,54 @@
+{
+  "unidad": 2,
+  "título": "El esqueleto de la frase",
+  "nota": "Unidad 2. Contenido propio, fuera de database/A1: sus frases todavía no cuentan en la validación de los 180 ejemplos. validado: false.",
+  "conjuntos": [
+    {
+      "id": "DS-ESQ-01",
+      "título": "Una frase crece como una cebolla",
+      "lead": "Empieza con una sola palabra y añade capas. En cada paso ya tienes una frase completa.",
+      "descubrimiento": "Escucha las cuatro frases en orden.\n\n¿Qué se añade en cada paso? ¿Cambia algo de lo que ya estaba?",
+      "sistematización": "Todo gira en torno al **núcleo**: la palabra del final (taberu). Es lo único imprescindible.\n\nAlrededor puedes añadir capas. **Complemento + posposición**: gohan **o** taberu (qué comes). **Tema**: watashi **wa** (de quién hablas). **Final**: **yo** (tu actitud hacia quien te escucha).\n\nEn el curso verás cada capa con calma: el núcleo (unidades 3 a 7), los complementos (8), el tema (9) y el final (10).",
+      "nota": "En español el verbo cambia según quién lo hace: «como», «comes». En japonés, taberu no cambia. Quién come lo dice el tema o la situación.",
+      "ids_entradas": ["E2-001", "E2-002", "E2-003", "E2-004"]
+    }
+  ],
+  "entradas": [
+    {
+      "id": "E2-001", "conjunto": "DS-ESQ-01", "clase": "V",
+      "japonés": "食べる。", "furigana": "たべる。", "romaji": "Taberu.",
+      "español": "Voy a comer.", "audio_text": "食べる",
+      "situación": {"descripción": "Alguien te ofrece comida. Aceptas."},
+      "notas_hispanohablante": "Paso 1. Una sola palabra, el núcleo, ya es una frase.",
+      "vocabulario": [{"jp": "食べる", "furigana": "たべる", "es": "comer", "clase": "V"}],
+      "calidad": {"validado": false}
+    },
+    {
+      "id": "E2-002", "conjunto": "DS-ESQ-01", "clase": "V",
+      "japonés": "ご飯を食べる。", "furigana": "ごはんをたべる。", "romaji": "Gohan o taberu.",
+      "español": "Voy a comer arroz.", "audio_text": "ご飯を食べる",
+      "situación": {"descripción": "Te preguntan qué vas a comer. Dices qué."},
+      "notas_hispanohablante": "Paso 2. Añadimos qué comes. O va detrás de gohan.",
+      "vocabulario": [{"jp": "ご飯", "furigana": "ごはん", "es": "arroz / comida", "clase": "N"}],
+      "calidad": {"validado": false}
+    },
+    {
+      "id": "E2-003", "conjunto": "DS-ESQ-01", "clase": "V",
+      "japonés": "私はご飯を食べる。", "furigana": "わたしはごはんをたべる。", "romaji": "Watashi wa gohan o taberu.",
+      "español": "Yo voy a comer arroz.", "audio_text": "私はご飯を食べる",
+      "situación": {"descripción": "Cada uno cuenta lo que va a comer. Tú hablas de ti."},
+      "notas_hispanohablante": "Paso 3. Añadimos el tema: watashi wa. La frase anterior sigue ahí dentro.",
+      "vocabulario": [{"jp": "私", "furigana": "わたし", "es": "yo", "clase": "N"}],
+      "calidad": {"validado": false}
+    },
+    {
+      "id": "E2-004", "conjunto": "DS-ESQ-01", "clase": "V",
+      "japonés": "私はご飯を食べるよ。", "furigana": "わたしはごはんをたべるよ。", "romaji": "Watashi wa gohan o taberu yo.",
+      "español": "Yo voy a comer arroz, te lo digo.", "audio_text": "私はご飯を食べるよ",
+      "situación": {"descripción": "Tus amigos dudan. Tú lo tienes claro y lo dices."},
+      "notas_hispanohablante": "Paso 4. Añadimos yo al final: «te lo digo». De nuevo, la frase anterior sigue intacta.",
+      "vocabulario": [],
+      "calidad": {"validado": false}
+    }
+  ]
+}
