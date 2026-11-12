@@ -10,9 +10,14 @@
       ini = $('h-ini'), nota = $('h-nota'), otra = $('h-otra');
   var POOL = { p: ['wa', 'ga', 'o', 'ni', 'de', 'kara', 'made'], f: ['da', 'desu', 'datta', 'nai', 'nakatta'],
     sa: ['kunai', 'katta', 'kunakatta', 'i'], sv: ['masu', 'nai', 'nakatta', 'ta', 'da'] };
-  var PAR = { wa: 'ga', ga: 'wa', da: 'desu', desu: 'da' };
-  var PAR_V = { ta: 'da', da: 'ta' };
-  function par(it) { return it.g === 'sv' ? PAR_V[it.ok] : (it.g === 'p' || it.g === 'f') ? PAR[it.ok] : null; }
+  // Pares que también serían correctos (solo cambia el tiempo o el registro): nunca van juntos.
+  var PAR = { wa: ['ga'], ga: ['wa'],
+    da: ['desu', 'datta'], desu: ['da', 'datta'], datta: ['da', 'desu'],
+    nai: ['nakatta'], nakatta: ['nai'],
+    kunai: ['kunakatta'], kunakatta: ['kunai'], katta: ['i'], i: ['katta'],
+    ta: ['da'] };
+  var PAR_V = { ta: ['da'], da: ['ta'] };
+  function par(it) { return (it.g === 'sv' && PAR_V[it.ok]) || PAR[it.ok] || []; }
   function rot(it, o) { return (it.g === 'sa' || it.g === 'sv') ? '-' + o : o; }
   var orden, i, aciertos, respondida, audio = null;
 
@@ -44,7 +49,7 @@
     es.textContent = it.e;
     fr.innerHTML = it.p + '<span class="p-hueco">＿＿</span>' + it.q;
     res.innerHTML = ''; sig.hidden = true;
-    var malos = POOL[it.g].filter(function (x) { return x !== it.ok && x !== par(it); });
+    var malos = POOL[it.g].filter(function (x) { return x !== it.ok && par(it).indexOf(x) < 0; });
     var opciones = barajar(barajar(malos).slice(0, 3).concat([it.ok]));
     ops.innerHTML = '';
     opciones.forEach(function (o) {
