@@ -1,0 +1,73 @@
+{
+  "_nota": "Textos para estudiantes (tú, frases cortas). Sustituyen a título/objetivo/descubrimiento/sistematización/nota_hispanohablante del conjunto al generar las lecciones. El original de la base de datos no se modifica. Párrafos separados por línea en blanco; **negrita** permitida. Pendiente de revisión por la colaboradora (español).",
+  "DS-CORE-01": {
+    "título": "Una palabra ya es una frase",
+    "lead": "En japonés puedes decir mucho con muy poco. Escucha estas cuatro frases y repítelas en voz alta.",
+    "descubrimiento": "¿Te has fijado? Ninguna frase dice «yo», «esto» ni «hace». La situación ya lo dice.\n\nLas cuatro son frases completas, pero cada una está hecha de una forma distinta. ¿Cuál se parece más al español? ¿Cuál te sorprende más?",
+    "sistematización": "Cada frase tiene un **núcleo**: la palabra que lleva el mensaje. Hay cuatro tipos de núcleo, y los usaremos todo el curso:\n\n**A** (adjetivo): samui. **Na** (palabra descriptiva con da): shizuka da. **N** (nombre con da): ame da. **V** (verbo): taberu.\n\nLas cuatro funcionan solas. No necesitas «ser» ni «estar».",
+    "nota": "En español casi siempre hace falta un verbo: «hace frío», «está tranquilo», «llueve». En japonés, un adjetivo o un nombre ya bastan para hacer una frase."
+  },
+  "DS-CORE-02": {
+    "título": "Samui, oishii, itai: adjetivos que hablan solos",
+    "lead": "Cuando algo hace frío, sabe rico o duele, en japonés lo dices con una sola palabra.",
+    "descubrimiento": "Mira estas frases: samui, atsui, nemui, itai, oishii. Cada una es una frase completa.\n\nEn español usas verbos: «hace frío», «tengo sueño», «me duele». ¿Qué tienen en común todas las palabras japonesas?",
+    "sistematización": "Todas terminan en **-i**. Esa -i es la marca de los adjetivos de clase **A**.\n\nUn adjetivo A es un núcleo completo. Además cambia de forma él solo: takai (es caro), takakunai (no es caro), takakatta (era caro). Lo verás en las próximas unidades.",
+    "nota": "Donde el español usa «hace», «está» o «tengo», el japonés usa solo el adjetivo. Nemui significa «tengo sueño» sin ningún otro verbo."
+  },
+  "DS-CORE-03": {
+    "título": "Shizuka da: palabra descriptiva + da",
+    "lead": "Algunas palabras necesitan un pequeño compañero para cerrar la frase: da.",
+    "descubrimiento": "Escucha: shizuka da, genki da, suki da, kirei da. Todas llevan da al final.\n\nLo que cambia es la primera palabra (shizuka, genki, suki, kirei). Da siempre es igual. ¿Cuál es el núcleo de la frase?",
+    "sistematización": "El núcleo es la primera palabra: shizuka, genki, suki. Son de clase **Na**.\n\n**Da** es un pequeño cierre que convierte la palabra en frase. No cambia nunca de significado: sirve para declarar.\n\nLas palabras Na no terminan en -i, y por eso necesitan da.",
+    "nota": "Da se parece a «es» o «está», pero no es un verbo: no cambia según la persona. Quien habla o de quién se habla lo dice la situación."
+  },
+  "DS-CORE-04": {
+    "título": "Ame da: un nombre también es una frase",
+    "lead": "Con un nombre y da ya puedes decir quién eres o qué pasa.",
+    "descubrimiento": "Escucha: ame da, gakusei da, yasumi da. Cada frase tiene un nombre y da.\n\nEn español no decimos «es lluvia»: decimos «llueve». En japonés, ame da es una frase normal. ¿Qué crees que hace da aquí?",
+    "sistematización": "Las palabras como ame (lluvia), gakusei (estudiante) y yasumi (día libre) son de clase **N**.\n\nUn nombre solo no cierra una frase. Con **da** sí: ame da, «llueve».\n\nDa no es el verbo «ser». Es el cierre de la frase, y lo usan las clases Na y N.",
+    "nota": "En español, «Soy estudiante» necesita el verbo «ser». En japonés dices gakusei da: nombre + da. No hay ningún verbo «ser» escondido."
+  },
+  "DS-CORE-05": {
+    "título": "Taberu, iku, neru: el verbo no dice quién",
+    "lead": "El verbo japonés no cambia según quién lo hace. Taberu vale para ti, para mí y para todos.",
+    "descubrimiento": "Escucha: taberu, iku, neru, kaeru. En español cada verbo dice la persona: «como», «voy», «me duermo», «vuelvo».\n\nEn japonés no. Entonces, ¿cómo sabes quién come o quién va?",
+    "sistematización": "El verbo es la clase **V**: el cuarto tipo de núcleo.\n\nComo A, Na y N, forma una frase completa sin decir quién. La situación lo aclara.\n\nEl verbo tiene sus propios cambios de forma, y no usa da. Hay dos tipos principales: tipo **-u** (iku) y tipo **-ru** (taberu). En otros materiales se llaman «Grupo 1» y «Grupo 2».",
+    "nota": "Taberu puede ser «como», «comes», «come» o «comemos». Si preguntas «¿Taberu?» a alguien, es «¿Comes?». La persona la pone la situación."
+  },
+  "DS-CORE-06": {
+    "título": "Las cuatro clases, una al lado de otra",
+    "lead": "Compara las cuatro clases y descubre cuándo aparece da y cuándo no.",
+    "descubrimiento": "Mira los cuatro grupos: A sin da, Na con da, N con da, V sin da.\n\n¿Qué patrón ves con da? ¿Por qué crees que A y V no lo llevan?",
+    "sistematización": "**A** y **V** se bastan solos: tienen su propia forma para cerrar la frase. Por eso no llevan da.\n\n**Na** y **N** no la tienen. Necesitan **da** para cerrar la frase.\n\nLas cuatro clases son iguales de importantes. Ninguna es la «básica».",
+    "nota": "En las cuatro clases, quién habla o de quién se habla lo dice la situación, no la gramática. Ese es el gran cambio respecto al español."
+  },
+  "_bloques": {
+    "0": "El núcleo de la frase"
+  },
+  "_notas_ejemplos": {
+    "A1-0-001": "En español dices «hace frío». En japonés, samui ya es la frase entera.",
+    "A1-0-002": "Shizuka da es «está tranquilo» sin ningún «estar». Da no es un verbo.",
+    "A1-0-003": "En español dices «llueve». En japonés, ame es «lluvia» y da cierra la frase.",
+    "A1-0-004": "Taberu vale para «como», «comes», «come»… Quién come lo dice la situación.",
+    "A1-0-005": "Atsui es «hace calor». Una sola palabra basta.",
+    "A1-0-006": "Nemui es «tengo sueño». En japonés el sueño es una cualidad, no algo que «tienes».",
+    "A1-0-007": "Itai es «duele». En español es un verbo; en japonés es un adjetivo, como samui.",
+    "A1-0-008": "Oishii es una frase completa: «¡qué rico!».",
+    "A1-0-009": "Tanoshii es «es divertido», sin «ser».",
+    "A1-0-010": "Muzukashii es «es difícil». Termina en -i, como todos los A.",
+    "A1-0-011": "Genki junta ideas que en español van separadas: estar bien, con energía, sano.",
+    "A1-0-012": "Suki da es «me gusta». No hay un verbo «gustar»: suki describe lo que sientes.",
+    "A1-0-013": "Taihen da puede ser «qué difícil», «qué horror» o «vaya lío». Depende de la situación.",
+    "A1-0-014": "Kirei termina en -i, pero es Na, no A. Por eso lleva da.",
+    "A1-0-015": "Joozu da se dice de otras personas: «lo hace muy bien». De ti mismo suena presumido.",
+    "A1-0-016": "Honmono da es «es auténtico»: un nombre y da.",
+    "A1-0-017": "Gakusei da es «soy estudiante», sin «ser». Más adelante añadiremos «yo» y la cortesía.",
+    "A1-0-018": "Yasumi da es «es día libre»: un nombre y da.",
+    "A1-0-019": "Uso da también sirve para reaccionar: «¡mentira!», «¡no puede ser!».",
+    "A1-0-020": "Saikoo da se oye mucho al hablar: «¡genial!», «¡lo mejor!».",
+    "A1-0-021": "Iku es «voy». Es un verbo, pero se basta solo, igual que samui o ame da.",
+    "A1-0-027": "Kirai da es lo contrario de suki da. Las dos son Na y ninguna usa «gustar».",
+    "A1-0-029": "Wakaru es «entiendo». En japonés es más bien «se aclara»: el sentido te llega."
+  }
+}

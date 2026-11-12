@@ -14,6 +14,8 @@ Presentación (decidida el 2026-11-11):
   - Notación «Hepburn con señales»: letras h, j, z y g(+e/i) marcadas,
     vocales largas dobles, u débil de desu/masu atenuada, ん = m ante b/p/m.
   - Estilos en css/aprender.css, comportamiento en js/leccion.js.
+  - Audio: audio/A1/<id>.mp3 (tools/generar_audio.py). Si falta el archivo,
+    el botón usa la voz del navegador.
 No editar a mano los HTML de lecciones/: se regeneran.
 """
 
@@ -202,7 +204,7 @@ FOOTER = '''<footer class="pie">
     <a href="../herramientas/kana.html">Kana</a>
     <a href="../gramatica/index.html">Para profes y curiosos</a>
   </nav>
-  <p>日本語 — Japonés para Todos</p>
+  <p>日本語 — Japonés para Todos · Voz: VOICEVOX:No.7</p>
 </footer>'''
 
 
@@ -219,6 +221,9 @@ def render_example_card(entry):
     note  = entry.get("notas_hispanohablante") or ""
     lec   = lectura(entry.get("romaji", ""))
 
+    mp3 = Path("audio/A1") / f"{entry.get('id', '')}.mp3"
+    archivo = f' data-audio="../{mp3.as_posix()}"' if mp3.exists() else ""
+
     pista = ""
     if entry.get("bloque") in BLOQUES_CON_PISTA and tiene_trampa(lec):
         pista = f'\n      <p class="ej-pista">Suena como «{esc(suena_como(lec))}»</p>'
@@ -231,15 +236,20 @@ def render_example_card(entry):
       <p class="ej-ka" lang="ja">{esc(fur)}</p>
       <p class="ej-kj" lang="ja">{esc(jp)}</p>
       <p class="ej-es">{esc(es)}</p>{pista}
-      <button type="button" class="oir" data-text="{esc(audio)}">▶ Escuchar</button>{nota}
+      <button type="button" class="oir" data-text="{esc(audio)}"{archivo}>▶ Escuchar</button>{nota}
     </article>'''
 
 
 def render_box(clase_css, etiqueta, text):
     if not text:
         return ""
-    parts = re.split(r"(?=\d+\.\s)", text.strip())
-    inner = "\n".join(f"      <p>{esc(p.strip())}</p>" for p in parts if p.strip())
+    if "\n\n" in text:
+        parts = text.strip().split("\n\n")
+    else:
+        parts = re.split(r"(?=\d+\.\s)", text.strip())
+    def fmt(p):
+        return re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", esc(p.strip()))
+    inner = "\n".join(f"      <p>{fmt(p)}</p>" for p in parts if p.strip())
     return f'''
     <div class="caja {clase_css}">
       <p class="caja-etq">{etiqueta}</p>
@@ -435,9 +445,40 @@ def render_index(all_conjuntos):
 # ─────────────────────────────────────────────
 # MAIN
 # ─────────────────────────────────────────────
+def _aprendiz_crudo():
+    p = Path("database/A1/aprendiz.json")
+    if not p.exists():
+        return {}
+    with open(p, encoding="utf-8") as f:
+        return json.load(f)
+
+
+def cargar_aprendiz():
+    """Textos para estudiantes (database/A1/aprendiz.json), por id de conjunto."""
+    return {k: v for k, v in _aprendiz_crudo().items() if not k.startswith("_")}
+
+
+def con_texto_aprendiz(conj, aprendiz):
+    a = aprendiz.get(conj.get("id"))
+    if not a:
+        return conj
+    c = dict(conj)
+    for destino, origen in (("título", "título"), ("objetivo", "lead"),
+                            ("descubrimiento", "descubrimiento"),
+                            ("sistematización", "sistematización"),
+                            ("nota_hispanohablante", "nota")):
+        if a.get(origen):
+            c[destino] = a[origen]
+    return c
+
+
 def build_all_conjuntos():
     """[(título del bloque, nº de bloque, conjunto, [entradas])] en orden."""
     todos = []
+    aprendiz = cargar_aprendiz()
+    crudo = _aprendiz_crudo()
+    notas = crudo.get("_notas_ejemplos", {})
+    bloques = crudo.get("_bloques", {})
     for path_str in DB_FILES:
         path = Path(path_str)
         if not path.exists():
@@ -445,12 +486,18 @@ def build_all_conjuntos():
             continue
         with open(path, encoding="utf-8") as f:
             db = json.load(f)
-        titulo = db.get("título", path.stem)
         num    = db.get("bloque", 0)
+        titulo = bloques.get(str(num), db.get("título", path.stem))
         mapa   = {e["id"]: e for e in db.get("entradas", [])}
+        if notas:
+            for e in mapa.values():
+                if e["id"] in notas:
+                    e["notas_hispanohablante"] = notas[e["id"]]
+                elif e["id"].startswith("A1-0-"):
+                    e["notas_hispanohablante"] = ""
         for conj in db.get("conjuntos", []):
             entries = [mapa[i] for i in conj.get("ids_entradas", []) if i in mapa]
-            todos.append((titulo, num, conj, entries))
+            todos.append((titulo, num, con_texto_aprendiz(conj, aprendiz), entries))
     return todos
 
 

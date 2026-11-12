@@ -1,21 +1,38 @@
-/* leccion.js — audio (Web Speech API) y selector de escritura */
+/* leccion.js — audio y selector de escritura
+   Cada botón .oir reproduce su archivo (data-audio). Si no hay archivo o
+   falla, usa la voz del navegador (Web Speech API) con data-text. */
 (function () {
   var synth = window.speechSynthesis;
+  var actual = null, boton = null;
+
   function vozJa() {
     if (!synth) return null;
     return synth.getVoices().filter(function (v) { return v.lang && v.lang.indexOf('ja') === 0; })[0] || null;
   }
+  function parar() {
+    if (actual) { actual.pause(); actual = null; }
+    if (synth) synth.cancel();
+    if (boton) boton.classList.remove('sonando');
+  }
+  function conNavegador(btn) {
+    if (!synth) { btn.classList.remove('sonando'); return; }
+    var u = new SpeechSynthesisUtterance(btn.dataset.text);
+    u.lang = 'ja-JP'; u.rate = 0.85;
+    var v = vozJa(); if (v) u.voice = v;
+    u.onend = u.onerror = function () { btn.classList.remove('sonando'); };
+    synth.speak(u);
+  }
   document.querySelectorAll('.oir').forEach(function (btn) {
-    var rotulo = btn.textContent;
     btn.addEventListener('click', function () {
-      if (!synth) { btn.textContent = 'Tu navegador no tiene voz'; return; }
-      synth.cancel();
-      var u = new SpeechSynthesisUtterance(btn.dataset.text);
-      u.lang = 'ja-JP'; u.rate = 0.85;
-      var v = vozJa(); if (v) u.voice = v;
-      btn.classList.add('sonando');
-      u.onend = u.onerror = function () { btn.classList.remove('sonando'); btn.textContent = rotulo; };
-      synth.speak(u);
+      parar();
+      boton = btn; btn.classList.add('sonando');
+      if (!btn.dataset.audio) { conNavegador(btn); return; }
+      var a = new Audio(btn.dataset.audio);
+      actual = a;
+      a.onended = function () { btn.classList.remove('sonando'); };
+      a.onerror = function () { if (actual === a) { actual = null; conNavegador(btn); } };
+      var p = a.play();
+      if (p && p.catch) p.catch(function () { if (actual === a) { actual = null; conNavegador(btn); } });
     });
   });
   if (synth && synth.onvoiceschanged !== undefined) synth.onvoiceschanged = function () {};
