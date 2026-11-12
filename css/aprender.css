@@ -201,3 +201,6 @@ body.ver-kata .kc-k{display:block}
 .kc-n{font-size:.62rem;color:var(--mizu);line-height:1.2;text-align:center}
 @media (max-width:520px){.tabla-kana table{border-spacing:3px}.kc-h,.kc-k{font-size:1.5rem}.kc-r{font-size:.8rem}.tabla-kana thead th:first-child,.tabla-kana th.fila{width:1.6rem}.kc{padding:4px 0;border-radius:9px}}
 body.ver-kata .kc-n{display:none}
+.lista li.pronto{opacity:.65}
+.li-pronto{display:flex;justify-content:space-between;gap:12px;align-items:baseline;padding:11px 16px;color:var(--mut)}
+.ayuda-ini{background:var(--mizu-soft);border-radius:12px;padding:10px 14px}

@@ -420,6 +420,8 @@ def render_page(conjunto, entries, bloque_titulo, bloque_num, prev_url, next_url
     next_btn = (f'<a href="{esc(next_url)}" class="paso paso-sig">Siguiente →</a>'
                 if next_url else "<span></span>")
     lead = f'\n    <p class="lead">{esc(objetivo)}</p>' if objetivo else ""
+    ayuda_inicial = ('\n    <p class="ayuda-ini">¿No sabes cómo leerlo? Mira primero <a href="../como-se-lee.html">Cómo se lee</a>: son 10 minutos.</p>'
+                     if not prev_url else "")
 
     return f'''<!DOCTYPE html>
 <html lang="es">
@@ -448,7 +450,7 @@ def render_page(conjunto, entries, bloque_titulo, bloque_num, prev_url, next_url
 
   <section class="parte">
     <h2>Escucha y repite</h2>
-    <p>Pulsa ▶ en cada frase y dila en voz alta. Las letras <span class="t">en color</span> no suenan como en español: <a href="../como-se-lee.html">cómo se lee</a>.</p>
+    <p>Pulsa ▶ en cada frase y dila en voz alta. Las letras <span class="t">en color</span> no suenan como en español: <a href="../como-se-lee.html">cómo se lee</a>.</p>{ayuda_inicial}
     {SELECTOR}
     <div class="ejs">{cards}
     </div>
@@ -509,6 +511,29 @@ def render_index(all_conjuntos):
 {filas}
     </ol>
   </section>''')
+
+    # unidades 1 y 2 (sin lecciones generadas): enlace fijo o «en preparación»
+    previas = []
+    for n, titulo, hacer, ro, es, bloque, enlace in UNIDADES:
+        if bloque is not None:
+            continue
+        if enlace:
+            fila = (f'        <li><a href="{esc(enlace)}"><span class="li-t">Cómo se lee el alfabeto japonés</span>'
+                    f'<span class="li-m">1 página</span></a></li>')
+        else:
+            fila = ('        <li class="pronto"><span class="li-pronto"><span class="li-t">Cómo se arma una frase</span>'
+                    '<span class="li-m">En preparación</span></span></li>')
+        previas.append(f'''
+  <section class="bloque" id="unidad-{n}">
+    <div class="bloque-cab">
+      <span class="bloque-n">{n}</span>
+      <div><h2>{esc(titulo)}</h2><p>{esc(hacer)}</p></div>
+    </div>
+    <ol class="lista">
+{fila}
+    </ol>
+  </section>''')
+    secciones = previas + secciones
 
     total   = sum(len(items) for _, _, items in bloques)
     primera = bloques[0][2][0][2] if bloques else "#"
