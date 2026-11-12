@@ -406,6 +406,52 @@ def render_kana_hoy(cid):
     </div>
   </section>'''
 
+
+# ─────────────────────────────────────────────
+# PONTE A PRUEBA: escuchar y elegir el significado
+# ─────────────────────────────────────────────
+def _significado_corto(es):
+    primero = re.split(r"\s/\s", es or "")[0]
+    return re.sub(r"\s*\([^)]*\)\s*$", "", primero).strip()
+
+
+def render_prueba(entries):
+    items, vistos = [], set()
+    for e in entries:
+        es = _significado_corto(e.get("español", ""))
+        if not es or es in vistos:
+            continue
+        vistos.add(es)
+        mp3 = Path(e.get("audio_dir", "audio/A1")) / f"{e.get('id', '')}.mp3"
+        items.append({
+            "a": f"../{mp3.as_posix()}" if mp3.exists() else "",
+            "t": e.get("audio_text", sin_punto(e.get("japonés", ""))),
+            "r": lectura_html(lectura(e.get("romaji", ""))),
+            "k": e.get("furigana", e.get("japonés", "")),
+            "e": es,
+        })
+    if len(items) < 2:
+        return ""
+    datos = json.dumps(items, ensure_ascii=False).replace("</", "<\\/")
+    return f'''
+  <section class="parte prueba" id="prueba">
+    <h2>Ponte a prueba <span class="h2-ja" lang="ja">聞いて選ぶ</span></h2>
+    <p>Escucha la frase y elige qué significa. No hay nota: es para que te oigas a ti mismo.</p>
+    <div class="p-caja" id="p-caja" hidden>
+      <p class="p-cuenta" id="p-cuenta" aria-live="polite"></p>
+      <button type="button" class="oir p-oir" id="p-oir">▶ Escuchar</button>
+      <div class="p-ops" id="p-ops" role="group" aria-label="Opciones"></div>
+      <div class="p-res" id="p-res" aria-live="polite"></div>
+      <button type="button" class="paso paso-sig p-sig" id="p-sig" hidden>Siguiente →</button>
+    </div>
+    <div class="p-fin" id="p-fin" hidden>
+      <p class="p-nota" id="p-nota"></p>
+      <button type="button" class="boton p-otra" id="p-otra">Otra vez</button>
+    </div>
+    <button type="button" class="boton" id="p-ini">▶ Empezar</button>
+    <script type="application/json" id="p-datos">{datos}</script>
+  </section>'''
+
 # ─────────────────────────────────────────────
 # PÁGINA DE LECCIÓN
 # ─────────────────────────────────────────────
@@ -471,7 +517,7 @@ def render_page(conjunto, entries, bloque_titulo, bloque_num, prev_url, next_url
   <section class="parte">
     <h2>Cómo funciona</h2>{render_box("caja-sis", "El patrón", conjunto.get("sistematización", ""))}{nota_html}{render_vocab_table(entries)}
   </section>
-{render_kana_hoy(cid)}
+{render_kana_hoy(cid)}{render_prueba(entries)}
 
   <nav class="pasos" aria-label="Lección anterior y siguiente">
     {prev_btn}
@@ -483,6 +529,7 @@ def render_page(conjunto, entries, bloque_titulo, bloque_num, prev_url, next_url
 
 {FOOTER}
 <script src="../js/leccion.js"></script>
+<script src="../js/practica.js"></script>
 </body>
 </html>'''
 

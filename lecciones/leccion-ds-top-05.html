@@ -111,6 +111,23 @@
     </div>
   </section>
 
+  <section class="parte prueba" id="prueba">
+    <h2>Ponte a prueba <span class="h2-ja" lang="ja">聞いて選ぶ</span></h2>
+    <p>Escucha la frase y elige qué significa. No hay nota: es para que te oigas a ti mismo.</p>
+    <div class="p-caja" id="p-caja" hidden>
+      <p class="p-cuenta" id="p-cuenta" aria-live="polite"></p>
+      <button type="button" class="oir p-oir" id="p-oir">▶ Escuchar</button>
+      <div class="p-ops" id="p-ops" role="group" aria-label="Opciones"></div>
+      <div class="p-res" id="p-res" aria-live="polite"></div>
+      <button type="button" class="paso paso-sig p-sig" id="p-sig" hidden>Siguiente →</button>
+    </div>
+    <div class="p-fin" id="p-fin" hidden>
+      <p class="p-nota" id="p-nota"></p>
+      <button type="button" class="boton p-otra" id="p-otra">Otra vez</button>
+    </div>
+    <button type="button" class="boton" id="p-ini">▶ Empezar</button>
+    <script type="application/json" id="p-datos">[{"a": "../audio/A1/A1-6-013.mp3", "t": "私は田中です", "r": "Watashi wa Tanaka des<span class=\"d\">u<\/span>.", "k": "わたしはたなかです。", "e": "Me llamo Tanaka."}, {"a": "../audio/A1/A1-6-014.mp3", "t": "私が田中です", "r": "Watashi ga Tanaka des<span class=\"d\">u<\/span>.", "k": "わたしがたなかです。", "e": "Soy yo Tanaka."}, {"a": "../audio/A1/A1-6-015.mp3", "t": "誰が来た？", "r": "Dare ga kita?", "k": "だれがきた？", "e": "¿Quién vino?"}, {"a": "../audio/A1/A1-6-016.mp3", "t": "田中さんが来た", "r": "Tanaka-san ga kita.", "k": "たなかさんがきた。", "e": "Ha llegado Tanaka."}]</script>
+  </section>
 
   <nav class="pasos" aria-label="Lección anterior y siguiente">
     <a href="leccion-ds-top-04.html" class="paso">← Anterior</a>
@@ -130,5 +147,6 @@
   <p>日本語 — Japonés para Todos · Voz: VOICEVOX:No.7</p>
 </footer>
 <script src="../js/leccion.js"></script>
+<script src="../js/practica.js"></script>
 </body>
 </html>

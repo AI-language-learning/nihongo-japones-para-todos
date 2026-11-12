@@ -99,6 +99,23 @@
     </div>
   </section>
 
+  <section class="parte prueba" id="prueba">
+    <h2>Ponte a prueba <span class="h2-ja" lang="ja">聞いて選ぶ</span></h2>
+    <p>Escucha la frase y elige qué significa. No hay nota: es para que te oigas a ti mismo.</p>
+    <div class="p-caja" id="p-caja" hidden>
+      <p class="p-cuenta" id="p-cuenta" aria-live="polite"></p>
+      <button type="button" class="oir p-oir" id="p-oir">▶ Escuchar</button>
+      <div class="p-ops" id="p-ops" role="group" aria-label="Opciones"></div>
+      <div class="p-res" id="p-res" aria-live="polite"></div>
+      <button type="button" class="paso paso-sig p-sig" id="p-sig" hidden>Siguiente →</button>
+    </div>
+    <div class="p-fin" id="p-fin" hidden>
+      <p class="p-nota" id="p-nota"></p>
+      <button type="button" class="boton p-otra" id="p-otra">Otra vez</button>
+    </div>
+    <button type="button" class="boton" id="p-ini">▶ Empezar</button>
+    <script type="application/json" id="p-datos">[{"a": "../audio/A1/A1-5-020.mp3", "t": "大阪から来た", "r": "Oosaka kara kita.", "k": "おおさかからきた。", "e": "Vine de Osaka."}, {"a": "../audio/A1/A1-5-021.mp3", "t": "9時から勉強する", "r": "Ku-<span class=\"t\">j<\/span>i kara benkyoo suru.", "k": "くじからべんきょうする。", "e": "Estudio desde las 9."}, {"a": "../audio/A1/A1-5-022.mp3", "t": "駅まで歩く", "r": "Eki made aruku.", "k": "えきまであるく。", "e": "Camino hasta la estación."}]</script>
+  </section>
 
   <nav class="pasos" aria-label="Lección anterior y siguiente">
     <a href="leccion-ds-comp-04.html" class="paso">← Anterior</a>
@@ -118,5 +135,6 @@
   <p>日本語 — Japonés para Todos · Voz: VOICEVOX:No.7</p>
 </footer>
 <script src="../js/leccion.js"></script>
+<script src="../js/practica.js"></script>
 </body>
 </html>

@@ -113,6 +113,23 @@
       </div>
     </div>
   </section>
+  <section class="parte prueba" id="prueba">
+    <h2>Ponte a prueba <span class="h2-ja" lang="ja">聞いて選ぶ</span></h2>
+    <p>Escucha la frase y elige qué significa. No hay nota: es para que te oigas a ti mismo.</p>
+    <div class="p-caja" id="p-caja" hidden>
+      <p class="p-cuenta" id="p-cuenta" aria-live="polite"></p>
+      <button type="button" class="oir p-oir" id="p-oir">▶ Escuchar</button>
+      <div class="p-ops" id="p-ops" role="group" aria-label="Opciones"></div>
+      <div class="p-res" id="p-res" aria-live="polite"></div>
+      <button type="button" class="paso paso-sig p-sig" id="p-sig" hidden>Siguiente →</button>
+    </div>
+    <div class="p-fin" id="p-fin" hidden>
+      <p class="p-nota" id="p-nota"></p>
+      <button type="button" class="boton p-otra" id="p-otra">Otra vez</button>
+    </div>
+    <button type="button" class="boton" id="p-ini">▶ Empezar</button>
+    <script type="application/json" id="p-datos">[{"a": "../audio/A1/A1-6-005.mp3", "t": "日本語は分かる", "r": "Ni<span class=\"t\">h<\/span>ongo wa wakaru.", "k": "にほんごはわかる。", "e": "El japonés lo entiendo."}, {"a": "../audio/A1/A1-6-006.mp3", "t": "これは高い", "r": "Kore wa takai.", "k": "これはたかい。", "e": "Esto está caro."}, {"a": "../audio/A1/A1-6-007.mp3", "t": "犬も好きだ", "r": "Inu mo suki da.", "k": "いぬもすきだ。", "e": "Los perros también me gustan."}]</script>
+  </section>
 
   <nav class="pasos" aria-label="Lección anterior y siguiente">
     <a href="leccion-ds-top-01.html" class="paso">← Anterior</a>
@@ -132,5 +149,6 @@
   <p>日本語 — Japonés para Todos · Voz: VOICEVOX:No.7</p>
 </footer>
 <script src="../js/leccion.js"></script>
+<script src="../js/practica.js"></script>
 </body>
 </html>

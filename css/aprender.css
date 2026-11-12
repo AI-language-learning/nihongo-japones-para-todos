@@ -210,3 +210,18 @@ body.ver-kata .kc-n{display:none}
 .ro-toggle{border:2px dashed var(--mizu);background:#fff;color:var(--mizu);border-radius:999px;padding:6px 14px;font:inherit;font-weight:700;cursor:pointer;margin-left:8px}
 .modo-alfa .ro-toggle{display:none}
 .ro-visible .ro-toggle{background:var(--mizu-soft)}
+/* Ponte a prueba */
+.p-caja{border:2px solid var(--line);border-radius:16px;padding:16px 18px;margin:10px 0;background:#fff}
+.p-cuenta{margin:0 0 8px;color:var(--mut);font-size:.9rem}
+.p-ops{display:grid;gap:10px;margin:14px 0}
+.p-op{border:2px solid var(--line);background:#fff;border-radius:12px;padding:12px 14px;font:inherit;font-weight:700;text-align:left;cursor:pointer;color:var(--fg)}
+.p-op:hover:not(:disabled){border-color:var(--mizu);background:var(--mizu-soft)}
+.p-op.ok{border-color:#2f9e44;background:#ebfbee}
+.p-op.mal{border-color:var(--kaki);background:#fff1e6}
+.p-v{margin:0;font-weight:800}
+.p-v.ok{color:#2b8a3e}.p-v.mal{color:var(--kaki)}
+.p-fr{margin:4px 0 10px}
+.p-ro{font-weight:800}
+.p-fin{border:2px solid var(--line);border-radius:16px;padding:16px 18px;margin:10px 0;text-align:center}
+.p-nota{font-weight:800;font-size:1.1rem;margin:0 0 10px}
+.p-caja[hidden],.p-fin[hidden],.p-sig[hidden],#p-ini[hidden]{display:none}
