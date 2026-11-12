@@ -301,6 +301,8 @@ def render_vocab_table(entries):
                           for p in re.split(r"([\s/]+)", fur))
             if v.get("es", "")[:1].isupper():   # nombres propios: Tookyoo, Tanaka
                 lec = lec[:1].upper() + lec[1:]
+            if fur.endswith("さん") and len(fur) > 2 and lec.endswith("san") and not lec.endswith("-san"):
+                lec = lec[:-3] + "-san"
             rows.append(
                 "<tr>"
                 f'<td class="v-ro" lang="ja-Latn">{lectura_html(lec)}</td>'
@@ -610,6 +612,145 @@ def render_mapa(todos):
 </body>
 </html>'''
 
+
+# ─────────────────────────────────────────────
+# TABLA DE KANA (herramientas/kana.html), con la notación del sitio
+# ─────────────────────────────────────────────
+_FILAS_KANA = [
+    ("", ["あ", "い", "う", "え", "お"]), ("k", ["か", "き", "く", "け", "こ"]),
+    ("s", ["さ", "し", "す", "せ", "そ"]), ("t", ["た", "ち", "つ", "て", "と"]),
+    ("n", ["な", "に", "ぬ", "ね", "の"]), ("h", ["は", "ひ", "ふ", "へ", "ほ"]),
+    ("m", ["ま", "み", "む", "め", "も"]), ("y", ["や", "", "ゆ", "", "よ"]),
+    ("r", ["ら", "り", "る", "れ", "ろ"]), ("w", ["わ", "", "", "", "を"]),
+    ("", ["ん", "", "", "", ""]),
+]
+_FILAS_SONORAS = [
+    ("g", ["が", "ぎ", "ぐ", "げ", "ご"]), ("z", ["ざ", "じ", "ず", "ぜ", "ぞ"]),
+    ("d", ["だ", "ぢ", "づ", "で", "ど"]), ("b", ["ば", "び", "ぶ", "べ", "ぼ"]),
+    ("p", ["ぱ", "ぴ", "ぷ", "ぺ", "ぽ"]),
+]
+_YOON_BASES = ["き", "し", "ち", "に", "ひ", "み", "り", "ぎ", "じ", "ぢ", "び", "ぴ"]
+_ESP_KANA = {"は": "ha", "へ": "he", "を": "o", "ん": "n"}
+_PIE_KANA = {"は": "wa", "へ": "e", "を": "o"}
+
+
+def _a_kata(s):
+    return "".join(chr(ord(c) + 0x60) if "ぁ" <= c <= "ゖ" else c for c in s)
+
+
+def _celda_kana(u):
+    if not u:
+        return '<td class="vacio"></td>'
+    lect = _ESP_KANA.get(u) or kana_a_lectura(u)
+    audio = "-".join(f"{ord(c):x}" for c in u)
+    pie = f'<span class="kc-n">posp.: {_PIE_KANA[u]}</span>' if u in _PIE_KANA else ""
+    return (f'<td><button type="button" class="kc" data-audio="../audio/kana/{audio}.mp3" data-text="{esc(u)}" '
+            f'aria-label="Escuchar {esc(lect)}">'
+            f'<span class="kc-h" lang="ja">{esc(u)}</span><span class="kc-k" lang="ja">{esc(_a_kata(u))}</span>'
+            f'<span class="kc-r">{lectura_html(lect)}</span>{pie}</button></td>')
+
+
+def _tabla_kana(filas, cols, titulo):
+    cab = "".join(f"<th>{c}</th>" for c in cols)
+    cuerpo = ""
+    for etiqueta, celdas in filas:
+        cuerpo += f'<tr><th class="fila">{lectura_html(etiqueta) if etiqueta else "·"}</th>' + \
+                  "".join(_celda_kana(c) for c in celdas) + "</tr>"
+    return f'''
+    <div class="tabla-kana"><table>
+      <caption>{titulo}</caption>
+      <thead><tr><th></th>{cab}</tr></thead>
+      <tbody>{cuerpo}</tbody>
+    </table></div>'''
+
+
+def render_kana_pagina():
+    base = _tabla_kana(_FILAS_KANA, ["a", "i", "u", "e", "o"], "Vocal en la columna, consonante en la fila")
+    sonoras = _tabla_kana(_FILAS_SONORAS, ["a", "i", "u", "e", "o"], "Con dos rayitas (g, z, d, b) o un círculo (p)")
+    filas_y = [(kana_a_lectura(b)[:-1] if False else "", [b + s for s in "ゃゅょ"]) for b in _YOON_BASES]
+    filas_y = [(b, [b + s for s in "ゃゅょ"]) for b in _YOON_BASES]
+    cuerpo_y = ""
+    for b, celdas in filas_y:
+        cuerpo_y += f'<tr><th class="fila" lang="ja">{esc(b)}</th>' + "".join(_celda_kana(c) for c in celdas) + "</tr>"
+    yoon = f'''
+    <div class="tabla-kana"><table>
+      <caption>Sonidos con ゃ ゅ ょ pequeñas</caption>
+      <thead><tr><th></th><th>ya</th><th>yu</th><th>yo</th></tr></thead>
+      <tbody>{cuerpo_y}</tbody>
+    </table></div>'''
+    pie = FOOTER.replace('href="index.html">Lecciones', 'href="../lecciones/index.html">Lecciones')
+    return f'''<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tabla de kana — Japonés para Todos</title>
+{HEAD_FONTS}
+</head>
+<body class="pag-kana">
+
+<nav class="migas" aria-label="Ruta de navegación">
+  <a href="../index.html">Inicio</a> <span>›</span>
+  <span>Tabla de kana</span>
+</nav>
+
+<header class="cab">
+  <div class="ancho">
+    <h1>Tabla de kana <span class="h1-ja" lang="ja">かな表</span></h1>
+    <p class="lead">Para consultar, no para memorizar de golpe. En el curso aprendes unos pocos kana en cada lección. Toca cualquiera para oírlo.</p>
+  </div>
+</header>
+
+<main class="ancho">
+
+  <section class="parte">
+    <div class="selector" role="group" aria-label="Ver kana">
+      <button type="button" data-kana="hira" class="activo">Hiragana</button>
+      <button type="button" data-kana="kata">Katakana</button>
+    </div>
+    <p class="nota-kana">Hiragana se usa para las palabras japonesas y las terminaciones. Katakana, para palabras extranjeras, como <span lang="ja">コーヒー</span> (koohii). Las letras <span class="t">en color</span> no suenan como en español: <a href="../como-se-lee.html">cómo se lee</a>.</p>
+  </section>
+
+  <section class="parte">
+    <h2>Los sonidos básicos</h2>{base}
+    <div class="caja caja-es">
+      <p class="caja-etq">Tres casos especiales</p>
+      <p><strong>は</strong> se lee ha, pero como posposición se lee <strong>wa</strong>. <strong>へ</strong> se lee he, pero como posposición se lee <strong>e</strong>. <strong>を</strong> se lee <strong>o</strong>.</p>
+    </div>
+  </section>
+
+  <section class="parte">
+    <h2>Con rayitas y círculo</h2>{sonoras}
+    <div class="caja caja-sis">
+      <p class="caja-etq">Dos pares que suenan igual</p>
+      <p><strong>じ</strong> y <strong>ぢ</strong> suenan ji. <strong>ず</strong> y <strong>づ</strong> suenan zu. Casi siempre se escribe じ y ず.</p>
+    </div>
+  </section>
+
+  <section class="parte">
+    <h2>Sonidos con ゃ ゅ ょ</h2>{yoon}
+    <div class="caja caja-sis">
+      <p class="caja-etq">Pequeñas, pero importantes</p>
+      <p>Un kana pequeño se une al anterior y forma una sola sílaba: <strong>き + ゃ = きゃ</strong> (kya). No es lo mismo que <strong>きや</strong> (ki-ya).</p>
+    </div>
+  </section>
+
+  <section class="parte">
+    <h2>Dos signos más</h2>
+    <div class="caja caja-desc">
+      <p class="caja-etq">っ y ー</p>
+      <p><strong>っ</strong> (pequeña) hace una pausa y duplica la consonante siguiente: <span lang="ja">きって</span> → kitte, <span lang="ja">だった</span> → datta.</p>
+      <p><strong>ー</strong> (en katakana) alarga la vocal: <span lang="ja">コーヒー</span> → koohii.</p>
+    </div>
+  </section>
+
+</main>
+
+{pie}
+<script src="../js/kana.js"></script>
+</body>
+</html>'''
+
 # ─────────────────────────────────────────────
 # MAIN
 # ─────────────────────────────────────────────
@@ -703,6 +844,9 @@ def main():
     Path("aprender").mkdir(exist_ok=True)
     Path("aprender/index.html").write_text(render_mapa(todos), encoding="utf-8")
     print("  ✓  aprender/index.html  (mapa del curso)")
+    Path("herramientas").mkdir(exist_ok=True)
+    Path("herramientas/kana.html").write_text(render_kana_pagina(), encoding="utf-8")
+    print("  ✓  herramientas/kana.html  (tabla de kana)")
     print(f"\n✅ {n} lecciones generadas en '{OUTPUT_DIR}/'")
 
     dudas = comprobar_notacion(todos)
