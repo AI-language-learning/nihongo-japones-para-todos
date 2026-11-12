@@ -37,7 +37,15 @@
   });
   if (synth && synth.onvoiceschanged !== undefined) synth.onvoiceschanged = function () {};
 
-  var botones = document.querySelectorAll('.modo button');
+  var tog = document.getElementById('ro-toggle');
+  if (tog) {
+    tog.addEventListener('click', function () {
+      var v = document.body.classList.toggle('ro-visible');
+      tog.textContent = v ? 'Ocultar alfabeto' : 'Mostrar alfabeto';
+    });
+  }
+
+  var botones = document.querySelectorAll('.modo button[data-modo]');
   if (!botones.length) return;
   function poner(modo, guardar) {
     document.body.classList.remove('modo-alfa', 'modo-kana', 'modo-kanji');

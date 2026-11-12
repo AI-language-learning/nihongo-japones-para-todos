@@ -43,7 +43,10 @@ CLASS_NAMES = {"A": "Adjetivo", "Na": "Nominal adjetival", "N": "Nominal", "V": 
 # Qué escritura va en grande al abrir la lección: "alfa", "kana" o "kanji".
 # Plan: bloques 4-5 → "kana", 6-7 → "kanji", cuando exista la sección «kana de hoy».
 MODO_POR_BLOQUE = {0: "alfa", 1: "alfa", 2: "alfa", 3: "alfa",
-                   4: "alfa", 5: "alfa", 6: "alfa", 7: "alfa"}
+                   4: "kana", 5: "kana", 6: "kanji", 7: "kanji"}
+# Unidades 4-6 (bloques 1-3): alfabeto grande, kana algo mayor. Unidades 9-10 (bloques 6-7): alfabeto oculto hasta pulsar.
+BLOQUES_KANA_MEDIO = {1, 2, 3}
+BLOQUES_ALFA_OCULTO = {6, 7}
 
 # Bloques en los que se muestra la pista «Suena como …»
 BLOQUES_CON_PISTA = {0, 1}
@@ -413,6 +416,11 @@ def render_page(conjunto, entries, bloque_titulo, bloque_num, prev_url, next_url
     nota     = conjunto.get("nota_hispanohablante", "")
     modo     = MODO_POR_BLOQUE.get(bloque_num, "alfa")
 
+    extra_cuerpo = (" kana-medio" if bloque_num in BLOQUES_KANA_MEDIO else
+                    " ro-oculto" if bloque_num in BLOQUES_ALFA_OCULTO else "")
+    selector = SELECTOR
+    if bloque_num in BLOQUES_ALFA_OCULTO:
+        selector = selector.replace("</div>", '<button type="button" id="ro-toggle" class="ro-toggle">Mostrar alfabeto</button>\n  </div>')
     cards = "\n".join(render_example_card(e) for e in entries)
     nota_html = render_box("caja-es", "Para hispanohablantes", nota)
     prev_btn = (f'<a href="{esc(prev_url)}" class="paso">← Anterior</a>'
@@ -431,7 +439,7 @@ def render_page(conjunto, entries, bloque_titulo, bloque_num, prev_url, next_url
 <title>{esc(titulo)} — Japonés para Todos</title>
 {HEAD_FONTS}
 </head>
-<body class="modo-{modo}" data-modo-inicial="{modo}">
+<body class="modo-{modo}{extra_cuerpo}" data-modo-inicial="{modo}">
 
 <nav class="migas" aria-label="Ruta de navegación">
   <a href="../index.html">Inicio</a> <span>›</span>
@@ -451,7 +459,7 @@ def render_page(conjunto, entries, bloque_titulo, bloque_num, prev_url, next_url
   <section class="parte">
     <h2>Escucha y repite</h2>
     <p>Pulsa ▶ en cada frase y dila en voz alta. Las letras <span class="t">en color</span> no suenan como en español: <a href="../como-se-lee.html">cómo se lee</a>.</p>{ayuda_inicial}
-    {SELECTOR}
+    {selector}
     <div class="ejs">{cards}
     </div>
   </section>

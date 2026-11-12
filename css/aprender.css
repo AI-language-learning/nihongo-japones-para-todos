@@ -204,3 +204,9 @@ body.ver-kata .kc-n{display:none}
 .lista li.pronto{opacity:.65}
 .li-pronto{display:flex;justify-content:space-between;gap:12px;align-items:baseline;padding:11px 16px;color:var(--mut)}
 .ayuda-ini{background:var(--mizu-soft);border-radius:12px;padding:10px 14px}
+/* Escritura por unidad */
+.kana-medio.modo-alfa .ej-ka{font-size:1.4rem;font-weight:600;color:var(--fg)}
+.ro-oculto:not(.modo-alfa):not(.ro-visible) .ej-ro{display:none}
+.ro-toggle{border:2px dashed var(--mizu);background:#fff;color:var(--mizu);border-radius:999px;padding:6px 14px;font:inherit;font-weight:700;cursor:pointer;margin-left:8px}
+.modo-alfa .ro-toggle{display:none}
+.ro-visible .ro-toggle{background:var(--mizu-soft)}
