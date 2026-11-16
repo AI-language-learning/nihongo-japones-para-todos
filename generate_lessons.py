@@ -203,7 +203,7 @@ UNIDADES = [
     (1, "Los sonidos", "Leer el alfabeto japonés tal como lo escribimos aquí.",
      "Hai.", "Sí.", None, "../como-se-lee.html"),
     (2, "El esqueleto de la frase", "Ver cómo se arma una frase japonesa, de dentro hacia fuera.",
-     "Watashi wa gohan o taberu.", "Yo voy a comer arroz.", None, "../lecciones/leccion-ds-esq-01.html"),
+     "Watashi wa ringo o taberu.", "Yo voy a comer una manzana.", None, "../lecciones/leccion-ds-esq-01.html"),
     (3, "El núcleo de la frase", "Decir frases completas con una sola palabra.",
      "Samui.", "¡Qué frío!", 0, None),
     (4, "Decir que no", "Negar lo que dices: no hace frío, no estoy bien, no voy.",
