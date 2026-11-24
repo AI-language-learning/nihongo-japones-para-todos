@@ -182,7 +182,7 @@
       "japonés": "雨だ。",
       "furigana": "あめだ。",
       "romaji": "Ame da.",
-      "español": "Llueve. / Es lluvia. / Está lloviendo.",
+      "español": "Llueve. / Está lloviendo.",
       "audio_text": "雨だ",
 
       "situación": {
@@ -385,7 +385,7 @@
       "japonés": "おいしい。",
       "furigana": "おいしい。",
       "romaji": "Oishii.",
-      "español": "Está rico. / ¡Qué bueno!",
+      "español": "Está rico. / ¡Qué bueno! / Está delicioso.",
       "audio_text": "おいしい",
 
       "situación": {
@@ -420,7 +420,7 @@
       "japonés": "楽しい。",
       "furigana": "たのしい。",
       "romaji": "Tanoshii.",
-      "español": "Es divertido. / ¡Qué bien!",
+      "español": "Es divertido. / ¡Qué divertido! / ¡Qué bien!",
       "audio_text": "楽しい",
 
       "situación": {
@@ -490,7 +490,7 @@
       "japonés": "元気だ。",
       "furigana": "げんきだ。",
       "romaji": "Genki da.",
-      "español": "Estoy bien. / Estoy de buenas.",
+      "español": "Estoy bien. / Estoy con energía.",
       "audio_text": "元気だ",
 
       "situación": {
@@ -560,7 +560,7 @@
       "japonés": "大変だ。",
       "furigana": "たいへんだ。",
       "romaji": "Taihen da.",
-      "español": "Es horrible. / Qué difícil. / Es terrible.",
+      "español": "¡Qué difícil! / ¡Qué duro! / Es terrible.",
       "audio_text": "大変だ",
 
       "situación": {
@@ -631,7 +631,7 @@
       "japonés": "上手だ。",
       "furigana": "じょうずだ。",
       "romaji": "Jōzu da.",
-      "español": "Es bueno en eso. / Lo hace bien.",
+      "español": "Es muy hábil. / Lo hace bien. / Es habilidoso.",
       "audio_text": "上手だ",
 
       "situación": {
@@ -736,7 +736,7 @@
       "japonés": "休みだ。",
       "furigana": "やすみだ。",
       "romaji": "Yasumi da.",
-      "español": "Es un día libre. / Tengo el día libre.",
+      "español": "Es un día libre. / Es festivo (feriado). / Tengo el día libre.",
       "audio_text": "休みだ",
 
       "situación": {
@@ -879,7 +879,7 @@
       "japonés": "寝る。",
       "furigana": "ねる。",
       "romaji": "Neru.",
-      "español": "Me voy a dormir.",
+      "español": "Voy a dormir.",
       "audio_text": "寝る",
 
       "situación": {
@@ -948,7 +948,7 @@
       "japonés": "帰る。",
       "furigana": "かえる。",
       "romaji": "Kaeru.",
-      "español": "Me voy a casa.",
+      "español": "Vuelvo a casa. / Me voy a casa.",
       "audio_text": "帰る",
 
       "situación": {

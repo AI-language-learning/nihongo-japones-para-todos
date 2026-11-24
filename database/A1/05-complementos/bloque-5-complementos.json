@@ -90,7 +90,7 @@
     {
       "id": "A1-5-002", "bloque": 5, "conjunto": "DS-COMP-01", "clase": "V",
       "japonés": "ご飯を食べる。", "furigana": "ごはんをたべる。", "romaji": "Gohan wo taberu.",
-      "español": "Como arroz. / Voy a comer.",
+      "español": "Como arroz. / Voy a comer arroz.",
       "audio_text": "ご飯を食べる",
       "situación": { "descripción": "Es la hora del almuerzo. Vas a comer.", "tipo": "describir acción habitual", "entorno": "cualquiera" },
       "predicado": { "núcleo": "食べる", "clase": "V", "grupo": 2, "expresiones_funcionales": [], "expresiones_finales": [] },
@@ -179,7 +179,7 @@
     {
       "id": "A1-5-006", "bloque": 5, "conjunto": "DS-COMP-02", "clase": "V",
       "japonés": "日本語が分かる。", "furigana": "にほんごがわかる。", "romaji": "Nihongo ga wakaru.",
-      "español": "Entiendo japonés. / Se me entiende el japonés.",
+      "español": "Entiendo japonés. / Entiendo el japonés.",
       "audio_text": "日本語が分かる",
       "situación": { "descripción": "Alguien te habla en japonés y lo entiendes.", "tipo": "constatar comprensión", "entorno": "cualquiera" },
       "predicado": { "núcleo": "分かる", "clase": "V", "grupo": 1, "expresiones_funcionales": [], "expresiones_finales": [] },
@@ -270,7 +270,7 @@
     {
       "id": "A1-5-010", "bloque": 5, "conjunto": "DS-COMP-02", "clase": "Na",
       "japonés": "辛いものが苦手だ。", "furigana": "からいものがにがてだ。", "romaji": "Karai mono ga nigate da.",
-      "español": "Se me dan mal las cosas picantes. / No soy bueno con el picante.",
+      "español": "No llevo bien lo picante. / No soy bueno con el picante.",
       "audio_text": "辛いものが苦手だ",
       "situación": { "descripción": "Te invitan a comer comida muy picante. Explicas que no toleras bien el picante.", "tipo": "explicar intolerancia/dificultad", "entorno": "comida" },
       "predicado": { "núcleo": "苦手", "clase": "Na", "expresiones_funcionales": ["だ"], "expresiones_finales": [] },
@@ -363,7 +363,7 @@
     {
       "id": "A1-5-014", "bloque": 5, "conjunto": "DS-COMP-03", "clase": "V",
       "japonés": "友達に話す。", "furigana": "ともだちにはなす。", "romaji": "Tomodachi ni hanasu.",
-      "español": "Le cuento a un amigo. / Hablo con un amigo.",
+      "español": "Le cuento a un amigo. / Les hablo a unos amigos.",
       "audio_text": "友達に話す",
       "situación": { "descripción": "Guardas un secreto pero decides contárselo a tu mejor amigo.", "tipo": "comunicar información", "entorno": "casual" },
       "predicado": { "núcleo": "話す", "clase": "V", "grupo": 1, "expresiones_funcionales": [], "expresiones_finales": [] },
@@ -503,7 +503,7 @@
     {
       "id": "A1-5-020", "bloque": 5, "conjunto": "DS-COMP-05", "clase": "V",
       "japonés": "大阪から来た。", "furigana": "おおさかからきた。", "romaji": "Ōsaka kara kita.",
-      "español": "Vine de Osaka. / Soy de Osaka.",
+      "español": "Vine de Osaka. / He venido de Osaka.",
       "audio_text": "大阪から来た",
       "situación": { "descripción": "Te presentas a alguien nuevo. Vienes de Osaka.", "tipo": "indicar procedencia", "entorno": "presentación" },
       "predicado": { "núcleo": "来る", "clase": "V", "grupo": "irregular", "expresiones_funcionales": ["た"], "expresiones_finales": [] },
@@ -594,7 +594,7 @@
     {
       "id": "A1-5-024", "bloque": 5, "conjunto": "DS-COMP-06", "clase": "V",
       "japonés": "猫を飼う。", "furigana": "ねこをかう。", "romaji": "Neko wo kau.",
-      "español": "Tengo un gato. / Cría gatos.",
+      "español": "Cuido un gato. / Cría gatos.",
       "audio_text": "猫を飼う",
       "situación": { "descripción": "Alguien te pregunta si tienes mascota en casa.", "tipo": "describir situación de tenencia", "entorno": "casual" },
       "predicado": { "núcleo": "飼う", "clase": "V", "grupo": 1, "expresiones_funcionales": [], "expresiones_finales": [] },
@@ -616,7 +616,7 @@
     {
       "id": "A1-5-025", "bloque": 5, "conjunto": "DS-COMP-06", "clase": "V",
       "japonés": "日本語が分かる。", "furigana": "にほんごがわかる。", "romaji": "Nihongo ga wakaru.",
-      "español": "Entiendo japonés. (≠ lo estudio activamente)",
+      "español": "Entiendo japonés.",
       "audio_text": "日本語が分かる",
       "situación": { "descripción": "Te preguntan si puedes comunicarte en japonés. Dices que sí lo entiendes, aunque no lo estudias formalmente.", "tipo": "distinguir competencia de actividad", "entorno": "presentación" },
       "predicado": { "núcleo": "分かる", "clase": "V", "grupo": 1, "expresiones_funcionales": [], "expresiones_finales": [] },
@@ -638,22 +638,16 @@
     },
     {
       "id": "A1-5-026", "bloque": 5, "conjunto": "DS-COMP-06", "clase": "A",
-      "japonés": "この問題が難しい。", "furigana": "このもんだいがむずかしい。", "romaji": "Kono mondai ga muzukashii.",
-      "español": "Este problema es difícil.",
-      "audio_text": "この問題が難しい",
-      "situación": { "descripción": "Estás haciendo ejercicios de japonés y uno te resulta muy difícil.", "tipo": "valorar dificultad", "entorno": "estudio" },
+      "japonés": "日本語が難しい。", "furigana": "にほんごがむずかしい。", "romaji": "Nihongo ga muzukashii.",
+      "español": "El japonés es difícil.",
+      "audio_text": "日本語が難しい",
+      "situación": {"descripción": "Llevas poco tiempo estudiando japonés y todavía te cuesta.", "tipo": "valorar dificultad", "entorno": "estudio"},
       "predicado": { "núcleo": "難しい", "clase": "A", "expresiones_funcionales": [], "expresiones_finales": [] },
-      "complementos": [
-        { "núcleo": "この問題", "furigana": "このもんだい", "posposición": "が", "función": "nominativo" }
-      ],
+      "complementos": [{"núcleo": "日本語", "furigana": "にほんご", "posposición": "が", "función": "nominativo"}],
       "tópico": null, "registro": "informal",
-      "descubrimiento": "この問題が難しい — A predicate (難しい) + が nominativo. Los adjetivos A también pueden tener complemento nominativo con が. ¿Y por qué no を?",
+      "descubrimiento": "日本語が難しい — A predicate (難しい) + が nominativo. Los adjetivos A también pueden tener complemento nominativo con が. ¿Y por qué no を?",
       "sistematización": "A predicados de valoración (難しい, 大きい, 重い, 楽しい...) toman が para marcar el elemento que tiene esa propiedad. Nunca を — porque no hay acción transitiva.",
-      "vocabulario": [
-        { "jp": "この", "furigana": "この", "es": "este / esta", "clase": "N-modificador", "jlpt": "N5" },
-        { "jp": "問題", "furigana": "もんだい", "es": "problema / pregunta", "clase": "N", "jlpt": "N4" },
-        { "jp": "難しい", "furigana": "むずかしい", "es": "difícil", "clase": "A", "jlpt": "N4" }
-      ],
+      "vocabulario": [{"jp": "日本語", "furigana": "にほんご", "es": "japonés (idioma)", "clase": "N", "jlpt": "N5"}, {"jp": "難しい", "furigana": "むずかしい", "es": "difícil", "clase": "A", "jlpt": "N4"}],
       "notas_hispanohablante": "En español 'Este problema es difícil' tiene al sujeto gramatical ('este problema') codificado sin preposición. En japonés この問題が tiene が — siempre marcado, nunca 'desnudo'.",
       "interferencia_española": false,
       "pares_contraste": ["A1-0-010", "A1-5-006", "A1-5-025"],

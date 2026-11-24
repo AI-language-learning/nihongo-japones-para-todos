@@ -415,6 +415,9 @@ def _significado_corto(es):
     return re.sub(r"\s*\([^)]*\)\s*$", "", primero).strip()
 
 
+AMBIGUAS = ['A1-0-008', 'A1-0-009', 'A1-0-011', 'A1-0-013', 'A1-0-014', 'A1-0-015', 'A1-0-016', 'A1-0-018', 'A1-0-024', 'A1-5-014', 'A1-6-010']   # otra opción también sería correcta (revisión 2026-11-24): no se usan como distractor
+
+
 def render_prueba(entries):
     items, vistos = [], set()
     for e in entries:
@@ -429,14 +432,15 @@ def render_prueba(entries):
             "r": lectura_html(lectura(e.get("romaji", ""))),
             "k": e.get("furigana", e.get("japonés", "")),
             "e": es,
+            **({"x": 1} if e.get("id") in AMBIGUAS else {}),
         })
-    if len(items) < 2:
+    if len(items) < 3:
         return ""
     datos = json.dumps(items, ensure_ascii=False).replace("</", "<\\/")
     return f'''
   <section class="parte prueba" id="prueba">
     <h2>Ponte a prueba <span class="h2-ja" lang="ja">聞いて選ぶ</span></h2>
-    <p>Escucha la frase y elige qué significa. No hay nota: es para que te oigas a ti mismo.</p>
+    <p>Escucha la frase y elige su significado. No puntúa: es simplemente para que te oigas a ti mismo.</p>
     <div class="p-caja" id="p-caja" hidden>
       <p class="p-cuenta" id="p-cuenta" aria-live="polite"></p>
       <button type="button" class="oir p-oir" id="p-oir">▶ Escuchar</button>
@@ -504,7 +508,7 @@ def render_hueco(entries):
     return f'''
   <section class="parte prueba" id="hueco">
     <h2>Completa la frase <span class="h2-ja" lang="ja">穴埋め</span></h2>
-    <p>Lee qué significa la frase y elige la palabra que falta. Después la oirás completa.</p>
+    <p>Lee qué significa la frase y elige la palabra que falta. Después podrás oírla completa.</p>
     <div class="p-caja" id="h-caja" hidden>
       <p class="p-cuenta" id="h-cuenta" aria-live="polite"></p>
       <p class="h-es" id="h-es"></p>

@@ -38,7 +38,9 @@
     respondida = false;
     cuenta.textContent = 'Frase ' + (i + 1) + ' de ' + orden.length;
     res.innerHTML = ''; sig.hidden = true;
-    var otras = barajar(items.filter(function (x) { return x !== it; })).slice(0, 3);
+    var otras = barajar(items.filter(function (x) { return x !== it && !x.x; }));
+    if (otras.length < 3) otras = otras.concat(barajar(items.filter(function (x) { return x !== it && x.x; })));
+    otras = otras.slice(0, 3);
     var opciones = barajar(otras.concat([it]));
     ops.innerHTML = '';
     opciones.forEach(function (o) {

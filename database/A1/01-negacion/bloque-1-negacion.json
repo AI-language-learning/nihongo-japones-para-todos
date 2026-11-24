@@ -62,7 +62,7 @@
     {
       "id": "A1-1-001", "bloque": 1, "conjunto": "DS-NEG-01", "clase": "A",
       "japonés": "寒くない。", "furigana": "さむくない。", "romaji": "Samukunai.",
-      "español": "No hace frío. / No está frío.",
+      "español": "No hace frío.",
       "audio_text": "寒くない",
       "situación": { "descripción": "Alguien se queja de que hace frío. Tú no lo sientes así.", "tipo": "contradecir percepción", "entorno": "casual" },
       "predicado": { "núcleo": "寒い", "clase": "A", "expresiones_funcionales": ["くない"], "expresiones_finales": [] },
@@ -177,7 +177,7 @@
     {
       "id": "A1-1-008", "bloque": 1, "conjunto": "DS-NEG-02", "clase": "A",
       "japonés": "楽しくない。", "furigana": "たのしくない。", "romaji": "Tanoshikunai.",
-      "español": "No es divertido. / No me está gustando.",
+      "español": "No es divertido. / No me divierte.",
       "audio_text": "楽しくない",
       "situación": { "descripción": "Estás en una fiesta que no te está gustando nada.", "tipo": "expresar tedio", "entorno": "evento social" },
       "predicado": { "núcleo": "楽しい", "clase": "A", "expresiones_funcionales": ["くない"], "expresiones_finales": [] },
@@ -209,7 +209,7 @@
     {
       "id": "A1-1-010", "bloque": 1, "conjunto": "DS-NEG-03", "clase": "Na",
       "japonés": "元気じゃない。", "furigana": "げんきじゃない。", "romaji": "Genki ja nai.",
-      "español": "No estoy bien. / No tiene energía.",
+      "español": "No estoy bien. / No tengo energía.",
       "audio_text": "元気じゃない",
       "situación": { "descripción": "Alguien te pregunta cómo estás. No estás bien hoy.", "tipo": "expresar malestar", "entorno": "casual" },
       "predicado": { "núcleo": "元気", "clase": "Na", "expresiones_funcionales": ["じゃない"], "expresiones_finales": [] },
@@ -242,7 +242,7 @@
     {
       "id": "A1-1-012", "bloque": 1, "conjunto": "DS-NEG-03", "clase": "Na",
       "japonés": "きれいじゃない。", "furigana": "きれいじゃない。", "romaji": "Kirei ja nai.",
-      "español": "No está bonito. / No está limpio.",
+      "español": "No es bonito. / No está limpio.",
       "audio_text": "きれいじゃない",
       "situación": { "descripción": "Ves una habitación que alguien dice que está arreglada. No lo está.", "tipo": "contradecir valoración", "entorno": "casual" },
       "predicado": { "núcleo": "きれい", "clase": "Na", "expresiones_funcionales": ["じゃない"], "expresiones_finales": [] },
@@ -275,7 +275,7 @@
     {
       "id": "A1-1-014", "bloque": 1, "conjunto": "DS-NEG-04", "clase": "N",
       "japonés": "雨じゃない。", "furigana": "あめじゃない。", "romaji": "Ame ja nai.",
-      "español": "No es lluvia. / No está lloviendo.",
+      "español": "No llueve. / No está lloviendo.",
       "audio_text": "雨じゃない",
       "situación": { "descripción": "Alguien dice que está lloviendo. Son gotas de un aspersor.", "tipo": "corregir información", "entorno": "exterior" },
       "predicado": { "núcleo": "雨", "clase": "N", "expresiones_funcionales": ["じゃない"], "expresiones_finales": [] },
@@ -291,7 +291,7 @@
     {
       "id": "A1-1-015", "bloque": 1, "conjunto": "DS-NEG-04", "clase": "N",
       "japonés": "休みじゃない。", "furigana": "やすみじゃない。", "romaji": "Yasumi ja nai.",
-      "español": "No es día libre. / No tengo el día libre.",
+      "español": "No es un día libre. / No es festivo. / No tengo el día libre.",
       "audio_text": "休みじゃない",
       "situación": { "descripción": "Tu amigo asume que no trabajas hoy. Pero sí trabajas.", "tipo": "corregir suposición", "entorno": "casual" },
       "predicado": { "núcleo": "休み", "clase": "N", "expresiones_funcionales": ["じゃない"], "expresiones_finales": [] },
@@ -306,7 +306,7 @@
     {
       "id": "A1-1-016", "bloque": 1, "conjunto": "DS-NEG-04", "clase": "N",
       "japonés": "嘘じゃない。", "furigana": "うそじゃない。", "romaji": "Uso ja nai.",
-      "español": "No es mentira. / Es verdad.",
+      "español": "No es mentira. / No es falso.",
       "audio_text": "嘘じゃない",
       "situación": { "descripción": "Cuentas algo increíble y alguien no te cree. Insistes en que es verdad.", "tipo": "defender veracidad", "entorno": "casual" },
       "predicado": { "núcleo": "嘘", "clase": "N", "expresiones_funcionales": ["じゃない"], "expresiones_finales": [] },
@@ -322,7 +322,7 @@
     {
       "id": "A1-1-017", "bloque": 1, "conjunto": "DS-NEG-05", "clase": "V",
       "japonés": "見ない。", "furigana": "みない。", "romaji": "Minai.",
-      "español": "No lo veo. / No miro.",
+      "español": "No miro. / No veo.",
       "audio_text": "見ない",
       "situación": { "descripción": "Alguien te pregunta si ves las noticias. No las ves.", "tipo": "negar hábito", "entorno": "casual" },
       "predicado": { "núcleo": "見る", "clase": "V", "grupo": 2, "expresiones_funcionales": ["ない"], "expresiones_finales": [] },
@@ -338,7 +338,7 @@
     {
       "id": "A1-1-018", "bloque": 1, "conjunto": "DS-NEG-05", "clase": "V",
       "japonés": "寝ない。", "furigana": "ねない。", "romaji": "Nenai.",
-      "español": "No duermo. / No me voy a dormir.",
+      "español": "No duermo. / No voy a dormir.",
       "audio_text": "寝ない",
       "situación": { "descripción": "Es tarde. Tu amigo insiste en que te duermas. No tienes sueño.", "tipo": "resistir sugerencia", "entorno": "casa" },
       "predicado": { "núcleo": "寝る", "clase": "V", "grupo": 2, "expresiones_funcionales": ["ない"], "expresiones_finales": [] },
@@ -353,7 +353,7 @@
     {
       "id": "A1-1-019", "bloque": 1, "conjunto": "DS-NEG-05", "clase": "V",
       "japonés": "起きない。", "furigana": "おきない。", "romaji": "Okinai.",
-      "español": "No me levanto. / No me levantaré.",
+      "español": "No me levanto.",
       "audio_text": "起きない",
       "situación": { "descripción": "Suena el despertador. Decides quedarte en la cama.", "tipo": "resistir obligación", "entorno": "dormitorio" },
       "predicado": { "núcleo": "起きる", "clase": "V", "grupo": 2, "expresiones_funcionales": ["ない"], "expresiones_finales": [] },

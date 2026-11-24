@@ -52,7 +52,7 @@
     {
       "id": "A1-3-001", "bloque": 3, "conjunto": "DS-PNEG-01", "clase": "A",
       "japonés": "寒くなかった。", "furigana": "さむくなかった。", "romaji": "Samukunakatta.",
-      "español": "No hacía frío. / No estaba frío.",
+      "español": "No hacía frío.",
       "audio_text": "寒くなかった",
       "situación": { "descripción": "El invierno pasado fue suave. No hacía frío.", "tipo": "rememorar clima", "entorno": "conversación" },
       "predicado": { "núcleo": "寒い", "clase": "A", "expresiones_funcionales": ["くなかった"], "expresiones_finales": [] },
@@ -194,7 +194,7 @@
     {
       "id": "A1-3-010", "bloque": 3, "conjunto": "DS-PNEG-03", "clase": "N",
       "japonés": "雨じゃなかった。", "furigana": "あめじゃなかった。", "romaji": "Ame ja nakatta.",
-      "español": "No llovía. / No era lluvia.",
+      "español": "No llovía. / No estaba lloviendo.",
       "audio_text": "雨じゃなかった",
       "situación": { "descripción": "Alguien dijo que había llovido. En realidad no fue así.", "tipo": "corregir información pasada", "entorno": "conversación" },
       "predicado": { "núcleo": "雨", "clase": "N", "expresiones_funcionales": ["じゃなかった"], "expresiones_finales": [] },
@@ -209,7 +209,7 @@
     {
       "id": "A1-3-011", "bloque": 3, "conjunto": "DS-PNEG-03", "clase": "N",
       "japonés": "嘘じゃなかった。", "furigana": "うそじゃなかった。", "romaji": "Uso ja nakatta.",
-      "español": "No era mentira. / Era verdad.",
+      "español": "No era mentira. / No era falso.",
       "audio_text": "嘘じゃなかった",
       "situación": { "descripción": "Algo que contaste parecía increíble. Ahora se confirma que era verdad.", "tipo": "confirmar veracidad de algo pasado", "entorno": "conversación" },
       "predicado": { "núcleo": "嘘", "clase": "N", "expresiones_funcionales": ["じゃなかった"], "expresiones_finales": [] },
@@ -240,7 +240,7 @@
     {
       "id": "A1-3-013", "bloque": 3, "conjunto": "DS-PNEG-04", "clase": "V",
       "japonés": "飲まなかった。", "furigana": "のまなかった。", "romaji": "Nomanakatta.",
-      "español": "No lo tomé. / No bebí.",
+      "español": "No bebí. / No tomé.",
       "audio_text": "飲まなかった",
       "situación": { "descripción": "El médico te pregunta si tomaste el medicamento. No lo tomaste.", "tipo": "negar acción pasada", "entorno": "consulta médica" },
       "predicado": { "núcleo": "飲む", "clase": "V", "grupo": 1, "expresiones_funcionales": ["なかった"], "expresiones_finales": [] },
@@ -255,7 +255,7 @@
     {
       "id": "A1-3-014", "bloque": 3, "conjunto": "DS-PNEG-04", "clase": "V",
       "japonés": "見なかった。", "furigana": "みなかった。", "romaji": "Minakatta.",
-      "español": "No lo vi. / No lo miré.",
+      "español": "No miré. / No vi.",
       "audio_text": "見なかった",
       "situación": { "descripción": "Tu amigo te habla de una película. No la viste.", "tipo": "negar acción pasada", "entorno": "casual" },
       "predicado": { "núcleo": "見る", "clase": "V", "grupo": 2, "expresiones_funcionales": ["なかった"], "expresiones_finales": [] },
@@ -271,7 +271,7 @@
     {
       "id": "A1-3-015", "bloque": 3, "conjunto": "DS-PNEG-04", "clase": "V",
       "japonés": "しなかった。", "furigana": "しなかった。", "romaji": "Shinakatta.",
-      "español": "No lo hice. / No hice nada.",
+      "español": "No lo hice. / No hice (eso).",
       "audio_text": "しなかった",
       "situación": { "descripción": "Te olvidaste de hacer algo que debías hacer.", "tipo": "reconocer omisión", "entorno": "casual" },
       "predicado": { "núcleo": "する", "clase": "V", "grupo": "irregular", "expresiones_funcionales": ["なかった"], "expresiones_finales": [] },

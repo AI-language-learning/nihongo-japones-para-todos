@@ -359,7 +359,7 @@
     {
       "id": "A1-7-019","bloque": 7,"conjunto": "DS-FIN-06","clase": "A",
       "japonés": "おいしいですね。","furigana": "おいしいですね。","romaji": "Oishii desu ne.",
-      "español": "Está rico, ¿verdad? (registro formal)",
+      "español": "Está rico, ¿verdad?",
       "audio_text": "おいしいですね",
       "situación": {"descripción": "Estáis cenando con compañeros de trabajo. Todo el mundo prueba el plato principal.","tipo": "compartir percepción — registro formal","entorno": "cena de empresa"},
       "predicado": {"núcleo": "おいしい","clase": "A","expresiones_funcionales": ["です"],"expresiones_finales": ["ね"]},

@@ -112,7 +112,7 @@
     {
       "id": "A1-2-004", "bloque": 2, "conjunto": "DS-PERF-01", "clase": "V",
       "japonés": "食べた。", "furigana": "たべた。", "romaji": "Tabeta.",
-      "español": "Comí. / Ya comí.",
+      "español": "Comí. / Lo comí.",
       "audio_text": "食べた",
       "situación": { "descripción": "Tu compañero te pregunta si ya comiste. Sí.", "tipo": "confirmar acción completada", "entorno": "casual" },
       "predicado": { "núcleo": "食べる", "clase": "V", "grupo": 2, "expresiones_funcionales": ["た"], "expresiones_finales": [] },
@@ -143,7 +143,7 @@
     {
       "id": "A1-2-006", "bloque": 2, "conjunto": "DS-PERF-02", "clase": "A",
       "japonés": "おいしかった。", "furigana": "おいしかった。", "romaji": "Oishikatta.",
-      "español": "Estaba rico. / Estaba buenísimo.",
+      "español": "Estaba rico. / Estuvo delicioso.",
       "audio_text": "おいしかった",
       "situación": { "descripción": "Acabas de terminar una comida estupenda. La recuerdas con placer.", "tipo": "valorar experiencia pasada", "entorno": "comida" },
       "predicado": { "núcleo": "おいしい", "clase": "A", "expresiones_funcionales": ["かった"], "expresiones_finales": [] },
@@ -273,7 +273,7 @@
     {
       "id": "A1-2-014", "bloque": 2, "conjunto": "DS-PERF-04", "clase": "N",
       "japonés": "夢だった。", "furigana": "ゆめだった。", "romaji": "Yume datta.",
-      "español": "Era un sueño. / Parecía un sueño.",
+      "español": "Era un sueño. / Fue un sueño.",
       "audio_text": "夢だった",
       "situación": { "descripción": "Recuerdas un viaje increíble a Japón. Fue como un sueño.", "tipo": "valorar experiencia pasada", "entorno": "conversación" },
       "predicado": { "núcleo": "夢", "clase": "N", "expresiones_funcionales": ["だった"], "expresiones_finales": [] },
@@ -288,7 +288,7 @@
     {
       "id": "A1-2-015", "bloque": 2, "conjunto": "DS-PERF-04", "clase": "N",
       "japonés": "休みだった。", "furigana": "やすみだった。", "romaji": "Yasumi datta.",
-      "español": "Era día libre. / Tenía el día libre.",
+      "español": "Era un día libre. / Era festivo. / Tenía el día libre.",
       "audio_text": "休みだった",
       "situación": { "descripción": "Recuerdas que ayer no trabajaste.", "tipo": "rememorar estado pasado", "entorno": "casual" },
       "predicado": { "núcleo": "休み", "clase": "N", "expresiones_funcionales": ["だった"], "expresiones_finales": [] },
@@ -303,7 +303,7 @@
     {
       "id": "A1-2-016", "bloque": 2, "conjunto": "DS-PERF-05", "clase": "V",
       "japonés": "見た。", "furigana": "みた。", "romaji": "Mita.",
-      "español": "La vi. / Ya la vi.",
+      "español": "Miré. / Vi.",
       "audio_text": "見た",
       "situación": { "descripción": "Tu amigo te pregunta si ya viste esa película. Sí.", "tipo": "confirmar acción completada", "entorno": "casual" },
       "predicado": { "núcleo": "見る", "clase": "V", "grupo": 2, "expresiones_funcionales": ["た"], "expresiones_finales": [] },
@@ -431,7 +431,7 @@
     {
       "id": "A1-2-024", "bloque": 2, "conjunto": "DS-PERF-06", "clase": "V",
       "japonés": "来た。", "furigana": "きた。", "romaji": "Kita.",
-      "español": "Llegó. / Ya vino.",
+      "español": "Llegó. / Vino.",
       "audio_text": "来た",
       "situación": { "descripción": "Esperabas a un amigo. Por fin aparece.", "tipo": "constatar llegada", "entorno": "casual" },
       "predicado": { "núcleo": "来る", "clase": "V", "grupo": "irregular", "expresiones_funcionales": ["た"], "expresiones_finales": [] },
@@ -448,7 +448,7 @@
     {
       "id": "A1-2-025", "bloque": 2, "conjunto": "DS-PERF-06", "clase": "V",
       "japonés": "帰った。", "furigana": "かえった。", "romaji": "Kaetta.",
-      "español": "Volví a casa. / Ya llegué a casa.",
+      "español": "Volví a casa. / Llegué a casa.",
       "audio_text": "帰った",
       "situación": { "descripción": "Llegas a casa después de una larga jornada. Lo anuncias o lo confirmas.", "tipo": "anunciar llegada", "entorno": "casa" },
       "predicado": { "núcleo": "帰る", "clase": "V", "grupo": 1, "expresiones_funcionales": ["った"], "expresiones_finales": [] },

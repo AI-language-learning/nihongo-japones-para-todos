@@ -56,7 +56,7 @@
     {
       "id": "A1-4-001", "bloque": 4, "conjunto": "DS-CRT-01", "clase": "A",
       "japonés": "寒いです。", "furigana": "さむいです。", "romaji": "Samui desu.",
-      "español": "Hace frío. (registro formal)",
+      "español": "Hace frío.",
       "audio_text": "寒いです",
       "situación": { "descripción": "Le dices a tu profesor que hace frío en el aula.", "tipo": "expresar sensación — registro formal", "entorno": "escuela" },
       "predicado": { "núcleo": "寒い", "clase": "A", "expresiones_funcionales": ["です"], "expresiones_finales": [] },
@@ -73,7 +73,7 @@
     {
       "id": "A1-4-002", "bloque": 4, "conjunto": "DS-CRT-01", "clase": "Na",
       "japonés": "静かです。", "furigana": "しずかです。", "romaji": "Shizuka desu.",
-      "español": "Está tranquilo. (registro formal)",
+      "español": "Está tranquilo.",
       "audio_text": "静かです",
       "situación": { "descripción": "Describes el ambiente de una sala a alguien que no conoces.", "tipo": "describir entorno — registro formal", "entorno": "lugar público" },
       "predicado": { "núcleo": "静か", "clase": "Na", "expresiones_funcionales": ["です"], "expresiones_finales": [] },
@@ -89,7 +89,7 @@
     {
       "id": "A1-4-003", "bloque": 4, "conjunto": "DS-CRT-01", "clase": "N",
       "japonés": "学生です。", "furigana": "がくせいです。", "romaji": "Gakusei desu.",
-      "español": "Soy estudiante. (registro formal)",
+      "español": "Soy estudiante.",
       "audio_text": "学生です",
       "situación": { "descripción": "Te presentas ante alguien que no conoces.", "tipo": "presentarse — registro formal", "entorno": "presentación" },
       "predicado": { "núcleo": "学生", "clase": "N", "expresiones_funcionales": ["です"], "expresiones_finales": [] },
@@ -106,7 +106,7 @@
     {
       "id": "A1-4-004", "bloque": 4, "conjunto": "DS-CRT-01", "clase": "V",
       "japonés": "食べます。", "furigana": "たべます。", "romaji": "Tabemasu.",
-      "español": "Como. (registro formal)",
+      "español": "Como.",
       "audio_text": "食べます",
       "situación": { "descripción": "En una cena formal, alguien te ofrece algo. Aceptas cortésmente.", "tipo": "aceptar ofrecimiento — registro formal", "entorno": "evento formal" },
       "predicado": { "núcleo": "食べる", "clase": "V", "grupo": 2, "expresiones_funcionales": ["ます"], "expresiones_finales": [] },
@@ -123,7 +123,7 @@
     {
       "id": "A1-4-005", "bloque": 4, "conjunto": "DS-CRT-02", "clase": "A",
       "japonés": "暑いです。", "furigana": "あついです。", "romaji": "Atsui desu.",
-      "español": "Hace calor. (registro formal)",
+      "español": "Hace calor.",
       "audio_text": "暑いです",
       "situación": { "descripción": "Le dices a un desconocido que el clima está muy caluroso.", "tipo": "comentar el clima — registro formal", "entorno": "lugar público" },
       "predicado": { "núcleo": "暑い", "clase": "A", "expresiones_funcionales": ["です"], "expresiones_finales": [] },
@@ -138,7 +138,7 @@
     {
       "id": "A1-4-006", "bloque": 4, "conjunto": "DS-CRT-02", "clase": "A",
       "japonés": "おいしいです。", "furigana": "おいしいです。", "romaji": "Oishii desu.",
-      "español": "Está rico. (registro formal)",
+      "español": "Está rico.",
       "audio_text": "おいしいです",
       "situación": { "descripción": "Tu anfitrión te pregunta cómo está la comida. Respondes con cortesía.", "tipo": "valorar comida — registro formal", "entorno": "comida en casa ajena" },
       "predicado": { "núcleo": "おいしい", "clase": "A", "expresiones_funcionales": ["です"], "expresiones_finales": [] },
@@ -153,7 +153,7 @@
     {
       "id": "A1-4-007", "bloque": 4, "conjunto": "DS-CRT-02", "clase": "A",
       "japonés": "難しいです。", "furigana": "むずかしいです。", "romaji": "Muzukashii desu.",
-      "español": "Es difícil. (registro formal)",
+      "español": "Es difícil.",
       "audio_text": "難しいです",
       "situación": { "descripción": "El profesor te pregunta si el problema es difícil.", "tipo": "valorar dificultad — registro formal", "entorno": "clase" },
       "predicado": { "núcleo": "難しい", "clase": "A", "expresiones_funcionales": ["です"], "expresiones_finales": [] },
@@ -168,7 +168,7 @@
     {
       "id": "A1-4-008", "bloque": 4, "conjunto": "DS-CRT-02", "clase": "A",
       "japonés": "いいです。", "furigana": "いいです。", "romaji": "Ii desu.",
-      "español": "Está bien. / Me parece bien. (registro formal)",
+      "español": "Está bien. / Me parece bien.",
       "audio_text": "いいです",
       "situación": { "descripción": "Alguien te ofrece algo o te hace una propuesta. Está bien para ti.", "tipo": "aceptar o aprobar — registro formal", "entorno": "cualquiera" },
       "predicado": { "núcleo": "いい", "clase": "A", "expresiones_funcionales": ["です"], "expresiones_finales": [] },
@@ -185,7 +185,7 @@
     {
       "id": "A1-4-009", "bloque": 4, "conjunto": "DS-CRT-03", "clase": "Na",
       "japonés": "元気です。", "furigana": "げんきです。", "romaji": "Genki desu.",
-      "español": "Estoy bien. (registro formal)",
+      "español": "Estoy bien.",
       "audio_text": "元気です",
       "situación": { "descripción": "Tu profesor te pregunta cómo estás al inicio de clase.", "tipo": "responder a saludo — registro formal", "entorno": "aula" },
       "predicado": { "núcleo": "元気", "clase": "Na", "expresiones_funcionales": ["です"], "expresiones_finales": [] },
@@ -201,7 +201,7 @@
     {
       "id": "A1-4-010", "bloque": 4, "conjunto": "DS-CRT-03", "clase": "Na",
       "japonés": "大丈夫です。", "furigana": "だいじょうぶです。", "romaji": "Daijōbu desu.",
-      "español": "Estoy bien. / No hay problema. / Está bien. (registro formal)",
+      "español": "Estoy bien. / No hay problema. / Está bien.",
       "audio_text": "大丈夫です",
       "situación": { "descripción": "Alguien te pregunta si estás bien después de un tropiezo. Dices que sí.", "tipo": "tranquilizar a alguien — registro neutro/formal", "entorno": "cualquiera" },
       "predicado": { "núcleo": "大丈夫", "clase": "Na", "expresiones_funcionales": ["です"], "expresiones_finales": [] },
@@ -218,7 +218,7 @@
     {
       "id": "A1-4-011", "bloque": 4, "conjunto": "DS-CRT-03", "clase": "N",
       "japonés": "日本語の先生です。", "furigana": "にほんごのせんせいです。", "romaji": "Nihongo no sensei desu.",
-      "español": "Soy profesor de japonés. (registro formal)",
+      "español": "Soy profesor de japonés.",
       "audio_text": "日本語の先生です",
       "situación": { "descripción": "Te presentas en un contexto formal. Te dedicas a la enseñanza del japonés.", "tipo": "presentarse — registro formal", "entorno": "presentación formal" },
       "predicado": { "núcleo": "先生", "clase": "N", "expresiones_funcionales": ["です"], "expresiones_finales": [] },
@@ -238,7 +238,7 @@
     {
       "id": "A1-4-012", "bloque": 4, "conjunto": "DS-CRT-04", "clase": "V",
       "japonés": "行きます。", "furigana": "いきます。", "romaji": "Ikimasu.",
-      "español": "Voy. / Iré. (registro formal)",
+      "español": "Voy.",
       "audio_text": "行きます",
       "situación": { "descripción": "Tu jefe te pregunta si vas a la reunión de mañana.", "tipo": "confirmar plan — registro formal", "entorno": "trabajo" },
       "predicado": { "núcleo": "行く", "clase": "V", "grupo": 1, "expresiones_funcionales": ["ます"], "expresiones_finales": [] },
@@ -254,7 +254,7 @@
     {
       "id": "A1-4-013", "bloque": 4, "conjunto": "DS-CRT-04", "clase": "V",
       "japonés": "飲みます。", "furigana": "のみます。", "romaji": "Nomimasu.",
-      "español": "Lo tomo. (registro formal)",
+      "español": "Lo tomo.",
       "audio_text": "飲みます",
       "situación": { "descripción": "El camarero te pregunta qué va a tomar. Dices que tomarás un café.", "tipo": "pedir en restaurante", "entorno": "restaurante" },
       "predicado": { "núcleo": "飲む", "clase": "V", "grupo": 1, "expresiones_funcionales": ["ます"], "expresiones_finales": [] },
@@ -270,7 +270,7 @@
     {
       "id": "A1-4-014", "bloque": 4, "conjunto": "DS-CRT-04", "clase": "V",
       "japonés": "見ます。", "furigana": "みます。", "romaji": "Mimasu.",
-      "español": "Lo veo. / Lo miro. (registro formal)",
+      "español": "Miro. / Veo.",
       "audio_text": "見ます",
       "situación": { "descripción": "Tu sensei te pregunta si ves las noticias en japonés.", "tipo": "responder sobre hábito — registro formal", "entorno": "clase" },
       "predicado": { "núcleo": "見る", "clase": "V", "grupo": 2, "expresiones_funcionales": ["ます"], "expresiones_finales": [] },
@@ -286,7 +286,7 @@
     {
       "id": "A1-4-015", "bloque": 4, "conjunto": "DS-CRT-04", "clase": "V",
       "japonés": "します。", "furigana": "します。", "romaji": "Shimasu.",
-      "español": "Lo hago. (registro formal)",
+      "español": "Lo hago.",
       "audio_text": "します",
       "situación": { "descripción": "Tu jefe te asigna una tarea. Confirmas que la harás.", "tipo": "aceptar tarea — registro formal", "entorno": "trabajo" },
       "predicado": { "núcleo": "する", "clase": "V", "grupo": "irregular", "expresiones_funcionales": ["ます"], "expresiones_finales": [] },
@@ -302,7 +302,7 @@
     {
       "id": "A1-4-016", "bloque": 4, "conjunto": "DS-CRT-05", "clase": "A",
       "japonés": "寒くないです。", "furigana": "さむくないです。", "romaji": "Samukunai desu.",
-      "español": "No hace frío. (registro formal)",
+      "español": "No hace frío.",
       "audio_text": "寒くないです",
       "situación": { "descripción": "Le dices cortésmente a alguien que no hace frío, así que no hace falta el abrigo.", "tipo": "negar sensación — registro formal", "entorno": "casual-formal" },
       "predicado": { "núcleo": "寒い", "clase": "A", "expresiones_funcionales": ["くない", "です"], "expresiones_finales": [] },
@@ -318,7 +318,7 @@
     {
       "id": "A1-4-017", "bloque": 4, "conjunto": "DS-CRT-05", "clase": "Na",
       "japonés": "元気じゃないです。", "furigana": "げんきじゃないです。", "romaji": "Genki ja nai desu.",
-      "español": "No estoy bien. (registro formal)",
+      "español": "No estoy bien.",
       "audio_text": "元気じゃないです",
       "situación": { "descripción": "Tu médico te pregunta cómo te encuentras. No estás bien.", "tipo": "expresar malestar — registro formal", "entorno": "consulta médica" },
       "predicado": { "núcleo": "元気", "clase": "Na", "expresiones_funcionales": ["じゃない", "です"], "expresiones_finales": [] },
@@ -334,7 +334,7 @@
     {
       "id": "A1-4-018", "bloque": 4, "conjunto": "DS-CRT-05", "clase": "N",
       "japonés": "学生じゃないです。", "furigana": "がくせいじゃないです。", "romaji": "Gakusei ja nai desu.",
-      "español": "No soy estudiante. (registro formal)",
+      "español": "No soy estudiante.",
       "audio_text": "学生じゃないです",
       "situación": { "descripción": "Alguien supone que eres estudiante. Lo corriges cortésmente.", "tipo": "corregir suposición — registro formal", "entorno": "presentación" },
       "predicado": { "núcleo": "学生", "clase": "N", "expresiones_funcionales": ["じゃない", "です"], "expresiones_finales": [] },
@@ -349,7 +349,7 @@
     {
       "id": "A1-4-019", "bloque": 4, "conjunto": "DS-CRT-05", "clase": "V",
       "japonés": "食べません。", "furigana": "たべません。", "romaji": "Tabemasen.",
-      "español": "No como. / No voy a comer. (registro formal)",
+      "español": "No como. / No voy a comer.",
       "audio_text": "食べません",
       "situación": { "descripción": "En una cena formal, alguien te ofrece algo que no comes. Rechazas cortésmente.", "tipo": "rechazar ofrecimiento — registro formal", "entorno": "evento formal" },
       "predicado": { "núcleo": "食べる", "clase": "V", "grupo": 2, "expresiones_funcionales": ["ません"], "expresiones_finales": [] },
@@ -366,7 +366,7 @@
     {
       "id": "A1-4-020", "bloque": 4, "conjunto": "DS-CRT-05", "clase": "V",
       "japonés": "行きません。", "furigana": "いきません。", "romaji": "Ikimasen.",
-      "español": "No voy. / No iré. (registro formal)",
+      "español": "No voy.",
       "audio_text": "行きません",
       "situación": { "descripción": "Tu jefe te pregunta si irás a la conferencia del viernes. No puedes ir.", "tipo": "declinar — registro formal", "entorno": "trabajo" },
       "predicado": { "núcleo": "行く", "clase": "V", "grupo": 1, "expresiones_funcionales": ["ません"], "expresiones_finales": [] },
@@ -382,7 +382,7 @@
     {
       "id": "A1-4-021", "bloque": 4, "conjunto": "DS-CRT-04", "clase": "V",
       "japonés": "来ます。", "furigana": "きます。", "romaji": "Kimasu.",
-      "español": "Viene. / Va a venir. (registro formal)",
+      "español": "Viene. / Va a venir.",
       "audio_text": "来ます",
       "situación": { "descripción": "Tu compañero te pregunta si el jefe vendrá a la reunión. Confirmas que sí.", "tipo": "confirmar llegada — registro formal", "entorno": "trabajo" },
       "predicado": { "núcleo": "来る", "clase": "V", "grupo": "irregular", "expresiones_funcionales": ["ます"], "expresiones_finales": [] },
